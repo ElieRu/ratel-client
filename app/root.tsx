@@ -30,6 +30,7 @@ import SignInPage from "./auth/sign-in/[[...sign-in]]/page";
 import { frFR } from '@clerk/localizations/fr-FR'
 import SignUpPage from "./auth/sign-up/[[...sign-up]]/page";
 import Welcome from "./routes/welcome/welcome";
+import { useState } from "react";
 
 export const middleware: Route.MiddlewareFunction[] = [clerkMiddleware()]
 export const loader = (args: Route.LoaderArgs) => rootAuthLoader(args)
@@ -90,24 +91,28 @@ export const ProtectedRoute = () => {
   return <Outlet />;
 };
 
+
+
+
 export default function App({ loaderData }: Route.ComponentProps) {
   const location = useLocation();
   const hideNavbarPaths = [
-    '/', 
-    '/login', 
-    '/sign-in', 
-    '/sign-up', 
+    '/',
+    '/login',
+    '/sign-in',
+    '/sign-up',
     '/sign-in/factor-one',
     '/welcome'
   ];
   const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
+  let [page, setPage] = useState("");
 
   return (
     <>
       <ClerkProvider loaderData={loaderData} localization={frFR}>
         {!shouldHideNavbar && <AppSidebar variant="inset" />}
         <SidebarInset>
-          {!shouldHideNavbar && <SiteHeader title={`Dashboard`} />}
+          {!shouldHideNavbar && <SiteHeader title={`${page}`} />}
           <div className={`flex flex-1 flex-col md:rounded-xl ${!shouldHideNavbar && 'md:m-4'}`}>
             <div className={`flex flex-col gap-4 ${!shouldHideNavbar && 'py-4'} md:gap-6 ${!shouldHideNavbar && 'md:py-1'}`}>
               {/* <Outlet /> */}

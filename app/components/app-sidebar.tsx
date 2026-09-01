@@ -16,12 +16,13 @@ import {
 } from "./ui/sidebar"
 import { Settings2Icon, CommandIcon, Gauge, ShoppingCart, Building2, CircleDollarSign, Landmark, CirclePlus, CalendarArrowUp, Contact, ListCheck, SendToBack, UserRoundCog, FileText, Users, Home, Component } from "lucide-react"
 import { Link } from "react-router"
+import { useUser } from "@clerk/react-router"
 
 const data = {
   user: {
-    name: "demo",
-    email: "demo@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "",
+    email: "",
+    avatar: "",
   },
   navMain: [
     {
@@ -128,6 +129,8 @@ const data = {
   ],
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { user, isLoaded } = useUser();
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -148,8 +151,22 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser
+          user={
+            user
+              ? {
+                name: user.fullName,
+                email: user.emailAddresses[0]?.emailAddress,
+                avatar: user.imageUrl,
+              }
+              : {
+                name: "",
+                email: "",
+                avatar: "",
+              }
+          } isLoaded={isLoaded}
+        />
       </SidebarFooter>
-    </Sidebar>  
+    </Sidebar>
   )
 }

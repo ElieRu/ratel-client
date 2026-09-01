@@ -23,17 +23,38 @@ import {
 import { CreditCardIcon, BellIcon, CircleUserRoundIcon, EllipsisVerticalIcon, LogOutIcon } from "lucide-react"
 import { Link } from "react-router"
 import { Show, SignOutButton } from "@clerk/react-router"
+import { Skeleton } from "./ui/skeleton"
 
 export function NavUser({
-  user,
+  user, isLoaded
 }: {
   user: {
-    name: string
-    email: string
-    avatar: string
-  }
+    name: string | null | undefined
+    email: string | undefined
+    avatar: string | undefined
+  }, isLoaded: boolean
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile } = useSidebar();
+
+  if(!isLoaded) {
+    return <SidebarMenu>
+      <SidebarMenuItem>
+        <SidebarMenuButton size="lg" className="pointer-events-none">
+          {/* Avatar Skeleton */}
+          <Skeleton className="size-8 rounded-lg shrink-0" />
+          
+          {/* User Name & Email Text Lines Skeleton */}
+          <div className="grid flex-1 gap-1.5 text-left">
+            <Skeleton className="h-3.5 w-24" />
+            <Skeleton className="h-2.5 w-32" />
+          </div>
+
+          {/* Ellipsis Icon Skeleton */}
+          <Skeleton className="ml-auto size-4 rounded-full shrink-0" />
+        </SidebarMenuButton>
+      </SidebarMenuItem>
+    </SidebarMenu>
+  }
 
   return (
     <SidebarMenu>
@@ -45,7 +66,7 @@ export function NavUser({
             }
           >
             <Avatar className="size-8 rounded-lg grayscale">
-              <AvatarImage src={user.avatar} alt={user.name} />
+              <AvatarImage src={user.avatar} alt={user.name ?? undefined} />
               <AvatarFallback className="rounded-lg">CN</AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
@@ -66,7 +87,7 @@ export function NavUser({
               <DropdownMenuLabel className="p-0 font-normal">
                 <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                   <Avatar className="size-8">
-                    <AvatarImage src={user.avatar} alt={user.name} />
+                    <AvatarImage src={user.avatar} alt={user.name ?? undefined} />
                     <AvatarFallback className="rounded-lg">CN</AvatarFallback>
                   </Avatar>
                   <div className="grid flex-1 text-left text-sm leading-tight">
