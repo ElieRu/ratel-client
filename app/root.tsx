@@ -26,10 +26,10 @@ import Businesses from "./routes/admin/businesses";
 import Offres from "./routes/admin/offres";
 import Categories from "./routes/admin/categories";
 import Parametres from "./routes/parametres/parametres";
-import SignUp from "./auth/sign-up";
 import SignInPage from "./auth/sign-in/[[...sign-in]]/page";
 import { frFR } from '@clerk/localizations/fr-FR'
 import SignUpPage from "./auth/sign-up/[[...sign-up]]/page";
+import Welcome from "./routes/welcome/welcome";
 
 export const middleware: Route.MiddlewareFunction[] = [clerkMiddleware()]
 export const loader = (args: Route.LoaderArgs) => rootAuthLoader(args)
@@ -92,7 +92,14 @@ export const ProtectedRoute = () => {
 
 export default function App({ loaderData }: Route.ComponentProps) {
   const location = useLocation();
-  const hideNavbarPaths = ['/', '/login', '/sign-in', '/sign-up', '/sign-in/factor-one'];
+  const hideNavbarPaths = [
+    '/', 
+    '/login', 
+    '/sign-in', 
+    '/sign-up', 
+    '/sign-in/factor-one',
+    '/welcome'
+  ];
   const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
 
   return (
@@ -111,6 +118,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
 
                 <MyRoute element={<ProtectedRoute />}>
                   <MyRoute path="/acceuil" element={<AcceuilPage />} />
+                  <MyRoute path="/welcome" element={<Welcome />} />
                   <MyRoute path="/dashboard" element={<Dashboard />} />
                   <MyRoute path="/commandes" element={<Commandes />} />
                   <MyRoute path="/ventes" element={<Ventes />} />

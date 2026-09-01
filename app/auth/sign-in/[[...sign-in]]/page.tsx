@@ -5,7 +5,7 @@ import { SignIn } from "@clerk/react-router";
 export function meta({ }: Route.MetaArgs) {
     return [
         { title: "Connectez-vous sur Ratel" },
-        { name: "description", content: "Bienvenu sur Ratel Market!" },
+        { name: "description", content: "Se connecter pour continuer vers Ratel!" },
     ];
 }
 

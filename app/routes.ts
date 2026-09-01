@@ -12,9 +12,9 @@ export default [
   index("./routes/home.tsx"),
   route("/sign-in/*", `./auth/sign-in/[[...sign-in]]/page.tsx`),
   route("/sign-up/*", `./auth/sign-up/[[...sign-up]]/page.tsx`),
-  // route("/sign-in/factor-one", `./auth/sign-up/[[...sign-up]]/page.tsx`),
-
+  
   // main* routes
+  route("/welcome", `./routes/welcome/welcome.tsx`),
   route("/acceuil", `./routes/acceuil/acceuil.tsx`),
   route("/dashboard", `./routes/dashboard/dashboard.tsx`),
   route("/commandes", `./routes/commandes/commandes.tsx`),

@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import { API } from "~/lib/utils";
-import { SignInButton, SignUpButton, Show, UserButton, getToken } from '@clerk/react-router'
-import { LoginForm } from "~/components/login-form";
+import { Show, UserButton, getToken } from '@clerk/react-router'
 
 export default function Home() {
   const protected_route = async () => {
