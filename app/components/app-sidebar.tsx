@@ -14,10 +14,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "./ui/sidebar"
-import { Settings2Icon, CircleHelpIcon, SearchIcon, CommandIcon, Gauge, ShoppingCart, Building2, CircleDollarSign, Landmark, CirclePlus, CalendarArrowUp, Contact, ListCheck, SendToBack, UserRoundCog, FileText, Users, Home, Component } from "lucide-react"
-import { NavBusiness } from "./nav-business"
-import { NavAdmin } from "./nav-admin"
-import { Link, useLocation } from "react-router"
+import { Settings2Icon, CommandIcon, Gauge, ShoppingCart, Building2, CircleDollarSign, Landmark, CirclePlus, CalendarArrowUp, Contact, ListCheck, SendToBack, UserRoundCog, FileText, Users, Home, Component } from "lucide-react"
+import { Link } from "react-router"
 
 const data = {
   user: {
@@ -27,13 +25,6 @@ const data = {
   },
   navMain: [
     {
-      title: "Docs",
-      url: "https://ui.shadcn.com/docs/components",
-      icon: (
-        <Component />
-      ),
-    },
-    {
       title: "Acceuil",
       url: "/acceuil",
       icon: (
@@ -41,14 +32,14 @@ const data = {
       ),
     },
     {
-      title: "Dashboard",
+      title: "Tableau de bord",
       url: "/dashboard",
       icon: (
         <Gauge />
       ),
     },
     {
-      title: "Commandes",
+      title: "Mes commandes",
       url: "/commandes",
       icon: (
         <CalendarArrowUp />
@@ -56,22 +47,20 @@ const data = {
     },
     {
       title: "Historique des ventes",
-      url: "/historique-des-ventes",
+      url: "/ventes",
       icon: (
         <FileText />
       ),
     },
-  ],
-  navBusiness: [
     {
-      title: "Articles",
+      title: "Gestion des articles",
       url: "/articles",
       icon: (
         <CirclePlus />
       ),
     },
     {
-      title: "Achats",
+      title: "Opération d'achats",
       url: "/achats",
       icon: (
         <ShoppingCart />
@@ -81,7 +70,7 @@ const data = {
       title: "Clients",
       url: "/clients",
       icon: (
-        <Contact />
+        <Users />
       ),
     },
     {
@@ -92,26 +81,17 @@ const data = {
       ),
     },
     {
+      title: "Travailleurs",
+      url: "/travailleurs",
+      icon: (
+        <UserRoundCog />
+      ),
+    },
+    {
       title: "Caisses",
       url: "/caisses",
       icon: (
         <CircleDollarSign />
-      ),
-    },
-    {
-      title: "Agents",
-      url: "/agents",
-      icon: (
-        <Users />
-      ),
-    },
-  ],
-  navAdmin: [
-    {
-      title: "Acteurs",
-      url: "/admin/users",
-      icon: (
-        <UserRoundCog />
       ),
     },
     {
@@ -145,22 +125,6 @@ const data = {
         />
       ),
     },
-    {
-      title: "Recherche",
-      url: "/recherches",
-      icon: (
-        <SearchIcon
-        />
-      ),
-    },
-    {
-      title: "Aides",
-      url: "/aides",
-      icon: (
-        <CircleHelpIcon
-        />
-      ),
-    },
   ],
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -181,8 +145,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavBusiness items={data.navBusiness} />
-        <NavAdmin items={data.navAdmin} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>

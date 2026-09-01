@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function AchatPage() {
+export default function Achats() {
   return <div>
     <h1>Achats</h1>
   </div>;

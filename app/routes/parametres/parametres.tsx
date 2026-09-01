@@ -1,4 +1,4 @@
-import type { Route } from "./+types/agents";
+import type { Route } from "./+types/parametres";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,8 +7,11 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function AgentPage() {
+export default function Parametres() {
   return <div>
-    <h1>Achats</h1>
+    <ul>
+      <li>application</li>
+      <li>devises</li>
+    </ul>
   </div>;
 }

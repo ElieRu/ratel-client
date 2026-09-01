@@ -10,7 +10,7 @@ export function meta({ }: Route.MetaArgs) {
   ];
 }
 
-export default function AcceuilPage() {
+export default function Acceuil() {
   return <>
     <p>the same done with design</p>
     <ul>

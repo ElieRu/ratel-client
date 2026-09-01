@@ -1,14 +1,14 @@
-import type { Route } from "./+types/clients";
+import type { Route } from "./+types/commandes";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "My Admin App" },
+    { title: "React App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
-export default function ClientPage() {
+export default function Commandes() {
   return <div>
-    <h1>Achats</h1>
+    <h1>commandes</h1>
   </div>;
 }

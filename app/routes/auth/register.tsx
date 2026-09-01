@@ -3,7 +3,7 @@
 import { useNavigate } from "react-router";
 import { API } from "~/lib/utils";
 
-export default function LoginPage() {
+export default function Login() {
   const navigation = useNavigate();
 
   const submit = async () => {

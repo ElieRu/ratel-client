@@ -1,14 +1,14 @@
-import type { Route } from "./+types/commandes";
+import type { Route } from "./+types/fournisseurs";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "React App" },
+    { title: "My Admin App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
-export default function CommandePage() {
+export default function Fournisseurs() {
   return <div>
-    <h1>commandes</h1>
+    <h1>fournisseurs</h1>
   </div>;
 }

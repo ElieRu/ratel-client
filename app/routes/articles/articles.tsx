@@ -8,7 +8,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function ArticlePage() {
+export default function Articles() {
   const [articles, setArticles] = useState([]);
   return <div>
     <h1>articles</h1>

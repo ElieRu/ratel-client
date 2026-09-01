@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function DashboardPage(d: "smartedt") {
+export default function Dashboard() {
   return <div>
     <DataTable data={data} />
   </div>;

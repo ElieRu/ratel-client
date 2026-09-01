@@ -1,4 +1,4 @@
-import type { Route } from "./+types/parametres";
+import type { Route } from "./+types/caisses";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,11 +7,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function ParametrePage() {
+export default function Caisses() {
   return <div>
-    <ul>
-      <li>application</li>
-      <li>devises</li>
-    </ul>
+    <h1>caisse</h1>
   </div>;
 }

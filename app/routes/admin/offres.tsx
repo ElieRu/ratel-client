@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function OffrePage() {
+export default function Offres() {
   return <div>
     <h1>offres</h1>
   </div>;

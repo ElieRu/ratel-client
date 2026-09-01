@@ -1,4 +1,5 @@
 import type { Route } from "./+types/profile";
+
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "My Admin App" },
@@ -6,7 +7,7 @@ export function meta({ }: Route.MetaArgs) {
   ];
 }
 
-export default function ProfilePage() {
+export default function Profile() {
   return <div>
     profile
   </div>;

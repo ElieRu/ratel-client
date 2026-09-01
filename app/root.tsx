@@ -5,9 +5,31 @@ import { AppSidebar } from "./components/app-sidebar";
 import { SiteHeader } from "./components/site-header";
 import { clerkMiddleware, rootAuthLoader } from '@clerk/react-router/server'
 
-import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from 'react-router'
+import { isRouteErrorResponse, Links, Meta, Navigate, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useRoutes, useNavigate } from 'react-router'
 import stylesheet from './app.css?url'
-import { ClerkProvider } from '@clerk/react-router'
+import { ClerkProvider, useAuth } from '@clerk/react-router'
+
+import AcceuilPage from "./routes/acceuil/acceuil";
+import Home from "./routes/home";
+import Profile from "./routes/profile/profile";
+import Notifications from "./routes/notifications/notifications";
+import Dashboard from "./routes/dashboard/dashboard";
+import Commandes from "./routes/commandes/commandes";
+import Ventes from "./routes/ventes/ventes";
+import Articles from "./routes/articles/articles";
+import Achats from "./routes/achats/achats";
+import Clients from "./routes/clients/clients";
+import Fournisseurs from "./routes/fournisseurs/fournisseurs";
+import Travailleurs from "./routes/travailleurs/travailleurs";
+import Caisses from "./routes/caisses/caisses";
+import Businesses from "./routes/admin/businesses";
+import Offres from "./routes/admin/offres";
+import Categories from "./routes/admin/categories";
+import Parametres from "./routes/parametres/parametres";
+import SignUp from "./auth/sign-up";
+import SignInPage from "./auth/sign-in/[[...sign-in]]/page";
+import { frFR } from '@clerk/localizations/fr-FR'
+import SignUpPage from "./auth/sign-up/[[...sign-up]]/page";
 
 export const middleware: Route.MiddlewareFunction[] = [clerkMiddleware()]
 export const loader = (args: Route.LoaderArgs) => rootAuthLoader(args)
@@ -53,19 +75,59 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+export const ProtectedRoute = () => {
+  const { isLoaded, isSignedIn } = useAuth();
+
+  if (!isLoaded) {
+    return <div>Loading authentication...</div>;
+  }
+
+  if (!isSignedIn) {
+    const navigate = useNavigate();
+    navigate('/sign-up', { replace: true });
+  }
+
+  return <Outlet />;
+};
+
 export default function App({ loaderData }: Route.ComponentProps) {
   const location = useLocation();
-  const hideNavbarPaths = ['/', '/login', '/sign-in', '/sign-up'];
+  const hideNavbarPaths = ['/', '/login', '/sign-in', '/sign-up', '/sign-in/factor-one'];
   const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
+
   return (
     <>
-      <ClerkProvider loaderData={loaderData}>
+      <ClerkProvider loaderData={loaderData} localization={frFR}>
         {!shouldHideNavbar && <AppSidebar variant="inset" />}
         <SidebarInset>
           {!shouldHideNavbar && <SiteHeader title={`Dashboard`} />}
           <div className={`flex flex-1 flex-col md:rounded-xl ${!shouldHideNavbar && 'md:m-4'}`}>
             <div className={`flex flex-col gap-4 ${!shouldHideNavbar && 'py-4'} md:gap-6 ${!shouldHideNavbar && 'md:py-1'}`}>
-              <Outlet />
+              {/* <Outlet /> */}
+              <Routes>
+                <MyRoute path="/" element={<Home />} />
+                <MyRoute path="/sign-in/*" element={<SignInPage />} />
+                <MyRoute path="/sign-up/*" element={<SignUpPage />} />
+
+                <MyRoute element={<ProtectedRoute />}>
+                  <MyRoute path="/acceuil" element={<AcceuilPage />} />
+                  <MyRoute path="/dashboard" element={<Dashboard />} />
+                  <MyRoute path="/commandes" element={<Commandes />} />
+                  <MyRoute path="/ventes" element={<Ventes />} />
+                  <MyRoute path="/articles" element={<Articles />} />
+                  <MyRoute path="/achats" element={<Achats />} />
+                  <MyRoute path="/clients" element={<Clients />} />
+                  <MyRoute path="/fournisseurs" element={<Fournisseurs />} />
+                  <MyRoute path="/travailleurs" element={<Travailleurs />} />
+                  <MyRoute path="/caisses" element={<Caisses />} />
+                  <MyRoute path="/admin/businesses" element={<Businesses />} />
+                  <MyRoute path="/admin/offres" element={<Offres />} />
+                  <MyRoute path="/admin/categories" element={<Categories />} />
+                  <MyRoute path="/notifications" element={<Notifications />} />
+                  <MyRoute path="/profile" element={<Profile />} />
+                  <MyRoute path="/parametres" element={<Parametres />} />
+                </MyRoute>
+              </Routes>
             </div>
           </div>
         </SidebarInset>

@@ -1,4 +1,4 @@
-import type { Route } from "./+types/compte";
+import type { Route } from "./+types/travailleurs";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,8 +7,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function ComptePage() {
+export default function Travailleurs() {
   return <div>
-    <h1>compte</h1>
+    <h1>Achats</h1>
   </div>;
 }

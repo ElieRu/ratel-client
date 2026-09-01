@@ -22,6 +22,7 @@ import {
 } from "~/components/ui/sidebar"
 import { CreditCardIcon, BellIcon, CircleUserRoundIcon, EllipsisVerticalIcon, LogOutIcon } from "lucide-react"
 import { Link } from "react-router"
+import { Show, SignOutButton } from "@clerk/react-router"
 
 export function NavUser({
   user,
@@ -84,10 +85,6 @@ export function NavUser({
                 />
                 Profile
               </DropdownMenuItem>
-              <DropdownMenuItem render={<Link to={'/mon-compte'} />}>
-                <CreditCardIcon />
-                Mon Compte
-              </DropdownMenuItem>
               <DropdownMenuItem render={<Link to={'/notifications'} />}>
                 <BellIcon />
                 Notifications
@@ -95,7 +92,10 @@ export function NavUser({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-                {/* <LogOutIcon /> */}
+                <LogOutIcon />
+                <Show when="signed-in">
+                  <SignOutButton>Se déconnecter</SignOutButton>
+                </Show>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

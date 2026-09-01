@@ -1,4 +1,4 @@
-import type { Route } from "./+types/caisses";
+import type { Route } from "./+types/clients";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,8 +7,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function CaissePage() {
+export default function Clients() {
   return <div>
-    <h1>caisse</h1>
+    <h1>Achats</h1>
   </div>;
 }

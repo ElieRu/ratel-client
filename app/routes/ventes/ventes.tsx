@@ -1,4 +1,4 @@
-import type { Route } from "./+types/historique-des-ventes";
+import type { Route } from "./+types/ventes";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function HistoriqueDesVentesPage() {
+export default function Ventes() {
   return <div>
     <h1>historique des ventes</h1>
   </div>;

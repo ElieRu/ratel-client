@@ -1,31 +1,66 @@
-import { SignIn } from "@clerk/react-router";
-import { LoginForm } from "~/components/login-form";
 import type { Route } from "../../../+types/root";
+import { Card } from "~/components/ui/card"
+import { SignIn } from "@clerk/react-router";
 
 export function meta({ }: Route.MetaArgs) {
     return [
-        { title: "My Admin App" },
-        { name: "description", content: "Welcome to React Router!" },
+        { title: "Connectez-vous sur Ratel" },
+        { name: "description", content: "Bienvenu sur Ratel Market!" },
     ];
 }
 
-export default function Page() {
-    return <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
-        <div className="w-full max-w-sm md:max-w-4xl">
-            {/* <LoginForm /> */}
-            <SignIn
-                appearance={{
-                    variables: {
-                        colorPrimary: '#ff0000',
-                        colorBackground: '#373737',
-                        borderRadius: '0.5rem'
-                    },
-                    elements: {
-                        formButtonPrimary: 'bg-black hover:bg-gray-800 text-sm normal-case',
-                        card: 'shadow-md border border-gray-100'
-                    }
-                }}
-            />
-        </div>
+export default function SignInPage({
+    className,
+    ...props
+}: React.ComponentProps<"div">) {
+    return <div className="flex min-h-svh bg-muted flex-col items-center justify-center p-6 md:p-10">
+        <Card className="overflow-hidden p-0">
+            <div className="m-auto">
+                <SignIn
+                    appearance={{
+                        options: {
+                            logoImageUrl: '/favicon.ico',
+                            logoPlacement: 'inside',
+                            socialButtonsPlacement: 'bottom',
+                            socialButtonsVariant: 'iconButton',
+                            animations: true,
+                            autoFocus: true,
+                            logoLinkUrl: 'http://localhost:5173',
+                            // elevation: 'flush',
+                            // helpPageUrl: 'http://localhost:5173/aides/auth',
+                            // privacyPageUrl: 'http://localhost:5654/privacy'
+                            // termsPageUrl: 'https://clerk.com/terms'
+                        },
+                        variables: {
+                            colorPrimary: 'var(--primary)',
+                            colorForeground: '#000000',
+                            colorBackground: 'var(--background)',
+                            colorInputForeground: 'var(--foreground)',
+                            colorBorder: 'var(--foreground)',
+                            colorShadow: 'var(--muted)'
+                        },
+                        elements: {
+                            // cardBox: {},
+                            // card: {},
+                            formFieldInput: {
+                                backgroundColor: 'var(--background)',
+                            },
+                            formButtonPrimary: {
+                                color: 'var(--primary-foreground)',
+                            },
+                            buttonArrowIcon: {
+                                display: 'none'
+                            },
+                            footerItem: {
+                                display: 'none'
+                            },
+                            socialButtonsBlockButtonText: {
+                                color: 'var(--secondary-foreground)'
+                            }
+                        },
+                    }}
+                />
+            </div>
+        </Card>
     </div>
 }

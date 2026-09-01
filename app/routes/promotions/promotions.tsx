@@ -1,14 +1,14 @@
-import type { Route } from "./+types/notifications";
+import type { Route } from "./+types/promotions";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "My Admin App" },
+    { title: "React App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
-export default function NotificationPage() {
+export default function Promotions() {
   return <div>
-    <h1>aides</h1>
+    <h1>promotions</h1>
   </div>;
 }

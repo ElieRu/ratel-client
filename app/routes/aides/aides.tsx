@@ -1,4 +1,4 @@
-import type { Route } from "./+types/recherches";
+import type { Route } from "./+types/aides";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,8 +7,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function RecherchePage() {
+export default function Aides() {
   return <div>
-    <h1>Accueil</h1>
+    <h1>aides</h1>
   </div>;
 }

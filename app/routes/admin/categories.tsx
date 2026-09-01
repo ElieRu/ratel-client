@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function CategoriePage() {
+export default function Categories() {
   return <div>
     <h1>categorie</h1>
   </div>;

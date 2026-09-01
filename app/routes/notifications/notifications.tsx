@@ -1,4 +1,4 @@
-import type { Route } from "./+types/fournisseurs";
+import type { Route } from "./+types/notifications";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -7,8 +7,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function FournisseurPage() {
+export default function Notifications() {
   return <div>
-    <h1>fournisseurs</h1>
+    <h1>aides</h1>
   </div>;
 }

@@ -1,8 +1,9 @@
 import { Link } from "react-router";
 import { API } from "~/lib/utils";
 import { SignInButton, SignUpButton, Show, UserButton, getToken } from '@clerk/react-router'
+import { LoginForm } from "~/components/login-form";
 
-export default function Page() {
+export default function Home() {
   const protected_route = async () => {
     const res = await fetch(`${API}/auth/protected`, {
       method: "GET",
@@ -32,8 +33,13 @@ export default function Page() {
     <div>
       <header className="flex items-center justify-center py-8 px-4">
         <Show when="signed-out">
-          <SignInButton />
-          <SignUpButton />
+          <br />
+          <Link to={'/sign-in'}>sign-in</Link>
+          <br />
+          <Link to={'/sign-up'}>Sign up</Link>
+          <br />
+          {/* <SignInButton /> */}
+          {/* <SignUpButton /> */}
         </Show>
         <Show when="signed-in">
           <UserButton />
@@ -41,8 +47,11 @@ export default function Page() {
       </header>
       <h1>Welcome back</h1>
       <br />
-      <br />
+      <Link to={'/acceuil'}>Acceuil</Link>
       <button onClick={protectedCall}>call protected route</button>
     </div>
   )
 }
+
+
+

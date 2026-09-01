@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function BusinessesPage() {
+export default function Businesses() {
   return <div>
     <h1>user</h1>
   </div>;
