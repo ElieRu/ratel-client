@@ -20,10 +20,10 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "~/components/ui/sidebar"
-import { CreditCardIcon, BellIcon, CircleUserRoundIcon, EllipsisVerticalIcon, LogOutIcon } from "lucide-react"
+import { BellIcon, CircleUserRoundIcon, EllipsisVerticalIcon, LogOutIcon } from "lucide-react"
 import { Link } from "react-router"
 import { Show, SignOutButton } from "@clerk/react-router"
-import { Skeleton } from "./ui/skeleton"
+import { UserNavSkeleton } from "./all-skeletons"
 
 export function NavUser({
   user, isLoaded
@@ -36,25 +36,7 @@ export function NavUser({
 }) {
   const { isMobile } = useSidebar();
 
-  if(!isLoaded) {
-    return <SidebarMenu>
-      <SidebarMenuItem>
-        <SidebarMenuButton size="lg" className="pointer-events-none">
-          {/* Avatar Skeleton */}
-          <Skeleton className="size-8 rounded-lg shrink-0" />
-          
-          {/* User Name & Email Text Lines Skeleton */}
-          <div className="grid flex-1 gap-1.5 text-left">
-            <Skeleton className="h-3.5 w-24" />
-            <Skeleton className="h-2.5 w-32" />
-          </div>
-
-          {/* Ellipsis Icon Skeleton */}
-          <Skeleton className="ml-auto size-4 rounded-full shrink-0" />
-        </SidebarMenuButton>
-      </SidebarMenuItem>
-    </SidebarMenu>
-  }
+  if(!isLoaded) return UserNavSkeleton();
 
   return (
     <SidebarMenu>

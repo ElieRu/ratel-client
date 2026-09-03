@@ -23,17 +23,16 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog";
-import { Separator } from "~/components/ui/separator";
-import { Textarea } from "~/components/ui/textarea";
 import { Button } from "~/components/ui/button";
-import { Label } from "~/components/ui/label";
-import { Skeleton } from "~/components/ui/skeleton";
+import type { UserForm } from "~/lib/definitions";
+import { API } from "~/lib/utils";
+import { UserProfileSkeleton } from "~/components/all-skeletons";
 
 
 export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Profile" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Personalisez vos informations!" },
   ];
 }
 
@@ -65,74 +64,38 @@ export default function Profile() {
   };
 
   const { user, isLoaded } = useUser();
+  if (!isLoaded) return UserProfileSkeleton();
 
-  if (!isLoaded) {
-    return <div className="flex items-center justify-center p-10">
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-        {/* Left Column: Section Title & Description */}
-        <div className="hidden md:block">
-          <Skeleton className="h-6 w-48" />
-          <Skeleton className="mt-2 h-4 w-64" />
-        </div>
-
-        {/* Right Column: Form Area */}
-        <div className="sm:max-w-3xl md:col-span-2">
-          {/* Avatar & Upload Button Section */}
-          <div className="grid grid-cols-1 mb-6">
-            <div className="flex flex-col items-center justify-center">
-              {/* Avatar Circle */}
-              <Skeleton className="h-24 w-24 rounded-full mb-2" />
-              {/* Upload Label */}
-              <Skeleton className="h-4 w-28 mb-1" />
-              {/* Max File Size Label */}
-              <Skeleton className="h-3 w-36 mb-3" />
-              {/* Add Image Button */}
-              <Skeleton className="h-9 w-28 rounded-md" />
-            </div>
-          </div>
-
-          {/* Input Fields Grid */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-6">
-            {/* Nom Field */}
-            <div className="col-span-full sm:col-span-3 space-y-2">
-              <Skeleton className="h-4 w-16" />
-              <Skeleton className="h-10 w-full rounded-md" />
-            </div>
-
-            {/* Post-nom Field */}
-            <div className="col-span-full sm:col-span-3 space-y-2">
-              <Skeleton className="h-4 w-20" />
-              <Skeleton className="h-10 w-full rounded-md" />
-            </div>
-
-            {/* Email Field */}
-            <div className="col-span-full space-y-2">
-              <Skeleton className="h-4 w-24" />
-              <Skeleton className="h-10 w-full rounded-md" />
-            </div>
-
-            {/* Date de naissance Field */}
-            <div className="col-span-full sm:col-span-3 space-y-2">
-              <Skeleton className="h-4 w-32" />
-              <Skeleton className="h-10 w-full rounded-md" />
-            </div>
-
-            {/* Role Field & Description */}
-            <div className="col-span-full sm:col-span-3 space-y-2">
-              <Skeleton className="h-4 w-12" />
-              <Skeleton className="h-10 w-full rounded-md" />
-              <Skeleton className="h-3 w-56" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  const submit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data: UserForm = {
+      firstName: formData.get('first-name') as string,
+      lastName: formData.get('last-name') as string,
+      email: formData.get('email') as string,
+      birthday: formData.get('year') as string,
+    };
+    // console.log(data);
+    fetch(`${API}/profile`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
-  // if (!isSignedIn) return <div>Loading...</div>;
 
   return <>
     <div className="flex items-center justify-center p-10">
-      <form>
+      {/* onSubmit={handleSubmit(onSubmit)} */}
+      <form onSubmit={submit}>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="hidden md:block">
             <h2 className="text-balance font-semibold text-foreground dark:text-foreground">

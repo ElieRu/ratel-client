@@ -5,7 +5,7 @@ import { AppSidebar } from "./components/app-sidebar";
 import { SiteHeader } from "./components/site-header";
 import { clerkMiddleware, rootAuthLoader } from '@clerk/react-router/server'
 
-import { isRouteErrorResponse, Links, Meta, Navigate, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useRoutes, useNavigate } from 'react-router'
+import { isRouteErrorResponse, Links, Meta, Navigate, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useNavigate } from 'react-router'
 import stylesheet from './app.css?url'
 import { ClerkProvider, useAuth } from '@clerk/react-router'
 
