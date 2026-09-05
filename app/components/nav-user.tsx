@@ -4,7 +4,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "~/components/ui/avatar"
+} from "@/components/ui/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,16 +13,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "~/components/ui/sidebar"
-import { BellIcon, CircleUserRoundIcon, EllipsisVerticalIcon, LogOutIcon } from "lucide-react"
+} from "@/components/ui/sidebar"
+import { BellIcon, CircleUserRoundIcon, EllipsisVerticalIcon, LogOutIcon, SettingsIcon } from "lucide-react"
 import { Link } from "react-router"
-import { Show, SignOutButton } from "@clerk/react-router"
+// import { Show, SignOutButton } from "@clerk/react-router"
 import { UserNavSkeleton } from "./all-skeletons"
 
 export function NavUser({
@@ -47,7 +47,7 @@ export function NavUser({
               <SidebarMenuButton size="lg" className="aria-expanded:bg-muted" />
             }
           >
-            <Avatar className="size-8 rounded-lg grayscale">
+            <Avatar className="size-8 rounded-lg">
               <AvatarImage src={user.avatar} alt={user.name ?? undefined} />
               <AvatarFallback className="rounded-lg">CN</AvatarFallback>
             </Avatar>
@@ -92,14 +92,18 @@ export function NavUser({
                 <BellIcon />
                 Notifications
               </DropdownMenuItem>
+              <DropdownMenuItem render={<Link to={'/parametres'} />}>
+                <SettingsIcon />
+                Paramètres
+              </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            {/* <DropdownMenuItem>
                 <LogOutIcon />
                 <Show when="signed-in">
                   <SignOutButton>Se déconnecter</SignOutButton>
                 </Show>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

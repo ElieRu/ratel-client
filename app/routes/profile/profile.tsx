@@ -1,32 +1,16 @@
 'use client'
 
-import { useAuth, UserProfile, useUser } from "@clerk/react-router";
+// import { useUser } from "@clerk/react-router";
 import type { Route } from "./+types/profile";
-import { Checkbox } from "~/components/ui/checkbox";
-import { Field, FieldDescription, FieldLabel } from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "~/components/ui/select";
+import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import { Plus, UserRoundIcon, X } from "lucide-react";
 import { useRef, useState } from "react";
-
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "~/components/ui/dialog";
-import { Button } from "~/components/ui/button";
-import type { UserForm } from "~/lib/definitions";
-import { API } from "~/lib/utils";
-import { UserProfileSkeleton } from "~/components/all-skeletons";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import type { UserForm } from "@/lib/definitions";
+import { API } from "@/lib/utils";
+import { UserProfileSkeleton } from "@/components/all-skeletons";
 
 
 export function meta({ }: Route.MetaArgs) {
@@ -35,6 +19,11 @@ export function meta({ }: Route.MetaArgs) {
     { name: "description", content: "Personalisez vos informations!" },
   ];
 }
+
+import { Separator } from "@/components/ui/separator";
+import ContactsManager from "@/components/contacts/contacts";
+
+
 
 export default function Profile() {
   const [open, setOpen] = useState(true);
@@ -63,39 +52,38 @@ export default function Profile() {
     fileInputRef.current?.click();
   };
 
-  const { user, isLoaded } = useUser();
-  if (!isLoaded) return UserProfileSkeleton();
+  // const { user, isLoaded } = useUser();
+  // if (!isLoaded) return UserProfileSkeleton();
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data: UserForm = {
-      firstName: formData.get('first-name') as string,
-      lastName: formData.get('last-name') as string,
-      email: formData.get('email') as string,
-      birthday: formData.get('year') as string,
-    };
+    // const data: UserForm = {
+    //   firstName: formData.get('first-name') as string,
+    //   lastName: formData.get('last-name') as string,
+    //   email: formData.get('email') as string,
+    //   // birthday: formData.get('year') as string,
+    // };
     // console.log(data);
-    fetch(`${API}/profile`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    // fetch(`${API}/profile`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log('Success:', data);
+    // })
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    // });
   }
 
   return <>
     <div className="flex items-center justify-center p-10">
-      {/* onSubmit={handleSubmit(onSubmit)} */}
-      <form onSubmit={submit}>
+      {/* <form onSubmit={submit}>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="hidden md:block">
             <h2 className="text-balance font-semibold text-foreground dark:text-foreground">
@@ -234,7 +222,10 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        {/* <Separator className="my-8" />
+        <Separator className="my-8" /> */}
+        <ContactsManager /> 
+
+      {/*
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
             <h2 className="text-balance font-semibold text-foreground dark:text-foreground">
@@ -296,7 +287,7 @@ export default function Profile() {
             </div>
           </div>
         </div>  */}
-        {/* <Separator className="my-8" />
+      {/* <Separator className="my-8" />
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
             <h2 className="text-balance font-semibold text-foreground dark:text-foreground">
@@ -386,12 +377,12 @@ export default function Profile() {
           </div>
         </div> 
         <Separator className="my-8" /> */}
-        <div className="flex items-center justify-end space-x-4">
+      {/* <div className="flex items-center justify-end space-x-4">
           <Button className="whitespace-nowrap" type="submit">
             Save settings
           </Button>
         </div>
-      </form>
+      </form> */}
     </div >
   </>;
 }

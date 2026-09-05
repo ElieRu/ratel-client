@@ -1,4 +1,4 @@
-import { DataTable } from "~/components/data-table";
+import { DataTable } from "@/components/data-table";
 import type { Route } from "./+types/dashboard";
 import data from "../../data.json"
 

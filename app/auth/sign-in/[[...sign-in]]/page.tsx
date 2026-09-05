@@ -1,6 +1,6 @@
 import type { Route } from "../../../+types/root";
-import { Card } from "~/components/ui/card"
-import { SignIn } from "@clerk/react-router";
+import { Card } from "@/components/ui/card"
+// import { SignIn } from "@clerk/react-router";
 
 export function meta({ }: Route.MetaArgs) {
     return [
@@ -16,7 +16,7 @@ export default function SignInPage({
     return <div className="flex min-h-svh bg-muted flex-col items-center justify-center p-6 md:p-10">
         <Card className="overflow-hidden p-0">
             <div className="m-auto">
-                <SignIn
+                {/* <SignIn
                     appearance={{
                         options: {
                             logoImageUrl: '/favicon.ico',
@@ -59,7 +59,7 @@ export default function SignInPage({
                             }
                         },
                     }}
-                />
+                /> */}
             </div>
         </Card>
     </div>

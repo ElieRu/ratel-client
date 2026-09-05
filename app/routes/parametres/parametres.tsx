@@ -1,11 +1,12 @@
-import { Button } from "~/components/ui/button";
+import { Button } from "@/components/ui/button";
 import type { Route } from "./+types/parametres";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "~/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { AlertTriangleIcon } from "lucide-react";
 import { useState } from "react";
-import { SignOutButton, } from "@clerk/react-router";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { getRemoveAccount } from "~/lib/apis";
+// import { SignOutButton, } from "@clerk/react-router";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { getRemoveAccount } from "@/lib/apis";
+// import { Show } from "@clerk/react-router";
 
 
 export function meta({ }: Route.MetaArgs) {
@@ -49,7 +50,9 @@ export default function Parametres() {
               </div>
               <DialogFooter>
                 <Button variant="destructive" onClick={removeAccount}>
-                  <SignOutButton>Supprimer</SignOutButton>
+                  {/* <Show when="signed-in">
+                    <SignOutButton>Supprimer</SignOutButton>
+                  </Show> */}
                 </Button>
               </DialogFooter>
             </DialogContent>

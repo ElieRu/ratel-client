@@ -1,5 +1,5 @@
-import { Card } from "~/components/ui/card"
-import { SignUp } from "@clerk/react-router";
+import { Card } from "@/components/ui/card"
+// import { SignUp } from "@clerk/react-router";
 import type { Route } from "../../sign-up/[[...sign-up]]/+types/page";
 
 export function meta({ }: Route.MetaArgs) {
@@ -16,7 +16,7 @@ export default function SignUpPage({
     return <div className="flex min-h-svh bg-muted flex-col items-center justify-center p-6 md:p-10">
         <Card className="overflow-hidden p-0">
             <div className="m-auto">
-                <SignUp
+                {/* <SignUp
                     appearance={{
                         options: {
                             logoImageUrl: '/favicon.ico',
@@ -59,7 +59,7 @@ export default function SignUpPage({
                             }
                         },
                     }}
-                />
+                /> */}
             </div>
         </Card>
     </div>

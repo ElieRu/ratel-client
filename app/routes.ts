@@ -10,6 +10,7 @@ const nav_admin = "./routes/admin";
 
 export default [
   index("./routes/home.tsx"),
+  route("/docs", `./routes/docs.tsx`),
   route("/sign-in/*", `./auth/sign-in/[[...sign-in]]/page.tsx`),
   route("/sign-up/*", `./auth/sign-up/[[...sign-up]]/page.tsx`),
   

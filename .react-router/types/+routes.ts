@@ -14,6 +14,9 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/docs": {
+    params: {};
+  };
   "/sign-in/*": {
     params: {
       "*": string;
@@ -86,11 +89,15 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/clients" | "/fournisseurs" | "/articles" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
+    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/clients" | "/fournisseurs" | "/articles" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
   };
   "./routes/home.tsx": {
     id: "routes/home";
     page: "/";
+  };
+  "./routes/docs.tsx": {
+    id: "routes/docs";
+    page: "/docs";
   };
   "./auth/sign-in/[[...sign-in]]/page.tsx": {
     id: "auth/sign-in/[[...sign-in]]/page";
@@ -181,6 +188,7 @@ type RouteFiles = {
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/home": typeof import("./app/./routes/home.tsx");
+  "routes/docs": typeof import("./app/./routes/docs.tsx");
   "auth/sign-in/[[...sign-in]]/page": typeof import("./app/./auth/sign-in/[[...sign-in]]/page.tsx");
   "auth/sign-up/[[...sign-up]]/page": typeof import("./app/./auth/sign-up/[[...sign-up]]/page.tsx");
   "routes/welcome/welcome": typeof import("./app/./routes/welcome/welcome.tsx");
