@@ -7,11 +7,11 @@
 
 
 import * as z from "zod";
-import { DeviseType, StatusAchat, StatusPromotion, TypeBusiness, TypeInvitation, TypePromotion, UserSex } from "./enums";
-// import { DeviseType, StatusAchat, StatusPromotion, TypeBusiness, TypeInvitation, TypePromotion, UserSex } from "../generated/prisma/enums";
+import { TypeDevise, StatusAchat, StatusPromotion, TypeBusiness, TypeInvitation, TypePromotion, UserSex, StatusContact, TypeContact } from "./enums";
+// import { TypeDevise, StatusAchat, StatusPromotion, TypeBusiness, TypeInvitation, TypePromotion, UserSex } from "../generated/prisma/enums";
 
 export const userRoles = ["USER", "ADMIN", "MANAGER"] as const;
-export const typeContact = ["PHONE", "EMAIL", "WHATSAPP"] as const;
+export const typeContact = ["PHONE", "EMAIL"] as const;
 
 
 export const UserSchema = z.object({
@@ -47,31 +47,21 @@ export const ProfileSchema = z.object({
     profile: z.url({ message: "Le lien d'image est incorrecte" })
 });
 
-export const ContactSchema = z.discriminatedUnion("type", [
-    z.object({
-        label: z.string().optional(),
-            // .min(1, "Ce champ est requis")
-            // .max(50, "Pas plus de 50 caractères")
-            // .trim(),
-        type: z.literal("PHONE"),
-        valeur: z.string().regex(/^\+?[1-9]\d{1,14}$/, "le numéro de téléphone est incorrecte"),
-        businessId: z.string().optional(),
-        clientId: z.string().optional(),
-        fournisseurId: z.string().optional(),
-    }),
-    z.object({
-        label: z.string()
-            .min(1, "Ce champ est requis")
-            .max(50, "Pas plus de 50 caractères")
-            .trim(),
-        type: z.literal("EMAIL"),
-        valeur: z.string().email("Ce champ est incorrecte"),
-        businessId: z.string().optional(),
-        clientId: z.string().optional(),
-        fournisseurId: z.string().optional(),
-    }),
-]
-);
+export const ContactSchema = z.object({
+    label: z.string().optional(),
+    // .min(1, "Ce champ est requis")
+    // .max(50, "Pas plus de 50 caractères")
+    // .trim(),
+    type: z.enum(TypeContact).default('PHONE'),
+    phone: z.string()
+        .regex(/^\+?[1-9]\d{1,14}$/, "Le numéro de téléphone est incorrecte").optional(),
+    email: z.string().email("L'adresse mail est incorrecte").optional(),
+    parDefaut: z.boolean().default(false).optional(),
+    status: z.enum(StatusContact).default('EN_ATTENTE').optional(),
+    businessId: z.string().optional(),
+    clientId: z.string().optional(),
+    fournisseurId: z.string().optional(),
+});
 
 export const AdresseSchema = z.object({
     label: z.string()
@@ -151,7 +141,7 @@ export const DeviseSchema = z.object({
         .max(50, "Pas plus de 50 caractères")
         .trim()
         .toLowerCase(),
-    type: z.enum(DeviseType, "Le type de devise est incorrecte"),
+    type: z.enum(TypeDevise, "Le type de devise est incorrecte"),
     symbole: z.string("Le symbole de devise est incorrecte"),
     tauxVente: z.int()
 });
@@ -403,38 +393,38 @@ export const StatusAchatSchema = z.object({
 
 
 // user-profile
-export type UserForm = z.infer<typeof UserSchema>;
-export type ProfileForm = z.infer<typeof ProfileSchema>;
-export type ContactForm = z.infer<typeof ContactSchema>;
-export type AdresseForm = z.infer<typeof AdresseSchema>;
+export type User = z.infer<typeof UserSchema>;
+export type Profile = z.infer<typeof ProfileSchema>;
+export type Contact = z.infer<typeof ContactSchema>;
+export type Adresse = z.infer<typeof AdresseSchema>;
 
 // module business-personnel 
-export type BusinessForm = z.infer<typeof BusinessSchema>;
-export type BusinessTypeForm = z.infer<typeof BusinessTypeSchema>;
-export type AbonnementForm = z.infer<typeof AbonnementSchema>;
-export type OffreForm = z.infer<typeof OffreSchema>;
-export type DeviseForm = z.infer<typeof DeviseSchema>;
-export type ArticleForm = z.infer<typeof ArticleSchema>;
-export type AttributForm = z.infer<typeof AttributSchema>;
-export type CategorieForm = z.infer<typeof CategorieSchema>;
-export type CommentaireForm = z.infer<typeof CommentaireSchema>;
-export type CaisseForm = z.infer<typeof CaisseSchema>;
-export type PromotionForm = z.infer<typeof PromotionSchema>;
-export type PromotionDraftForm = z.infer<typeof PromotionDraftSchema>;
-export type StatusPromotionForm = z.infer<typeof StatusPromotionSchema>;
+export type Business = z.infer<typeof BusinessSchema>;
+export type BusinessType = z.infer<typeof BusinessTypeSchema>;
+export type Abonnement = z.infer<typeof AbonnementSchema>;
+export type Offre = z.infer<typeof OffreSchema>;
+export type Devise = z.infer<typeof DeviseSchema>;
+export type Article = z.infer<typeof ArticleSchema>;
+export type Attribut = z.infer<typeof AttributSchema>;
+export type Categorie = z.infer<typeof CategorieSchema>;
+export type Commentaire = z.infer<typeof CommentaireSchema>;
+export type Caisse = z.infer<typeof CaisseSchema>;
+export type Promotion = z.infer<typeof PromotionSchema>;
+export type PromotionDraft = z.infer<typeof PromotionDraftSchema>;
+export type StatusPromotion = z.infer<typeof StatusPromotionSchema>;
 
 // module business-etablissement
-export type InvitationForm = z.infer<typeof InvitationSchema>;
-export type ClientForm = z.infer<typeof ClientSchema>;
-export type FournisseurForm = z.infer<typeof FournisseurSchema>;
-export type AchatForm = z.infer<typeof AchatSchema>;
-export type DetailForm = z.infer<typeof DetailSchema>;
-export type DetailQtteForm = z.infer<typeof DetailQtteSchema>;
-export type DetailPrixUnitaireForm = z.infer<typeof DetailPrixUnitaireSchema>;
-export type DetailTypeForm = z.infer<typeof DetailTypeSchema>;
-export type DetailEnStockForm = z.infer<typeof DetailEnStockSchema>;
-export type ArrayDetailForm = z.infer<typeof ArrayDetailSchema>;
-export type AchatDetailForm = z.infer<typeof ArrayDetailSchema>;
-export type StatusAchatForm = z.infer<typeof StatusAchatSchema>;
+export type Invitation = z.infer<typeof InvitationSchema>;
+export type Client = z.infer<typeof ClientSchema>;
+export type Fournisseur = z.infer<typeof FournisseurSchema>;
+export type Achat = z.infer<typeof AchatSchema>;
+export type Detail = z.infer<typeof DetailSchema>;
+export type DetailQtte = z.infer<typeof DetailQtteSchema>;
+export type DetailPrixUnitaire = z.infer<typeof DetailPrixUnitaireSchema>;
+export type DetailType = z.infer<typeof DetailTypeSchema>;
+export type DetailEnStock = z.infer<typeof DetailEnStockSchema>;
+export type ArrayDetail = z.infer<typeof ArrayDetailSchema>;
+export type AchatDetail = z.infer<typeof ArrayDetailSchema>;
+export type StatusAchat = z.infer<typeof StatusAchatSchema>;
 
 

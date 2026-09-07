@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
-import { Plus, Search, MoreVertical, Mail, Phone, Building2, Filter } from "lucide-react";
+import { Search, Mail, Phone, Building2, Filter } from "lucide-react";
 
 // shadcn UI Primitives
 import { Button } from "@/components/ui/button";
@@ -9,29 +9,34 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
     Sheet,
     SheetContent,
     SheetHeader,
     SheetTitle,
     SheetDescription,
 } from "@/components/ui/sheet";
-
+import {
+    AlertTriangleIcon,
+    CheckIcon,
+    ChevronDownIcon,
+    CopyIcon,
+    ShareIcon,
+    TrashIcon,
+    UserRoundXIcon,
+    VolumeOffIcon,
+} from "lucide-react"
+import { ButtonGroup } from "@/components/ui/button-group"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { MOCK_CONTACTS, type Contact } from "./contacts-data";
+import { ContactsList } from "./contacts-list";
 import { AddContact } from "./add-contact";
 
 export default function ContactsManager() {
@@ -39,23 +44,6 @@ export default function ContactsManager() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
-
-    // New Contact Form State
-    const [newContact, setNewContact] = useState({
-        valeur: "",
-        label: "",
-        parDefaut: "",
-        status: "",
-    });
-
-    // Filter contacts by search query
-    const filteredContacts = contacts.filter(
-        (c) =>
-            c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            c.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            c.company.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-
 
     const getStatusBadge = (status: Contact["status"]) => {
         switch (status) {
@@ -68,6 +56,7 @@ export default function ContactsManager() {
         }
     };
 
+    const [activeDialog, setActiveDialog] = useState<"PHONE" | "EMAIL" | null>(null)
     return (
         <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
             {/* Header & Controls */}
@@ -80,7 +69,44 @@ export default function ContactsManager() {
                 </div>
 
                 {/* Add Contact Modal */}
-                <AddContact />
+                <ButtonGroup>
+                    {/* Main Phone Button & Dialog */}
+                    <Dialog open={activeDialog === "PHONE"} onOpenChange={(open) => setActiveDialog(open ? "PHONE" : null)}>
+                        <DialogTrigger>
+                            <Button variant="outline">New phone</Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                            <AddContact type="PHONE" />
+                        </DialogContent>
+                    </Dialog>
+
+                    {/* Dropdown Menu */}
+                    <DropdownMenu>
+                        <DropdownMenuTrigger>
+                            <Button variant="outline" className="pl-2">
+                                <ChevronDownIcon />
+                            </Button>
+                        </DropdownMenuTrigger>
+
+                        <DropdownMenuContent align="end" className="w-44">
+                            <DropdownMenuGroup>
+                                <DropdownMenuItem onClick={() => setActiveDialog("PHONE")}>
+                                    <VolumeOffIcon /> New phone
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => setActiveDialog("EMAIL")}>
+                                    <VolumeOffIcon /> New email
+                                </DropdownMenuItem>
+                            </DropdownMenuGroup>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </ButtonGroup>
+
+                {/* Standalone Dialog for Dropdown Item: Email */}
+                <Dialog open={activeDialog === "EMAIL"} onOpenChange={(open) => setActiveDialog(open ? "EMAIL" : null)}>
+                    <DialogContent>
+                        <AddContact type="EMAIL" />
+                    </DialogContent>
+                </Dialog>
             </div>
 
             {/* Filter & Search Toolbar */}
@@ -100,70 +126,7 @@ export default function ContactsManager() {
             </div>
 
             {/* Contacts Data Table */}
-            <div className="border rounded-lg bg-card">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Contact</TableHead>
-                            <TableHead className="hidden md:table-cell">Company</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead className="hidden lg:table-cell">Phone</TableHead>
-                            <TableHead className="w-[50px]"></TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {filteredContacts.length === 0 ? (
-                            <TableRow>
-                                <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
-                                    No contacts found.
-                                </TableCell>
-                            </TableRow>
-                        ) : (
-                            filteredContacts.map((contact) => (
-                                <TableRow
-                                    key={contact.id}
-                                    className="cursor-pointer hover:bg-muted/50"
-                                    onClick={() => setSelectedContact(contact)}
-                                >
-                                    <TableCell>
-                                        <div className="flex items-center gap-3">
-                                            <Avatar className="h-9 w-9">
-                                                <AvatarImage src={contact.avatar} alt={contact.name} />
-                                                <AvatarFallback>{contact.name.substring(0, 2).toUpperCase()}</AvatarFallback>
-                                            </Avatar>
-                                            <div className="grid">
-                                                <span className="font-medium text-sm leading-none">{contact.name}</span>
-                                                <span className="text-xs text-muted-foreground mt-1">{contact.email}</span>
-                                            </div>
-                                        </div>
-                                    </TableCell>
-                                    <TableCell className="hidden md:table-cell text-sm">{contact.company}</TableCell>
-                                    <TableCell>{getStatusBadge(contact.status)}</TableCell>
-                                    <TableCell className="hidden lg:table-cell text-sm text-muted-foreground">
-                                        {contact.phone}
-                                    </TableCell>
-                                    <TableCell onClick={(e) => e.stopPropagation()}>
-                                        <DropdownMenu>
-                                            <DropdownMenuTrigger>
-                                                <Button variant="ghost" size="icon" className="h-8 w-8">
-                                                    <MoreVertical className="h-4 w-4" />
-                                                </Button>
-                                            </DropdownMenuTrigger>
-                                            <DropdownMenuContent align="end">
-                                                <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                                <DropdownMenuItem onClick={() => setSelectedContact(contact)}>
-                                                    View details
-                                                </DropdownMenuItem>
-                                                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
-                                            </DropdownMenuContent>
-                                        </DropdownMenu>
-                                    </TableCell>
-                                </TableRow>
-                            ))
-                        )}
-                    </TableBody>
-                </Table>
-            </div>
+            <ContactsList />
 
             {/* Slide-over Contact Details Drawer */}
             <Sheet open={!!selectedContact} onOpenChange={() => setSelectedContact(null)}>

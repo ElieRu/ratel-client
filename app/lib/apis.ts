@@ -1,5 +1,5 @@
 // import { getToken } from "@clerk/react-router";
-import type { ContactForm } from "./definitions";
+import type { Contact } from "./definitions";
 import { API } from "./utils";
 
 export const getRemoveAccount = async () => {
@@ -17,7 +17,7 @@ export const getRemoveAccount = async () => {
     }
 }
 
-export const createContact = async (form: ContactForm) => {
+export const createContact = async (form: Contact) => {
     // const token = await getToken();
     return await fetch(`${API}/contacts`, {
         method: "POST",
@@ -26,6 +26,23 @@ export const createContact = async (form: ContactForm) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(form),
+    }).then(async (res) => {
+        console.log(await res.json());
+        return await res.json();
+    }).catch((err) => {
+        return err;
+    });
+}
+
+
+export const listContact = async () => {
+    // const token = await getToken();
+    return await fetch(`${API}/contacts`, {
+        method: "GET",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
     }).then(async (res) => {
         console.log(await res.json());
         return await res.json();
