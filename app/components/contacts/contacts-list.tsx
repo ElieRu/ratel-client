@@ -25,7 +25,7 @@ import {
 
 // import { MOCK_CONTACTS, type Contact } from "./contacts-data";
 import { listContact } from "@/lib/apis";
-import type { Contact } from "@/lib/definitions";
+import type { Contact } from "@/lib/validations";
 
 export function ContactsList() {
 

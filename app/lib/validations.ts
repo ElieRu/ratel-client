@@ -47,21 +47,27 @@ export const ProfileSchema = z.object({
     profile: z.url({ message: "Le lien d'image est incorrecte" })
 });
 
-export const ContactSchema = z.object({
-    label: z.string().optional(),
-    // .min(1, "Ce champ est requis")
-    // .max(50, "Pas plus de 50 caractères")
-    // .trim(),
-    type: z.enum(TypeContact).default('PHONE'),
-    phone: z.string()
-        .regex(/^\+?[1-9]\d{1,14}$/, "Le numéro de téléphone est incorrecte").optional(),
-    email: z.string().email("L'adresse mail est incorrecte").optional(),
-    parDefaut: z.boolean().default(false).optional(),
-    status: z.enum(StatusContact).default('EN_ATTENTE').optional(),
-    businessId: z.string().optional(),
-    clientId: z.string().optional(),
-    fournisseurId: z.string().optional(),
-});
+export const ContactSchema = z.discriminatedUnion("type", [
+    z.object({
+        label: z.string()
+            .min(1, "Ce champ est requis")
+            .max(50, "Pas plus de 50 caractères")
+            .trim(),
+        type: z.literal("PHONE"),
+        phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Le numéro de téléphone est incorrecte"),
+        email: z.string().nullable(),
+    }),
+    z.object({
+        label: z.string()
+            .min(4, "Ce champ est requis")
+            .max(50, "Pas plus de 50 caractères")
+            .trim(),
+        type: z.literal("EMAIL"),
+        phone: z.string().nullable(),
+        email: z.string().email("L'adresse mail est incorrecte")
+    }),
+]
+);
 
 export const AdresseSchema = z.object({
     label: z.string()

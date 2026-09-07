@@ -8,7 +8,7 @@ import { Plus, UserRoundIcon, X } from "lucide-react";
 import { useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import type { UserForm } from "@/lib/definitions";
+import type { UserForm } from "@/lib/validations";
 import { API } from "@/lib/utils";
 import { UserProfileSkeleton } from "@/components/all-skeletons";
 

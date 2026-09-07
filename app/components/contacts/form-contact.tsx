@@ -8,16 +8,16 @@ import { Input } from "../ui/input";
 import { useState } from "react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../ui/select";
 import { createContact } from "@/lib/apis";
-import { ContactSchema, type Contact } from "@/lib/definitions";
+import { ContactSchema, type Contact } from "@/lib/validations";
 import type { Response } from "@/lib/types";
 
-export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
+export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
     // New Contact Form State
     const [form, setForm] = useState<Contact>({
-        label: "",
-        type: type,
-        phone: "",
+        label: "pernaoll",
+        type: type as Contact["type"],
+        phone: "+243898977980",
         email: "",
     });
     const [errors, setErrors] = useState<Partial<Record<keyof Contact, string>>>({});
@@ -34,7 +34,7 @@ export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
             message: "",
             data: null
         });
-        console.log(form)
+
         const result = ContactSchema.safeParse(form);
         if (!result.success) {
             const fieldErrors: Partial<Record<keyof Contact, string>> = {};
@@ -44,19 +44,21 @@ export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
             });
             setErrors(fieldErrors);
         } else {
-            setErrors({});
             await createContact(form).then((res) => {
-                if (res.error) {
-                    if (!res.error.success) setResponse({
+                setErrors({});
+                if (!res.success) {
+                    setResponse({
                         ...response,
-                        message: res.error.message
+                        message: res.message
                     });
+                    // i must pick informations*
+                    // setErrors(res.errors);
+                    // setErrors({});
                 }
                 if (res.success) {
                     setForm({
                         ...form,
                         label: "",
-                        type: 'PHONE',
                         phone: "",
                         email: "",
                     });
@@ -65,6 +67,7 @@ export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                         message: res.message,
                         data: res.data
                     });
+                    setErrors({});
                 }
             }).catch((err) => {
                 console.log(err);
@@ -72,7 +75,7 @@ export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                 // setFormError(err.message);
             });
 
-            // setIsAddDialogOpen(false);
+            //     // setIsAddDialogOpen(false);
         }
     };
 
@@ -97,7 +100,7 @@ export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                 <Label htmlFor="label">Libellé</Label>
                 <Input
                     id="label"
-                    placeholder="ex: Personal, etc."
+                    placeholder="ex: Home, Personal, etc."
                     value={form.label}
                     onChange={(e) => setForm({ ...form, label: e.target.value })}
                 />
@@ -109,7 +112,7 @@ export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                 <Input
                     id="valeur"
                     placeholder="Ex. +(243) 98 09 667"
-                    value={form.phone}
+                    value={form.phone ?? ""}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 />
                 {errors.phone && <span className="text-red-500 text-1xl ml-2">{errors.phone}</span>}
@@ -121,7 +124,7 @@ export function AddContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                 <Input
                     id="valeur"
                     placeholder="ex: john@example.com"
-                    value={form.email}
+                    value={form.email ?? ""}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
                 {errors.email && <span className="text-red-500 text-1xl ml-2">{errors.email}</span>}

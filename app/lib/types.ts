@@ -1,4 +1,4 @@
-import type { Contact } from "./definitions";
+import type { Contact } from "./validations";
 
 
 export interface Response {

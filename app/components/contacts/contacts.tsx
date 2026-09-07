@@ -37,7 +37,7 @@ import {
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { MOCK_CONTACTS, type Contact } from "./contacts-data";
 import { ContactsList } from "./contacts-list";
-import { AddContact } from "./add-contact";
+import { FormContact } from "./form-contact";
 
 export default function ContactsManager() {
     const [contacts, setContacts] = useState<Contact[]>(MOCK_CONTACTS);
@@ -76,7 +76,7 @@ export default function ContactsManager() {
                             <Button variant="outline">New phone</Button>
                         </DialogTrigger>
                         <DialogContent>
-                            <AddContact type="PHONE" />
+                            <FormContact type="PHONE" />
                         </DialogContent>
                     </Dialog>
 
@@ -104,7 +104,7 @@ export default function ContactsManager() {
                 {/* Standalone Dialog for Dropdown Item: Email */}
                 <Dialog open={activeDialog === "EMAIL"} onOpenChange={(open) => setActiveDialog(open ? "EMAIL" : null)}>
                     <DialogContent>
-                        <AddContact type="EMAIL" />
+                        <FormContact type="EMAIL" />
                     </DialogContent>
                 </Dialog>
             </div>

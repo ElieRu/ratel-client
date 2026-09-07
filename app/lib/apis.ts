@@ -1,5 +1,5 @@
 // import { getToken } from "@clerk/react-router";
-import type { Contact } from "./definitions";
+import type { Contact } from "./validations";
 import { API } from "./utils";
 
 export const getRemoveAccount = async () => {
@@ -19,19 +19,21 @@ export const getRemoveAccount = async () => {
 
 export const createContact = async (form: Contact) => {
     // const token = await getToken();
-    return await fetch(`${API}/contacts`, {
+    const response = await fetch(`${API}/contacts`, {
         method: "POST",
         headers: {
             // 'Authorization': `${token}`,
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(form),
-    }).then(async (res) => {
-        console.log(await res.json());
-        return await res.json();
-    }).catch((err) => {
-        return err;
     });
+    
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'Form validation failed');
+    }
+
+    return result;
 }
 
 
