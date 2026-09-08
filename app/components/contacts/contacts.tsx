@@ -1,28 +1,10 @@
 "use client"
 
-import React, { useState } from "react";
-import { Search, Mail, Phone, Building2, Filter } from "lucide-react";
-
+import { useEffect, useState } from "react";
 // shadcn UI Primitives
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import {
-    Sheet,
-    SheetContent,
-    SheetHeader,
-    SheetTitle,
-    SheetDescription,
-} from "@/components/ui/sheet";
-import {
-    AlertTriangleIcon,
-    CheckIcon,
     ChevronDownIcon,
-    CopyIcon,
-    ShareIcon,
-    TrashIcon,
-    UserRoundXIcon,
     VolumeOffIcon,
 } from "lucide-react"
 import { ButtonGroup } from "@/components/ui/button-group"
@@ -31,16 +13,28 @@ import {
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
-import { FormContact } from "./form-contact";
-import { ItemsContacts } from "./items-contacts";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { Form } from "./form";
+import { Items } from "./items";
+import type { Contact } from "@/lib/validations";
+import { listContact } from "@/lib/apis";
 
 export default function ContactsManager() {
-    
-    const [activeDialog, setActiveDialog] = useState<"PHONE" | "EMAIL" | null>(null)
+    const [contacts, setContacts] = useState<Contact[]>([]);
+    const [isLoaded, setIsLoaded] = useState(false);
+    useEffect(() => {
+        const fetchDatas = async () => {
+            await listContact().then((resp) => {
+                setContacts(resp.data);
+                setIsLoaded(true);
+            });
+        };
+        fetchDatas();
+    }, []);
+    const [activeDialog, setActiveDialog] = useState<"PHONE" | "EMAIL" | null>(null);
+
     return (
         <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
             {/* Header & Controls */}
@@ -60,7 +54,9 @@ export default function ContactsManager() {
                             <Button variant="outline">New phone</Button>
                         </DialogTrigger>
                         <DialogContent>
-                            <FormContact type="PHONE" />
+                            <Form type="PHONE" new_contact={(newContact: Contact) => {
+                                setContacts([...contacts, newContact])
+                            }} />
                         </DialogContent>
                     </Dialog>
 
@@ -88,15 +84,17 @@ export default function ContactsManager() {
                 {/* Standalone Dialog for Dropdown Item: Email */}
                 <Dialog open={activeDialog === "EMAIL"} onOpenChange={(open) => setActiveDialog(open ? "EMAIL" : null)}>
                     <DialogContent>
-                        <FormContact type="EMAIL" />
+                        <Form type="EMAIL" new_contact={(newContact: Contact) => {
+                            setContacts([...contacts, newContact])
+                        }} />
                     </DialogContent>
                 </Dialog>
             </div>
-
             {/* Contacts Data Table */}
-            <ItemsContacts />
-
-            
+            <Items isLoaded={isLoaded} contacts={contacts} removedContact={(removedItem: Contact) => {
+                setContacts((contacts) => contacts.filter((contact) => contact.id !== removedItem.id)
+                );
+            }} />
         </div>
     );
 }

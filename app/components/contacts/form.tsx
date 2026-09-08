@@ -6,12 +6,12 @@ import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, Di
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { useState } from "react";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../ui/select";
 import { createContact } from "@/lib/apis";
 import { ContactSchema, type Contact } from "@/lib/validations";
 import type { Response } from "@/lib/types";
 
-export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
+export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_contact: (newContact: Contact) => void }) {
+
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
     // New Contact Form State
     const [form, setForm] = useState<Contact>({
@@ -26,6 +26,7 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
         data: null
     });
     const [isLoaded, setIsLoaded] = useState(false);
+    // t("done");
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -69,6 +70,7 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                         message: res.message,
                         data: res.data
                     });
+                    new_contact(res.data);
                     setErrors({});
                     setIsLoaded(false);
                 }

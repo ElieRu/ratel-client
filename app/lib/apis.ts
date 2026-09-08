@@ -56,5 +56,24 @@ export const listContact = async () => {
 }
 
 
+export const removeContact = async (id: string) => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/contacts/${id}`, {
+        method: "DELETE",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'Remove data failed');
+    }
+    console.log(result);
+    return result;
+}
+
+
 
 

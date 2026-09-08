@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 // import { MOCK_CONTACTS, type Contact } from "./contacts-data";
-import { listContact } from "@/lib/apis";
+import { removeContact } from "@/lib/apis";
 import type { Contact } from "@/lib/validations";
 
 import {
@@ -34,20 +34,13 @@ import {
     StarIcon,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ContactsListSkeleton } from "../all-skeletons";
 
-export function ItemContacts({ contact }: { contact: Contact }) {
-    const [contacts, setContacts] = useState<Contact[]>([]);
-    const [isLoaded, setIsLoaded] = useState(false);
-    useEffect(() => {
-        const fetchDatas = async () => {
-            await listContact().then((resp) => {
-                setContacts(resp.data);
-                setIsLoaded(true);
-            });
-        };
-        fetchDatas();
-    }, []);
+export function Item({ contact, removedContact }: { contact: Contact, removedContact: (data: Contact) => void }) {
+    const removeItem = async (contact: Contact) => {
+        await removeContact(contact.id).then((res) => {
+            removedContact(res.data)
+        });
+    }
 
     return <Card key={contact.id} className="relative">
         <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
@@ -68,7 +61,7 @@ export function ItemContacts({ contact }: { contact: Contact }) {
                     <DropdownMenuItem>Edit</DropdownMenuItem>
                     <DropdownMenuItem>Duplicate</DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem variant="destructive">
+                    <DropdownMenuItem variant="destructive" onClick={(id) => removeItem(contact)}>
                         Delete
                     </DropdownMenuItem>
                 </DropdownMenuContent>
