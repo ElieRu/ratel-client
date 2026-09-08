@@ -1,3 +1,4 @@
+import { Card, CardContent, CardHeader } from "./ui/card";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
 import { Skeleton } from "./ui/skeleton";
 
@@ -82,4 +83,43 @@ export function UserNavSkeleton() {
             </SidebarMenuButton>
         </SidebarMenuItem>
     </SidebarMenu>
+}
+
+export function ContactsListSkeleton () {
+    return <>
+      {Array.from({ length: 3 }).map((_, index) => (
+        <Card key={index} className="relative">
+          <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
+            {/* Label Skeleton */}
+            <Skeleton className="h-5 w-1/2" />
+
+            {/* Actions Button Skeleton */}
+            <Skeleton className="size-8 rounded-md" />
+          </CardHeader>
+
+          <CardContent className="space-y-3">
+            {/* Phone Skeleton */}
+            <div className="flex items-center gap-2">
+              <Skeleton className="size-4 rounded-full shrink-0" />
+              <Skeleton className="h-4 w-2/3" />
+            </div>
+
+            {/* Email Skeleton */}
+            <div className="flex items-center gap-2">
+              <Skeleton className="size-4 rounded-full shrink-0" />
+              <Skeleton className="h-4 w-4/5" />
+            </div>
+
+            {/* Badges Footer Skeleton */}
+            <div className="flex items-center justify-between pt-2 border-t border-border">
+              {/* Par défaut Badge Skeleton */}
+              <Skeleton className="h-5 w-20 rounded-full" />
+
+              {/* Status Badge Skeleton */}
+              <Skeleton className="h-5 w-16 rounded-full" />
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </>
 }

@@ -35,27 +35,11 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
-import { MOCK_CONTACTS, type Contact } from "./contacts-data";
-import { ContactsList } from "./contacts-list";
 import { FormContact } from "./form-contact";
+import { ItemsContacts } from "./items-contacts";
 
 export default function ContactsManager() {
-    const [contacts, setContacts] = useState<Contact[]>(MOCK_CONTACTS);
-    const [searchQuery, setSearchQuery] = useState("");
-    const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
-    const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
-
-    const getStatusBadge = (status: Contact["status"]) => {
-        switch (status) {
-            case "Active":
-                return <Badge className="bg-emerald-500/15 text-emerald-700 hover:bg-emerald-500/25 dark:text-emerald-400">Active</Badge>;
-            case "Lead":
-                return <Badge className="bg-blue-500/15 text-blue-700 hover:bg-blue-500/25 dark:text-blue-400">Lead</Badge>;
-            case "Inactive":
-                return <Badge variant="secondary">Inactive</Badge>;
-        }
-    };
-
+    
     const [activeDialog, setActiveDialog] = useState<"PHONE" | "EMAIL" | null>(null)
     return (
         <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
@@ -109,70 +93,10 @@ export default function ContactsManager() {
                 </Dialog>
             </div>
 
-            {/* Filter & Search Toolbar */}
-            <div className="flex items-center gap-3">
-                <div className="relative flex-1 max-w-sm">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                    <Input
-                        placeholder="Filter by name, email, or company..."
-                        className="pl-9"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                </div>
-                <Button variant="outline" size="icon">
-                    <Filter className="h-4 w-4 text-muted-foreground" />
-                </Button>
-            </div>
-
             {/* Contacts Data Table */}
-            <ContactsList />
+            <ItemsContacts />
 
-            {/* Slide-over Contact Details Drawer */}
-            <Sheet open={!!selectedContact} onOpenChange={() => setSelectedContact(null)}>
-                <SheetContent className="sm:max-w-md">
-                    {selectedContact && (
-                        <>
-                            <SheetHeader className="text-left">
-                                <div className="flex items-center gap-4 mb-2">
-                                    <Avatar className="h-16 w-16">
-                                        <AvatarImage src={selectedContact.avatar} />
-                                        <AvatarFallback>{selectedContact.name.substring(0, 2)}</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <SheetTitle>{selectedContact.name}</SheetTitle>
-                                        <SheetDescription>{getStatusBadge(selectedContact.status)}</SheetDescription>
-                                    </div>
-                                </div>
-                            </SheetHeader>
-
-                            <div className="space-y-6 pt-6 text-sm">
-                                <div className="space-y-3">
-                                    <div className="flex items-center gap-3 text-muted-foreground">
-                                        <Mail className="h-4 w-4" />
-                                        <span className="text-foreground font-medium">{selectedContact.email}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-muted-foreground">
-                                        <Phone className="h-4 w-4" />
-                                        <span className="text-foreground">{selectedContact.phone || "N/A"}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-muted-foreground">
-                                        <Building2 className="h-4 w-4" />
-                                        <span className="text-foreground">{selectedContact.company}</span>
-                                    </div>
-                                </div>
-
-                                <div className="pt-4 border-t flex gap-2">
-                                    <Button className="flex-1" variant="default">
-                                        Send Message
-                                    </Button>
-                                    <Button variant="outline">Edit</Button>
-                                </div>
-                            </div>
-                        </>
-                    )}
-                </SheetContent>
-            </Sheet>
+            
         </div>
     );
 }

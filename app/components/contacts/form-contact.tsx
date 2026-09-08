@@ -1,6 +1,6 @@
 "use client"
 
-import { Plus } from "lucide-react";
+import { Loader2, Plus } from "lucide-react";
 import { Button } from "../ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Label } from "../ui/label";
@@ -15,9 +15,8 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
     const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
     // New Contact Form State
     const [form, setForm] = useState<Contact>({
-        label: "pernaoll",
         type: type as Contact["type"],
-        phone: "+243898977980",
+        phone: "",
         email: "",
     });
     const [errors, setErrors] = useState<Partial<Record<keyof Contact, string>>>({});
@@ -26,6 +25,7 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
         message: "",
         data: null
     });
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -34,7 +34,7 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
             message: "",
             data: null
         });
-
+        setIsLoaded(false);
         const result = ContactSchema.safeParse(form);
         if (!result.success) {
             const fieldErrors: Partial<Record<keyof Contact, string>> = {};
@@ -46,6 +46,7 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
         } else {
             await createContact(form).then((res) => {
                 setErrors({});
+                setIsLoaded(true);
                 if (!res.success) {
                     setResponse({
                         ...response,
@@ -54,11 +55,12 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                     // i must pick informations*
                     // setErrors(res.errors);
                     // setErrors({});
+                    setIsLoaded(false);
                 }
                 if (res.success) {
+                    console.log(res.data);
                     setForm({
                         ...form,
-                        label: "",
                         phone: "",
                         email: "",
                     });
@@ -68,21 +70,20 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
                         data: res.data
                     });
                     setErrors({});
+                    setIsLoaded(false);
                 }
             }).catch((err) => {
                 console.log(err);
                 // setErrors({});
                 // setFormError(err.message);
             });
-
-            //     // setIsAddDialogOpen(false);
+            // setIsAddDialogOpen(false);
         }
     };
 
     const closeDialog = () => {
         setForm({
             ...form,
-            label: "",
             phone: "",
             email: ""
         });
@@ -96,17 +97,6 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
             </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 py-2">
-            <div className="space-y-2">
-                <Label htmlFor="label">Libellé</Label>
-                <Input
-                    id="label"
-                    placeholder="ex: Home, Personal, etc."
-                    value={form.label}
-                    onChange={(e) => setForm({ ...form, label: e.target.value })}
-                />
-                {errors.label && <span className="text-red-500 text-1xl ml-2">{errors.label}</span>}
-            </div>
-
             {form.type == 'PHONE' && <div className="space-y-2">
                 <Label htmlFor="valeur">Numéro de téléphone</Label>
                 <Input
@@ -134,7 +124,7 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
             {/* Action Button */}
             <div className="pt-2">
                 <Button type="submit" className="w-full">
-                    Enregistrer
+                    Enregistrer {isLoaded && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 </Button>
                 <div className="flex justify-center">
                     <DialogClose render={<Button type="button" className="text-foreground" variant={'link'} onClick={closeDialog}>Close</Button>} />
@@ -142,55 +132,4 @@ export function FormContact({ type }: { type: 'PHONE' | 'EMAIL' }) {
             </div>
         </form>
     </DialogContent>
-
-    // <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
-    {/* <ButtonGroup>
-            <Button variant="outline">Follow</Button>
-            <DropdownMenu>
-                <DropdownMenuTrigger render={<Button variant="outline" className="pl-2!"><ChevronDownIcon /></Button>} />
-                <DropdownMenuContent align="end" className="w-44">
-                    <DropdownMenuGroup>
-                        <DropdownMenuItem>
-                            <VolumeOffIcon />
-                            Mute Conversation
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <CheckIcon />
-                            Mark as Read
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <AlertTriangleIcon />
-                            Report Conversation
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <UserRoundXIcon />
-                            Block User
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <ShareIcon />
-                            Share Conversation
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <CopyIcon />
-                            Copy Conversation
-                        </DropdownMenuItem>
-                    </DropdownMenuGroup>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuGroup>
-                        <DropdownMenuItem variant="destructive">
-                            <TrashIcon />
-                            Delete Conversation
-                        </DropdownMenuItem>
-                    </DropdownMenuGroup>
-                </DropdownMenuContent>
-            </DropdownMenu>
-        </ButtonGroup>
-
-        <DialogTrigger>
-            <ButtonGroup>
-                <Button variant="outline">Follow</Button>
-            </ButtonGroup>
-        </DialogTrigger>
-        {blockData} */}
-    // </Dialog>
 }

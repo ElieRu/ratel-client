@@ -32,25 +32,27 @@ export const createContact = async (form: Contact) => {
     if (!response.ok) {
         throw new Error(result.message || 'Form validation failed');
     }
-
+    console.log(result);
     return result;
 }
 
 
 export const listContact = async () => {
     // const token = await getToken();
-    return await fetch(`${API}/contacts`, {
+    const response = await fetch(`${API}/contacts`, {
         method: "GET",
         headers: {
             // 'Authorization': `${token}`,
             'Content-Type': 'application/json',
         },
-    }).then(async (res) => {
-        console.log(await res.json());
-        return await res.json();
-    }).catch((err) => {
-        return err;
     });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'Fetching data failed');
+    }
+    
+    return result;
 }
 
 

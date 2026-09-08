@@ -49,19 +49,19 @@ export const ProfileSchema = z.object({
 
 export const ContactSchema = z.discriminatedUnion("type", [
     z.object({
-        label: z.string()
-            .min(1, "Ce champ est requis")
-            .max(50, "Pas plus de 50 caractères")
-            .trim(),
+        id: z.string().optional(),
+        label: z.string().optional(),
+        parDefaut: z.string().optional(),
+        status: z.string().optional(),
         type: z.literal("PHONE"),
         phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Le numéro de téléphone est incorrecte"),
         email: z.string().nullable(),
     }),
     z.object({
-        label: z.string()
-            .min(4, "Ce champ est requis")
-            .max(50, "Pas plus de 50 caractères")
-            .trim(),
+        id: z.string().optional(),
+        label: z.string().optional(),
+        parDefaut: z.string().optional(),
+        status: z.string().optional(),
         type: z.literal("EMAIL"),
         phone: z.string().nullable(),
         email: z.string().email("L'adresse mail est incorrecte")
