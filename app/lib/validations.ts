@@ -51,7 +51,7 @@ export const ContactSchema = z.discriminatedUnion("type", [
     z.object({
         id: z.string().optional(),
         label: z.string().optional(),
-        parDefaut: z.string().optional(),
+        parDefaut: z.boolean().optional(),
         status: z.string().optional(),
         type: z.literal("PHONE"),
         phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Le numéro de téléphone est incorrecte"),
@@ -60,7 +60,7 @@ export const ContactSchema = z.discriminatedUnion("type", [
     z.object({
         id: z.string().optional(),
         label: z.string().optional(),
-        parDefaut: z.string().optional(),
+        parDefaut: z.boolean().optional(),
         status: z.string().optional(),
         type: z.literal("EMAIL"),
         phone: z.string().nullable(),

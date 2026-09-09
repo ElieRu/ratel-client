@@ -34,11 +34,35 @@ import {
     StarIcon,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { toast } from "../ui/toast";
 
-export function Item({ contact, removedContact }: { contact: Contact, removedContact: (data: Contact) => void }) {
+export function Item({ contact, removedContact }: { contact: Contact, removedContact: (data: Contact, newDefault: string) => void }) {
+    // let id = "";
+    // if (contact.id === id) {
+    //     contact.parDefaut = true;
+    //     // console.log(contact);
+    // }
+
     const removeItem = async (contact: Contact) => {
+        if (!contact.id) return;
         await removeContact(contact.id).then((res) => {
-            removedContact(res.data)
+            if (res.success) {
+                removedContact(res.data, res.newDefault);
+                // id = res.newDefault;
+                // if (contact.id === id) {
+                //     contact.parDefaut = false;
+                //     // console.log(contact);
+                // }
+                toast.add({
+                    type: "success",
+                    description: `${res.message}`,
+                });
+            } else {
+                toast.add({
+                    type: "warning",
+                    description: `${res.message}`,
+                })
+            }
         });
     }
 

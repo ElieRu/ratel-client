@@ -7,7 +7,7 @@ import { Item } from "./item";
 export function Items({ 
     isLoaded, contacts, removedContact 
 }: { 
-    isLoaded: boolean, contacts: Contact[], removedContact: (data: Contact) => void
+    isLoaded: boolean, contacts: Contact[], removedContact: (data: Contact, newDefault: string) => void
 }) {
     return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {!isLoaded && <ContactsListSkeleton />}

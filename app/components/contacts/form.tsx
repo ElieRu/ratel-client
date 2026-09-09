@@ -26,7 +26,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
         data: null
     });
     const [isLoaded, setIsLoaded] = useState(false);
-    // t("done");
+    const [hideForm, setHideForm] = useState(false);
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -59,7 +59,6 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
                     setIsLoaded(false);
                 }
                 if (res.success) {
-                    console.log(res.data);
                     setForm({
                         ...form,
                         phone: "",
@@ -72,6 +71,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
                     });
                     new_contact(res.data);
                     setErrors({});
+                    setHideForm(true);
                     setIsLoaded(false);
                 }
             }).catch((err) => {
@@ -98,7 +98,9 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
                 Anyone who has this link will be able to view this.
             </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4 py-2">
+
+        {/* form dedicated to validate contacts */}
+        <form onSubmit={handleSubmit} className={`space-y-4 py-2 ${hideForm ? 'hidden' : ''}`}>
             {form.type == 'PHONE' && <div className="space-y-2">
                 <Label htmlFor="valeur">Numéro de téléphone</Label>
                 <Input
@@ -133,5 +135,20 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
                 </div>
             </div>
         </form>
+
+        {/* form to updqte the stutus of contacts */}
+        <form onSubmit={handleSubmit} className={`space-y-4 py-2 ${hideForm ? '' : 'hidden'}`}>
+            {/* Action Button */}
+            <div className="pt-2">
+                <Button type="submit" className="w-full">
+                    Enregistrer {isLoaded && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                </Button>
+                <div className="flex justify-center">
+                    <DialogClose render={<Button type="button" className="text-foreground" variant={'link'} onClick={closeDialog}>Close</Button>} />
+                </div>
+            </div>
+        </form>
     </DialogContent>
 }
+
+

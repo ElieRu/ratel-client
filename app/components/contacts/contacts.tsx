@@ -80,7 +80,6 @@ export default function ContactsManager() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </ButtonGroup>
-
                 {/* Standalone Dialog for Dropdown Item: Email */}
                 <Dialog open={activeDialog === "EMAIL"} onOpenChange={(open) => setActiveDialog(open ? "EMAIL" : null)}>
                     <DialogContent>
@@ -91,10 +90,19 @@ export default function ContactsManager() {
                 </Dialog>
             </div>
             {/* Contacts Data Table */}
-            <Items isLoaded={isLoaded} contacts={contacts} removedContact={(removedItem: Contact) => {
-                setContacts((contacts) => contacts.filter((contact) => contact.id !== removedItem.id)
+            {contacts && <Items isLoaded={isLoaded} contacts={contacts} removedContact={(removedItem: Contact, newDefault: string) => {
+                setContacts((contacts) =>
+                    contacts
+                        .filter((contact) => contact.id !== removedItem.id)
+                        .map((contact) => ({
+                            ...contact,
+                            parDefaut: contact.id === newDefault ? true : contact.parDefaut,
+                        }))
                 );
-            }} />
+            }} />}
+
+            {isLoaded && contacts.length === 0 && <span>empty</span>}
+
         </div>
     );
 }

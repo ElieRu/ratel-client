@@ -4,6 +4,7 @@ import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
 import { SiteHeader } from "./components/site-header";
 // import { clerkMiddleware, rootAuthLoader } from '@clerk/react-router/server'
+import { Toaster } from "@/components/ui/toast"
 
 import { isRouteErrorResponse, Links, Meta, Navigate, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useNavigate, Link } from 'react-router'
 import stylesheet from './app.css?url'
@@ -138,6 +139,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
               </MyRoute>
             </Routes> */}
           </div>
+          <Toaster />
         </div>
       </SidebarInset>
       {/* </ClerkProvider> */}
