@@ -35,24 +35,20 @@ import {
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { toast } from "../ui/toast";
+import { Switch } from "../ui/switch";
 
 export function Item({ contact, removedContact }: { contact: Contact, removedContact: (data: Contact, newDefault: string) => void }) {
-    // let id = "";
-    // if (contact.id === id) {
-    //     contact.parDefaut = true;
-    //     // console.log(contact);
-    // }
+
+    const updateParDefaut = async (contact: Contact) => {
+        // await changerParDefaut(contact.id)
+    }
 
     const removeItem = async (contact: Contact) => {
         if (!contact.id) return;
         await removeContact(contact.id).then((res) => {
             if (res.success) {
                 removedContact(res.data, res.newDefault);
-                // id = res.newDefault;
-                // if (contact.id === id) {
-                //     contact.parDefaut = false;
-                //     // console.log(contact);
-                // }
+                console.log(res.newDefault)
                 toast.add({
                     type: "success",
                     description: `${res.message}`,
@@ -107,13 +103,7 @@ export function Item({ contact, removedContact }: { contact: Contact, removedCon
             {/* Badges Footer: Par défaut & Status */}
             <div className="flex items-center justify-between pt-2 border-t border-border">
                 {/* Par défaut */}
-                {contact.parDefaut ? (
-                    <Badge variant="secondary" className="gap-1 text-xs bg-amber-500/10 text-amber-600 border-amber-500/20">
-                        <StarIcon className="h-3 w-3 fill-amber-500 text-amber-500" /> Par défaut
-                    </Badge>
-                ) : (
-                    <span />
-                )}
+                <Switch checked={contact.parDefaut} onCheckedChange={() => updateParDefaut(contact)} />
 
                 {/* Status */}
                 <Badge

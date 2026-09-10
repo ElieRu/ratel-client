@@ -21,7 +21,6 @@ export default function Acceuil() {
       <li><Link to={'https://play.blocks.so/'}>Play Blocks</Link></li>
       <li><Link to={'https://shadcnstudio.com/blocks/free'}>shadcn studio</Link></li>
       <li><Link to={'https://shadcnspace.com/components'}>shadcn space</Link></li>
-      <li><Link to={'https://coss.com/ui/docs'}>coss ui</Link></li>
     </ul>
   </>
     ;

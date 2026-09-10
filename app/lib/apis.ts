@@ -74,6 +74,43 @@ export const removeContact = async (id: string) => {
     return result;
 }
 
+export const changerParDefaut = async (id: string) => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/contacts/${id}/par-defaut`, {
+        method: "PUT",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'Update data failed');
+    }
+    console.log(result);
+    return result;
+}
 
 
+export const contactVerfication = async (contactId: string, token: string) => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/contacts/${contactId}/verifier`, {
+        method: "PUT",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            token: token
+        }),
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'Update data failed');
+    }
+    console.log(result);
+    return result;
+}
 

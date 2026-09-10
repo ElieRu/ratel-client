@@ -5,10 +5,12 @@ import { Button } from "../ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import { useState } from "react";
-import { createContact } from "@/lib/apis";
+import { useRef, useState } from "react";
+import { contactVerfication, createContact } from "@/lib/apis";
 import { ContactSchema, type Contact } from "@/lib/validations";
 import type { Response } from "@/lib/types";
+import { toast } from "../ui/toast";
+import InputOTPDemo from "./input-opt";
 
 export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_contact: (newContact: Contact) => void }) {
 
@@ -27,6 +29,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
     });
     const [isLoaded, setIsLoaded] = useState(false);
     const [hideForm, setHideForm] = useState(false);
+    const [contactId, setContactId] = useState("");
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -45,6 +48,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
             });
             setErrors(fieldErrors);
         } else {
+            setIsLoaded(true);
             await createContact(form).then((res) => {
                 setErrors({});
                 setIsLoaded(true);
@@ -69,6 +73,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
                         message: res.message,
                         data: res.data
                     });
+                    setContactId(res.data.id);
                     new_contact(res.data);
                     setErrors({});
                     setHideForm(true);
@@ -91,6 +96,30 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
         });
     }
 
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
+    const [token, setToken] = useState("");
+    const handle = async (e: any) => {
+        e.preventDefault();
+        setIsLoaded(true);
+        await contactVerfication(contactId, token).then((res) => {
+            if (res.success) {
+                setTimeout(() => {
+                    if (closeButtonRef.current) {
+                        closeButtonRef.current.click();
+                    }
+                    setIsLoaded(false);
+                }, 500);
+                setTimeout(() => {
+                    toast.add({
+                        type: "success",
+                        description: `${res.message}`
+                    })
+                }, 1000);
+            }
+        });
+
+    }
+
     return <DialogContent className="sm:max-w-[425px]" showCloseButton={false}>
         <DialogHeader>
             <DialogTitle>Create Contact</DialogTitle>
@@ -99,7 +128,6 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
             </DialogDescription>
         </DialogHeader>
 
-        {/* form dedicated to validate contacts */}
         <form onSubmit={handleSubmit} className={`space-y-4 py-2 ${hideForm ? 'hidden' : ''}`}>
             {form.type == 'PHONE' && <div className="space-y-2">
                 <Label htmlFor="valeur">Numéro de téléphone</Label>
@@ -127,7 +155,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
 
             {/* Action Button */}
             <div className="pt-2">
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" disabled={isLoaded}>
                     Enregistrer {isLoaded && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 </Button>
                 <div className="flex justify-center">
@@ -137,14 +165,15 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
         </form>
 
         {/* form to updqte the stutus of contacts */}
-        <form onSubmit={handleSubmit} className={`space-y-4 py-2 ${hideForm ? '' : 'hidden'}`}>
-            {/* Action Button */}
+        {/*  */}
+        <form onSubmit={handle} className={`space-y-4 py-2 ${hideForm ? '' : 'hidden'}`}>
+            <InputOTPDemo value={token} getToken={v => setToken(v)} />
             <div className="pt-2">
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" disabled={isLoaded}>
                     Enregistrer {isLoaded && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 </Button>
                 <div className="flex justify-center">
-                    <DialogClose render={<Button type="button" className="text-foreground" variant={'link'} onClick={closeDialog}>Close</Button>} />
+                    <DialogClose render={<Button type="button" ref={closeButtonRef} className="text-foreground" variant={'link'} onClick={closeDialog}>Close</Button>} />
                 </div>
             </div>
         </form>
