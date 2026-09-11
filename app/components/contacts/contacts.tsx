@@ -20,7 +20,7 @@ import { Form } from "./form";
 import { Items } from "./items";
 import type { Contact } from "@/lib/validations";
 import { listContact } from "@/lib/apis";
-import Dialog05 from "./successed";
+import Dialog05 from "./success-message";
 
 export default function ContactsManager() {
     const [contacts, setContacts] = useState<Contact[]>([]);
