@@ -146,7 +146,7 @@ export const AnimatedOTP = ({
 };
 
 // Default export wrapper containing the demo code
-export default function InputOTPDemo({ value, getToken }: { value: string, getToken: (v: string) => void}) {
+export default function InputOTPDemo({ value, getToken }: { value: string, getToken: (v: string) => void }) {
     // const [value, setValue] = useState("");
 
     return (

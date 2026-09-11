@@ -11,6 +11,7 @@ import { ContactSchema, type Contact } from "@/lib/validations";
 import type { Response } from "@/lib/types";
 import { toast } from "../ui/toast";
 import InputOTPDemo from "./input-opt";
+import Dialog05 from "./successed";
 
 export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_contact: (newContact: Contact) => void }) {
 
@@ -28,7 +29,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
         data: null
     });
     const [isLoaded, setIsLoaded] = useState(false);
-    const [hideForm, setHideForm] = useState(false);
+    const [hide, setHide] = useState<'form-contact' | 'form-token' | 'success'>("form-contact");
     const [contactId, setContactId] = useState("");
 
     const handleSubmit = async (e: any) => {
@@ -76,7 +77,7 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
                     setContactId(res.data.id);
                     new_contact(res.data);
                     setErrors({});
-                    setHideForm(true);
+                    setHide('form-token');
                     setIsLoaded(false);
                 }
             }).catch((err) => {
@@ -104,9 +105,10 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
         await contactVerfication(contactId, token).then((res) => {
             if (res.success) {
                 setTimeout(() => {
-                    if (closeButtonRef.current) {
-                        closeButtonRef.current.click();
-                    }
+                    setHide('success');
+                    // if (closeButtonRef.current) {
+                    //     closeButtonRef.current.click();
+                    // }
                     setIsLoaded(false);
                 }, 500);
                 setTimeout(() => {
@@ -121,14 +123,15 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
     }
 
     return <DialogContent className="sm:max-w-[425px]" showCloseButton={false}>
-        <DialogHeader>
+        <DialogHeader className={`${hide !== 'success' ? '' : 'hidden'}`}>
             <DialogTitle>Create Contact</DialogTitle>
             <DialogDescription>
                 Anyone who has this link will be able to view this.
             </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className={`space-y-4 py-2 ${hideForm ? 'hidden' : ''}`}>
+        {/* contact validation form */}
+        <form onSubmit={handleSubmit} className={`space-y-4 py-2 ${hide == 'form-contact' ? '' : 'hidden'}`}>
             {form.type == 'PHONE' && <div className="space-y-2">
                 <Label htmlFor="valeur">Numéro de téléphone</Label>
                 <Input
@@ -164,9 +167,8 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
             </div>
         </form>
 
-        {/* form to updqte the stutus of contacts */}
-        {/*  */}
-        <form onSubmit={handle} className={`space-y-4 py-2 ${hideForm ? '' : 'hidden'}`}>
+        {/* form to verify the contacts */}
+        <form onSubmit={handle} className={`space-y-4 py-2 ${hide == 'form-token' ? '' : 'hidden'}`}>
             <InputOTPDemo value={token} getToken={v => setToken(v)} />
             <div className="pt-2">
                 <Button type="submit" className="w-full" disabled={isLoaded}>
@@ -177,6 +179,12 @@ export function Form({ type, new_contact }: { type: 'PHONE' | 'EMAIL', new_conta
                 </div>
             </div>
         </form>
+
+        {/* the box dedicated to succced information  */}
+        <div className={`${hide == 'success' ? '' : 'hidden'}`}>
+            <Dialog05 />
+        </div>
+
     </DialogContent>
 }
 

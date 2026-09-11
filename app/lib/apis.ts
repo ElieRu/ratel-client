@@ -108,7 +108,7 @@ export const contactVerfication = async (contactId: string, token: string) => {
 
     const result = await response.json();
     if (!response.ok) {
-        throw new Error(result.message || 'Update data failed');
+        throw new Error(result.message || 'Verfication data failed');
     }
     console.log(result);
     return result;

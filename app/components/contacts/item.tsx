@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
-import { Plus, Search, MoreVertical, Mail, Phone, Building2, Filter, MoreHorizontalIcon } from "lucide-react";
+import { Plus, Search, MoreVertical, Mail, Phone, Building2, Filter, MoreHorizontalIcon, Type } from "lucide-react";
 
 // shadcn UI Primitives
 import { Button } from "@/components/ui/button";
@@ -36,6 +36,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { toast } from "../ui/toast";
 import { Switch } from "../ui/switch";
+import { Link } from "react-router";
 
 export function Item({ contact, removedContact }: { contact: Contact, removedContact: (data: Contact, newDefault: string) => void }) {
 
@@ -106,16 +107,7 @@ export function Item({ contact, removedContact }: { contact: Contact, removedCon
                 <Switch checked={contact.parDefaut} onCheckedChange={() => updateParDefaut(contact)} />
 
                 {/* Status */}
-                <Badge
-                    variant="outline"
-                    className={
-                        contact.status === "VALIDE"
-                            ? "text-emerald-600 border-emerald-500/30 bg-emerald-500/10"
-                            : "text-amber-600 border-amber-500/30 bg-amber-500/10"
-                    }
-                >
-                    {contact.status === "VALIDE" ? "Validé" : "En attente"}
-                </Badge>
+                {contact.status !== "VERIFIE" ? <Button type="button" className="text-foreground btn-sm cursor-pointer" variant={'link'}>Verifier</Button> : ''}
             </div>
         </CardContent>
     </Card>

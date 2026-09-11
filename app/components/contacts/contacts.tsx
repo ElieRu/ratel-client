@@ -20,6 +20,7 @@ import { Form } from "./form";
 import { Items } from "./items";
 import type { Contact } from "@/lib/validations";
 import { listContact } from "@/lib/apis";
+import Dialog05 from "./successed";
 
 export default function ContactsManager() {
     const [contacts, setContacts] = useState<Contact[]>([]);
@@ -80,6 +81,9 @@ export default function ContactsManager() {
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </ButtonGroup>
+
+                {/* <Dialog05/> */}
+
                 {/* Standalone Dialog for Dropdown Item: Email */}
                 <Dialog open={activeDialog === "EMAIL"} onOpenChange={(open) => setActiveDialog(open ? "EMAIL" : null)}>
                     <DialogContent>
