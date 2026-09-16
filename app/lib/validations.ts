@@ -70,45 +70,30 @@ export const ContactSchema = z.discriminatedUnion("type", [
 );
 
 export const AdresseSchema = z.object({
-    label: z.string()
-        .min(4, "Pas moins de 4 caractères")
-        .max(50, "Pas plus de 50 caractères")
-        .trim()
-        .optional(),
-    parDefaut: z.boolean().optional(),
-    avenu: z.string()
-        .min(4, "Pas moins de 4 caractères")
-        .max(50, "Pas plus de 50 caractères")
-        .trim()
-        .toLowerCase()
-        .optional(),
-    quartier: z.string()
-        .min(4, "Pas moins de 4 caractères")
+    adresse: z.string()
+        .min(6, "Ce champs est requis")
         .max(50, "Pas plus de 50 caractères")
         .trim()
         .toLowerCase(),
-    commune: z.string()
-        .min(4, "Pas moins de 4 caractères")
+    region: z.string()
+        .min(1, "Ce champs est requis")
         .max(50, "Pas plus de 50 caractères")
         .trim()
-        .toLowerCase()
-        .optional(),
+        .toLowerCase(),
     ville: z.string()
-        .min(4, "Pas moins de 4 caractères")
+        .min(1, "Ce champs est requis")
         .max(50, "Pas plus de 50 caractères")
         .trim()
-        .toLowerCase()
-        .optional(),
-    codePostal: z.string().optional(),
-    indications: z.string()
-        .min(5, "Pas moins de 5 caractères")
-        .max(100, "Pas plus de 100 caractères")
+        .toLowerCase(),
+    pays: z.string()
+        .min(1, "Ce champs est requis")
+        .max(50, "Pas plus de 50 caractères")
         .trim()
-        .toLowerCase()
-        .nullable()
-        .optional(),
-    userId: z.string().optional(),
-    businessId: z.string().optional()
+        .toLowerCase(),
+    codePostal: z.string().optional(),
+    businessId: z.string().optional(),
+    clientId: z.string().optional(),
+    fournisseurId: z.string().optional(),
 });
 
 export const BusinessSchema = z.object({

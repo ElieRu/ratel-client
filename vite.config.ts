@@ -6,5 +6,8 @@ export default defineConfig({
   plugins: [tailwindcss(), reactRouter()],
   resolve: {
     tsconfigPaths: true,
+    // alias: {
+    //   console: 'rollup-plugin-node-polyfills/polyfills/console', 
+    // },
   },
 });

@@ -8,7 +8,7 @@ import { Plus, UserRoundIcon, X } from "lucide-react";
 import { useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import type { UserForm } from "@/lib/validations";
+// import type { UserForm } from "@/lib/validations";
 import { API } from "@/lib/utils";
 import { UserProfileSkeleton } from "@/components/all-skeletons";
 
@@ -22,6 +22,7 @@ export function meta({ }: Route.MetaArgs) {
 
 import { Separator } from "@/components/ui/separator";
 import ContactsManager from "@/components/contacts/contacts";
+import AdressesManager from "@/components/adresses/adresses";
 
 
 
@@ -81,8 +82,12 @@ export default function Profile() {
     // });
   }
 
+
+
+  // ginu
+
   return <>
-    <div className="flex items-center justify-center p-10">
+    <div className="block items-center justify-center p-10">
       {/* <form onSubmit={submit}>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="hidden md:block">
@@ -223,7 +228,10 @@ export default function Profile() {
           </div>
         </div>
         <Separator className="my-8" /> */}
-        <ContactsManager /> 
+      
+      <ContactsManager />
+      <Separator className="my-8" />
+      <AdressesManager /> 
 
       {/*
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">

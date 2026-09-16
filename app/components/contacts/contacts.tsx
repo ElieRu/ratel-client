@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react";
-// shadcn UI Primitives
 import { Button } from "@/components/ui/button";
 import {
     ChevronDownIcon,
@@ -47,7 +46,6 @@ export default function ContactsManager() {
                     </p>
                 </div>
 
-                {/* Add Contact Modal */}
                 <ButtonGroup>
                     {/* Main Phone Button & Dialog */}
                     <Dialog open={activeDialog === "PHONE"} onOpenChange={(open) => setActiveDialog(open ? "PHONE" : null)}>
@@ -82,9 +80,6 @@ export default function ContactsManager() {
                     </DropdownMenu>
                 </ButtonGroup>
 
-                {/* <Dialog05/> */}
-
-                {/* Standalone Dialog for Dropdown Item: Email */}
                 <Dialog open={activeDialog === "EMAIL"} onOpenChange={(open) => setActiveDialog(open ? "EMAIL" : null)}>
                     <DialogContent>
                         <Form type="EMAIL" new_contact={(newContact: Contact) => {

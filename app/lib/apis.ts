@@ -1,5 +1,5 @@
 // import { getToken } from "@clerk/react-router";
-import type { Contact } from "./validations";
+import type { Adresse, Contact } from "./validations";
 import { API } from "./utils";
 
 export const getRemoveAccount = async () => {
@@ -109,6 +109,44 @@ export const contactVerfication = async (contactId: string, token: string) => {
     const result = await response.json();
     if (!response.ok) {
         throw new Error(result.message || 'Verfication data failed');
+    }
+    console.log(result);
+    return result;
+}
+
+
+export const getAdresse = async () => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/adresses`, {
+        method: "GET",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'get data failed');
+    }
+    console.log(result);
+    return result;
+}
+
+export const createAdresse = async (form: Adresse) => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/adresses`, {
+        method: "POST",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'Create data failed');
     }
     console.log(result);
     return result;
