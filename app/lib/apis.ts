@@ -1,6 +1,7 @@
 // import { getToken } from "@clerk/react-router";
 import type { Adresse, Contact } from "./validations";
 import { API } from "./utils";
+import type { Response } from "./types";
 
 export const getRemoveAccount = async () => {
     // const token = await getToken();
@@ -147,6 +148,43 @@ export const createAdresse = async (form: Adresse) => {
     const result = await response.json();
     if (!response.ok) {
         throw new Error(result.message || 'Create data failed');
+    }
+    console.log(result);
+    return result;
+}
+
+export const removeAdress = async (id: string) => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/adresses/${id}`, {
+        method: "DELETE",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'Delete data failed');
+    }
+    console.log(result);
+    return result as Promise<Response>;
+}
+
+export const updateAdress = async (id: string, form: Adresse) => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/adresses/${id}`, {
+        method: "PUT",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form)
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'update data failed');
     }
     console.log(result);
     return result;

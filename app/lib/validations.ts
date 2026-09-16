@@ -70,6 +70,7 @@ export const ContactSchema = z.discriminatedUnion("type", [
 );
 
 export const AdresseSchema = z.object({
+    id: z.string().optional(),
     adresse: z.string()
         .min(6, "Ce champs est requis")
         .max(50, "Pas plus de 50 caractères")

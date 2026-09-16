@@ -9,10 +9,11 @@ import { type Adresse } from "@/lib/validations";
 import { getAdresse } from "@/lib/apis";
 import { Data } from "./data";
 import { Form } from "./form";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 
 export default function AdressesManager() {
-    const [adresse, setAdresse] = useState<Adresse>();
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [adresse, setAdresse] = useState<Adresse | null>();
+    const [isLoaded, setIsLoaded] = useState<boolean>(false);
     useEffect(() => {
         const fetchDatas = async () => {
             await getAdresse().then((resp) => {
@@ -32,15 +33,33 @@ export default function AdressesManager() {
                         Manage your customer accounts and leads.
                     </p>
                 </div>
-                <Form 
-                    isLoaded={isLoaded} 
-                    isExistedAdress={0}
-                    setAdresse={(v: Adresse) => setAdresse(v)}
-                />
+                <Dialog>
+                    <DialogTrigger>
+                        <Button variant="outline">New adress</Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]" showCloseButton={false}>
+                        <DialogHeader>
+                            <DialogTitle>Create Adress</DialogTitle>
+                            <DialogDescription>
+                                Anyone who has this link will be able to view this.
+                            </DialogDescription>
+                        </DialogHeader>
+                        <Form
+                            isLoaded={isLoaded}
+                            setAdresse={(v: Adresse) => setAdresse(v)}
+                            adresse={null}
+                        />
+
+                    </DialogContent>
+                </Dialog>
             </div>
 
             {/* Contacts Data Table */}
-            {adresse && <Data adresse={adresse} />}
+            {adresse && <Data 
+                adresse={adresse} 
+                isLoaded={isLoaded}
+                setAdress={(v: Adresse | null) => setAdresse(v)} 
+            />}
             {/* {isLoaded && adresse. === 0 && <span>empty</span>} */}
 
         </div>
