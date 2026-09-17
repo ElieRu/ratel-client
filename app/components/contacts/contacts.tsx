@@ -18,7 +18,7 @@ import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { Form } from "./form";
 import { Items } from "./items";
 import type { Contact } from "@/lib/validations";
-import { listContact } from "@/lib/apis";
+import { items_contact } from "@/lib/apis";
 import Dialog05 from "./success-message";
 
 export default function ContactsManager() {
@@ -26,7 +26,7 @@ export default function ContactsManager() {
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
         const fetchDatas = async () => {
-            await listContact().then((resp) => {
+            await items_contact().then((resp) => {
                 setContacts(resp.data);
                 setIsLoaded(true);
             });

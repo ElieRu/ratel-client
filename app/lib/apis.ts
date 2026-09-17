@@ -2,8 +2,9 @@
 import type { Adresse, Contact } from "./validations";
 import { API } from "./utils";
 import type { Response } from "./types";
+import { process } from "zod/v4/core";
 
-export const getRemoveAccount = async () => {
+export const supprimer_user = async () => {
     // const token = await getToken();
     try {
         await fetch(`${API}/users/deleteUser`, {
@@ -18,7 +19,7 @@ export const getRemoveAccount = async () => {
     }
 }
 
-export const createContact = async (form: Contact) => {
+export const creer_contact = async (form: Contact) => {
     // const token = await getToken();
     const response = await fetch(`${API}/contacts`, {
         method: "POST",
@@ -37,8 +38,7 @@ export const createContact = async (form: Contact) => {
     return result;
 }
 
-
-export const listContact = async () => {
+export const items_contact = async () => {
     // const token = await getToken();
     const response = await fetch(`${API}/contacts`, {
         method: "GET",
@@ -56,8 +56,7 @@ export const listContact = async () => {
     return result;
 }
 
-
-export const removeContact = async (id: string) => {
+export const supprimer_contact = async (id: string) => {
     // const token = await getToken();
     const response = await fetch(`${API}/contacts/${id}`, {
         method: "DELETE",
@@ -75,7 +74,7 @@ export const removeContact = async (id: string) => {
     return result;
 }
 
-export const changerParDefaut = async (id: string) => {
+export const changer_par_defaut_contact = async (id: string) => {
     // const token = await getToken();
     const response = await fetch(`${API}/contacts/${id}/par-defaut`, {
         method: "PUT",
@@ -93,8 +92,7 @@ export const changerParDefaut = async (id: string) => {
     return result;
 }
 
-
-export const contactVerfication = async (contactId: string, token: string) => {
+export const verifier_contact = async (contactId: string, token: string) => {
     // const token = await getToken();
     const response = await fetch(`${API}/contacts/${contactId}/verifier`, {
         method: "PUT",
@@ -115,10 +113,32 @@ export const contactVerfication = async (contactId: string, token: string) => {
     return result;
 }
 
-
-export const getAdresse = async () => {
+export const items_adresse = async (businessId: string | null, clientId: string | null, fournisseurId: string | null) => {
     // const token = await getToken();
     const response = await fetch(`${API}/adresses`, {
+        method: "GET",
+        headers: {
+            // 'Authorization': `${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            clientId: clientId,
+            fournisseurId: fournisseurId,
+            businessId: businessId
+        })
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.message || 'get data failed');
+    }
+    console.log(result);
+    return result;
+}
+
+export const item_adresse = async (id: string) => {
+    // const token = await getToken();
+    const response = await fetch(`${API}/adresses/${id}`, {
         method: "GET",
         headers: {
             // 'Authorization': `${token}`,
@@ -134,7 +154,7 @@ export const getAdresse = async () => {
     return result;
 }
 
-export const createAdresse = async (form: Adresse) => {
+export const creer_adresse = async (form: Adresse) => {
     // const token = await getToken();
     const response = await fetch(`${API}/adresses`, {
         method: "POST",
@@ -153,7 +173,7 @@ export const createAdresse = async (form: Adresse) => {
     return result;
 }
 
-export const removeAdress = async (id: string) => {
+export const supprimer_adresse = async (id: string) => {
     // const token = await getToken();
     const response = await fetch(`${API}/adresses/${id}`, {
         method: "DELETE",
@@ -171,7 +191,7 @@ export const removeAdress = async (id: string) => {
     return result as Promise<Response>;
 }
 
-export const updateAdress = async (id: string, form: Adresse) => {
+export const modifier_adresse = async (id: string, form: Adresse) => {
     // const token = await getToken();
     const response = await fetch(`${API}/adresses/${id}`, {
         method: "PUT",

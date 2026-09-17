@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 // import { MOCK_CONTACTS, type Contact } from "./contacts-data";
-import { removeContact } from "@/lib/apis";
+import { supprimer_contact } from "@/lib/apis";
 import type { Contact } from "@/lib/validations";
 
 import {
@@ -46,7 +46,7 @@ export function Item({ contact, removedContact }: { contact: Contact, removedCon
 
     const removeItem = async (contact: Contact) => {
         if (!contact.id) return;
-        await removeContact(contact.id).then((res) => {
+        await supprimer_contact(contact.id).then((res) => {
             if (res.success) {
                 removedContact(res.data, res.newDefault);
                 console.log(res.newDefault)

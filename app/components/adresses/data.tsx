@@ -1,4 +1,4 @@
-import { removeAdress } from "@/lib/apis";
+import { supprimer_adresse } from "@/lib/apis";
 import type { Adresse } from "@/lib/validations";
 import { Building, Globe, Mail, MapPin, Pencil, Trash2 } from "lucide-react";
 import { toast } from "../ui/toast";
@@ -16,7 +16,7 @@ export function Data({
 
     const onRemove = async () => {
         if (adresse.id) {
-            const removeRequest = removeAdress(adresse.id).then((res) => {
+            const removeRequest = supprimer_adresse(adresse.id).then((res) => {
                 setAdress(null);
                 return res;
             });

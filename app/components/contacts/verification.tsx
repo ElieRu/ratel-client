@@ -2,7 +2,7 @@ import { Loader2 } from "lucide-react";
 import { Button } from "../ui/button";
 import InputOTPDemo from "./input-opt";
 import { DialogClose } from "../ui/dialog";
-import { contactVerfication } from "@/lib/apis";
+import { verifier_contact } from "@/lib/apis";
 import { useState } from "react";
 import { toast } from "../ui/toast";
 import type { HideType } from "./form";
@@ -22,7 +22,7 @@ export function VerificationForm({
     const handleSublit = async (e: any) => {
         e.preventDefault();
         setIsLoaded(true);
-        await contactVerfication(contactId, token).then((res) => {
+        await verifier_contact(contactId, token).then((res) => {
             if (res.success) {
                 setTimeout(() => {
                     setHide('success');

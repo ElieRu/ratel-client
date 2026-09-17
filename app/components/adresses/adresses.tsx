@@ -6,7 +6,7 @@ import {
     Loader2,
 } from "lucide-react"
 import { type Adresse } from "@/lib/validations";
-import { getAdresse } from "@/lib/apis";
+import { items_adresse } from "@/lib/apis";
 import { Data } from "./data";
 import { Form } from "./form";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
@@ -16,7 +16,7 @@ export default function AdressesManager() {
     const [isLoaded, setIsLoaded] = useState<boolean>(false);
     useEffect(() => {
         const fetchDatas = async () => {
-            await getAdresse().then((resp) => {
+            await items_adresse(null, null, null).then((resp) => {
                 setAdresse(resp.data);
             });
         };

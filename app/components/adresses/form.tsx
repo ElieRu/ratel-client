@@ -5,14 +5,14 @@ import {
 } from "lucide-react"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { AdresseSchema, type Adresse } from "@/lib/validations";
-import { createAdresse, updateAdress } from "@/lib/apis";
+import { creer_adresse, modifier_adresse } from "@/lib/apis";
 import { Controller, useForm } from 'react-hook-form';
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import type { Response } from "@/lib/types";
+import { items } from "@/lib/utils";
 
 export function Form({
     isLoaded,
@@ -40,20 +40,11 @@ export function Form({
         }
     });
 
-    const items = [
-        { label: "Select a fruit", value: null },
-        { label: "Apple", value: "apple" },
-        { label: "Banana", value: "banana" },
-        { label: "Blueberry", value: "blueberry" },
-        { label: "Grapes", value: "grapes" },
-        { label: "Pineapple", value: "pineapple" },
-    ];
-
     const [hide, setHide] = useState<'form-adress' | 'successed-form'>("form-adress");
-    const [response, setResponse] = useState<Response>();
+    // const [response, setResponse] = useState<Response>();
     const onSubmit = async (form: Adresse) => {
-        await createAdresse(form).then((res) => {
-            setResponse(res);
+        await creer_adresse(form).then((res) => {
+            // setResponse(res);
             if (res.success) {
                 setHide('successed-form');
                 setAdresse(res.data);
@@ -64,7 +55,7 @@ export function Form({
     const onUpdate = async (form: Adresse) => {
         const id = adresse?.id;
         if (id) {
-            await updateAdress(id, form).then((res) => {
+            await modifier_adresse(id, form).then((res) => {
                 // setResponse(res);
                 if (res.success) {
                     setHide('successed-form');

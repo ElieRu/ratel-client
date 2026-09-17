@@ -42,6 +42,9 @@ type Pages = {
   "/ventes": {
     params: {};
   };
+  "/businesses": {
+    params: {};
+  };
   "/profile": {
     params: {};
   };
@@ -89,7 +92,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/clients" | "/fournisseurs" | "/articles" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
+    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/businesses" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/clients" | "/fournisseurs" | "/articles" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
   };
   "./routes/home.tsx": {
     id: "routes/home";
@@ -126,6 +129,10 @@ type RouteFiles = {
   "./routes/ventes/ventes.tsx": {
     id: "routes/ventes/ventes";
     page: "/ventes";
+  };
+  "./routes/businesses/page.tsx": {
+    id: "routes/businesses/page";
+    page: "/businesses";
   };
   "./routes/profile/profile.tsx": {
     id: "routes/profile/profile";
@@ -196,6 +203,7 @@ type RouteModules = {
   "routes/dashboard/dashboard": typeof import("./app/./routes/dashboard/dashboard.tsx");
   "routes/commandes/commandes": typeof import("./app/./routes/commandes/commandes.tsx");
   "routes/ventes/ventes": typeof import("./app/./routes/ventes/ventes.tsx");
+  "routes/businesses/page": typeof import("./app/./routes/businesses/page.tsx");
   "routes/profile/profile": typeof import("./app/./routes/profile/profile.tsx");
   "routes/notifications/notifications": typeof import("./app/./routes/notifications/notifications.tsx");
   "routes/achats/achats": typeof import("./app/./routes/achats/achats.tsx");

@@ -22,6 +22,8 @@ export default [
   route("/ventes", `./routes/ventes/ventes.tsx`),
 
   // business* routes
+  route("/businesses", `./routes/businesses/page.tsx`),
+
   route("/profile", `./routes/profile/profile.tsx`),
   route("/notifications", `./routes/notifications/notifications.tsx`),
   route("/achats", `./routes/achats/achats.tsx`),

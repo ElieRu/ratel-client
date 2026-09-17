@@ -8,7 +8,7 @@ import { DialogClose } from '../ui/dialog'
 import { Loader2 } from 'lucide-react'
 import { ContactSchema, type Contact } from '@/lib/validations'
 import type { Response } from '@/lib/types'
-import { createContact } from '@/lib/apis'
+import { creer_contact } from '@/lib/apis'
 import type { HideType } from './form'
 
 export const FormContact = ({
@@ -56,7 +56,7 @@ export const FormContact = ({
             setErrors(fieldErrors);
         } else {
             setIsLoaded(true);
-            await createContact(form).then((res) => {
+            await creer_contact(form).then((res) => {
                 setErrors({});
                 setIsLoaded(true);
                 if (!res.success) {
