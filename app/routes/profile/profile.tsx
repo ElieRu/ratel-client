@@ -82,10 +82,6 @@ export default function Profile() {
     // });
   }
 
-
-
-  // ginu
-
   return <>
     <div className="block items-center justify-center p-10">
       {/* <form onSubmit={submit}>
@@ -228,10 +224,10 @@ export default function Profile() {
           </div>
         </div>
         <Separator className="my-8" /> */}
-      
+
       <ContactsManager />
       <Separator className="my-8" />
-      <AdressesManager /> 
+      <AdressesManager />
 
       {/*
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
