@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/sidebar"
 import { BellIcon, CircleUserRoundIcon, EllipsisVerticalIcon, LogOutIcon, SettingsIcon } from "lucide-react"
 import { Link } from "react-router"
-// import { Show, SignOutButton } from "@clerk/react-router"
+import { Show, SignOutButton } from "@clerk/react-router"
 import { UserNavSkeleton } from "./all-skeletons"
 
 export function NavUser({
@@ -36,7 +36,7 @@ export function NavUser({
 }) {
   const { isMobile } = useSidebar();
 
-  if(!isLoaded) return UserNavSkeleton();
+  if (!isLoaded) return UserNavSkeleton();
 
   return (
     <SidebarMenu>
@@ -98,12 +98,12 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            {/* <DropdownMenuItem>
-                <LogOutIcon />
-                <Show when="signed-in">
-                  <SignOutButton>Se déconnecter</SignOutButton>
-                </Show>
-            </DropdownMenuItem> */}
+            <DropdownMenuItem>
+              <LogOutIcon />
+              <Show when="signed-in">
+                <SignOutButton>Se déconnecter</SignOutButton>
+              </Show>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

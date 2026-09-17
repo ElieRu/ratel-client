@@ -16,7 +16,7 @@ import {
 } from "./ui/sidebar"
 import { Settings2Icon, CommandIcon, Gauge, ShoppingCart, Building2, CircleDollarSign, Landmark, CirclePlus, CalendarArrowUp, Contact, ListCheck, SendToBack, UserRoundCog, FileText, Users, Home, Component, ChartPie } from "lucide-react"
 import { Link } from "react-router"
-// import { useUser } from "@clerk/react-router"
+import { useUser } from "@clerk/react-router"
 
 const data = {
   user: {
@@ -126,7 +126,7 @@ const data = {
   ],
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  // const { user, isLoaded } = useUser();
+  const { user, isLoaded } = useUser();
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -148,22 +148,19 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarFooter>
         <NavUser
-          user={{ name: "", email: "", avatar: "" }}
+          user={user ? {
+            name: user.fullName,
+            email: user.emailAddresses[0]?.emailAddress,
+            avatar: user.imageUrl,
+          } : {
+            name: "",
+            email: "",
+            avatar: "",
+          }}
           isLoaded={true}
         />
       </SidebarFooter>
     </Sidebar>
   )
 }
-//   user
-//     ? {
-//       name: user.fullName,
-//       email: user.emailAddresses[0]?.emailAddress,
-//       avatar: user.imageUrl,
-//     }
-//     : {
-//       name: "",
-//       email: "",
-//       avatar: "",
-//     }
-// } isLoaded={isLoaded}
+
