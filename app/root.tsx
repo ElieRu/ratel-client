@@ -5,7 +5,7 @@ import { AppSidebar } from "./components/app-sidebar";
 import { SiteHeader } from "./components/site-header";
 import { clerkMiddleware, rootAuthLoader } from '@clerk/react-router/server'
 
-import { isRouteErrorResponse, Links, Meta, Navigate, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useNavigate, Link } from 'react-router'
+import { isRouteErrorResponse, Links, Meta, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useNavigate, Link } from 'react-router'
 import stylesheet from './app.css?url'
 import { ClerkProvider, useAuth } from '@clerk/react-router'
 
@@ -80,12 +80,13 @@ export const ProtectedRoute = () => {
   const { isLoaded, isSignedIn } = useAuth();
 
   if (!isLoaded) return <div>Loading authentication...</div>;
+  const navigate = useNavigate();
 
   if (!isSignedIn) {
-    const navigate = useNavigate();
     navigate('/sign-up', { replace: true });
   }
   
+  return <Outlet />
 };
 
 export default function App({ loaderData }: Route.ComponentProps) {
@@ -99,7 +100,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
     '/welcome'
   ];
   const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
-  let [page, setPage] = useState("");
+  let [page, setPage] = useState("Current Page");
 
   return (
     <>
@@ -109,15 +110,13 @@ export default function App({ loaderData }: Route.ComponentProps) {
           {!shouldHideNavbar && <SiteHeader title={`${page}`} />}
           <div className={`flex flex-1 flex-col md:rounded-xl ${!shouldHideNavbar && 'md:m-4'}`}>
             <div className={`flex flex-col gap-4 ${!shouldHideNavbar && 'py-4'} md:gap-6 ${!shouldHideNavbar && 'md:py-1'}`}>
-              <Link to="/docs">Documentstion</Link>
-              <Outlet />
               <Routes>
-                <MyRoute path="/" element={<Home />} />
+                <MyRoute path="/*" element={<Home />} />
                 <MyRoute path="/sign-in/*" element={<SignInPage />} />
                 <MyRoute path="/sign-up/*" element={<SignUpPage />} />
+                <MyRoute path="/acceuil" element={<AcceuilPage />} />
 
                 <MyRoute element={<ProtectedRoute />}>
-                  <MyRoute path="/acceuil" element={<AcceuilPage />} />
                   <MyRoute path="/welcome" element={<Welcome />} />
                   <MyRoute path="/dashboard" element={<Dashboard />} />
                   <MyRoute path="/commandes" element={<Commandes />} />

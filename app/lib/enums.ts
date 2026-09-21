@@ -10,9 +10,9 @@ import { z } from 'zod'
 * 🟢 You can import this file directly.
 */
 
-export const ContactStatus = ['EN_ATTENTE', 'VERIFIE']
-export const ContactType = ['PHONE', 'EMAIL', 'WHATSAPP']
-export const DeviseType = ['USD', 'CDF']
+export const StatusContact = ['EN_ATTENTE', 'VERIFIE']
+export const TypeContact = ['PHONE', 'EMAIL']
+export const TypeDevise = ['USD', 'CDF']
 export const StatusAchat = ['EN_COURS', 'VALIDE', 'ANNULE']
 export const StatusAgent = ['ACTIF', 'BLOQUE']
 export const StatusCommande = ['EN_ATTENTE']

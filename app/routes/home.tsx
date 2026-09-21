@@ -3,6 +3,7 @@ import { API } from "@/lib/utils";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { SignUpButton } from "@clerk/react-router";
 // import { Show, UserButton, getToken } from '@clerk/react-router'
 
 export default function Home() {
@@ -36,6 +37,8 @@ export default function Home() {
       <h1>Welcome back</h1>
       <br />
       <Link to={'/acceuil'}>Acceuil</Link>
+      <br />
+      <SignUpButton>Desconnected</SignUpButton>
       <br />
       <Button variant="outline" className="border-destructive text-destructive hover:bg-destructive/10">Destructive Outline</Button>
       <button onClick={my_route}>my route</button>

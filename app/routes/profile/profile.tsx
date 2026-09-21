@@ -8,7 +8,7 @@ import { Plus, UserRoundIcon, X } from "lucide-react";
 import { useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import type { UserForm } from "@/lib/definitions";
+// import type { UserForm } from "@/lib/validations";
 import { API } from "@/lib/utils";
 import { UserProfileSkeleton } from "@/components/all-skeletons";
 
@@ -23,6 +23,7 @@ export function meta({ }: Route.MetaArgs) {
 import { Separator } from "@/components/ui/separator";
 import ContactsManager from "@/components/contacts/contacts";
 import { useUser } from "@clerk/react-router";
+import AdressesManager from "@/components/adresses/adresses";
 
 
 
@@ -58,33 +59,33 @@ export default function Profile() {
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      firstName: formData.get('first-name') as string,
-      lastName: formData.get('last-name') as string,
-      email: formData.get('email') as string,
-      // birthday: formData.get('year') as string,
-    };
-    console.log(data);
-    fetch(`${API}/profile`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    // const formData = new FormData(e.currentTarget);
+    // const data = {
+    //   firstName: formData.get('first-name') as string,
+    //   lastName: formData.get('last-name') as string,
+    //   email: formData.get('email') as string,
+    //   // birthday: formData.get('year') as string,
+    // };
+    // console.log(data);
+    // fetch(`${API}/profile`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log('Success:', data);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
   }
 
   return <>
     <div className="flex items-center justify-center p-10">
-      <form onSubmit={submit}>
+      <div>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div className="hidden md:block">
             <h2 className="text-balance font-semibold text-foreground dark:text-foreground">
@@ -224,12 +225,10 @@ export default function Profile() {
           </div>
         </div>
         <Separator className="my-8" />
-
         <ContactsManager />
-
-        {/* other contacts... */}
-        
-      </form>
+        <Separator className="my-8" />
+        <AdressesManager />
+      </div>
     </div >
   </>;
 }

@@ -5,7 +5,7 @@ import { AlertTriangleIcon } from "lucide-react";
 import { useState } from "react";
 // import { SignOutButton, } from "@clerk/react-router";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { getRemoveAccount } from "@/lib/apis";
+import { supprimer_user } from "@/lib/apis";
 // import { Show } from "@clerk/react-router";
 
 
@@ -20,7 +20,7 @@ export default function Parametres() {
   const [open, setOpen] = useState(false);
 
   const removeAccount = async () => {
-    await getRemoveAccount();
+    await supprimer_user();
   }
 
   return <div>
