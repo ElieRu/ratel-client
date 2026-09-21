@@ -1,0 +1,1 @@
+import{J as e,Z as t,c as n,t as r}from"./jsx-runtime-B9qScohU.js";var i=t(e(),1),a=t(r(),1);function o({}){return[{title:`React App`},{name:`description`,content:`Welcome to React Router!`}]}var s=n(function(){let[e,t]=(0,i.useState)([]);return(0,a.jsxs)(`div`,{children:[(0,a.jsx)(`h1`,{children:`articles`}),(0,a.jsx)(`ul`,{})]})});export{o as n,s as t};
