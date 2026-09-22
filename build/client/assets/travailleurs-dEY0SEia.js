@@ -1,0 +1,1 @@
+import{n as e,t}from"./travailleurs-_mPBbwd1.js";export{e as default,t as meta};

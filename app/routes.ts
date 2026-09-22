@@ -13,7 +13,6 @@ export default [
   route("/docs", `./routes/docs.tsx`),
   route("/sign-in/*", `./auth/sign-in/[[...sign-in]]/page.tsx`),
   route("/sign-up/*", `./auth/sign-up/[[...sign-up]]/page.tsx`),
-
   // route("/api/webhooks(.*)", ""),
   
   // main* routes
@@ -25,7 +24,6 @@ export default [
 
   // business* routes
   route("/businesses", `./routes/businesses/page.tsx`),
-
   route("/profile", `./routes/profile/profile.tsx`),
   route("/notifications", `./routes/notifications/notifications.tsx`),
   route("/achats", `./routes/achats/achats.tsx`),

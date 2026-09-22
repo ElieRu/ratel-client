@@ -1,1 +1,0 @@
-import{n as e,t}from"./offres-BJnl1l-4.js";export{e as default,t as meta};

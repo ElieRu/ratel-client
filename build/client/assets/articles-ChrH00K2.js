@@ -1,0 +1,1 @@
+import{n as e,t}from"./articles-Ce-VgV5H.js";export{t as default,e as meta};

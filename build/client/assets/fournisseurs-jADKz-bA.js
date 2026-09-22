@@ -1,0 +1,1 @@
+import{n as e,t}from"./fournisseurs-Bg-jTo_f.js";export{t as default,e as meta};

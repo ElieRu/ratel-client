@@ -1,0 +1,1 @@
+import{n as e,t}from"./ventes-D7eTj7Kb.js";export{e as default,t as meta};

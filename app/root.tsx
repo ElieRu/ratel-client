@@ -4,14 +4,16 @@ import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
 import { SiteHeader } from "./components/site-header";
 import { clerkMiddleware, rootAuthLoader } from '@clerk/react-router/server'
+import { useState } from "react";
 
 import { isRouteErrorResponse, Links, Meta, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useNavigate, Link } from 'react-router'
 import stylesheet from './app.css?url'
 import { ClerkProvider, useAuth } from '@clerk/react-router'
 
+import { frFR } from '@clerk/localizations/fr-FR'
+
 import AcceuilPage from "./routes/acceuil/acceuil";
 import Home from "./routes/home";
-import Profile from "./routes/profile/profile";
 import Notifications from "./routes/notifications/notifications";
 import Dashboard from "./routes/dashboard/dashboard";
 import Commandes from "./routes/commandes/commandes";
@@ -27,10 +29,9 @@ import Offres from "./routes/admin/offres";
 import Categories from "./routes/admin/categories";
 import Parametres from "./routes/parametres/parametres";
 import SignInPage from "./auth/sign-in/[[...sign-in]]/page";
-import { frFR } from '@clerk/localizations/fr-FR'
 import SignUpPage from "./auth/sign-up/[[...sign-up]]/page";
 import Welcome from "./routes/welcome/welcome";
-import { useState } from "react";
+import Profile from "./routes/profile/profile";
 
 export const middleware: Route.MiddlewareFunction[] = [clerkMiddleware()]
 export const loader = (args: Route.LoaderArgs) => rootAuthLoader(args)
@@ -78,14 +79,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export const ProtectedRoute = () => {
   const { isLoaded, isSignedIn } = useAuth();
-
-  if (!isLoaded) return <div>Loading authentication...</div>;
   const navigate = useNavigate();
 
-  if (!isSignedIn) {
-    navigate('/sign-up', { replace: true });
-  }
-  
+  if (!isLoaded) return <div>Loading authentication...</div>;
+  if (!isSignedIn) navigate('/sign-up', { replace: true });
+
   return <Outlet />
 };
 
@@ -93,7 +91,6 @@ export default function App({ loaderData }: Route.ComponentProps) {
   const location = useLocation();
   const hideNavbarPaths = [
     '/',
-    '/login',
     '/sign-in',
     '/sign-up',
     '/sign-in/factor-one',
@@ -114,10 +111,10 @@ export default function App({ loaderData }: Route.ComponentProps) {
                 <MyRoute path="/*" element={<Home />} />
                 <MyRoute path="/sign-in/*" element={<SignInPage />} />
                 <MyRoute path="/sign-up/*" element={<SignUpPage />} />
-                <MyRoute path="/acceuil" element={<AcceuilPage />} />
 
                 <MyRoute element={<ProtectedRoute />}>
                   <MyRoute path="/welcome" element={<Welcome />} />
+                  <MyRoute path="/acceuil" element={<AcceuilPage />} />
                   <MyRoute path="/dashboard" element={<Dashboard />} />
                   <MyRoute path="/commandes" element={<Commandes />} />
                   <MyRoute path="/ventes" element={<Ventes />} />
