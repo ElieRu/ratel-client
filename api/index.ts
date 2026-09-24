@@ -1,4 +1,6 @@
-import { createRequestHandler } from "@react-router/node";
+import { createRequestListener } from "@react-router/node";
 
-// @ts-ignore - build output exists after `npm run build`
-export default createRequestHandler({ build: () => import("../build/server/index.js") });
+export default createRequestListener({
+  // @ts-ignore – build/server/index.js is generated at build time
+  build: () => import("../build/server/index.js"),
+});
