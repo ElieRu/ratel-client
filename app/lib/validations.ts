@@ -102,7 +102,19 @@ export const BusinessSchema = z.object({
         .min(4, "Pas moins de 4 caractères")
         .max(50, "Pas plus de 50 caractères")
         .toLowerCase()
+        .trim(),
+    slogan: z.string()
+        .max(80, "Pas plus de 80 caractères")
         .trim()
+        .optional(),
+    website: z.union([
+        z.literal(""),
+        z.url({ message: "Le lien est incorrecte" })
+    ]).optional(),
+    description: z.string()
+        .max(500, "Pas plus de 500 caractères")
+        .trim()
+        .optional()
 });
 
 export const BusinessTypeSchema = z.object({
@@ -226,13 +238,7 @@ export const FournisseurSchema = z.object({
         .optional(),
     logo: z.url("le lien est incorrecte").optional(),
     email: z.email({ message: "l'adresse mail est invalide" }).optional(),
-    website: z.url({ message: "le lien est incorrecte" }).optional(),
-    description: z.string()
-        .min(4, "Pas moin de 4 caractères")
-        .max(100, "Pas plus de 100 caractères")
-        .toLowerCase()
-        .trim()
-        .optional()
+    website: z.url({ message: "le lien est incorrecte" }).optional()
 });
 
 export const CaisseSchema = z.object({
@@ -418,5 +424,4 @@ export type DetailEnStock = z.infer<typeof DetailEnStockSchema>;
 export type ArrayDetail = z.infer<typeof ArrayDetailSchema>;
 export type AchatDetail = z.infer<typeof ArrayDetailSchema>;
 export type StatusAchat = z.infer<typeof StatusAchatSchema>;
-
 

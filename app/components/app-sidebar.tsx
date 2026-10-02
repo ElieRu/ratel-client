@@ -14,9 +14,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "./ui/sidebar"
-import { Settings2Icon, CommandIcon, Gauge, ShoppingCart, Building2, CircleDollarSign, Landmark, CirclePlus, CalendarArrowUp, Contact, ListCheck, SendToBack, UserRoundCog, FileText, Users, Home, Component, ChartPie } from "lucide-react"
+import { CommandIcon, Gauge, ShoppingCart, Building2, CircleDollarSign, Landmark, CirclePlus, CalendarArrowUp, ListCheck, SendToBack, UserRoundCog, FileText, Users, Home, ChartPie, Bell, BadgePercent } from "lucide-react"
 import { Link } from "react-router"
 import { useUser } from "@clerk/react-router"
+import { useBusiness } from "@/lib/business-context"
 
 const data = {
   user: {
@@ -24,109 +25,62 @@ const data = {
     email: "",
     avatar: "",
   },
-  navMain: [
-    {
-      title: "Acceuil",
-      url: "/acceuil",
-      icon: (
-        <Home />
-      ),
-    },
-    {
-      title: "Tableau de bord",
-      url: "/dashboard",
-      icon: (
-        <Gauge />
-      ),
-    },
-    {
-      title: "Mes commandes",
-      url: "/commandes",
-      icon: (
-        <CalendarArrowUp />
-      ),
-    },
-    {
-      title: "Historique des ventes",
-      url: "/ventes",
-      icon: (
-        <FileText />
-      ),
-    },
-    {
-      title: "Créer un business",
-      url: "/businesses/creer",
-      icon: (
-        <ChartPie />
-      ),
-    },
-    {
-      title: "Gestion des articles",
-      url: "/articles",
-      icon: (
-        <CirclePlus />
-      ),
-    },
-    {
-      title: "Opération d'achats",
-      url: "/achats",
-      icon: (
-        <ShoppingCart />
-      ),
-    },
-    {
-      title: "Clients",
-      url: "/clients",
-      icon: (
-        <Users />
-      ),
-    },
-    {
-      title: "Fournisseurs",
-      url: "/fournisseurs",
-      icon: (
-        <Building2 />
-      ),
-    },
-    {
-      title: "Travailleurs",
-      url: "/travailleurs",
-      icon: (
-        <UserRoundCog />
-      ),
-    },
-    {
-      title: "Caisses",
-      url: "/caisses",
-      icon: (
-        <CircleDollarSign />
-      ),
-    },
-    {
-      title: "Businesses",
-      url: "/admin/businesses",
-      icon: (
-        <Landmark />
-      ),
-    },
-    {
-      title: "Offres",
-      url: "/admin/offres",
-      icon: (
-        <SendToBack />
-      ),
-    },
-    {
-      title: "Catégories",
-      url: "/admin/categories",
-      icon: (
-        <ListCheck />
-      ),
-    },
-  ],
+  groupeUtilisateur: {
+      label: "Utilisateur",
+      items: [
+        { title: "Acceuil", url: "/acceuil", icon: <Home /> },
+        { title: "Tableau de bord", url: "/dashboard", icon: <Gauge /> },
+        { title: "Mes commandes", url: "/commandes", icon: <CalendarArrowUp /> },
+        { title: "Historique des ventes", url: "/ventes", icon: <FileText /> },
+      ],
+  },
+
+  lienCreationBusiness: {
+    title: "Créer un business",
+    url: "/businesses/creer",
+    icon: <ChartPie />,
+  },
+
+  /** Affiché seulement à qui possède déjà un business. */
+  groupeBusiness: {
+    label: "Business",
+    items: [
+      { title: "Gestion des articles", url: "/articles", icon: <CirclePlus /> },
+      { title: "Promotions", url: "/promotions", icon: <BadgePercent /> },
+      { title: "Opération d'achats", url: "/achats", icon: <ShoppingCart /> },
+      { title: "Clients", url: "/clients", icon: <Users /> },
+      { title: "Fournisseurs", url: "/fournisseurs", icon: <Building2 /> },
+      { title: "Travailleurs", url: "/travailleurs", icon: <UserRoundCog /> },
+      { title: "Caisses", url: "/caisses", icon: <CircleDollarSign /> },
+    ],
+  },
+
+  /** Réservé aux rôles ADMIN et MANAGER. */
+  groupeAdmin: {
+    label: "Admin",
+    items: [
+      { title: "Businesses", url: "/admin/businesses", icon: <Landmark /> },
+      { title: "Offres", url: "/admin/offres", icon: <SendToBack /> },
+      { title: "Catégories", url: "/admin/categories", icon: <ListCheck /> },
+    ],
+  },
 }
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user, isLoaded } = useUser();
+  const { aUnBusiness, estAdmin, pret } = useBusiness();
+
+  // Tant que la session n'est pas résolue, la création n'est pas proposée.
+  const groupes = [
+    {
+      ...data.groupeUtilisateur,
+      items: [
+        ...data.groupeUtilisateur.items,
+        ...(pret && !aUnBusiness ? [data.lienCreationBusiness] : []),
+      ],
+    },
+    ...(pret && aUnBusiness ? [data.groupeBusiness] : []),
+    ...(pret && estAdmin ? [data.groupeAdmin] : []),
+  ];
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -144,7 +98,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain groupes={groupes} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser
@@ -157,10 +111,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             email: "",
             avatar: "",
           }}
-          isLoaded={true}
+          isLoaded={isLoaded}
         />
       </SidebarFooter>
     </Sidebar>
   )
 }
-

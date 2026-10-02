@@ -23,13 +23,15 @@ export default [
   route("/ventes", `./routes/ventes/ventes.tsx`),
 
   // business* routes
-  route("/businesses", `./routes/businesses/page.tsx`),
+  route("/businesses/creer", `./routes/businesses/page.tsx`),
   route("/profile", `./routes/profile/profile.tsx`),
   route("/notifications", `./routes/notifications/notifications.tsx`),
   route("/achats", `./routes/achats/achats.tsx`),
   route("/travailleurs", `./routes/travailleurs/travailleurs.tsx`),
   route("/clients", `./routes/clients/clients.tsx`),
   route("/fournisseurs", `./routes/fournisseurs/fournisseurs.tsx`),
+  route("/fournisseurs/:id", `./routes/fournisseurs/detail.tsx`),
+  route("/fournisseurs/valider-invitation/:invitationId", `./routes/fournisseurs/valider-invitation.tsx`),
   route("/articles", `./routes/articles/articles.tsx`),
   route("/promotions", `./routes/promotions/promotions.tsx`),
   route("/caisses", `./routes/caisses/caisses.tsx`),
@@ -53,4 +55,3 @@ export default [
     // route("trending", "./concerts/trending.tsx"),
   // ]),
 ] satisfies RouteConfig;
-

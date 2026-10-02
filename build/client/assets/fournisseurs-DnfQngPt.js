@@ -1,0 +1,1 @@
+import{t as e}from"./fournisseurs-B07G7vzF.js";export{e as default};

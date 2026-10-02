@@ -1,0 +1,1 @@
+import{n as e,t}from"./profile-CLnHleqN.js";export{e as default,t as meta};

@@ -6,7 +6,7 @@ import { SiteHeader } from "./components/site-header";
 import { clerkMiddleware, rootAuthLoader } from '@clerk/react-router/server'
 import { useState } from "react";
 
-import { isRouteErrorResponse, Links, Meta, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useNavigate, Link } from 'react-router'
+import { isRouteErrorResponse, Links, Meta, Navigate, Outlet, Route as MyRoute, Routes, Scripts, ScrollRestoration, useLocation, useNavigate, Link } from 'react-router'
 import stylesheet from './app.css?url'
 import { ClerkProvider, useAuth } from '@clerk/react-router'
 
@@ -22,6 +22,8 @@ import Articles from "./routes/articles/articles";
 import Achats from "./routes/achats/achats";
 import Clients from "./routes/clients/clients";
 import Fournisseurs from "./routes/fournisseurs/fournisseurs";
+import ValiderInvitationFournisseur from "./routes/fournisseurs/valider-invitation";
+import DetailFournisseur from "./routes/fournisseurs/detail";
 import Travailleurs from "./routes/travailleurs/travailleurs";
 import Caisses from "./routes/caisses/caisses";
 import Businesses from "./routes/admin/businesses";
@@ -32,6 +34,9 @@ import SignInPage from "./auth/sign-in/[[...sign-in]]/page";
 import SignUpPage from "./auth/sign-up/[[...sign-up]]/page";
 import Welcome from "./routes/welcome/welcome";
 import Profile from "./routes/profile/profile";
+import BusinessForm from "./routes/businesses/page";
+import Promotions from "./routes/promotions/promotions";
+import { BusinessProvider } from "./lib/business-context";
 
 export const middleware: Route.MiddlewareFunction[] = [clerkMiddleware()]
 export const loader = (args: Route.LoaderArgs) => rootAuthLoader(args)
@@ -79,10 +84,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export const ProtectedRoute = () => {
   const { isLoaded, isSignedIn } = useAuth();
-  const navigate = useNavigate();
 
   if (!isLoaded) return <div>Loading authentication...</div>;
-  if (!isSignedIn) navigate('/sign-up', { replace: true });
+  // `<Navigate>` plutôt que navigate() : appelée pendant le render, cette
+  // dernière relançait un render à l'infini (Maximum update depth exceeded).
+  if (!isSignedIn) return <Navigate to="/sign-up" replace />;
 
   return <Outlet />
 };
@@ -102,6 +108,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <ClerkProvider loaderData={loaderData} localization={frFR}>
+        <BusinessProvider>
         {!shouldHideNavbar && <AppSidebar variant="inset" />}
         <SidebarInset>
           {!shouldHideNavbar && <SiteHeader title={`${page}`} />}
@@ -119,9 +126,13 @@ export default function App({ loaderData }: Route.ComponentProps) {
                   <MyRoute path="/commandes" element={<Commandes />} />
                   <MyRoute path="/ventes" element={<Ventes />} />
                   <MyRoute path="/articles" element={<Articles />} />
+                  <MyRoute path="/businesses/creer" element={<BusinessForm />} />
+                  <MyRoute path="/promotions" element={<Promotions />} />
                   <MyRoute path="/achats" element={<Achats />} />
                   <MyRoute path="/clients" element={<Clients />} />
                   <MyRoute path="/fournisseurs" element={<Fournisseurs />} />
+                  <MyRoute path="/fournisseurs/:id" element={<DetailFournisseur />} />
+                  <MyRoute path="/fournisseurs/valider-invitation/:invitationId" element={<ValiderInvitationFournisseur />} />
                   <MyRoute path="/travailleurs" element={<Travailleurs />} />
                   <MyRoute path="/caisses" element={<Caisses />} />
                   <MyRoute path="/admin/businesses" element={<Businesses />} />
@@ -135,6 +146,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
             </div>
           </div>
         </SidebarInset>
+        </BusinessProvider>
       </ClerkProvider>
     </>
   )

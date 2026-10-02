@@ -1,31 +1,30 @@
 import { t as __exportAll } from "./assets/rolldown-runtime-D7D4PA-g.js";
 import { t as entry_server_node_exports } from "./assets/router-DKeukR6m.js";
-import { C as cn$1, S as API, T as useIsMobile, _ as DropdownMenuSeparator, a as SelectGroup, b as Input, c as SelectValue, d as Badge, f as DropdownMenu, g as DropdownMenuLabel, h as DropdownMenuItem, i as SelectContent, l as Label, m as DropdownMenuGroup, n as dashboard_exports, o as SelectItem, p as DropdownMenuContent, r as Select, s as SelectTrigger, t as dashboard_default, u as Checkbox, v as DropdownMenuTrigger, w as items, x as Button, y as Separator } from "./assets/dashboard-hM3NwAtp.js";
-import { a as businesses_default, i as offres_exports, n as categories_exports, o as businesses_exports, r as offres_default, t as categories_default } from "./assets/admin-2LN7GsE6.js";
+import { _ as useIsMobile, a as SelectGroup, c as SelectValue, d as DropdownMenuContent, f as DropdownMenuGroup, g as DropdownMenuTrigger, h as DropdownMenuSeparator, i as SelectContent, l as Checkbox, m as DropdownMenuLabel, n as dashboard_exports, o as SelectItem, p as DropdownMenuItem, r as Select, s as SelectTrigger, t as dashboard_default, u as DropdownMenu } from "./assets/dashboard-DqaksMjj.js";
+import { $ as supprimerPromotion, A as creerCaisse, B as listerDevises, C as PageRessource, Ct as champsRequis, D as changerStatusAchat, E as caisseParDefaut, F as listerAgents, G as modifierClient, H as listerPromotions, I as listerArticles, J as supprimerAgent, K as modifierFournisseur, L as listerCaisses, M as creerFournisseur, N as creerPromotion, O as changerStatusPromotion, P as listerAchats, Q as supprimerFournisseur, R as listerCategories, S as useListe, St as API, T as bloquerAgent, Tt as items, U as modifierArticle, V as listerFournisseurs, W as modifierCaisse, X as supprimerCaisse, Y as supprimerArticle, Z as supprimerClient, _ as DialogDescription, _t as Badge, a as businesses_default, at as CaisseSchema, b as DialogTitle, bt as Input, c as FieldDescription, ct as FournisseurSchema, d as FieldLabel, dt as TableBody, et as BusinessProvider, f as FieldLegend, ft as TableCell, g as DialogContent, gt as Label, h as DialogClose, ht as TableRow, i as offres_exports, it as BusinessSchema, j as creerClient, k as creerArticle, l as FieldError, lt as PromotionSchema, m as Dialog$1, mt as TableHeader, n as categories_exports, nt as AdresseSchema, o as businesses_exports, ot as ClientSchema, p as FieldSet, pt as TableHead, q as supprimerAchat, r as offres_default, rt as ArticleSchema, s as Field, st as ContactSchema, t as categories_default, tt as useBusiness, u as FieldGroup, ut as Table, v as DialogFooter, vt as Skeleton, w as activerAgent, wt as cn$1, x as DialogTrigger, xt as Button, y as DialogHeader, yt as Separator, z as listerClients } from "./assets/admin-DrDAZoTE.js";
 import { Link, Links, Meta, Outlet, Route, Routes, Scripts, ScrollRestoration, UNSAFE_withComponentProps, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, useLocation, useNavigate } from "react-router";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import * as React$1 from "react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cva } from "class-variance-authority";
 import "cn";
 import { Dialog } from "@base-ui/react/dialog";
-import { AlertTriangle, AlertTriangleIcon, ArrowRight, Bell, BellIcon, Building2, CalendarArrowUp, ChartPie, CheckCircle2, CheckCircle2Icon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, EllipsisVerticalIcon, FileText, Gauge, Home, Landmark, ListCheck, Loader2, LogOutIcon, Mail, MailIcon, MapPin, MoreHorizontalIcon, PanelLeftIcon, Pencil, PhoneIcon, Plus, Search, Send, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
+import { AlertTriangle, AlertTriangleIcon, ArrowRight, BadgePercent, BanIcon, Bell, BellIcon, Building2, CalendarArrowUp, ChartPie, CheckCircle2, CheckCircle2Icon, CheckIcon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, EllipsisVerticalIcon, FileText, Gauge, Home, Landmark, ListCheck, Loader2, Loader2Icon, LogOutIcon, Mail, MailIcon, MapPin, MoreHorizontalIcon, PanelLeftIcon, Pencil, PhoneIcon, Plus, PlusIcon, Search, SearchIcon, Send, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, Trash2Icon, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
 import { Tooltip } from "@base-ui/react/tooltip";
 import { Avatar } from "@base-ui/react/avatar";
 import { ClerkProvider, Show, SignIn, SignOutButton, SignUp, UserButton, getToken, useAuth, useUser } from "@clerk/react-router";
 import { clerkMiddleware, rootAuthLoader } from "@clerk/react-router/server";
 import { frFR } from "@clerk/localizations/fr-FR";
 import { toast } from "sonner";
-import * as z$1 from "zod";
-import { z } from "zod";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Toast } from "@base-ui/react/toast";
 import { AnimatePresence, motion } from "motion/react";
 import { OTPInput, OTPInputContext } from "input-otp";
 import { Switch } from "@base-ui/react/switch";
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Collapsible } from "@base-ui/react/collapsible";
 //#region app/components/ui/sheet.tsx
 function Sheet({ ...props }) {
 	return /* @__PURE__ */ jsx(Dialog.Root, {
@@ -84,15 +83,6 @@ function SheetDescription({ className, ...props }) {
 	return /* @__PURE__ */ jsx(Dialog.Description, {
 		"data-slot": "sheet-description",
 		className: cn$1("text-sm text-muted-foreground", className),
-		...props
-	});
-}
-//#endregion
-//#region app/components/ui/skeleton.tsx
-function Skeleton({ className, ...props }) {
-	return /* @__PURE__ */ jsx("div", {
-		"data-slot": "skeleton",
-		className: cn$1("animate-pulse rounded-md bg-muted", className),
 		...props
 	});
 }
@@ -311,6 +301,17 @@ function SidebarGroup({ className, ...props }) {
 		...props
 	});
 }
+function SidebarGroupLabel({ className, render, ...props }) {
+	return useRender({
+		defaultTagName: "div",
+		props: mergeProps({ className: cn$1("flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0", className) }, props),
+		render,
+		state: {
+			slot: "sidebar-group-label",
+			sidebar: "group-label"
+		}
+	});
+}
 function SidebarGroupContent({ className, ...props }) {
 	return /* @__PURE__ */ jsx("div", {
 		"data-slot": "sidebar-group-content",
@@ -379,20 +380,27 @@ function SidebarMenuButton({ render, isActive = false, variant = "default", size
 }
 //#endregion
 //#region app/components/nav-main.tsx
-function NavMain({ items }) {
+function Items$1({ items }) {
 	const location = useLocation();
+	return /* @__PURE__ */ jsx(SidebarMenu, { children: items.map((item) => {
+		const isActive = location.pathname === item.url;
+		return /* @__PURE__ */ jsx(SidebarMenuItem, { children: /* @__PURE__ */ jsxs(SidebarMenuButton, {
+			isActive,
+			render: /* @__PURE__ */ jsx(Link, { to: item.url }),
+			tooltip: item.title,
+			className: `transition-colors ${isActive ? "bg-primary! text-white!" : "hover:bg-muted"}`,
+			children: [item.icon, /* @__PURE__ */ jsx("span", { children: item.title })]
+		}) }, item.title);
+	}) });
+}
+function NavMain({ items, groupes }) {
+	if (groupes) return /* @__PURE__ */ jsx(Fragment, { children: groupes.map((groupe) => /* @__PURE__ */ jsxs(SidebarGroup, { children: [/* @__PURE__ */ jsx(SidebarGroupLabel, { children: groupe.label }), /* @__PURE__ */ jsx(SidebarGroupContent, {
+		className: "flex flex-col",
+		children: /* @__PURE__ */ jsx(Items$1, { items: groupe.items })
+	})] }, groupe.label)) });
 	return /* @__PURE__ */ jsx(SidebarGroup, { children: /* @__PURE__ */ jsx(SidebarGroupContent, {
 		className: "flex flex-col",
-		children: /* @__PURE__ */ jsx(SidebarMenu, { children: items.map((item) => {
-			const isActive = location.pathname === item.url;
-			return /* @__PURE__ */ jsx(SidebarMenuItem, { children: /* @__PURE__ */ jsxs(SidebarMenuButton, {
-				isActive,
-				render: /* @__PURE__ */ jsx(Link, { to: item.url }),
-				tooltip: item.title,
-				className: `transition-colors ${isActive ? "bg-primary! text-white!" : "hover:bg-muted"}`,
-				children: [item.icon, /* @__PURE__ */ jsx("span", { children: item.title })]
-			}) }, item.title);
-		}) })
+		children: /* @__PURE__ */ jsx(Items$1, { items: items ?? [] })
 	}) });
 }
 //#endregion
@@ -647,76 +655,101 @@ var data = {
 		email: "",
 		avatar: ""
 	},
-	navMain: [
+	groupes: [
 		{
-			title: "Acceuil",
-			url: "/acceuil",
-			icon: /* @__PURE__ */ jsx(Home, {})
+			label: "Utilisateur",
+			items: [
+				{
+					title: "Acceuil",
+					url: "/acceuil",
+					icon: /* @__PURE__ */ jsx(Home, {})
+				},
+				{
+					title: "Tableau de bord",
+					url: "/dashboard",
+					icon: /* @__PURE__ */ jsx(Gauge, {})
+				},
+				{
+					title: "Mes commandes",
+					url: "/commandes",
+					icon: /* @__PURE__ */ jsx(CalendarArrowUp, {})
+				},
+				{
+					title: "Historique des ventes",
+					url: "/ventes",
+					icon: /* @__PURE__ */ jsx(FileText, {})
+				},
+				{
+					title: "Notifications",
+					url: "/notifications",
+					icon: /* @__PURE__ */ jsx(Bell, {})
+				}
+			]
 		},
 		{
-			title: "Tableau de bord",
-			url: "/dashboard",
-			icon: /* @__PURE__ */ jsx(Gauge, {})
+			label: "Business",
+			items: [
+				{
+					title: "Créer un business",
+					url: "/businesses/creer",
+					icon: /* @__PURE__ */ jsx(ChartPie, {})
+				},
+				{
+					title: "Gestion des articles",
+					url: "/articles",
+					icon: /* @__PURE__ */ jsx(CirclePlus, {})
+				},
+				{
+					title: "Promotions",
+					url: "/promotions",
+					icon: /* @__PURE__ */ jsx(BadgePercent, {})
+				},
+				{
+					title: "Opération d'achats",
+					url: "/achats",
+					icon: /* @__PURE__ */ jsx(ShoppingCart, {})
+				},
+				{
+					title: "Clients",
+					url: "/clients",
+					icon: /* @__PURE__ */ jsx(Users, {})
+				},
+				{
+					title: "Fournisseurs",
+					url: "/fournisseurs",
+					icon: /* @__PURE__ */ jsx(Building2, {})
+				},
+				{
+					title: "Travailleurs",
+					url: "/travailleurs",
+					icon: /* @__PURE__ */ jsx(UserRoundCog, {})
+				},
+				{
+					title: "Caisses",
+					url: "/caisses",
+					icon: /* @__PURE__ */ jsx(CircleDollarSign, {})
+				}
+			]
 		},
 		{
-			title: "Mes commandes",
-			url: "/commandes",
-			icon: /* @__PURE__ */ jsx(CalendarArrowUp, {})
-		},
-		{
-			title: "Historique des ventes",
-			url: "/ventes",
-			icon: /* @__PURE__ */ jsx(FileText, {})
-		},
-		{
-			title: "Créer un business",
-			url: "/businesses/creer",
-			icon: /* @__PURE__ */ jsx(ChartPie, {})
-		},
-		{
-			title: "Gestion des articles",
-			url: "/articles",
-			icon: /* @__PURE__ */ jsx(CirclePlus, {})
-		},
-		{
-			title: "Opération d'achats",
-			url: "/achats",
-			icon: /* @__PURE__ */ jsx(ShoppingCart, {})
-		},
-		{
-			title: "Clients",
-			url: "/clients",
-			icon: /* @__PURE__ */ jsx(Users, {})
-		},
-		{
-			title: "Fournisseurs",
-			url: "/fournisseurs",
-			icon: /* @__PURE__ */ jsx(Building2, {})
-		},
-		{
-			title: "Travailleurs",
-			url: "/travailleurs",
-			icon: /* @__PURE__ */ jsx(UserRoundCog, {})
-		},
-		{
-			title: "Caisses",
-			url: "/caisses",
-			icon: /* @__PURE__ */ jsx(CircleDollarSign, {})
-		},
-		{
-			title: "Businesses",
-			url: "/admin/businesses",
-			icon: /* @__PURE__ */ jsx(Landmark, {})
-		},
-		{
-			title: "Offres",
-			url: "/admin/offres",
-			icon: /* @__PURE__ */ jsx(SendToBack, {})
-		},
-		{
-			title: "Catégories",
-			url: "/admin/categories",
-			icon: /* @__PURE__ */ jsx(ListCheck, {})
+			label: "Admin",
+			items: [
+				{
+					title: "Businesses",
+					url: "/admin/businesses",
+					icon: /* @__PURE__ */ jsx(Landmark, {})
+				},
+				{
+					title: "Offres",
+					url: "/admin/offres",
+					icon: /* @__PURE__ */ jsx(SendToBack, {})
+				},
+				{
+					title: "Catégories",
+					url: "/admin/categories",
+					icon: /* @__PURE__ */ jsx(ListCheck, {})
+				}
+			]
 		}
 	]
 };
@@ -734,7 +767,7 @@ function AppSidebar({ ...props }) {
 					children: "Ratel Market"
 				})]
 			}) }) }) }),
-			/* @__PURE__ */ jsx(SidebarContent, { children: /* @__PURE__ */ jsx(NavMain, { items: data.navMain }) }),
+			/* @__PURE__ */ jsx(SidebarContent, { children: /* @__PURE__ */ jsx(NavMain, { groupes: data.groupes }) }),
 			/* @__PURE__ */ jsx(SidebarFooter, { children: /* @__PURE__ */ jsx(NavUser, {
 				user: user ? {
 					name: user.fullName,
@@ -773,14 +806,14 @@ function SiteHeader({ title }) {
 }
 //#endregion
 //#region app/app.css?url
-var app_default = "/assets/app-PBoHEL53.css";
+var app_default = "/assets/app-CZ20jkVq.css";
 //#endregion
 //#region app/routes/acceuil/acceuil.tsx
 var acceuil_exports = /* @__PURE__ */ __exportAll({
 	default: () => acceuil_default,
-	meta: () => meta$16
+	meta: () => meta$9
 });
-function meta$16({}) {
+function meta$9({}) {
 	return [{ title: "My Admin App" }, {
 		name: "description",
 		content: "Welcome to React Router!"
@@ -891,9 +924,9 @@ var home_default = UNSAFE_withComponentProps(function Home() {
 //#region app/routes/notifications/notifications.tsx
 var notifications_exports = /* @__PURE__ */ __exportAll({
 	default: () => notifications_default,
-	meta: () => meta$15
+	meta: () => meta$8
 });
-function meta$15({}) {
+function meta$8({}) {
 	return [{ title: "My Admin App" }, {
 		name: "description",
 		content: "Welcome to React Router!"
@@ -906,9 +939,9 @@ var notifications_default = UNSAFE_withComponentProps(function Notifications() {
 //#region app/routes/commandes/commandes.tsx
 var commandes_exports = /* @__PURE__ */ __exportAll({
 	default: () => commandes_default,
-	meta: () => meta$14
+	meta: () => meta$7
 });
-function meta$14({}) {
+function meta$7({}) {
 	return [{ title: "React App" }, {
 		name: "description",
 		content: "Welcome to React Router!"
@@ -921,9 +954,9 @@ var commandes_default = UNSAFE_withComponentProps(function Commandes() {
 //#region app/routes/ventes/ventes.tsx
 var ventes_exports = /* @__PURE__ */ __exportAll({
 	default: () => ventes_default,
-	meta: () => meta$13
+	meta: () => meta$6
 });
-function meta$13({}) {
+function meta$6({}) {
 	return [{ title: "React App" }, {
 		name: "description",
 		content: "Welcome to React Router!"
@@ -933,182 +966,1180 @@ var ventes_default = UNSAFE_withComponentProps(function Ventes() {
 	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "historique des ventes" }) });
 });
 //#endregion
-//#region app/routes/articles/articles.tsx
-var articles_exports = /* @__PURE__ */ __exportAll({
-	default: () => articles_default,
-	meta: () => meta$12
-});
-function meta$12({}) {
-	return [{ title: "React App" }, {
-		name: "description",
-		content: "Welcome to React Router!"
-	}];
+//#region app/components/ui/textarea.tsx
+function Textarea({ className, ...props }) {
+	return /* @__PURE__ */ jsx("textarea", {
+		"data-slot": "textarea",
+		className: cn$1("flex field-sizing-content min-h-16 w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", className),
+		...props
+	});
 }
+//#endregion
+//#region app/components/ui/native-select.tsx
+function NativeSelect({ className, size = "default", ...props }) {
+	return /* @__PURE__ */ jsxs("div", {
+		className: cn$1("group/native-select relative w-fit has-[select:disabled]:opacity-50", className),
+		"data-slot": "native-select-wrapper",
+		"data-size": size,
+		children: [/* @__PURE__ */ jsx("select", {
+			"data-slot": "native-select",
+			"data-size": size,
+			className: "h-8 w-full min-w-0 appearance-none rounded-lg border border-input bg-transparent py-1 pr-8 pl-2.5 text-sm transition-colors outline-none select-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[size=sm]:py-0.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+			...props
+		}), /* @__PURE__ */ jsx(ChevronDownIcon, {
+			className: "pointer-events-none absolute top-1/2 right-2.5 size-4 -translate-y-1/2 text-muted-foreground select-none",
+			"aria-hidden": "true",
+			"data-slot": "native-select-icon"
+		})]
+	});
+}
+function NativeSelectOption({ className, ...props }) {
+	return /* @__PURE__ */ jsx("option", {
+		"data-slot": "native-select-option",
+		className: cn$1("bg-[Canvas] text-[CanvasText]", className),
+		...props
+	});
+}
+//#endregion
+//#region app/routes/articles/articles.tsx
+var articles_exports = /* @__PURE__ */ __exportAll({ default: () => articles_default });
+var requis$3 = champsRequis(ArticleSchema.shape);
+var Etoile$1 = () => /* @__PURE__ */ jsx("span", {
+	className: "text-destructive",
+	children: "*"
+});
 var articles_default = UNSAFE_withComponentProps(function Articles() {
-	const [articles, setArticles] = useState([]);
-	return /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h1", { children: "articles" }), /* @__PURE__ */ jsx("ul", {})] });
+	const { businessId } = useBusiness();
+	const [ouvert, setOuvert] = useState(false);
+	const [enEdition, setEnEdition] = useState(null);
+	const chargerArticles = useCallback(() => listerArticles(), []);
+	const chargerCategories = useCallback(() => listerCategories(businessId), [businessId]);
+	const chargerDevises = useCallback(() => listerDevises(businessId), [businessId]);
+	const { donnees, chargement, erreur, recharger } = useListe(chargerArticles);
+	const { donnees: categories } = useListe(chargerCategories, !!businessId);
+	const { donnees: devises } = useListe(chargerDevises, !!businessId);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(ArticleSchema),
+		mode: "onTouched"
+	});
+	const ouvrirCreation = () => {
+		setEnEdition(null);
+		reset({
+			designation: "",
+			pu: 0,
+			description: "",
+			categorieId: categories[0]?.id ?? "",
+			deviseId: devises[0]?.id ?? ""
+		});
+		setOuvert(true);
+	};
+	const ouvrirEdition = (article) => {
+		setEnEdition(article);
+		reset({
+			designation: article.designation,
+			pu: Number(article.pu),
+			description: article.description ?? "",
+			categorieId: article.categorieId,
+			deviseId: article.deviseId
+		});
+		setOuvert(true);
+	};
+	const onSubmit = async (form) => {
+		const action = enEdition ? modifierArticle(enEdition.id, form) : creerArticle(businessId, form);
+		await toast.promise(action, {
+			loading: enEdition ? "Modification…" : "Création…",
+			success: () => {
+				setOuvert(false);
+				recharger();
+				return enEdition ? "Article modifié" : "Article créé";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const supprimer = async (article) => {
+		await toast.promise(supprimerArticle(article.id), {
+			loading: "Suppression…",
+			success: () => {
+				recharger();
+				return "Article supprimé";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	return /* @__PURE__ */ jsxs(PageRessource, {
+		titre: "Gestion des articles",
+		description: "Le catalogue de votre business.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		vide: donnees.length === 0,
+		messageVide: "Aucun article au catalogue pour le moment.",
+		onReessayer: recharger,
+		action: /* @__PURE__ */ jsxs(Button, {
+			onClick: ouvrirCreation,
+			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouvel article"]
+		}),
+		children: [/* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableHead, { children: "Désignation" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Catégorie" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "text-right",
+					children: "Prix unitaire"
+				}),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "w-[1%] text-right",
+					children: "Actions"
+				})
+			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((article) => /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-medium",
+					children: article.designation
+				}),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "text-muted-foreground",
+					children: article.categorie?.nom ?? "—"
+				}),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right tabular-nums",
+					children: [
+						Number(article.pu).toLocaleString("fr-FR"),
+						" ",
+						/* @__PURE__ */ jsx("span", {
+							className: "text-muted-foreground",
+							children: article.devise?.symbole ?? ""
+						})
+					]
+				}),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: [/* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						onClick: () => ouvrirEdition(article),
+						children: "Modifier"
+					}), /* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						"aria-label": `Supprimer ${article.designation}`,
+						onClick: () => supprimer(article),
+						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+					})]
+				})
+			] }, article.id)) })] })
+		}), /* @__PURE__ */ jsx(Dialog$1, {
+			open: ouvert,
+			onOpenChange: setOuvert,
+			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier l'article" : "Nouvel article" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Les champs marqués d'une étoile sont exigés par le serveur." })] }), /* @__PURE__ */ jsxs("form", {
+				onSubmit: handleSubmit(onSubmit),
+				noValidate: true,
+				children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [/* @__PURE__ */ jsxs(FieldSet, { children: [
+					/* @__PURE__ */ jsx(FieldLegend, {
+						variant: "label",
+						children: "Informations requises"
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.designation,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "designation",
+								children: ["Désignation ", requis$3.has("designation") && /* @__PURE__ */ jsx(Etoile$1, {})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "designation",
+								placeholder: "Ex : Pagne wax 6 yards",
+								"aria-required": requis$3.has("designation"),
+								"aria-invalid": !!errors.designation,
+								...register("designation")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.designation] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.pu,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "pu",
+								children: ["Prix unitaire ", requis$3.has("pu") && /* @__PURE__ */ jsx(Etoile$1, {})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "pu",
+								type: "number",
+								step: "0.01",
+								inputMode: "decimal",
+								placeholder: "0",
+								"aria-required": requis$3.has("pu"),
+								"aria-invalid": !!errors.pu,
+								...register("pu", { valueAsNumber: true })
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.pu] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.categorieId,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "categorieId",
+								children: ["Catégorie ", requis$3.has("categorieId") && /* @__PURE__ */ jsx(Etoile$1, {})]
+							}),
+							/* @__PURE__ */ jsxs(NativeSelect, {
+								id: "categorieId",
+								"aria-required": requis$3.has("categorieId"),
+								"aria-invalid": !!errors.categorieId,
+								...register("categorieId"),
+								children: [/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: "",
+									children: "Sélectionner une catégorie"
+								}), categories.map((c) => /* @__PURE__ */ jsx(NativeSelectOption, {
+									value: c.id,
+									children: c.nom
+								}, c.id))]
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.categorieId] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.deviseId,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "deviseId",
+								children: ["Devise ", requis$3.has("deviseId") && /* @__PURE__ */ jsx(Etoile$1, {})]
+							}),
+							/* @__PURE__ */ jsxs(NativeSelect, {
+								id: "deviseId",
+								"aria-required": requis$3.has("deviseId"),
+								"aria-invalid": !!errors.deviseId,
+								...register("deviseId"),
+								children: [/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: "",
+									children: "Sélectionner une devise"
+								}), devises.map((d) => /* @__PURE__ */ jsxs(NativeSelectOption, {
+									value: d.id,
+									children: [
+										d.nom ?? d.type,
+										" (",
+										d.symbole,
+										")"
+									]
+								}, d.id))]
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.deviseId] })
+						]
+					})
+				] }), /* @__PURE__ */ jsxs(Field, {
+					"data-invalid": !!errors.description,
+					children: [
+						/* @__PURE__ */ jsxs(FieldLabel, {
+							htmlFor: "description",
+							children: ["Description ", /* @__PURE__ */ jsx("span", {
+								className: "text-muted-foreground",
+								children: "(facultatif)"
+							})]
+						}),
+						/* @__PURE__ */ jsx(Textarea, {
+							id: "description",
+							rows: 3,
+							placeholder: "Matière, dimensions, provenance…",
+							"aria-invalid": !!errors.description,
+							...register("description")
+						}),
+						/* @__PURE__ */ jsx(FieldError, { errors: [errors.description] })
+					]
+				})] }), /* @__PURE__ */ jsxs(DialogFooter, {
+					className: "mt-6",
+					children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						onClick: () => setOuvert(false),
+						disabled: isSubmitting,
+						children: "Annuler"
+					}), /* @__PURE__ */ jsx(Button, {
+						type: "submit",
+						disabled: !isValid || isSubmitting,
+						children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer l'article"
+					})]
+				})]
+			})] })
+		})]
+	});
 });
 //#endregion
 //#region app/routes/achats/achats.tsx
-var achats_exports = /* @__PURE__ */ __exportAll({
-	default: () => achats_default,
-	meta: () => meta$11
-});
-function meta$11({}) {
-	return [{ title: "My Admin App" }, {
-		name: "description",
-		content: "Welcome to React Router!"
-	}];
-}
+var achats_exports = /* @__PURE__ */ __exportAll({ default: () => achats_default });
+var STATUTS$1 = [
+	"EN_COURS",
+	"VALIDE",
+	"ANNULE"
+];
 var achats_default = UNSAFE_withComponentProps(function Achats() {
-	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "Achats" }) });
+	const { businessId } = useBusiness();
+	const charger = useCallback(() => listerAchats(businessId), [businessId]);
+	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
+	const changerStatut = async (achat, status) => {
+		await toast.promise(changerStatusAchat(businessId, achat.id, { status }), {
+			loading: "Mise à jour…",
+			success: () => {
+				recharger();
+				return status === "VALIDE" ? "Achat validé, les articles passent en stock" : "Statut mis à jour";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const supprimer = async (achat) => {
+		await toast.promise(supprimerAchat(businessId, achat.id), {
+			loading: "Suppression…",
+			success: () => {
+				recharger();
+				return "Achat supprimé";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	return /* @__PURE__ */ jsx(PageRessource, {
+		titre: "Opérations d'achats",
+		description: "Vos approvisionnements. Valider un achat fait entrer ses lignes en stock.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		vide: donnees.length === 0,
+		messageVide: "Aucun achat enregistré pour le moment.",
+		onReessayer: recharger,
+		children: /* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableHead, { children: "Référence" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Date d'achat" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Statut" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "w-[1%] text-right",
+					children: "Actions"
+				})
+			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((achat) => /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-mono text-sm",
+					children: achat.id
+				}),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "text-muted-foreground",
+					children: achat.dateAchat ? new Date(achat.dateAchat).toLocaleDateString("fr-FR") : "—"
+				}),
+				/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx(Badge, {
+					variant: achat.status === "VALIDE" ? "default" : "secondary",
+					children: achat.status
+				}) }),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: [/* @__PURE__ */ jsx(NativeSelect, {
+						"aria-label": `Changer le statut de l'achat ${achat.id}`,
+						value: achat.status,
+						onChange: (e) => changerStatut(achat, e.target.value),
+						className: "inline-block w-auto",
+						children: STATUTS$1.map((s) => /* @__PURE__ */ jsx(NativeSelectOption, {
+							value: s,
+							children: s
+						}, s))
+					}), /* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						"aria-label": `Supprimer l'achat ${achat.id}`,
+						onClick: () => supprimer(achat),
+						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+					})]
+				})
+			] }, achat.id)) })] })
+		})
+	});
 });
 //#endregion
 //#region app/routes/clients/clients.tsx
-var clients_exports = /* @__PURE__ */ __exportAll({
-	default: () => clients_default,
-	meta: () => meta$10
-});
-function meta$10({}) {
-	return [{ title: "My Admin App" }, {
-		name: "description",
-		content: "Welcome to React Router!"
-	}];
-}
+var clients_exports = /* @__PURE__ */ __exportAll({ default: () => clients_default });
 var clients_default = UNSAFE_withComponentProps(function Clients() {
-	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "Achats" }) });
+	const { businessId } = useBusiness();
+	const [recherche, setRecherche] = useState("");
+	const [saisie, setSaisie] = useState("");
+	const [ouvert, setOuvert] = useState(false);
+	const [enEdition, setEnEdition] = useState(null);
+	const charger = useCallback(() => listerClients(businessId, recherche || void 0), [businessId, recherche]);
+	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(ClientSchema),
+		mode: "onTouched",
+		defaultValues: {
+			firstName: "",
+			lastName: "",
+			email: ""
+		}
+	});
+	const ouvrirCreation = () => {
+		setEnEdition(null);
+		reset({
+			firstName: "",
+			lastName: "",
+			email: ""
+		});
+		setOuvert(true);
+	};
+	const ouvrirEdition = (client) => {
+		setEnEdition(client);
+		reset({
+			firstName: client.firstName ?? "",
+			lastName: client.lastName ?? "",
+			email: client.email ?? ""
+		});
+		setOuvert(true);
+	};
+	const onSubmit = async (form) => {
+		const donneesUtiles = {
+			...form.firstName?.trim() ? { firstName: form.firstName.trim() } : {},
+			...form.lastName?.trim() ? { lastName: form.lastName.trim() } : {},
+			...form.email?.trim() ? { email: form.email.trim() } : {}
+		};
+		const action = enEdition ? modifierClient(businessId, enEdition.id, donneesUtiles) : creerClient(businessId, donneesUtiles);
+		await toast.promise(action, {
+			loading: enEdition ? "Modification…" : "Création…",
+			success: () => {
+				setOuvert(false);
+				recharger();
+				return enEdition ? "Client modifié" : "Client créé";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const supprimer = async (client) => {
+		await toast.promise(supprimerClient(businessId, client.id), {
+			loading: "Suppression…",
+			success: () => {
+				recharger();
+				return "Client supprimé";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	return /* @__PURE__ */ jsxs(PageRessource, {
+		titre: "Clients",
+		description: "Les clients rattachés à votre business.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		vide: donnees.length === 0,
+		messageVide: "Aucun client enregistré pour le moment.",
+		onReessayer: recharger,
+		action: /* @__PURE__ */ jsxs(Button, {
+			onClick: ouvrirCreation,
+			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouveau client"]
+		}),
+		outils: /* @__PURE__ */ jsxs("form", {
+			onSubmit: (e) => {
+				e.preventDefault();
+				setRecherche(saisie);
+			},
+			className: "flex max-w-sm items-center gap-2",
+			children: [/* @__PURE__ */ jsxs("div", {
+				className: "relative flex-1",
+				children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+					value: saisie,
+					onChange: (e) => setSaisie(e.target.value),
+					placeholder: "Rechercher un client…",
+					"aria-label": "Rechercher un client",
+					className: "pl-9"
+				})]
+			}), /* @__PURE__ */ jsx(Button, {
+				type: "submit",
+				variant: "outline",
+				children: "Rechercher"
+			})]
+		}),
+		children: [/* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableHead, { children: "Nom" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Email" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "w-[1%] text-right",
+					children: "Actions"
+				})
+			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((client) => /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-medium",
+					children: client.fullName || [client.firstName, client.lastName].filter(Boolean).join(" ") || "—"
+				}),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "text-muted-foreground",
+					children: client.email || "—"
+				}),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: [/* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						onClick: () => ouvrirEdition(client),
+						children: "Modifier"
+					}), /* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						"aria-label": `Supprimer ${client.fullName ?? "ce client"}`,
+						onClick: () => supprimer(client),
+						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+					})]
+				})
+			] }, client.id)) })] })
+		}), /* @__PURE__ */ jsx(Dialog$1, {
+			open: ouvert,
+			onOpenChange: setOuvert,
+			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier le client" : "Nouveau client" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Tous les champs sont facultatifs côté serveur : renseignez au moins un identifiant pour retrouver ce client." })] }), /* @__PURE__ */ jsxs("form", {
+				onSubmit: handleSubmit(onSubmit),
+				noValidate: true,
+				children: [/* @__PURE__ */ jsx(FieldGroup, { children: /* @__PURE__ */ jsxs(FieldSet, { children: [
+					/* @__PURE__ */ jsx(FieldLegend, {
+						variant: "label",
+						children: "Identité"
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.firstName,
+						children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "firstName",
+								children: "Prénom"
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "firstName",
+								placeholder: "Ex : Amani",
+								"aria-invalid": !!errors.firstName,
+								...register("firstName")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.firstName] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.lastName,
+						children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "lastName",
+								children: "Nom"
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "lastName",
+								placeholder: "Ex : Kabila",
+								"aria-invalid": !!errors.lastName,
+								...register("lastName")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.lastName] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.email,
+						children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "email",
+								children: "Email"
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "email",
+								type: "email",
+								placeholder: "client@exemple.cd",
+								"aria-invalid": !!errors.email,
+								...register("email")
+							}),
+							errors.email ? /* @__PURE__ */ jsx(FieldError, { errors: [errors.email] }) : /* @__PURE__ */ jsx(FieldDescription, { children: "Sert à rattacher le client à un compte existant." })
+						]
+					})
+				] }) }), /* @__PURE__ */ jsxs(DialogFooter, {
+					className: "mt-6",
+					children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						onClick: () => setOuvert(false),
+						disabled: isSubmitting,
+						children: "Annuler"
+					}), /* @__PURE__ */ jsx(Button, {
+						type: "submit",
+						disabled: !isValid || isSubmitting,
+						children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer le client"
+					})]
+				})]
+			})] })
+		})]
+	});
 });
 //#endregion
 //#region app/routes/fournisseurs/fournisseurs.tsx
-var fournisseurs_exports = /* @__PURE__ */ __exportAll({
-	default: () => fournisseurs_default,
-	meta: () => meta$9
-});
-function meta$9({}) {
-	return [{ title: "My Admin App" }, {
-		name: "description",
-		content: "Welcome to React Router!"
-	}];
-}
+var fournisseurs_exports = /* @__PURE__ */ __exportAll({ default: () => fournisseurs_default });
 var fournisseurs_default = UNSAFE_withComponentProps(function Fournisseurs() {
-	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "fournisseurs" }) });
+	const { businessId } = useBusiness();
+	const [recherche, setRecherche] = useState("");
+	const [saisie, setSaisie] = useState("");
+	const [ouvert, setOuvert] = useState(false);
+	const [enEdition, setEnEdition] = useState(null);
+	const charger = useCallback(() => listerFournisseurs(businessId, recherche || void 0), [businessId, recherche]);
+	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(FournisseurSchema),
+		mode: "onTouched",
+		defaultValues: {
+			nom: "",
+			email: "",
+			website: "",
+			description: ""
+		}
+	});
+	const ouvrirCreation = () => {
+		setEnEdition(null);
+		reset({
+			nom: "",
+			email: "",
+			website: "",
+			description: ""
+		});
+		setOuvert(true);
+	};
+	const ouvrirEdition = (f) => {
+		setEnEdition(f);
+		reset({
+			nom: f.nom ?? "",
+			email: f.email ?? "",
+			website: f.website ?? "",
+			description: f.description ?? ""
+		});
+		setOuvert(true);
+	};
+	const onSubmit = async (form) => {
+		const utiles = {
+			...form.nom?.trim() ? { nom: form.nom.trim() } : {},
+			...form.email?.trim() ? { email: form.email.trim() } : {},
+			...form.website?.trim() ? { website: form.website.trim() } : {},
+			...form.description?.trim() ? { description: form.description.trim() } : {}
+		};
+		const action = enEdition ? modifierFournisseur(businessId, enEdition.id, utiles) : creerFournisseur(businessId, utiles);
+		await toast.promise(action, {
+			loading: enEdition ? "Modification…" : "Création…",
+			success: () => {
+				setOuvert(false);
+				recharger();
+				return enEdition ? "Fournisseur modifié" : "Fournisseur créé";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const supprimer = async (f) => {
+		await toast.promise(supprimerFournisseur(businessId, f.id), {
+			loading: "Suppression…",
+			success: () => {
+				recharger();
+				return "Fournisseur supprimé";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	return /* @__PURE__ */ jsxs(PageRessource, {
+		titre: "Fournisseurs",
+		description: "Les fournisseurs auprès desquels vous vous approvisionnez.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		vide: donnees.length === 0,
+		messageVide: "Aucun fournisseur enregistré pour le moment.",
+		onReessayer: recharger,
+		action: /* @__PURE__ */ jsxs(Button, {
+			onClick: ouvrirCreation,
+			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouveau fournisseur"]
+		}),
+		outils: /* @__PURE__ */ jsxs("form", {
+			onSubmit: (e) => {
+				e.preventDefault();
+				setRecherche(saisie);
+			},
+			className: "flex max-w-sm items-center gap-2",
+			children: [/* @__PURE__ */ jsxs("div", {
+				className: "relative flex-1",
+				children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+					value: saisie,
+					onChange: (e) => setSaisie(e.target.value),
+					placeholder: "Rechercher par nom…",
+					"aria-label": "Rechercher un fournisseur",
+					className: "pl-9"
+				})]
+			}), /* @__PURE__ */ jsx(Button, {
+				type: "submit",
+				variant: "outline",
+				children: "Rechercher"
+			})]
+		}),
+		children: [/* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableHead, { children: "Nom" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Email" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Site web" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "w-[1%] text-right",
+					children: "Actions"
+				})
+			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((f) => /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-medium",
+					children: f.nom || "—"
+				}),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "text-muted-foreground",
+					children: f.email || "—"
+				}),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "text-muted-foreground",
+					children: f.website || "—"
+				}),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: [/* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						onClick: () => ouvrirEdition(f),
+						children: "Modifier"
+					}), /* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						"aria-label": `Supprimer ${f.nom ?? "ce fournisseur"}`,
+						onClick: () => supprimer(f),
+						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+					})]
+				})
+			] }, f.id)) })] })
+		}), /* @__PURE__ */ jsx(Dialog$1, {
+			open: ouvert,
+			onOpenChange: setOuvert,
+			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier le fournisseur" : "Nouveau fournisseur" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Renseignez au moins le nom pour identifier ce fournisseur dans vos achats." })] }), /* @__PURE__ */ jsxs("form", {
+				onSubmit: handleSubmit(onSubmit),
+				noValidate: true,
+				children: [/* @__PURE__ */ jsx(FieldGroup, { children: /* @__PURE__ */ jsxs(FieldSet, { children: [
+					/* @__PURE__ */ jsx(FieldLegend, {
+						variant: "label",
+						children: "Coordonnées"
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.nom,
+						children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "nom",
+								children: "Nom"
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "nom",
+								placeholder: "Ex : Textile Bukavu",
+								"aria-invalid": !!errors.nom,
+								...register("nom")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.nom] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.email,
+						children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "email",
+								children: "Email"
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "email",
+								type: "email",
+								placeholder: "contact@exemple.cd",
+								"aria-invalid": !!errors.email,
+								...register("email")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.email] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.website,
+						children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "website",
+								children: "Site web"
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "website",
+								type: "url",
+								placeholder: "https://exemple.cd",
+								"aria-invalid": !!errors.website,
+								...register("website")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.website] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.description,
+						children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "description",
+								children: "Description"
+							}),
+							/* @__PURE__ */ jsx(Textarea, {
+								id: "description",
+								rows: 3,
+								placeholder: "Ce qu'il fournit, conditions…",
+								"aria-invalid": !!errors.description,
+								...register("description")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.description] })
+						]
+					})
+				] }) }), /* @__PURE__ */ jsxs(DialogFooter, {
+					className: "mt-6",
+					children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						onClick: () => setOuvert(false),
+						disabled: isSubmitting,
+						children: "Annuler"
+					}), /* @__PURE__ */ jsx(Button, {
+						type: "submit",
+						disabled: !isValid || isSubmitting,
+						children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer le fournisseur"
+					})]
+				})]
+			})] })
+		})]
+	});
 });
 //#endregion
 //#region app/routes/travailleurs/travailleurs.tsx
-var travailleurs_exports = /* @__PURE__ */ __exportAll({
-	default: () => travailleurs_default,
-	meta: () => meta$8
-});
-function meta$8({}) {
-	return [{ title: "My Admin App" }, {
-		name: "description",
-		content: "Welcome to React Router!"
-	}];
-}
+var travailleurs_exports = /* @__PURE__ */ __exportAll({ default: () => travailleurs_default });
 var travailleurs_default = UNSAFE_withComponentProps(function Travailleurs() {
-	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "Achats" }) });
+	const { businessId } = useBusiness();
+	const charger = useCallback(() => listerAgents(businessId), [businessId]);
+	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
+	const agir = async (promesse, enCours, succes) => {
+		await toast.promise(promesse, {
+			loading: enCours,
+			success: () => {
+				recharger();
+				return succes;
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	return /* @__PURE__ */ jsx(PageRessource, {
+		titre: "Travailleurs",
+		description: "Les agents rattachés à votre business. Ils rejoignent l'équipe en acceptant une invitation.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		vide: donnees.length === 0,
+		messageVide: "Aucun agent dans votre équipe. Invitez quelqu'un pour commencer.",
+		onReessayer: recharger,
+		children: /* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableHead, { children: "Agent" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Statut" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Depuis" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "w-[1%] text-right",
+					children: "Actions"
+				})
+			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((agent) => /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-medium",
+					children: agent.userId
+				}),
+				/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx(Badge, {
+					variant: agent.status === "ACTIF" ? "secondary" : "destructive",
+					children: agent.status === "ACTIF" ? "Actif" : "Bloqué"
+				}) }),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "text-muted-foreground",
+					children: agent.createdAt ? new Date(agent.createdAt).toLocaleDateString("fr-FR") : "—"
+				}),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: [agent.status === "ACTIF" ? /* @__PURE__ */ jsxs(Button, {
+						variant: "ghost",
+						size: "sm",
+						onClick: () => agir(bloquerAgent(businessId, agent.id), "Blocage…", "Agent bloqué"),
+						children: [/* @__PURE__ */ jsx(BanIcon, { className: "size-4" }), "Bloquer"]
+					}) : /* @__PURE__ */ jsxs(Button, {
+						variant: "ghost",
+						size: "sm",
+						onClick: () => agir(activerAgent(businessId, agent.id), "Activation…", "Agent réactivé"),
+						children: [/* @__PURE__ */ jsx(CheckCircle2Icon, { className: "size-4" }), "Réactiver"]
+					}), /* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						"aria-label": "Retirer cet agent",
+						onClick: () => agir(supprimerAgent(businessId, agent.id), "Retrait…", "Agent retiré"),
+						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+					})]
+				})
+			] }, agent.id)) })] })
+		})
+	});
 });
 //#endregion
 //#region app/routes/caisses/caisses.tsx
-var caisses_exports = /* @__PURE__ */ __exportAll({
-	default: () => caisses_default,
-	meta: () => meta$7
-});
-function meta$7({}) {
-	return [{ title: "My Admin App" }, {
-		name: "description",
-		content: "Welcome to React Router!"
-	}];
-}
+var caisses_exports = /* @__PURE__ */ __exportAll({ default: () => caisses_default });
+var requis$2 = champsRequis(CaisseSchema.shape);
 var caisses_default = UNSAFE_withComponentProps(function Caisses() {
-	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "caisse" }) });
+	const { businessId } = useBusiness();
+	const [ouvert, setOuvert] = useState(false);
+	const [enEdition, setEnEdition] = useState(null);
+	const chargerCaisses = useCallback(() => listerCaisses(businessId), [businessId]);
+	const chargerDevises = useCallback(() => listerDevises(businessId), [businessId]);
+	const { donnees, chargement, erreur, recharger } = useListe(chargerCaisses, !!businessId);
+	const { donnees: devises } = useListe(chargerDevises, !!businessId);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(CaisseSchema),
+		mode: "onTouched"
+	});
+	const ouvrirCreation = () => {
+		setEnEdition(null);
+		reset({
+			nom: "",
+			solde: 0,
+			deviseId: devises[0]?.id ?? ""
+		});
+		setOuvert(true);
+	};
+	const ouvrirEdition = (caisse) => {
+		setEnEdition(caisse);
+		reset({
+			nom: caisse.nom,
+			solde: Number(caisse.solde),
+			deviseId: caisse.deviseId
+		});
+		setOuvert(true);
+	};
+	const onSubmit = async (form) => {
+		const action = enEdition ? modifierCaisse(businessId, enEdition.id, form) : creerCaisse(businessId, form);
+		await toast.promise(action, {
+			loading: enEdition ? "Modification…" : "Création…",
+			success: () => {
+				setOuvert(false);
+				recharger();
+				return enEdition ? "Caisse modifiée" : "Caisse créée";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const definirParDefaut = async (caisse) => {
+		await toast.promise(caisseParDefaut(businessId, caisse.id), {
+			loading: "Mise à jour…",
+			success: () => {
+				recharger();
+				return `« ${caisse.nom} » est la caisse par défaut`;
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const supprimer = async (caisse) => {
+		await toast.promise(supprimerCaisse(businessId, caisse.id), {
+			loading: "Suppression…",
+			success: () => {
+				recharger();
+				return "Caisse supprimée";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const symbole = (deviseId) => devises.find((d) => d.id === deviseId)?.symbole ?? "";
+	return /* @__PURE__ */ jsxs(PageRessource, {
+		titre: "Caisses",
+		description: "Vos caisses et leur solde, une par devise.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		vide: donnees.length === 0,
+		messageVide: "Aucune caisse ouverte pour le moment.",
+		onReessayer: recharger,
+		action: /* @__PURE__ */ jsxs(Button, {
+			onClick: ouvrirCreation,
+			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouvelle caisse"]
+		}),
+		children: [/* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableHead, { children: "Nom" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "text-right",
+					children: "Solde"
+				}),
+				/* @__PURE__ */ jsx(TableHead, { children: "Statut" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "w-[1%] text-right",
+					children: "Actions"
+				})
+			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((caisse) => /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-medium",
+					children: caisse.nom
+				}),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right tabular-nums",
+					children: [
+						Number(caisse.solde).toLocaleString("fr-FR"),
+						" ",
+						/* @__PURE__ */ jsx("span", {
+							className: "text-muted-foreground",
+							children: symbole(caisse.deviseId)
+						})
+					]
+				}),
+				/* @__PURE__ */ jsx(TableCell, { children: caisse.parDefaut ? /* @__PURE__ */ jsx(Badge, {
+					variant: "secondary",
+					children: "Par défaut"
+				}) : /* @__PURE__ */ jsxs(Button, {
+					variant: "ghost",
+					size: "sm",
+					onClick: () => definirParDefaut(caisse),
+					children: [/* @__PURE__ */ jsx(CheckIcon, { className: "size-4" }), "Définir par défaut"]
+				}) }),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: [/* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						onClick: () => ouvrirEdition(caisse),
+						children: "Modifier"
+					}), /* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						"aria-label": `Supprimer la caisse ${caisse.nom}`,
+						onClick: () => supprimer(caisse),
+						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+					})]
+				})
+			] }, caisse.id)) })] })
+		}), /* @__PURE__ */ jsx(Dialog$1, {
+			open: ouvert,
+			onOpenChange: setOuvert,
+			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier la caisse" : "Nouvelle caisse" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Une caisse porte un solde dans une seule devise." })] }), /* @__PURE__ */ jsxs("form", {
+				onSubmit: handleSubmit(onSubmit),
+				noValidate: true,
+				children: [/* @__PURE__ */ jsx(FieldGroup, { children: /* @__PURE__ */ jsxs(FieldSet, { children: [
+					/* @__PURE__ */ jsx(FieldLegend, {
+						variant: "label",
+						children: "Informations requises"
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.nom,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "nom",
+								children: ["Nom ", requis$2.has("nom") && /* @__PURE__ */ jsx("span", {
+									className: "text-destructive",
+									children: "*"
+								})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "nom",
+								placeholder: "Ex : Caisse principale",
+								"aria-required": requis$2.has("nom"),
+								"aria-invalid": !!errors.nom,
+								...register("nom")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.nom] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.solde,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "solde",
+								children: [
+									"Solde initial",
+									" ",
+									requis$2.has("solde") && /* @__PURE__ */ jsx("span", {
+										className: "text-destructive",
+										children: "*"
+									})
+								]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "solde",
+								type: "number",
+								step: "0.01",
+								inputMode: "decimal",
+								placeholder: "0",
+								"aria-required": requis$2.has("solde"),
+								"aria-invalid": !!errors.solde,
+								...register("solde", { valueAsNumber: true })
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.solde] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.deviseId,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "deviseId",
+								children: [
+									"Devise",
+									" ",
+									requis$2.has("deviseId") && /* @__PURE__ */ jsx("span", {
+										className: "text-destructive",
+										children: "*"
+									})
+								]
+							}),
+							/* @__PURE__ */ jsxs(NativeSelect, {
+								id: "deviseId",
+								"aria-required": requis$2.has("deviseId"),
+								"aria-invalid": !!errors.deviseId,
+								...register("deviseId"),
+								children: [/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: "",
+									children: "Sélectionner une devise"
+								}), devises.map((devise) => /* @__PURE__ */ jsxs(NativeSelectOption, {
+									value: devise.id,
+									children: [
+										devise.nom ?? devise.type,
+										" (",
+										devise.symbole,
+										")"
+									]
+								}, devise.id))]
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.deviseId] })
+						]
+					})
+				] }) }), /* @__PURE__ */ jsxs(DialogFooter, {
+					className: "mt-6",
+					children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						onClick: () => setOuvert(false),
+						disabled: isSubmitting,
+						children: "Annuler"
+					}), /* @__PURE__ */ jsx(Button, {
+						type: "submit",
+						disabled: !isValid || isSubmitting,
+						children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer la caisse"
+					})]
+				})]
+			})] })
+		})]
+	});
 });
-//#endregion
-//#region app/components/ui/dialog.tsx
-function Dialog$1({ ...props }) {
-	return /* @__PURE__ */ jsx(Dialog.Root, {
-		"data-slot": "dialog",
-		...props
-	});
-}
-function DialogTrigger({ ...props }) {
-	return /* @__PURE__ */ jsx(Dialog.Trigger, {
-		"data-slot": "dialog-trigger",
-		...props
-	});
-}
-function DialogPortal({ ...props }) {
-	return /* @__PURE__ */ jsx(Dialog.Portal, {
-		"data-slot": "dialog-portal",
-		...props
-	});
-}
-function DialogClose({ ...props }) {
-	return /* @__PURE__ */ jsx(Dialog.Close, {
-		"data-slot": "dialog-close",
-		...props
-	});
-}
-function DialogOverlay({ className, ...props }) {
-	return /* @__PURE__ */ jsx(Dialog.Backdrop, {
-		"data-slot": "dialog-overlay",
-		className: cn$1("fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0", className),
-		...props
-	});
-}
-function DialogContent({ className, children, showCloseButton = true, ...props }) {
-	return /* @__PURE__ */ jsxs(DialogPortal, { children: [/* @__PURE__ */ jsx(DialogOverlay, {}), /* @__PURE__ */ jsxs(Dialog.Popup, {
-		"data-slot": "dialog-content",
-		className: cn$1("fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
-		...props,
-		children: [children, showCloseButton && /* @__PURE__ */ jsxs(Dialog.Close, {
-			"data-slot": "dialog-close",
-			render: /* @__PURE__ */ jsx(Button, {
-				variant: "ghost",
-				className: "absolute top-2 right-2",
-				size: "icon-sm"
-			}),
-			children: [/* @__PURE__ */ jsx(XIcon, {}), /* @__PURE__ */ jsx("span", {
-				className: "sr-only",
-				children: "Close"
-			})]
-		})]
-	})] });
-}
-function DialogHeader({ className, ...props }) {
-	return /* @__PURE__ */ jsx("div", {
-		"data-slot": "dialog-header",
-		className: cn$1("flex flex-col gap-2", className),
-		...props
-	});
-}
-function DialogFooter({ className, showCloseButton = false, children, ...props }) {
-	return /* @__PURE__ */ jsxs("div", {
-		"data-slot": "dialog-footer",
-		className: cn$1("-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end", className),
-		...props,
-		children: [children, showCloseButton && /* @__PURE__ */ jsx(Dialog.Close, {
-			render: /* @__PURE__ */ jsx(Button, { variant: "outline" }),
-			children: "Close"
-		})]
-	});
-}
-function DialogTitle({ className, ...props }) {
-	return /* @__PURE__ */ jsx(Dialog.Title, {
-		"data-slot": "dialog-title",
-		className: cn$1("font-heading text-base leading-none font-medium", className),
-		...props
-	});
-}
-function DialogDescription({ className, ...props }) {
-	return /* @__PURE__ */ jsx(Dialog.Description, {
-		"data-slot": "dialog-description",
-		className: cn$1("text-sm text-muted-foreground *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground", className),
-		...props
-	});
-}
 //#endregion
 //#region app/lib/apis.ts
+var creer_business = async (form) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/api/businesses`, {
+		method: "POST",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(form)
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Create data failed");
+	return result;
+};
 var creer_user = async () => {
 	const token = await getToken();
 	const response = await fetch(`${API}/auth/createUser`, {
@@ -1270,9 +2301,9 @@ var modifier_adresse = async (id, form) => {
 //#region app/routes/parametres/parametres.tsx
 var parametres_exports = /* @__PURE__ */ __exportAll({
 	default: () => parametres_default,
-	meta: () => meta$6
+	meta: () => meta$5
 });
-function meta$6({}) {
+function meta$5({}) {
 	return [{ title: "Parametres" }, {
 		name: "description",
 		content: "Welcome to React Router!"
@@ -1316,9 +2347,9 @@ var parametres_default = UNSAFE_withComponentProps(function Parametres() {
 //#region app/auth/sign-in/[[...sign-in]]/page.tsx
 var page_exports$2 = /* @__PURE__ */ __exportAll({
 	default: () => page_default$2,
-	meta: () => meta$5
+	meta: () => meta$4
 });
-function meta$5({}) {
+function meta$4({}) {
 	return [{ title: "Connectez-vous sur Ratel" }, {
 		name: "description",
 		content: "Se connecter pour continuer vers Ratel!"
@@ -1365,9 +2396,9 @@ var page_default$2 = UNSAFE_withComponentProps(function SignInPage({ className, 
 //#region app/auth/sign-up/[[...sign-up]]/page.tsx
 var page_exports$1 = /* @__PURE__ */ __exportAll({
 	default: () => page_default$1,
-	meta: () => meta$4
+	meta: () => meta$3
 });
-function meta$4({}) {
+function meta$3({}) {
 	return [{ title: "Créez votre compte" }, {
 		name: "description",
 		content: "Créez votre compte pour continuer vers Ratel sur Ratel Market!"
@@ -1415,9 +2446,9 @@ var page_default$1 = UNSAFE_withComponentProps(function SignUpPage({ className, 
 //#region app/routes/welcome/welcome.tsx
 var welcome_exports = /* @__PURE__ */ __exportAll({
 	default: () => welcome_default,
-	meta: () => meta$3
+	meta: () => meta$2
 });
-function meta$3({}) {
+function meta$2({}) {
 	return [{ title: "Bienvenu sur Ratel Market" }, {
 		name: "description",
 		content: "Welcome to React Router!"
@@ -1452,39 +2483,6 @@ var welcome_default = UNSAFE_withComponentProps(function Welcome() {
 	] });
 });
 //#endregion
-//#region app/components/ui/field.tsx
-var fieldVariants = cva("group/field flex w-full gap-2 data-[invalid=true]:text-destructive", {
-	variants: { orientation: {
-		vertical: "flex-col *:w-full [&>.sr-only]:w-auto",
-		horizontal: "flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
-		responsive: "flex-col *:w-full @md/field-group:flex-row @md/field-group:items-center @md/field-group:*:w-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:*:data-[slot=field-label]:flex-auto [&>.sr-only]:w-auto @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px"
-	} },
-	defaultVariants: { orientation: "vertical" }
-});
-function Field({ className, orientation = "vertical", ...props }) {
-	return /* @__PURE__ */ jsx("div", {
-		role: "group",
-		"data-slot": "field",
-		"data-orientation": orientation,
-		className: cn$1(fieldVariants({ orientation }), className),
-		...props
-	});
-}
-function FieldLabel({ className, ...props }) {
-	return /* @__PURE__ */ jsx(Label, {
-		"data-slot": "field-label",
-		className: cn$1("group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-lg has-[>[data-slot=field]]:border *:data-[slot=field]:p-2.5 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10", "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col", className),
-		...props
-	});
-}
-function FieldDescription({ className, ...props }) {
-	return /* @__PURE__ */ jsx("p", {
-		"data-slot": "field-description",
-		className: cn$1("text-left text-sm leading-normal font-normal text-muted-foreground group-has-data-horizontal/field:text-balance [[data-variant=legend]+&]:-mt-1.5", "last:mt-0 nth-last-2:-mt-1", "[&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary", className),
-		...props
-	});
-}
-//#endregion
 //#region app/components/ui/button-group.tsx
 var buttonGroupVariants = cva("flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-lg [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1", {
 	variants: { orientation: {
@@ -1502,189 +2500,6 @@ function ButtonGroup({ className, orientation, ...props }) {
 		...props
 	});
 }
-//#endregion
-//#region app/lib/enums.ts
-var TypeDevise = ["USD", "CDF"];
-var StatusAchat = [
-	"EN_COURS",
-	"VALIDE",
-	"ANNULE"
-];
-var StatusPromotion = [
-	"EN_ATTENTE",
-	"DRAFT",
-	"ACTIVE",
-	"PAUSE",
-	"EXPIRE"
-];
-var TypeBusiness = [
-	"PERSONNEL",
-	"ETABLISSEMENT",
-	"ENTREPRISE"
-];
-var TypeInvitation = [
-	"CLIENT",
-	"AGENT",
-	"FOURNISSEUR"
-];
-var TypePromotion = [
-	"POURCENTAGE",
-	"MONTANT_FIXE",
-	"BOGO",
-	"LIVRAISON_GRATUITE"
-];
-var UserSex = ["HOMME", "FEMME"];
-z$1.object({
-	email: z$1.email({ message: "L'adresse mail est invalide" }).trim().toLowerCase(),
-	firstName: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").trim().toLowerCase(),
-	lastName: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").optional(),
-	fullName: z$1.string().min(4, "Pas moins de 4 caractères").max(100, "Pas plus de 100 caractères").trim().toLowerCase(),
-	profileImage: z$1.url({ message: "Le lien d'image est incorrecte" }).nullable().optional()
-});
-z$1.object({ profile: z$1.url({ message: "Le lien d'image est incorrecte" }) });
-var ContactSchema = z$1.discriminatedUnion("type", [z$1.object({
-	id: z$1.string().optional(),
-	label: z$1.string().optional(),
-	parDefaut: z$1.boolean().optional(),
-	status: z$1.string().optional(),
-	type: z$1.literal("PHONE"),
-	phone: z$1.string().regex(/^\+?[1-9]\d{1,14}$/, "Le numéro de téléphone est incorrecte"),
-	email: z$1.string().nullable()
-}), z$1.object({
-	id: z$1.string().optional(),
-	label: z$1.string().optional(),
-	parDefaut: z$1.boolean().optional(),
-	status: z$1.string().optional(),
-	type: z$1.literal("EMAIL"),
-	phone: z$1.string().nullable(),
-	email: z$1.string().email("L'adresse mail est incorrecte")
-})]);
-var AdresseSchema = z$1.object({
-	id: z$1.string().optional(),
-	adresse: z$1.string().min(6, "Ce champs est requis").max(50, "Pas plus de 50 caractères").trim().toLowerCase(),
-	region: z$1.string().min(1, "Ce champs est requis").max(50, "Pas plus de 50 caractères").trim().toLowerCase(),
-	ville: z$1.string().min(1, "Ce champs est requis").max(50, "Pas plus de 50 caractères").trim().toLowerCase(),
-	pays: z$1.string().min(1, "Ce champs est requis").max(50, "Pas plus de 50 caractères").trim().toLowerCase(),
-	codePostal: z$1.string().optional(),
-	businessId: z$1.string().optional(),
-	clientId: z$1.string().optional(),
-	fournisseurId: z$1.string().optional()
-});
-z$1.object({ nom: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim() });
-z$1.object({ type: z$1.enum(TypeBusiness, "le type est incorrecte") });
-z$1.object({ userId: z$1.string() });
-z$1.object({
-	designation: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim(),
-	categories: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim().optional()
-});
-z$1.object({
-	nom: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").trim().toLowerCase(),
-	type: z$1.enum(TypeDevise, "Le type de devise est incorrecte"),
-	symbole: z$1.string("Le symbole de devise est incorrecte"),
-	tauxVente: z$1.int()
-});
-z$1.object({
-	designation: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim(),
-	pu: z$1.number().finite(),
-	description: z$1.string().optional(),
-	categorieId: z$1.string(),
-	deviseId: z$1.string()
-});
-z$1.object({
-	nom: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim(),
-	offreId: z$1.string()
-});
-z$1.object({
-	designation: z$1.string().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim(),
-	valeur: z$1.string().toLowerCase().trim().min(4, "Pas moins de 4 caractères").max(50, "Pas plus de 50 caractères").optional()
-});
-z$1.object({
-	commentaire: z$1.string().min(1, "Ce champ ne peux pas être vide").max(500, "Pas plus de 500 caractères").toLowerCase().trim(),
-	userId: z$1.string()
-});
-z$1.object({ type: z$1.enum(TypeInvitation, "le type est incorrecte") });
-z$1.object({
-	firstName: z$1.string().min(4, "Pas moin de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim().optional(),
-	lastName: z$1.string().min(4, "Pas moin de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim().optional(),
-	fullName: z$1.string().toLowerCase().trim().optional(),
-	email: z$1.email({ message: "l'adresse mail est invalide" }).trim().toLowerCase().optional(),
-	sex: z$1.enum(UserSex, "le sexe est incorrecte").optional(),
-	birthday: z$1.date("le format n'est pas pris en charge").optional(),
-	profile: z$1.url({ message: "l'url est invalide" }).trim().toLowerCase().optional()
-});
-z$1.object({
-	nom: z$1.string().min(4, "Pas moin de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim().optional(),
-	logo: z$1.url("le lien est incorrecte").optional(),
-	email: z$1.email({ message: "l'adresse mail est invalide" }).optional(),
-	website: z$1.url({ message: "le lien est incorrecte" }).optional(),
-	description: z$1.string().min(4, "Pas moin de 4 caractères").max(100, "Pas plus de 100 caractères").toLowerCase().trim().optional()
-});
-z$1.object({
-	nom: z$1.string().min(4, "Pas moin de 4 caractères").max(50, "Pas plus de 50 caractères").toLowerCase().trim(),
-	solde: z$1.number("le contenu n'est pas un nombre"),
-	deviseId: z$1.string("la devise est incorrecte")
-});
-z$1.object({
-	nom: z$1.string().min(1, "Ce champ ne peux pas être vide").max(50, "Pas plus de 50 caractères").toLowerCase().trim(),
-	codePromo: z$1.string().min(1, "Ce champ ne peux pas être vide").max(50, "Pas plus de 50 caractères").trim(),
-	type: z$1.enum(TypePromotion, "le type est incorrecte"),
-	valeur: z$1.number({ message: "le format est incorrecte" }),
-	qtteLimitee: z$1.number({ message: "le format est incorrecte" }).optional(),
-	dateDebut: z$1.string().datetime({
-		offset: true,
-		message: "format de date est incorrecte"
-	}).transform((str) => new Date(str)),
-	dateFin: z$1.string().datetime({
-		offset: true,
-		message: "format de date est incorrecte"
-	}).transform((str) => new Date(str)),
-	description: z$1.string().min(5, "pas moins de 5 caractères").max(100, "pas plus de 100 caractères").toLowerCase().trim().optional()
-}).refine((data) => data.dateDebut < data.dateFin, {
-	message: "la date finale doit être dans le future",
-	path: ["dateFin"]
-});
-z$1.object({
-	nom: z$1.string().min(1, "Ce champ ne peux pas être vide").max(50, "Pas plus de 50 caractères").toLowerCase().trim().optional(),
-	codePromo: z$1.string().min(1, "Ce champ ne peux pas être vide").max(50, "Pas plus de 50 caractères").trim().optional(),
-	type: z$1.enum(TypePromotion, "le type est incorrecte").optional(),
-	status: z$1.enum(StatusPromotion, "le status est incorrecte").default("DRAFT"),
-	valeur: z$1.number({ message: "le format est incorrecte" }).optional(),
-	qtteLimitee: z$1.number({ message: "le format est incorrecte" }).optional(),
-	dateDebut: z$1.string().datetime({
-		offset: true,
-		message: "format de date est incorrecte"
-	}).optional(),
-	dateFin: z$1.string().datetime({
-		offset: true,
-		message: "format de date est incorrecte"
-	}).optional(),
-	description: z$1.string().min(5, "pas moins de 5 caractères").max(100, "pas plus de 100 caractères").toLowerCase().trim().optional()
-});
-z$1.object({ status: z$1.enum(StatusPromotion, "le status est incorrecte") });
-var DetailSchema = z$1.object({
-	articleId: z$1.string(),
-	qtte: z$1.number(),
-	pu: z$1.number().finite(),
-	pt: z$1.number().finite().optional(),
-	deviseId: z$1.string().optional(),
-	fournisseurId: z$1.string().optional()
-});
-z$1.object({ qtte: z$1.number() });
-z$1.object({ pu: z$1.number().finite() });
-z$1.object({ deviseId: z$1.string().cuid2({ message: "type est incorrecte" }) });
-z$1.array(DetailSchema);
-z$1.object({
-	nom: z$1.string().min(4, "pas moins de 4 caractères").max(50, "pas plus de 50 caractères").toLowerCase().trim().optional(),
-	numPhone: z$1.string().optional(),
-	adresse: z$1.string().min(4, "pas moins de 4 caractères").max(50, "pas plus de 50 caractères").toLowerCase().trim().optional(),
-	dateAchat: z$1.string().datetime({
-		offset: true,
-		message: "format de date est incorrecte"
-	}).transform((str) => new Date(str)).optional(),
-	fournisseurId: z$1.string()
-});
-z$1.object({ enStock: z$1.boolean("la donnée n'est pas prise en charge") });
-z$1.object({ status: z$1.enum(StatusAchat, "le status est incorrect") });
 //#endregion
 //#region app/components/ui/toast.tsx
 var toast$1 = Toast.createToastManager();
@@ -2579,9 +3394,9 @@ function AdressesManager() {
 //#region app/routes/profile/profile.tsx
 var profile_exports = /* @__PURE__ */ __exportAll({
 	default: () => profile_default,
-	meta: () => meta$2
+	meta: () => meta$1
 });
-function meta$2({}) {
+function meta$1({}) {
 	return [{ title: "Profile" }, {
 		name: "description",
 		content: "Personalisez vos informations!"
@@ -2784,6 +3599,498 @@ var profile_default = UNSAFE_withComponentProps(function Profile() {
 	}) });
 });
 //#endregion
+//#region app/components/ui/collapsible.tsx
+function Collapsible$1({ ...props }) {
+	return /* @__PURE__ */ jsx(Collapsible.Root, {
+		"data-slot": "collapsible",
+		...props
+	});
+}
+function CollapsibleTrigger({ ...props }) {
+	return /* @__PURE__ */ jsx(Collapsible.Trigger, {
+		"data-slot": "collapsible-trigger",
+		...props
+	});
+}
+function CollapsibleContent({ ...props }) {
+	return /* @__PURE__ */ jsx(Collapsible.Panel, {
+		"data-slot": "collapsible-content",
+		...props
+	});
+}
+//#endregion
+//#region app/routes/businesses/page.tsx
+var page_exports = /* @__PURE__ */ __exportAll({ default: () => page_default });
+var requis$1 = champsRequis(BusinessSchema.shape);
+function Requis() {
+	return /* @__PURE__ */ jsx("span", {
+		className: "text-destructive",
+		"aria-hidden": "true",
+		children: "*"
+	});
+}
+var page_default = UNSAFE_withComponentProps(function BusinessForm() {
+	const navigate = useNavigate();
+	const [complementsOuverts, setComplementsOuverts] = useState(false);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(BusinessSchema),
+		mode: "onTouched",
+		reValidateMode: "onChange",
+		defaultValues: {
+			nom: "",
+			slogan: "",
+			website: "",
+			description: ""
+		}
+	});
+	const onSubmit = async (data) => {
+		const form = {
+			nom: data.nom,
+			...data.slogan?.trim() ? { slogan: data.slogan.trim() } : {},
+			...data.website?.trim() ? { website: data.website.trim() } : {},
+			...data.description?.trim() ? { description: data.description.trim() } : {}
+		};
+		await toast.promise(creer_business(form), {
+			loading: "Création du business en cours…",
+			success: () => {
+				reset();
+				navigate("/acceuil");
+				return "Votre business a été créé";
+			},
+			error: (err) => err.message || "La création a échoué"
+		}).unwrap();
+	};
+	return /* @__PURE__ */ jsx("div", {
+		className: "mx-auto w-full max-w-2xl px-4 py-6 lg:px-6",
+		children: /* @__PURE__ */ jsxs(Card, { children: [/* @__PURE__ */ jsxs(CardHeader, { children: [/* @__PURE__ */ jsx(CardTitle, {
+			className: "text-xl font-semibold",
+			children: "Créer un business"
+		}), /* @__PURE__ */ jsx(CardDescription, { children: "Seul le nom est nécessaire pour démarrer. Vos catégories, attributs et devise par défaut sont créés automatiquement." })] }), /* @__PURE__ */ jsx(CardContent, { children: /* @__PURE__ */ jsx("form", {
+			onSubmit: handleSubmit(onSubmit),
+			noValidate: true,
+			children: /* @__PURE__ */ jsxs(FieldGroup, { children: [
+				/* @__PURE__ */ jsxs(FieldSet, { children: [/* @__PURE__ */ jsx(FieldLegend, {
+					variant: "label",
+					children: "Informations requises"
+				}), /* @__PURE__ */ jsxs(Field, {
+					"data-invalid": !!errors.nom,
+					children: [
+						/* @__PURE__ */ jsxs(FieldLabel, {
+							htmlFor: "nom",
+							children: ["Nom du business ", requis$1.has("nom") && /* @__PURE__ */ jsx(Requis, {})]
+						}),
+						/* @__PURE__ */ jsx(Input, {
+							id: "nom",
+							type: "text",
+							autoComplete: "organization",
+							placeholder: "Ex : Maison Kivu",
+							"aria-required": requis$1.has("nom"),
+							"aria-invalid": !!errors.nom,
+							"aria-describedby": errors.nom ? "nom-error" : "nom-aide",
+							...register("nom")
+						}),
+						errors.nom ? /* @__PURE__ */ jsx(FieldError, {
+							id: "nom-error",
+							errors: [errors.nom]
+						}) : /* @__PURE__ */ jsx(FieldDescription, {
+							id: "nom-aide",
+							children: "Entre 4 et 50 caractères. C'est le nom que verront vos clients."
+						})
+					]
+				})] }),
+				/* @__PURE__ */ jsxs(Collapsible$1, {
+					open: complementsOuverts,
+					onOpenChange: setComplementsOuverts,
+					children: [/* @__PURE__ */ jsxs(CollapsibleTrigger, {
+						className: cn$1("flex w-full items-center justify-between rounded-md py-2 text-sm font-medium", "text-muted-foreground transition-colors hover:text-foreground", "focus-visible:ring-ring/50 focus-visible:outline-none focus-visible:ring-[3px]"),
+						children: ["Informations complémentaires", /* @__PURE__ */ jsxs("span", {
+							className: "flex items-center gap-2",
+							children: [/* @__PURE__ */ jsx("span", {
+								className: "text-xs font-normal",
+								children: "facultatif"
+							}), /* @__PURE__ */ jsx(ChevronDownIcon, { className: cn$1("size-4 transition-transform duration-200", complementsOuverts && "rotate-180") })]
+						})]
+					}), /* @__PURE__ */ jsx(CollapsibleContent, { children: /* @__PURE__ */ jsxs(FieldGroup, {
+						className: "pt-4",
+						children: [
+							/* @__PURE__ */ jsxs(Field, {
+								"data-invalid": !!errors.slogan,
+								children: [
+									/* @__PURE__ */ jsx(FieldLabel, {
+										htmlFor: "slogan",
+										children: "Slogan"
+									}),
+									/* @__PURE__ */ jsx(Input, {
+										id: "slogan",
+										type: "text",
+										placeholder: "Ex : Le meilleur du Kivu, livré chez vous",
+										"aria-invalid": !!errors.slogan,
+										...register("slogan")
+									}),
+									/* @__PURE__ */ jsx(FieldError, { errors: [errors.slogan] })
+								]
+							}),
+							/* @__PURE__ */ jsxs(Field, {
+								"data-invalid": !!errors.website,
+								children: [
+									/* @__PURE__ */ jsx(FieldLabel, {
+										htmlFor: "website",
+										children: "Site web"
+									}),
+									/* @__PURE__ */ jsx(Input, {
+										id: "website",
+										type: "url",
+										inputMode: "url",
+										placeholder: "https://exemple.cd",
+										"aria-invalid": !!errors.website,
+										...register("website")
+									}),
+									/* @__PURE__ */ jsx(FieldError, { errors: [errors.website] })
+								]
+							}),
+							/* @__PURE__ */ jsxs(Field, {
+								"data-invalid": !!errors.description,
+								children: [
+									/* @__PURE__ */ jsx(FieldLabel, {
+										htmlFor: "description",
+										children: "Description"
+									}),
+									/* @__PURE__ */ jsx(Textarea, {
+										id: "description",
+										rows: 4,
+										placeholder: "Présentez votre activité en quelques mots…",
+										"aria-invalid": !!errors.description,
+										...register("description")
+									}),
+									/* @__PURE__ */ jsx(FieldError, { errors: [errors.description] })
+								]
+							})
+						]
+					}) })]
+				}),
+				/* @__PURE__ */ jsxs(Field, {
+					orientation: "horizontal",
+					className: "justify-end pt-2",
+					children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						disabled: isSubmitting,
+						onClick: () => navigate("/acceuil"),
+						children: "Annuler"
+					}), /* @__PURE__ */ jsxs(Button, {
+						type: "submit",
+						disabled: !isValid || isSubmitting,
+						children: [isSubmitting && /* @__PURE__ */ jsx(Loader2Icon, { className: "size-4 animate-spin" }), isSubmitting ? "Création…" : "Créer le business"]
+					})]
+				})
+			] })
+		}) })] })
+	});
+});
+//#endregion
+//#region app/routes/promotions/promotions.tsx
+var promotions_exports = /* @__PURE__ */ __exportAll({ default: () => promotions_default });
+var requis = champsRequis(PromotionSchema.shape);
+var Etoile = () => /* @__PURE__ */ jsx("span", {
+	className: "text-destructive",
+	children: "*"
+});
+var TYPES = [
+	{
+		valeur: "POURCENTAGE",
+		libelle: "Pourcentage"
+	},
+	{
+		valeur: "MONTANT_FIXE",
+		libelle: "Montant fixe"
+	},
+	{
+		valeur: "BOGO",
+		libelle: "Un acheté, un offert"
+	},
+	{
+		valeur: "LIVRAISON_GRATUITE",
+		libelle: "Livraison gratuite"
+	}
+];
+var STATUTS = [
+	"EN_ATTENTE",
+	"DRAFT",
+	"ACTIVE",
+	"PAUSE",
+	"EXPIRE"
+];
+var promotions_default = UNSAFE_withComponentProps(function Promotions() {
+	const { businessId } = useBusiness();
+	const [ouvert, setOuvert] = useState(false);
+	const charger = useCallback(() => listerPromotions(businessId), [businessId]);
+	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(PromotionSchema),
+		mode: "onTouched"
+	});
+	const ouvrirCreation = () => {
+		reset({
+			nom: "",
+			codePromo: "",
+			type: "POURCENTAGE",
+			valeur: 0,
+			description: ""
+		});
+		setOuvert(true);
+	};
+	const onSubmit = async (form) => {
+		await toast.promise(creerPromotion(businessId, form), {
+			loading: "Création…",
+			success: () => {
+				setOuvert(false);
+				recharger();
+				return "Promotion créée";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const changerStatut = async (promo, status) => {
+		await toast.promise(changerStatusPromotion(businessId, promo.id, { status }), {
+			loading: "Mise à jour…",
+			success: () => {
+				recharger();
+				return "Statut mis à jour";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	const supprimer = async (promo) => {
+		await toast.promise(supprimerPromotion(businessId, promo.id), {
+			loading: "Suppression…",
+			success: () => {
+				recharger();
+				return "Promotion supprimée";
+			},
+			error: (e) => e.message
+		}).unwrap();
+	};
+	return /* @__PURE__ */ jsxs(PageRessource, {
+		titre: "Promotions",
+		description: "Vos campagnes promotionnelles et leur cycle de vie.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		vide: donnees.length === 0,
+		messageVide: "Aucune promotion créée pour le moment.",
+		onReessayer: recharger,
+		action: /* @__PURE__ */ jsxs(Button, {
+			onClick: ouvrirCreation,
+			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouvelle promotion"]
+		}),
+		children: [/* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableHead, { children: "Nom" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Code" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Type" }),
+				/* @__PURE__ */ jsx(TableHead, { children: "Statut" }),
+				/* @__PURE__ */ jsx(TableHead, {
+					className: "w-[1%] text-right",
+					children: "Actions"
+				})
+			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((promo) => /* @__PURE__ */ jsxs(TableRow, { children: [
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-medium",
+					children: promo.nom || "—"
+				}),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "font-mono text-sm text-muted-foreground",
+					children: promo.codePromo || "—"
+				}),
+				/* @__PURE__ */ jsx(TableCell, {
+					className: "text-muted-foreground",
+					children: TYPES.find((t) => t.valeur === promo.type)?.libelle ?? "—"
+				}),
+				/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx(Badge, {
+					variant: promo.status === "ACTIVE" ? "default" : "secondary",
+					children: promo.status ?? "—"
+				}) }),
+				/* @__PURE__ */ jsxs(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: [/* @__PURE__ */ jsx(NativeSelect, {
+						"aria-label": `Changer le statut de ${promo.nom ?? "la promotion"}`,
+						value: promo.status ?? "",
+						onChange: (e) => changerStatut(promo, e.target.value),
+						className: "inline-block w-auto",
+						children: STATUTS.map((s) => /* @__PURE__ */ jsx(NativeSelectOption, {
+							value: s,
+							children: s
+						}, s))
+					}), /* @__PURE__ */ jsx(Button, {
+						variant: "ghost",
+						size: "sm",
+						"aria-label": `Supprimer ${promo.nom ?? "cette promotion"}`,
+						onClick: () => supprimer(promo),
+						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+					})]
+				})
+			] }, promo.id)) })] })
+		}), /* @__PURE__ */ jsx(Dialog$1, {
+			open: ouvert,
+			onOpenChange: setOuvert,
+			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Nouvelle promotion" }), /* @__PURE__ */ jsx(DialogDescription, { children: "La date de fin doit être postérieure à la date de début." })] }), /* @__PURE__ */ jsxs("form", {
+				onSubmit: handleSubmit(onSubmit),
+				noValidate: true,
+				children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [/* @__PURE__ */ jsxs(FieldSet, { children: [
+					/* @__PURE__ */ jsx(FieldLegend, {
+						variant: "label",
+						children: "Informations requises"
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.nom,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "nom",
+								children: ["Nom ", requis.has("nom") && /* @__PURE__ */ jsx(Etoile, {})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "nom",
+								placeholder: "Ex : Soldes de fin d'année",
+								"aria-required": requis.has("nom"),
+								"aria-invalid": !!errors.nom,
+								...register("nom")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.nom] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.codePromo,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "codePromo",
+								children: ["Code promo ", requis.has("codePromo") && /* @__PURE__ */ jsx(Etoile, {})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "codePromo",
+								placeholder: "Ex : NOEL2026",
+								"aria-required": requis.has("codePromo"),
+								"aria-invalid": !!errors.codePromo,
+								...register("codePromo")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.codePromo] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.type,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "type",
+								children: ["Type ", requis.has("type") && /* @__PURE__ */ jsx(Etoile, {})]
+							}),
+							/* @__PURE__ */ jsx(NativeSelect, {
+								id: "type",
+								"aria-required": requis.has("type"),
+								"aria-invalid": !!errors.type,
+								...register("type"),
+								children: TYPES.map((t) => /* @__PURE__ */ jsx(NativeSelectOption, {
+									value: t.valeur,
+									children: t.libelle
+								}, t.valeur))
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.type] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.valeur,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "valeur",
+								children: ["Valeur ", requis.has("valeur") && /* @__PURE__ */ jsx(Etoile, {})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "valeur",
+								type: "number",
+								step: "0.01",
+								inputMode: "decimal",
+								"aria-required": requis.has("valeur"),
+								"aria-invalid": !!errors.valeur,
+								...register("valeur", { valueAsNumber: true })
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.valeur] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.dateDebut,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "dateDebut",
+								children: ["Date de début ", requis.has("dateDebut") && /* @__PURE__ */ jsx(Etoile, {})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "dateDebut",
+								type: "datetime-local",
+								"aria-required": requis.has("dateDebut"),
+								"aria-invalid": !!errors.dateDebut,
+								...register("dateDebut")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.dateDebut] })
+						]
+					}),
+					/* @__PURE__ */ jsxs(Field, {
+						"data-invalid": !!errors.dateFin,
+						children: [
+							/* @__PURE__ */ jsxs(FieldLabel, {
+								htmlFor: "dateFin",
+								children: ["Date de fin ", requis.has("dateFin") && /* @__PURE__ */ jsx(Etoile, {})]
+							}),
+							/* @__PURE__ */ jsx(Input, {
+								id: "dateFin",
+								type: "datetime-local",
+								"aria-required": requis.has("dateFin"),
+								"aria-invalid": !!errors.dateFin,
+								...register("dateFin")
+							}),
+							/* @__PURE__ */ jsx(FieldError, { errors: [errors.dateFin] })
+						]
+					})
+				] }), /* @__PURE__ */ jsxs(Field, {
+					"data-invalid": !!errors.description,
+					children: [
+						/* @__PURE__ */ jsxs(FieldLabel, {
+							htmlFor: "description",
+							children: [
+								"Description",
+								" ",
+								/* @__PURE__ */ jsx("span", {
+									className: "text-muted-foreground",
+									children: "(facultatif)"
+								})
+							]
+						}),
+						/* @__PURE__ */ jsx(Textarea, {
+							id: "description",
+							rows: 3,
+							"aria-invalid": !!errors.description,
+							...register("description")
+						}),
+						/* @__PURE__ */ jsx(FieldError, { errors: [errors.description] })
+					]
+				})] }), /* @__PURE__ */ jsxs(DialogFooter, {
+					className: "mt-6",
+					children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						onClick: () => setOuvert(false),
+						disabled: isSubmitting,
+						children: "Annuler"
+					}), /* @__PURE__ */ jsx(Button, {
+						type: "submit",
+						disabled: !isValid || isSubmitting,
+						children: isSubmitting ? "Enregistrement…" : "Créer la promotion"
+					})]
+				})]
+			})] })
+		})]
+	});
+});
+//#endregion
 //#region app/root.tsx
 var root_exports = /* @__PURE__ */ __exportAll({
 	ErrorBoundary: () => ErrorBoundary,
@@ -2856,10 +4163,10 @@ var root_default = UNSAFE_withComponentProps(function App({ loaderData }) {
 		"/welcome"
 	].includes(location.pathname);
 	let [page, setPage] = useState("Current Page");
-	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs(ClerkProvider, {
+	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsx(ClerkProvider, {
 		loaderData,
 		localization: frFR,
-		children: [!shouldHideNavbar && /* @__PURE__ */ jsx(AppSidebar, { variant: "inset" }), /* @__PURE__ */ jsxs(SidebarInset, { children: [!shouldHideNavbar && /* @__PURE__ */ jsx(SiteHeader, { title: `${page}` }), /* @__PURE__ */ jsx("div", {
+		children: /* @__PURE__ */ jsxs(BusinessProvider, { children: [!shouldHideNavbar && /* @__PURE__ */ jsx(AppSidebar, { variant: "inset" }), /* @__PURE__ */ jsxs(SidebarInset, { children: [!shouldHideNavbar && /* @__PURE__ */ jsx(SiteHeader, { title: `${page}` }), /* @__PURE__ */ jsx("div", {
 			className: `flex flex-1 flex-col md:rounded-xl ${!shouldHideNavbar && "md:m-4"}`,
 			children: /* @__PURE__ */ jsx("div", {
 				className: `flex flex-col gap-4 ${!shouldHideNavbar && "py-4"} md:gap-6 ${!shouldHideNavbar && "md:py-1"}`,
@@ -2902,6 +4209,14 @@ var root_default = UNSAFE_withComponentProps(function App({ loaderData }) {
 							/* @__PURE__ */ jsx(Route, {
 								path: "/articles",
 								element: /* @__PURE__ */ jsx(articles_default, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
+								path: "/businesses/creer",
+								element: /* @__PURE__ */ jsx(page_default, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
+								path: "/promotions",
+								element: /* @__PURE__ */ jsx(promotions_default, {})
 							}),
 							/* @__PURE__ */ jsx(Route, {
 								path: "/achats",
@@ -2951,7 +4266,7 @@ var root_default = UNSAFE_withComponentProps(function App({ loaderData }) {
 					})
 				] })
 			})
-		})] })]
+		})] })] })
 	}) });
 });
 var ErrorBoundary = UNSAFE_withErrorBoundaryProps(function ErrorBoundary({ error }) {
@@ -3442,158 +4757,6 @@ var docs_default = UNSAFE_withComponentProps(function ShadcnInteractiveVariants(
 	});
 });
 //#endregion
-//#region app/routes/businesses/page.tsx
-var page_exports = /* @__PURE__ */ __exportAll({ default: () => page_default });
-var formSchema = z.object({
-	nom: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
-	slogan: z.string().optional(),
-	website: z.string().url("Veuillez entrer une URL valide (ex: https://example.com)").or(z.literal("")),
-	description: z.string().min(10, "La description doit faire au moins 10 caractères").max(500, "La description ne doit pas dépasser 500 caractères")
-});
-var page_default = UNSAFE_withComponentProps(function BusinessForm() {
-	const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm({
-		resolver: zodResolver(formSchema),
-		defaultValues: {
-			nom: "",
-			slogan: "",
-			website: "",
-			description: ""
-		}
-	});
-	const onSubmit = async (data) => {
-		const savePromise = new Promise((resolve) => setTimeout(resolve, 1500));
-		toast.promise(savePromise, {
-			loading: "Enregistrement en cours...",
-			success: () => {
-				reset();
-				return "Informations enregistrées avec succès !";
-			},
-			error: "Une erreur est survenue."
-		});
-	};
-	return /* @__PURE__ */ jsxs("form", {
-		onSubmit: handleSubmit(onSubmit),
-		className: "max-w-lg space-y-5 rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950",
-		children: [
-			/* @__PURE__ */ jsx("h2", {
-				className: "text-xl font-semibold text-slate-900 dark:text-slate-100",
-				children: "Informations de l'entreprise"
-			}),
-			/* @__PURE__ */ jsxs("div", {
-				className: "space-y-1",
-				children: [
-					/* @__PURE__ */ jsxs("label", {
-						htmlFor: "nom",
-						className: "text-sm font-medium text-slate-700 dark:text-slate-300",
-						children: ["Nom ", /* @__PURE__ */ jsx("span", {
-							className: "text-red-500",
-							children: "*"
-						})]
-					}),
-					/* @__PURE__ */ jsx("input", {
-						id: "nom",
-						type: "text",
-						placeholder: "Ex: Ratel Xpress",
-						...register("nom"),
-						className: "w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:border-slate-700 dark:text-slate-100 dark:focus:ring-slate-300"
-					}),
-					errors.nom && /* @__PURE__ */ jsx("p", {
-						className: "text-xs text-red-500",
-						children: errors.nom.message
-					})
-				]
-			}),
-			/* @__PURE__ */ jsxs("div", {
-				className: "space-y-1",
-				children: [
-					/* @__PURE__ */ jsx("label", {
-						htmlFor: "slogan",
-						className: "text-sm font-medium text-slate-700 dark:text-slate-300",
-						children: "Slogan"
-					}),
-					/* @__PURE__ */ jsx("input", {
-						id: "slogan",
-						type: "text",
-						placeholder: "Ex: L'innovation à votre portée",
-						...register("slogan"),
-						className: "w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:border-slate-700 dark:text-slate-100 dark:focus:ring-slate-300"
-					}),
-					errors.slogan && /* @__PURE__ */ jsx("p", {
-						className: "text-xs text-red-500",
-						children: errors.slogan.message
-					})
-				]
-			}),
-			/* @__PURE__ */ jsxs("div", {
-				className: "space-y-1",
-				children: [
-					/* @__PURE__ */ jsx("label", {
-						htmlFor: "website",
-						className: "text-sm font-medium text-slate-700 dark:text-slate-300",
-						children: "Site Web"
-					}),
-					/* @__PURE__ */ jsx("input", {
-						id: "website",
-						type: "url",
-						placeholder: "https://example.com",
-						...register("website"),
-						className: "w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:border-slate-700 dark:text-slate-100 dark:focus:ring-slate-300"
-					}),
-					errors.website && /* @__PURE__ */ jsx("p", {
-						className: "text-xs text-red-500",
-						children: errors.website.message
-					})
-				]
-			}),
-			/* @__PURE__ */ jsxs("div", {
-				className: "space-y-1",
-				children: [
-					/* @__PURE__ */ jsxs("label", {
-						htmlFor: "description",
-						className: "text-sm font-medium text-slate-700 dark:text-slate-300",
-						children: ["Description ", /* @__PURE__ */ jsx("span", {
-							className: "text-red-500",
-							children: "*"
-						})]
-					}),
-					/* @__PURE__ */ jsx("textarea", {
-						id: "description",
-						rows: 4,
-						placeholder: "Présentez votre activité en quelques mots...",
-						...register("description"),
-						className: "w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:border-slate-700 dark:text-slate-100 dark:focus:ring-slate-300"
-					}),
-					errors.description && /* @__PURE__ */ jsx("p", {
-						className: "text-xs text-red-500",
-						children: errors.description.message
-					})
-				]
-			}),
-			/* @__PURE__ */ jsx("button", {
-				type: "submit",
-				disabled: isSubmitting,
-				className: "w-full rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 disabled:opacity-50 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200",
-				children: isSubmitting ? "Enregistrement..." : "Enregistrer"
-			})
-		]
-	});
-});
-//#endregion
-//#region app/routes/promotions/promotions.tsx
-var promotions_exports = /* @__PURE__ */ __exportAll({
-	default: () => promotions_default,
-	meta: () => meta$1
-});
-function meta$1({}) {
-	return [{ title: "React App" }, {
-		name: "description",
-		content: "Welcome to React Router!"
-	}];
-}
-var promotions_default = UNSAFE_withComponentProps(function Promotions() {
-	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "promotions" }) });
-});
-//#endregion
 //#region app/routes/aides/aides.tsx
 var aides_exports = /* @__PURE__ */ __exportAll({
 	default: () => aides_default,
@@ -3612,12 +4775,11 @@ var aides_default = UNSAFE_withComponentProps(function Aides() {
 //#region \0virtual:react-router/server-manifest
 var server_manifest_default = {
 	"entry": {
-		"module": "/assets/entry.client-C4G7kxEY.js",
+		"module": "/assets/entry.client-B44Z6adk.js",
 		"imports": [
 			"/assets/rolldown-runtime-hePW80VL.js",
-			"/assets/admin-DHA8jJiU.js",
-			"/assets/clerk-BXwTGenx.js",
-			"/assets/charts-Rf2Do3dp.js"
+			"/assets/admin-BtS6y-sF.js",
+			"/assets/clerk-RS1SG_Tj.js"
 		],
 		"css": []
 	},
@@ -3635,40 +4797,41 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": true,
-			"module": "/assets/root-Ce3j6IX7.js",
+			"module": "/assets/root-BRTMlXn0.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/clerk-BXwTGenx.js",
-				"/assets/charts-Rf2Do3dp.js",
-				"/assets/entry.client-C4G7kxEY.js",
-				"/assets/dashboard-BBnzkr89.js",
-				"/assets/ui-CXuNYPCk.js",
-				"/assets/profile-BmFi6qGu.js",
-				"/assets/switch-ChjT5wZS.js",
-				"/assets/acceuil-DY2TRLiH.js",
-				"/assets/home-BGfawx0e.js",
-				"/assets/notifications-B3DMe3L02.js",
-				"/assets/commandes-D-GmeAAu.js",
-				"/assets/ventes-D7eTj7Kb.js",
-				"/assets/articles-Ce-VgV5H.js",
-				"/assets/achats-DNntHsay.js",
-				"/assets/clients-DNntHsay.js",
-				"/assets/fournisseurs-Bg-jTo_f.js",
-				"/assets/travailleurs-_mPBbwd1.js",
-				"/assets/caisses-BwBPBJaL.js",
-				"/assets/parametres-DheioCAE.js",
-				"/assets/page-Br2bg4ab.js",
-				"/assets/page-BH1KDSFz.js",
-				"/assets/welcome-Ce_hRPq4.js",
-				"/assets/vendor-lbu9lgbX.js",
-				"/assets/card-C936DBPV.js",
-				"/assets/dialog-RvDH8-vl.js",
-				"/assets/apis-YRxZf7m2.js",
-				"/assets/forms-AknTAQO5.js",
-				"/assets/alert-CFGAos4u.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/clerk-RS1SG_Tj.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/ui-BVD8b3OD.js",
+				"/assets/profile-CLnHleqN.js",
+				"/assets/switch-B0hxJjCq.js",
+				"/assets/acceuil-DFiTNjLE.js",
+				"/assets/home-DBYFGNSx.js",
+				"/assets/notifications-BQTYrczU.js",
+				"/assets/commandes-D9t7yzUw.js",
+				"/assets/ventes-CWkYckbk.js",
+				"/assets/articles-D62uVdvs2.js",
+				"/assets/achats-Byd4dohw.js",
+				"/assets/clients-DfujkNt6.js",
+				"/assets/fournisseurs-B07G7vzF.js",
+				"/assets/travailleurs-D8UD8Gws.js",
+				"/assets/caisses-3jnr_ym9.js",
+				"/assets/parametres-Dqtkjhmc.js",
+				"/assets/page-BHM7HG-p.js",
+				"/assets/page-Chm-XXSY.js",
+				"/assets/welcome-D1W2lZVs.js",
+				"/assets/page-D8siq90n.js",
+				"/assets/promotions-CSMWynN7.js",
+				"/assets/charts-CX2LHfGF.js",
+				"/assets/vendor-BB_HCXhT.js",
+				"/assets/card-DuTL90fD.js",
+				"/assets/apis-B8R9BB44.js",
+				"/assets/alert-Dw1x3RUG.js",
+				"/assets/textarea-ClEOVw9l.js",
+				"/assets/native-select-DpVQMhiZ.js"
 			],
-			"css": ["/assets/root-DuxvV2uD.css"],
+			"css": ["/assets/app-C0pQUMKt.css"],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
 			"clientMiddlewareModule": void 0,
@@ -3687,16 +4850,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/home-5WJ1x4Qx.js",
+			"module": "/assets/home-C5ADRk4t.js",
 			"imports": [
-				"/assets/home-BGfawx0e.js",
+				"/assets/home-DBYFGNSx.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/clerk-BXwTGenx.js",
-				"/assets/entry.client-C4G7kxEY.js",
-				"/assets/dashboard-BBnzkr89.js",
-				"/assets/alert-CFGAos4u.js",
-				"/assets/charts-Rf2Do3dp.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/clerk-RS1SG_Tj.js",
+				"/assets/alert-Dw1x3RUG.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3717,16 +4877,16 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/docs-BNCTH5Ki.js",
+			"module": "/assets/docs-BnJRwLKJ.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/dashboard-BBnzkr89.js",
-				"/assets/ui-CXuNYPCk.js",
-				"/assets/switch-ChjT5wZS.js",
-				"/assets/alert-CFGAos4u.js",
-				"/assets/charts-Rf2Do3dp.js",
-				"/assets/vendor-lbu9lgbX.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/ui-BVD8b3OD.js",
+				"/assets/switch-B0hxJjCq.js",
+				"/assets/alert-Dw1x3RUG.js",
+				"/assets/charts-CX2LHfGF.js",
+				"/assets/vendor-BB_HCXhT.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3747,15 +4907,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-IK6_lREw.js",
+			"module": "/assets/page-DWpSH94h.js",
 			"imports": [
-				"/assets/page-Br2bg4ab.js",
+				"/assets/page-BHM7HG-p.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/clerk-BXwTGenx.js",
-				"/assets/card-C936DBPV.js",
-				"/assets/charts-Rf2Do3dp.js",
-				"/assets/dashboard-BBnzkr89.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/clerk-RS1SG_Tj.js",
+				"/assets/card-DuTL90fD.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3776,15 +4934,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-4c2ilSur.js",
+			"module": "/assets/page-8nbdRn60.js",
 			"imports": [
-				"/assets/page-BH1KDSFz.js",
+				"/assets/page-Chm-XXSY.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/clerk-BXwTGenx.js",
-				"/assets/card-C936DBPV.js",
-				"/assets/charts-Rf2Do3dp.js",
-				"/assets/dashboard-BBnzkr89.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/clerk-RS1SG_Tj.js",
+				"/assets/card-DuTL90fD.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3805,16 +4961,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/welcome-SnezDb4R.js",
+			"module": "/assets/welcome-IaiRLLKd.js",
 			"imports": [
-				"/assets/welcome-Ce_hRPq4.js",
+				"/assets/welcome-D1W2lZVs.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/entry.client-C4G7kxEY.js",
-				"/assets/dashboard-BBnzkr89.js",
-				"/assets/apis-YRxZf7m2.js",
-				"/assets/clerk-BXwTGenx.js",
-				"/assets/charts-Rf2Do3dp.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/apis-B8R9BB44.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3835,14 +4987,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/acceuil-DXKhe7hT.js",
+			"module": "/assets/acceuil-CAnanP9z.js",
 			"imports": [
-				"/assets/acceuil-DY2TRLiH.js",
+				"/assets/acceuil-DFiTNjLE.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/entry.client-C4G7kxEY.js",
-				"/assets/clerk-BXwTGenx.js",
-				"/assets/charts-Rf2Do3dp.js"
+				"/assets/admin-BtS6y-sF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3863,12 +5012,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/dashboard-2l6_UPJC.js",
+			"module": "/assets/dashboard-jtal3xzL.js",
 			"imports": [
-				"/assets/dashboard-BBnzkr89.js",
+				"/assets/dashboard-CbjJJbrC.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/charts-Rf2Do3dp.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/charts-CX2LHfGF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3889,11 +5038,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/commandes-CYK2S1qY.js",
+			"module": "/assets/commandes-BjLIVFGv.js",
 			"imports": [
-				"/assets/commandes-D-GmeAAu.js",
+				"/assets/commandes-D9t7yzUw.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3914,11 +5063,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/ventes-BKFqSc8v.js",
+			"module": "/assets/ventes-Be4hMFtM.js",
 			"imports": [
-				"/assets/ventes-D7eTj7Kb.js",
+				"/assets/ventes-CWkYckbk.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3929,7 +5078,7 @@ var server_manifest_default = {
 		"routes/businesses/page": {
 			"id": "routes/businesses/page",
 			"parentId": "root",
-			"path": "/businesses",
+			"path": "/businesses/creer",
 			"index": void 0,
 			"caseSensitive": void 0,
 			"hasAction": false,
@@ -3939,13 +5088,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-5gDCpcjU.js",
+			"module": "/assets/page-TT-g2GDI.js",
 			"imports": [
+				"/assets/page-D8siq90n.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/dashboard-BBnzkr89.js",
-				"/assets/forms-AknTAQO5.js",
-				"/assets/charts-Rf2Do3dp.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/vendor-BB_HCXhT.js",
+				"/assets/ui-BVD8b3OD.js",
+				"/assets/card-DuTL90fD.js",
+				"/assets/textarea-ClEOVw9l.js",
+				"/assets/apis-B8R9BB44.js",
+				"/assets/charts-CX2LHfGF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -3966,21 +5120,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/profile-BMPo_MPE.js",
+			"module": "/assets/profile-C7WOqcFk.js",
 			"imports": [
-				"/assets/profile-BmFi6qGu.js",
+				"/assets/profile-CLnHleqN.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/clerk-BXwTGenx.js",
-				"/assets/dashboard-BBnzkr89.js",
-				"/assets/vendor-lbu9lgbX.js",
-				"/assets/ui-CXuNYPCk.js",
-				"/assets/switch-ChjT5wZS.js",
-				"/assets/card-C936DBPV.js",
-				"/assets/dialog-RvDH8-vl.js",
-				"/assets/apis-YRxZf7m2.js",
-				"/assets/forms-AknTAQO5.js",
-				"/assets/charts-Rf2Do3dp.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/clerk-RS1SG_Tj.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/vendor-BB_HCXhT.js",
+				"/assets/ui-BVD8b3OD.js",
+				"/assets/switch-B0hxJjCq.js",
+				"/assets/card-DuTL90fD.js",
+				"/assets/apis-B8R9BB44.js",
+				"/assets/charts-CX2LHfGF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4001,11 +5153,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/notifications-D90nIdB5.js",
+			"module": "/assets/notifications-DuL86q_f.js",
 			"imports": [
-				"/assets/notifications-B3DMe3L02.js",
+				"/assets/notifications-BQTYrczU.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4026,11 +5178,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/achats-Bm7rx8dK.js",
+			"module": "/assets/achats-DpRo4Pxj.js",
 			"imports": [
-				"/assets/achats-DNntHsay.js",
+				"/assets/achats-Byd4dohw.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/native-select-DpVQMhiZ.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/charts-CX2LHfGF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4051,11 +5206,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/travailleurs-dEY0SEia.js",
+			"module": "/assets/travailleurs-By9symnu.js",
 			"imports": [
-				"/assets/travailleurs-_mPBbwd1.js",
+				"/assets/travailleurs-D8UD8Gws.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/ui-BVD8b3OD.js",
+				"/assets/charts-CX2LHfGF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4076,11 +5234,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/clients-T8rLP5fP.js",
+			"module": "/assets/clients-Wopo-WWf.js",
 			"imports": [
-				"/assets/clients-DNntHsay.js",
+				"/assets/clients-DfujkNt6.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/ui-BVD8b3OD.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4101,11 +5260,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/fournisseurs-jADKz-bA.js",
+			"module": "/assets/fournisseurs-DnfQngPt.js",
 			"imports": [
-				"/assets/fournisseurs-Bg-jTo_f.js",
+				"/assets/fournisseurs-B07G7vzF.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/ui-BVD8b3OD.js",
+				"/assets/textarea-ClEOVw9l.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4126,11 +5287,15 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/articles-ChrH00K2.js",
+			"module": "/assets/articles-CIuCsCcP.js",
 			"imports": [
-				"/assets/articles-Ce-VgV5H.js",
+				"/assets/articles-D62uVdvs2.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/textarea-ClEOVw9l.js",
+				"/assets/native-select-DpVQMhiZ.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/charts-CX2LHfGF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4151,8 +5316,16 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/promotions-BRgjeRNE.js",
-			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DHA8jJiU.js"],
+			"module": "/assets/promotions-DYMFKdec.js",
+			"imports": [
+				"/assets/promotions-CSMWynN7.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/textarea-ClEOVw9l.js",
+				"/assets/native-select-DpVQMhiZ.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/charts-CX2LHfGF.js"
+			],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -4172,11 +5345,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/caisses-beqX6xU6.js",
+			"module": "/assets/caisses-DtvWEe6Y.js",
 			"imports": [
-				"/assets/caisses-BwBPBJaL.js",
+				"/assets/caisses-3jnr_ym9.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/native-select-DpVQMhiZ.js",
+				"/assets/charts-CX2LHfGF.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4197,8 +5373,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/aides-L5Kf8h7H.js",
-			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DHA8jJiU.js"],
+			"module": "/assets/aides-CmDLymHb.js",
+			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-BtS6y-sF.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -4218,19 +5394,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/parametres-B-6Hyj0g.js",
+			"module": "/assets/parametres-CFro1KYP.js",
 			"imports": [
-				"/assets/parametres-DheioCAE.js",
+				"/assets/parametres-Dqtkjhmc.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DHA8jJiU.js",
-				"/assets/dashboard-BBnzkr89.js",
-				"/assets/ui-CXuNYPCk.js",
-				"/assets/card-C936DBPV.js",
-				"/assets/dialog-RvDH8-vl.js",
-				"/assets/apis-YRxZf7m2.js",
-				"/assets/charts-Rf2Do3dp.js",
-				"/assets/vendor-lbu9lgbX.js",
-				"/assets/clerk-BXwTGenx.js"
+				"/assets/admin-BtS6y-sF.js",
+				"/assets/ui-BVD8b3OD.js",
+				"/assets/card-DuTL90fD.js",
+				"/assets/apis-B8R9BB44.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4251,8 +5422,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/businesses-C5aK50o7.js",
-			"imports": ["/assets/admin-DHA8jJiU.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/businesses-D_9aZ2Bm.js",
+			"imports": ["/assets/admin-BtS6y-sF.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -4272,8 +5443,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/offres-DNFbcu0J.js",
-			"imports": ["/assets/admin-DHA8jJiU.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/offres-DGQi5TJj.js",
+			"imports": ["/assets/admin-BtS6y-sF.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -4293,8 +5464,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/categories-BVysuxwv.js",
-			"imports": ["/assets/admin-DHA8jJiU.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/categories-CD9LMZ0R.js",
+			"imports": ["/assets/admin-BtS6y-sF.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -4302,8 +5473,8 @@ var server_manifest_default = {
 			"hydrateFallbackModule": void 0
 		}
 	},
-	"url": "/assets/manifest-45981026.js",
-	"version": "45981026",
+	"url": "/assets/manifest-7f23e464.js",
+	"version": "7f23e464",
 	"sri": void 0
 };
 //#endregion
@@ -4407,7 +5578,7 @@ var routes = {
 	"routes/businesses/page": {
 		id: "routes/businesses/page",
 		parentId: "root",
-		path: "/businesses",
+		path: "/businesses/creer",
 		index: void 0,
 		caseSensitive: void 0,
 		module: page_exports

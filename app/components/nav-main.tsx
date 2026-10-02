@@ -1,52 +1,77 @@
-import { CirclePlusIcon, House } from "lucide-react"
-import { Link, NavLink, useLocation } from "react-router"
+import { Link, useLocation } from "react-router"
 import {
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
+export type NavItem = {
+  title: string
+  url: string
+  icon?: React.ReactNode
+}
+
+export type NavGroupe = {
+  label: string
+  items: NavItem[]
+}
+
+function Items({ items }: { items: NavItem[] }) {
+  const location = useLocation()
+  return (
+    <SidebarMenu>
+      {items.map((item) => {
+        const isActive = location.pathname === item.url
+        return (
+          <SidebarMenuItem key={item.title}>
+            <SidebarMenuButton
+              isActive={isActive}
+              render={<Link to={item.url} />}
+              tooltip={item.title}
+              className={`transition-colors ${isActive
+                ? "bg-primary! text-white!"
+                : "hover:bg-muted"
+                }`}
+            >
+              {item.icon}
+              <span>{item.title}</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        )
+      })}
+    </SidebarMenu>
+  )
+}
+
 export function NavMain({
   items,
+  groupes,
 }: {
-  items: {
-    title: string
-    url: string
-    icon?: React.ReactNode
-    isActive?: boolean
-    items?: {
-      title: string
-      url: string
-    }[]
-  }[]
+  items?: NavItem[]
+  groupes?: NavGroupe[]
 }) {
-  const location = useLocation();
+  if (groupes) {
+    return (
+      <>
+        {groupes.map((groupe) => (
+          <SidebarGroup key={groupe.label}>
+            <SidebarGroupLabel>{groupe.label}</SidebarGroupLabel>
+            <SidebarGroupContent className="flex flex-col">
+              <Items items={groupe.items} />
+            </SidebarGroupContent>
+          </SidebarGroup>
+        ))}
+      </>
+    )
+  }
+
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col">
-        <SidebarMenu>
-          {items.map((item) => {
-            const isActive = location.pathname === item.url;
-            return (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton
-                  isActive={isActive}
-                  render={<Link to={item.url} />}
-                  tooltip={item.title}
-                  className={`transition-colors ${isActive 
-                    ? "bg-primary! text-white!"
-                      : "hover:bg-muted"
-                    }`}
-                >
-                  {item.icon}
-                  <span>{item.title}</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            );
-          })}
-        </SidebarMenu>
+        <Items items={items ?? []} />
       </SidebarGroupContent>
     </SidebarGroup>
   )
