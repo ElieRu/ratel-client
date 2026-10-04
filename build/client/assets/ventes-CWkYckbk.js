@@ -1,1 +1,0 @@
-import{r as e}from"./rolldown-runtime-hePW80VL.js";import{Da as t,qa as n}from"./admin-BtS6y-sF.js";var r=e(t(),1);function i({}){return[{title:`React App`},{name:`description`,content:`Welcome to React Router!`}]}var a=n(function(){return(0,r.jsx)(`div`,{children:(0,r.jsx)(`h1`,{children:`historique des ventes`})})});export{a as n,i as t};

@@ -21,10 +21,14 @@ import Ventes from "./routes/ventes/ventes";
 import Articles from "./routes/articles/articles";
 import Achats from "./routes/achats/achats";
 import Clients from "./routes/clients/clients";
+import DetailClient from "./routes/clients/detail";
+import ValiderInvitationClient from "./routes/clients/valider-invitation";
 import Fournisseurs from "./routes/fournisseurs/fournisseurs";
 import ValiderInvitationFournisseur from "./routes/fournisseurs/valider-invitation";
 import DetailFournisseur from "./routes/fournisseurs/detail";
 import Travailleurs from "./routes/travailleurs/travailleurs";
+import DetailTravailleur from "./routes/travailleurs/detail";
+import ValiderInvitationTravailleur from "./routes/travailleurs/valider-invitation";
 import Caisses from "./routes/caisses/caisses";
 import Businesses from "./routes/admin/businesses";
 import Offres from "./routes/admin/offres";
@@ -100,7 +104,10 @@ export default function App({ loaderData }: Route.ComponentProps) {
     '/sign-in',
     '/sign-up',
     '/sign-in/factor-one',
-    '/welcome'
+    '/welcome',
+    '/clients/valider-invitation/:invitationId',
+    '/fournisseurs/valider-invitation/:invitationId',
+    '/travailleurs/valider-invitation/:invitationId',
   ];
   const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
   let [page, setPage] = useState("Current Page");
@@ -130,10 +137,14 @@ export default function App({ loaderData }: Route.ComponentProps) {
                   <MyRoute path="/promotions" element={<Promotions />} />
                   <MyRoute path="/achats" element={<Achats />} />
                   <MyRoute path="/clients" element={<Clients />} />
+                  <MyRoute path="/clients/valider-invitation/:invitationId" element={<ValiderInvitationClient />} />
+                  <MyRoute path="/clients/:id" element={<DetailClient />} />
                   <MyRoute path="/fournisseurs" element={<Fournisseurs />} />
                   <MyRoute path="/fournisseurs/:id" element={<DetailFournisseur />} />
                   <MyRoute path="/fournisseurs/valider-invitation/:invitationId" element={<ValiderInvitationFournisseur />} />
                   <MyRoute path="/travailleurs" element={<Travailleurs />} />
+                  <MyRoute path="/travailleurs/valider-invitation/:invitationId" element={<ValiderInvitationTravailleur />} />
+                  <MyRoute path="/travailleurs/:id" element={<DetailTravailleur />} />
                   <MyRoute path="/caisses" element={<Caisses />} />
                   <MyRoute path="/admin/businesses" element={<Businesses />} />
                   <MyRoute path="/admin/offres" element={<Offres />} />

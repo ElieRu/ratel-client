@@ -1,0 +1,1 @@
+import{Gt as e,It as t}from"./admin-DDjUWroy.js";function n(n){return e(t,n)}export{n as t};

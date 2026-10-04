@@ -1,25 +1,27 @@
 import { t as __exportAll } from "./assets/rolldown-runtime-D7D4PA-g.js";
 import { t as entry_server_node_exports } from "./assets/router-DKeukR6m.js";
-import { _ as useIsMobile, a as SelectGroup, c as SelectValue, d as DropdownMenuContent, f as DropdownMenuGroup, g as DropdownMenuTrigger, h as DropdownMenuSeparator, i as SelectContent, l as Checkbox, m as DropdownMenuLabel, n as dashboard_exports, o as SelectItem, p as DropdownMenuItem, r as Select, s as SelectTrigger, t as dashboard_default, u as DropdownMenu } from "./assets/dashboard-DqaksMjj.js";
-import { $ as supprimerPromotion, A as creerCaisse, B as listerDevises, C as PageRessource, Ct as champsRequis, D as changerStatusAchat, E as caisseParDefaut, F as listerAgents, G as modifierClient, H as listerPromotions, I as listerArticles, J as supprimerAgent, K as modifierFournisseur, L as listerCaisses, M as creerFournisseur, N as creerPromotion, O as changerStatusPromotion, P as listerAchats, Q as supprimerFournisseur, R as listerCategories, S as useListe, St as API, T as bloquerAgent, Tt as items, U as modifierArticle, V as listerFournisseurs, W as modifierCaisse, X as supprimerCaisse, Y as supprimerArticle, Z as supprimerClient, _ as DialogDescription, _t as Badge, a as businesses_default, at as CaisseSchema, b as DialogTitle, bt as Input, c as FieldDescription, ct as FournisseurSchema, d as FieldLabel, dt as TableBody, et as BusinessProvider, f as FieldLegend, ft as TableCell, g as DialogContent, gt as Label, h as DialogClose, ht as TableRow, i as offres_exports, it as BusinessSchema, j as creerClient, k as creerArticle, l as FieldError, lt as PromotionSchema, m as Dialog$1, mt as TableHeader, n as categories_exports, nt as AdresseSchema, o as businesses_exports, ot as ClientSchema, p as FieldSet, pt as TableHead, q as supprimerAchat, r as offres_default, rt as ArticleSchema, s as Field, st as ContactSchema, t as categories_default, tt as useBusiness, u as FieldGroup, ut as Table, v as DialogFooter, vt as Skeleton, w as activerAgent, wt as cn$1, x as DialogTrigger, xt as Button, y as DialogHeader, yt as Separator, z as listerClients } from "./assets/admin-DrDAZoTE.js";
-import { Link, Links, Meta, Outlet, Route, Routes, Scripts, ScrollRestoration, UNSAFE_withComponentProps, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, useLocation, useNavigate } from "react-router";
+import { _ as DropdownMenuItem, a as TabsList, b as DropdownMenuTrigger, c as SelectContent, d as SelectTrigger, f as SelectValue, g as DropdownMenuGroup, h as DropdownMenuContent, i as TabsContent, l as SelectGroup, m as DropdownMenu, n as dashboard_exports, o as TabsTrigger, p as Checkbox, r as Tabs, s as Select, t as dashboard_default, u as SelectItem, v as DropdownMenuLabel, x as useIsMobile, y as DropdownMenuSeparator } from "./assets/dashboard-CuUfNxe8.js";
+import { $ as listerUtilisateursFournisseurDisponibles, A as changerStatusPromotion, At as TableHeader, B as lireClient, Bt as API, C as PageRessource, Ct as ContactSchema, D as bloquerAgent, Dt as TableBody, E as activerAgent, Et as Table, F as creerPromotion, Ft as useBusiness, G as listerCaisses, H as listerAchats, Ht as cn$1, I as inviterUtilisateursCommeAgents, It as Skeleton, J as listerDevises, K as listerCategories, L as inviterUtilisateursCommeClients, Lt as Separator, M as creerCaisse, Mt as Label, N as creerClientAvecLogo, Nt as Badge, O as caisseParDefaut, Ot as TableCell, P as creerFournisseurAvecLogo, Pt as BusinessProvider, Q as listerUtilisateursClientDisponibles, R as inviterUtilisateursCommeFournisseurs, Rt as Input, S as useListe, St as CaisseSchema, Tt as PromotionSchema, U as listerAgents, Ut as items, V as lireFournisseur, Vt as champsRequis, W as listerArticles, Wt as tronquerAvecEllipses, X as listerPromotions, Y as listerFournisseurs, Z as listerUtilisateursAgentDisponibles, _ as DialogDescription, _t as validerInvitationClient, a as businesses_default, at as modifierFournisseurAvecLogo, b as DialogTitle, bt as ArticleSchema, c as FieldDescription, ct as renvoyerInvitationFournisseur, d as FieldLabel, dt as supprimerArticle, et as modifierArticle, f as FieldLegend, ft as supprimerCaisse, g as DialogContent, gt as validerInvitationAgent, h as DialogClose, ht as supprimerPromotion, i as offres_exports, it as modifierFournisseur, j as creerArticle, jt as TableRow, k as changerStatusAchat, kt as TableHead, l as FieldError, lt as supprimerAchat, m as Dialog$1, mt as supprimerFournisseur, n as categories_exports, nt as modifierClient, o as businesses_exports, ot as renvoyerInvitationAgent, p as FieldSet, pt as supprimerClient, q as listerClients, r as offres_default, rt as modifierClientAvecLogo, s as Field, st as renvoyerInvitationClient, t as categories_default, tt as modifierCaisse, u as FieldGroup, ut as supprimerAgent, v as DialogFooter, vt as validerInvitationFournisseur, wt as FournisseurSchema, x as DialogTrigger, xt as BusinessSchema, y as DialogHeader, yt as AdresseSchema, z as lireAgent, zt as Button } from "./assets/admin-BkVIuPc6.js";
+import { Link, Links, Meta, Navigate, Outlet, Route, Routes, Scripts, ScrollRestoration, UNSAFE_withComponentProps, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, useLocation, useNavigate, useParams } from "react-router";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import * as React$1 from "react";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cva } from "class-variance-authority";
 import "cn";
 import { Dialog } from "@base-ui/react/dialog";
-import { AlertTriangle, AlertTriangleIcon, ArrowRight, BadgePercent, BanIcon, Bell, BellIcon, Building2, CalendarArrowUp, ChartPie, CheckCircle2, CheckCircle2Icon, CheckIcon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, EllipsisVerticalIcon, FileText, Gauge, Home, Landmark, ListCheck, Loader2, Loader2Icon, LogOutIcon, Mail, MailIcon, MapPin, MoreHorizontalIcon, PanelLeftIcon, Pencil, PhoneIcon, Plus, PlusIcon, Search, SearchIcon, Send, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, Trash2Icon, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
+import { AlertTriangle, AlertTriangleIcon, ArrowLeft, ArrowRight, BadgePercent, BanIcon, Bell, BellIcon, Building2, CalendarArrowUp, ChartPie, Check, CheckCircle2, CheckCircle2Icon, CheckIcon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, EllipsisVerticalIcon, FileText, Gauge, Home, ImagePlusIcon, Landmark, ListCheck, Loader2, Loader2Icon, LogOutIcon, Mail, MailIcon, MapPin, MapPinIcon, MoreHorizontalIcon, PanelLeftIcon, Pencil, PencilIcon, Phone, PhoneIcon, Plus, PlusIcon, Search, SearchIcon, Send, SendIcon, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, Trash2Icon, Upload, UploadIcon, UserPlusIcon, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
 import { Tooltip } from "@base-ui/react/tooltip";
 import { Avatar } from "@base-ui/react/avatar";
 import { ClerkProvider, Show, SignIn, SignOutButton, SignUp, UserButton, getToken, useAuth, useUser } from "@clerk/react-router";
+import { toast } from "sonner";
 import { clerkMiddleware, rootAuthLoader } from "@clerk/react-router/server";
 import { frFR } from "@clerk/localizations/fr-FR";
-import { toast } from "sonner";
+import { z } from "zod";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { AlertDialog } from "@base-ui/react/alert-dialog";
 import { Toast } from "@base-ui/react/toast";
 import { AnimatePresence, motion } from "motion/react";
 import { OTPInput, OTPInputContext } from "input-otp";
@@ -655,106 +657,110 @@ var data = {
 		email: "",
 		avatar: ""
 	},
-	groupes: [
-		{
-			label: "Utilisateur",
-			items: [
-				{
-					title: "Acceuil",
-					url: "/acceuil",
-					icon: /* @__PURE__ */ jsx(Home, {})
-				},
-				{
-					title: "Tableau de bord",
-					url: "/dashboard",
-					icon: /* @__PURE__ */ jsx(Gauge, {})
-				},
-				{
-					title: "Mes commandes",
-					url: "/commandes",
-					icon: /* @__PURE__ */ jsx(CalendarArrowUp, {})
-				},
-				{
-					title: "Historique des ventes",
-					url: "/ventes",
-					icon: /* @__PURE__ */ jsx(FileText, {})
-				},
-				{
-					title: "Notifications",
-					url: "/notifications",
-					icon: /* @__PURE__ */ jsx(Bell, {})
-				}
-			]
-		},
-		{
-			label: "Business",
-			items: [
-				{
-					title: "Créer un business",
-					url: "/businesses/creer",
-					icon: /* @__PURE__ */ jsx(ChartPie, {})
-				},
-				{
-					title: "Gestion des articles",
-					url: "/articles",
-					icon: /* @__PURE__ */ jsx(CirclePlus, {})
-				},
-				{
-					title: "Promotions",
-					url: "/promotions",
-					icon: /* @__PURE__ */ jsx(BadgePercent, {})
-				},
-				{
-					title: "Opération d'achats",
-					url: "/achats",
-					icon: /* @__PURE__ */ jsx(ShoppingCart, {})
-				},
-				{
-					title: "Clients",
-					url: "/clients",
-					icon: /* @__PURE__ */ jsx(Users, {})
-				},
-				{
-					title: "Fournisseurs",
-					url: "/fournisseurs",
-					icon: /* @__PURE__ */ jsx(Building2, {})
-				},
-				{
-					title: "Travailleurs",
-					url: "/travailleurs",
-					icon: /* @__PURE__ */ jsx(UserRoundCog, {})
-				},
-				{
-					title: "Caisses",
-					url: "/caisses",
-					icon: /* @__PURE__ */ jsx(CircleDollarSign, {})
-				}
-			]
-		},
-		{
-			label: "Admin",
-			items: [
-				{
-					title: "Businesses",
-					url: "/admin/businesses",
-					icon: /* @__PURE__ */ jsx(Landmark, {})
-				},
-				{
-					title: "Offres",
-					url: "/admin/offres",
-					icon: /* @__PURE__ */ jsx(SendToBack, {})
-				},
-				{
-					title: "Catégories",
-					url: "/admin/categories",
-					icon: /* @__PURE__ */ jsx(ListCheck, {})
-				}
-			]
-		}
-	]
+	groupeUtilisateur: {
+		label: "Utilisateur",
+		items: [
+			{
+				title: "Acceuil",
+				url: "/acceuil",
+				icon: /* @__PURE__ */ jsx(Home, {})
+			},
+			{
+				title: "Tableau de bord",
+				url: "/dashboard",
+				icon: /* @__PURE__ */ jsx(Gauge, {})
+			},
+			{
+				title: "Mes commandes",
+				url: "/commandes",
+				icon: /* @__PURE__ */ jsx(CalendarArrowUp, {})
+			},
+			{
+				title: "Historique des ventes",
+				url: "/ventes",
+				icon: /* @__PURE__ */ jsx(FileText, {})
+			}
+		]
+	},
+	lienCreationBusiness: {
+		title: "Créer un business",
+		url: "/businesses/creer",
+		icon: /* @__PURE__ */ jsx(ChartPie, {})
+	},
+	/** Affiché seulement à qui possède déjà un business. */
+	groupeBusiness: {
+		label: "Business",
+		items: [
+			{
+				title: "Gestion des articles",
+				url: "/articles",
+				icon: /* @__PURE__ */ jsx(CirclePlus, {})
+			},
+			{
+				title: "Promotions",
+				url: "/promotions",
+				icon: /* @__PURE__ */ jsx(BadgePercent, {})
+			},
+			{
+				title: "Opération d'achats",
+				url: "/achats",
+				icon: /* @__PURE__ */ jsx(ShoppingCart, {})
+			},
+			{
+				title: "Clients",
+				url: "/clients",
+				icon: /* @__PURE__ */ jsx(Users, {})
+			},
+			{
+				title: "Fournisseurs",
+				url: "/fournisseurs",
+				icon: /* @__PURE__ */ jsx(Building2, {})
+			},
+			{
+				title: "Travailleurs",
+				url: "/travailleurs",
+				icon: /* @__PURE__ */ jsx(UserRoundCog, {})
+			},
+			{
+				title: "Caisses",
+				url: "/caisses",
+				icon: /* @__PURE__ */ jsx(CircleDollarSign, {})
+			}
+		]
+	},
+	/** Réservé aux rôles ADMIN et MANAGER. */
+	groupeAdmin: {
+		label: "Admin",
+		items: [
+			{
+				title: "Businesses",
+				url: "/admin/businesses",
+				icon: /* @__PURE__ */ jsx(Landmark, {})
+			},
+			{
+				title: "Offres",
+				url: "/admin/offres",
+				icon: /* @__PURE__ */ jsx(SendToBack, {})
+			},
+			{
+				title: "Catégories",
+				url: "/admin/categories",
+				icon: /* @__PURE__ */ jsx(ListCheck, {})
+			}
+		]
+	}
 };
 function AppSidebar({ ...props }) {
 	const { user, isLoaded } = useUser();
+	const { aUnBusiness, estAdmin, pret } = useBusiness();
+	const groupes = [
+		{
+			...data.groupeUtilisateur,
+			items: [...data.groupeUtilisateur.items, ...pret && !aUnBusiness ? [data.lienCreationBusiness] : []]
+		},
+		...pret && aUnBusiness ? [data.groupeBusiness] : [],
+		...pret && estAdmin ? [data.groupeAdmin] : []
+	];
 	return /* @__PURE__ */ jsxs(Sidebar, {
 		collapsible: "icon",
 		...props,
@@ -767,7 +773,7 @@ function AppSidebar({ ...props }) {
 					children: "Ratel Market"
 				})]
 			}) }) }) }),
-			/* @__PURE__ */ jsx(SidebarContent, { children: /* @__PURE__ */ jsx(NavMain, { groupes: data.groupes }) }),
+			/* @__PURE__ */ jsx(SidebarContent, { children: /* @__PURE__ */ jsx(NavMain, { groupes }) }),
 			/* @__PURE__ */ jsx(SidebarFooter, { children: /* @__PURE__ */ jsx(NavUser, {
 				user: user ? {
 					name: user.fullName,
@@ -778,7 +784,7 @@ function AppSidebar({ ...props }) {
 					email: "",
 					avatar: ""
 				},
-				isLoaded: true
+				isLoaded
 			}) })
 		]
 	});
@@ -806,7 +812,7 @@ function SiteHeader({ title }) {
 }
 //#endregion
 //#region app/app.css?url
-var app_default = "/assets/app-CZ20jkVq.css";
+var app_default = "/assets/app-BAvek0Pd.css";
 //#endregion
 //#region app/routes/acceuil/acceuil.tsx
 var acceuil_exports = /* @__PURE__ */ __exportAll({
@@ -966,6 +972,132 @@ var ventes_default = UNSAFE_withComponentProps(function Ventes() {
 	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "historique des ventes" }) });
 });
 //#endregion
+//#region app/components/data-table-reusable.tsx
+function compareValues(left, right) {
+	if (left == null) return right == null ? 0 : 1;
+	if (right == null) return -1;
+	if (typeof left === "number" && typeof right === "number") return left - right;
+	return String(left).localeCompare(String(right), "fr", {
+		numeric: true,
+		sensitivity: "base"
+	});
+}
+function DataTable({ data, columns, getRowKey, pageSize = 10, emptyMessage = "Aucun résultat." }) {
+	const [tri, setTri] = useState(null);
+	const [page, setPage] = useState(0);
+	const lignesTriees = useMemo(() => {
+		if (!tri) return [...data];
+		const colonne = columns.find(({ id }) => id === tri.columnId);
+		if (!colonne) return [...data];
+		return data.map((row, index) => ({
+			row,
+			index
+		})).sort((left, right) => {
+			const ordre = compareValues(colonne.accessor(left.row), colonne.accessor(right.row));
+			return (tri.direction === "ascending" ? ordre : -ordre) || left.index - right.index;
+		}).map(({ row }) => row);
+	}, [
+		columns,
+		data,
+		tri
+	]);
+	const taillePage = Math.max(1, Math.floor(pageSize));
+	const nombrePages = Math.ceil(lignesTriees.length / taillePage);
+	const pageCourante = Math.min(page, Math.max(0, nombrePages - 1));
+	const lignesPage = lignesTriees.slice(pageCourante * taillePage, (pageCourante + 1) * taillePage);
+	const debut = lignesTriees.length === 0 ? 0 : pageCourante * taillePage + 1;
+	const fin = Math.min((pageCourante + 1) * pageSize, lignesTriees.length);
+	const changerTri = (columnId) => {
+		setTri((courant) => ({
+			columnId,
+			direction: courant?.columnId === columnId && courant.direction === "ascending" ? "descending" : "ascending"
+		}));
+		setPage(0);
+	};
+	return /* @__PURE__ */ jsxs("div", {
+		className: "space-y-3",
+		children: [/* @__PURE__ */ jsx("div", {
+			className: "overflow-hidden rounded-lg border",
+			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsx(TableRow, { children: columns.map((column) => {
+				const sortDirection = tri?.columnId === column.id ? tri.direction : void 0;
+				return /* @__PURE__ */ jsx(TableHead, {
+					scope: "col",
+					"aria-sort": sortDirection ?? "none",
+					className: column.className,
+					children: column.sortable === false ? column.header : /* @__PURE__ */ jsxs("button", {
+						type: "button",
+						onClick: () => changerTri(column.id),
+						className: "inline-flex items-center gap-1 rounded-sm text-left hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+						children: [
+							column.header,
+							/* @__PURE__ */ jsx("span", {
+								"aria-hidden": "true",
+								children: sortDirection === "ascending" ? "↑" : sortDirection === "descending" ? "↓" : "↕"
+							}),
+							/* @__PURE__ */ jsx("span", {
+								className: "sr-only",
+								children: sortDirection ? `, tri ${sortDirection === "ascending" ? "croissant" : "décroissant"}` : ", activer le tri"
+							})
+						]
+					})
+				}, column.id);
+			}) }) }), /* @__PURE__ */ jsx(TableBody, { children: lignesPage.length > 0 ? lignesPage.map((row) => /* @__PURE__ */ jsx(TableRow, { children: columns.map((column) => /* @__PURE__ */ jsx(TableCell, {
+				className: column.className,
+				children: column.cell ? column.cell(row) : String(column.accessor(row) ?? "—")
+			}, column.id)) }, getRowKey(row))) : /* @__PURE__ */ jsx(TableRow, { children: /* @__PURE__ */ jsx(TableCell, {
+				colSpan: columns.length,
+				className: "h-24 text-center text-muted-foreground",
+				children: emptyMessage
+			}) }) })] })
+		}), /* @__PURE__ */ jsxs("nav", {
+			"aria-label": "Pagination du tableau",
+			className: "flex flex-wrap items-center justify-between gap-3",
+			children: [/* @__PURE__ */ jsxs("p", {
+				"aria-live": "polite",
+				className: "text-sm text-muted-foreground",
+				children: [
+					debut,
+					"–",
+					fin,
+					" sur ",
+					lignesTriees.length
+				]
+			}), /* @__PURE__ */ jsxs("div", {
+				className: "flex items-center gap-2",
+				children: [
+					/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						size: "sm",
+						onClick: () => setPage(pageCourante - 1),
+						disabled: pageCourante === 0,
+						"aria-label": "Page précédente",
+						children: "Précédent"
+					}),
+					/* @__PURE__ */ jsxs("span", {
+						"aria-current": "page",
+						className: "text-sm tabular-nums",
+						children: [
+							nombrePages === 0 ? 0 : pageCourante + 1,
+							" / ",
+							nombrePages
+						]
+					}),
+					/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						size: "sm",
+						onClick: () => setPage(pageCourante + 1),
+						disabled: pageCourante >= nombrePages - 1,
+						"aria-label": "Page suivante",
+						children: "Suivant"
+					})
+				]
+			})]
+		})]
+	});
+}
+//#endregion
 //#region app/components/ui/textarea.tsx
 function Textarea({ className, ...props }) {
 	return /* @__PURE__ */ jsx("textarea", {
@@ -1080,55 +1212,69 @@ var articles_default = UNSAFE_withComponentProps(function Articles() {
 			onClick: ouvrirCreation,
 			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouvel article"]
 		}),
-		children: [/* @__PURE__ */ jsx("div", {
-			className: "overflow-hidden rounded-lg border",
-			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableHead, { children: "Désignation" }),
-				/* @__PURE__ */ jsx(TableHead, { children: "Catégorie" }),
-				/* @__PURE__ */ jsx(TableHead, {
-					className: "text-right",
-					children: "Prix unitaire"
-				}),
-				/* @__PURE__ */ jsx(TableHead, {
-					className: "w-[1%] text-right",
-					children: "Actions"
-				})
-			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((article) => /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "font-medium",
-					children: article.designation
-				}),
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "text-muted-foreground",
-					children: article.categorie?.nom ?? "—"
-				}),
-				/* @__PURE__ */ jsxs(TableCell, {
-					className: "text-right tabular-nums",
-					children: [
-						Number(article.pu).toLocaleString("fr-FR"),
-						" ",
-						/* @__PURE__ */ jsx("span", {
-							className: "text-muted-foreground",
-							children: article.devise?.symbole ?? ""
-						})
-					]
-				}),
-				/* @__PURE__ */ jsxs(TableCell, {
-					className: "text-right whitespace-nowrap",
-					children: [/* @__PURE__ */ jsx(Button, {
-						variant: "ghost",
-						size: "sm",
-						onClick: () => ouvrirEdition(article),
-						children: "Modifier"
-					}), /* @__PURE__ */ jsx(Button, {
-						variant: "ghost",
-						size: "sm",
-						"aria-label": `Supprimer ${article.designation}`,
-						onClick: () => supprimer(article),
-						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
-					})]
-				})
-			] }, article.id)) })] })
+		children: [/* @__PURE__ */ jsx(DataTable, {
+			data: donnees,
+			columns: [
+				{
+					id: "designation",
+					header: "Désignation",
+					accessor: (article) => article.designation,
+					cell: (article) => /* @__PURE__ */ jsx("span", {
+						className: "font-medium",
+						children: article.designation
+					})
+				},
+				{
+					id: "categorie",
+					header: "Catégorie",
+					accessor: (article) => article.categorie?.nom,
+					cell: (article) => /* @__PURE__ */ jsx("span", {
+						className: "text-muted-foreground",
+						children: article.categorie?.nom ?? "—"
+					})
+				},
+				{
+					id: "pu",
+					header: "Prix unitaire",
+					accessor: (article) => Number(article.pu),
+					cell: (article) => /* @__PURE__ */ jsxs("span", {
+						className: "tabular-nums",
+						children: [
+							Number(article.pu).toLocaleString("fr-FR"),
+							" ",
+							/* @__PURE__ */ jsx("span", {
+								className: "text-muted-foreground",
+								children: article.devise?.symbole ?? ""
+							})
+						]
+					}),
+					className: "text-right"
+				},
+				{
+					id: "actions",
+					header: "Actions",
+					accessor: () => null,
+					sortable: false,
+					cell: (article) => /* @__PURE__ */ jsxs("div", {
+						className: "whitespace-nowrap text-right",
+						children: [/* @__PURE__ */ jsx(Button, {
+							variant: "ghost",
+							size: "sm",
+							onClick: () => ouvrirEdition(article),
+							children: "Modifier"
+						}), /* @__PURE__ */ jsx(Button, {
+							variant: "ghost",
+							size: "sm",
+							"aria-label": `Supprimer ${article.designation}`,
+							onClick: () => supprimer(article),
+							children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+						})]
+					}),
+					className: "w-[1%] text-right"
+				}
+			],
+			getRowKey: (article) => article.id,
+			pageSize: 10
 		}), /* @__PURE__ */ jsx(Dialog$1, {
 			open: ouvert,
 			onOpenChange: setOuvert,
@@ -1354,36 +1500,607 @@ var achats_default = UNSAFE_withComponentProps(function Achats() {
 	});
 });
 //#endregion
+//#region app/components/clients/creer-client.tsx
+/**
+* Le nom est le seul champ obligatoire à la création. Le minimum de 4 caractères
+* reflète ClientSchema côté serveur : en-dessous, la requête serait rejetée.
+*/
+var formulaireClientSchema = z.object({
+	lastName: z.string().trim().min(4, "Le nom doit contenir au moins 4 caractères.").max(50, "Le nom ne peut pas dépasser 50 caractères."),
+	firstName: z.string().trim().max(50, "Le prénom ne peut pas dépasser 50 caractères.").refine((valeur) => valeur.length === 0 || valeur.length >= 4, "Le prénom doit contenir au moins 4 caractères.").optional(),
+	email: z.union([z.literal(""), z.email("Saisissez une adresse e-mail valide.")]).optional()
+});
+function nomUtilisateur$2(utilisateur) {
+	return utilisateur.full_name?.trim() || utilisateur.email?.trim() || `Utilisateur ${utilisateur.id.slice(-6)}`;
+}
+function CreerClient({ businessId, onCreated, onInvited }) {
+	const [ouvert, setOuvert] = useState(false);
+	const [logo, setLogo] = useState(null);
+	const [erreurLogo, setErreurLogo] = useState(null);
+	const [apercuLogo, setApercuLogo] = useState(null);
+	const inputLogoRef = useRef(null);
+	const [recherche, setRecherche] = useState("");
+	const [utilisateurs, setUtilisateurs] = useState([]);
+	const [selection, setSelection] = useState(() => /* @__PURE__ */ new Set());
+	const [chargement, setChargement] = useState(false);
+	const [erreurRecherche, setErreurRecherche] = useState(null);
+	const [rattachementEnCours, setRattachementEnCours] = useState(false);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(formulaireClientSchema),
+		mode: "onTouched",
+		defaultValues: {
+			lastName: "",
+			firstName: "",
+			email: ""
+		}
+	});
+	useEffect(() => {
+		if (!logo) {
+			setApercuLogo(null);
+			return;
+		}
+		const url = URL.createObjectURL(logo);
+		setApercuLogo(url);
+		return () => URL.revokeObjectURL(url);
+	}, [logo]);
+	useEffect(() => {
+		if (!ouvert) {
+			setRecherche("");
+			setUtilisateurs([]);
+			setSelection(/* @__PURE__ */ new Set());
+			setErreurRecherche(null);
+		}
+	}, [ouvert]);
+	useEffect(() => {
+		if (!ouvert) return;
+		const terme = recherche.trim();
+		if (!terme || !businessId) {
+			setUtilisateurs([]);
+			setChargement(false);
+			return;
+		}
+		let annule = false;
+		setChargement(true);
+		setErreurRecherche(null);
+		const timeout = window.setTimeout(() => {
+			listerUtilisateursClientDisponibles(businessId, terme).then((resultat) => {
+				if (!annule) setUtilisateurs(resultat);
+			}).catch((error) => {
+				if (!annule) setErreurRecherche(error.message || "Impossible de charger les utilisateurs.");
+			}).finally(() => {
+				if (!annule) setChargement(false);
+			});
+		}, 300);
+		return () => {
+			annule = true;
+			window.clearTimeout(timeout);
+		};
+	}, [
+		businessId,
+		ouvert,
+		recherche
+	]);
+	const choisirLogo = (fichier) => {
+		setErreurLogo(null);
+		if (!fichier) {
+			setLogo(null);
+			return;
+		}
+		if (![
+			"image/jpeg",
+			"image/png",
+			"image/webp",
+			"image/gif"
+		].includes(fichier.type)) {
+			setLogo(null);
+			setErreurLogo("Choisissez une image JPG, PNG, WebP ou GIF.");
+			return;
+		}
+		if (fichier.size > 2097152) {
+			setLogo(null);
+			setErreurLogo("L’image ne doit pas dépasser 2 Mo.");
+			return;
+		}
+		setLogo(fichier);
+	};
+	const reinitialiser = () => {
+		reset({
+			lastName: "",
+			firstName: "",
+			email: ""
+		});
+		setLogo(null);
+		setErreurLogo(null);
+		if (inputLogoRef.current) inputLogoRef.current.value = "";
+	};
+	const onSubmit = async (valeurs) => {
+		if (!businessId) {
+			toast.error("Aucun business n’est sélectionné.");
+			return;
+		}
+		const lastName = valeurs.lastName.trim();
+		const firstName = valeurs.firstName?.trim();
+		const email = valeurs.email?.trim();
+		const client = {
+			lastName,
+			...firstName ? { firstName } : {},
+			...email ? { email } : {},
+			fullName: [firstName, lastName].filter(Boolean).join(" ")
+		};
+		await toast.promise(creerClientAvecLogo(businessId, client, logo ?? void 0), {
+			loading: "Création du client…",
+			success: ({ data: cree, message }) => {
+				reinitialiser();
+				setOuvert(false);
+				onCreated(cree);
+				return message;
+			},
+			error: (error) => error.message
+		}).unwrap();
+	};
+	const basculerSelection = (id) => {
+		setSelection((courante) => {
+			const suivante = new Set(courante);
+			if (suivante.has(id)) suivante.delete(id);
+			else suivante.add(id);
+			return suivante;
+		});
+	};
+	const rattacher = async () => {
+		if (!businessId || selection.size === 0) return;
+		setRattachementEnCours(true);
+		try {
+			await toast.promise(inviterUtilisateursCommeClients(businessId, Array.from(selection)), {
+				loading: "Rattachement du compte…",
+				success: ({ message }) => {
+					setOuvert(false);
+					onInvited();
+					return message;
+				},
+				error: (error) => error.message
+			}).unwrap();
+		} finally {
+			setRattachementEnCours(false);
+		}
+	};
+	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs(Button, {
+		type: "button",
+		disabled: !businessId,
+		onClick: () => setOuvert(true),
+		children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouveau client"]
+	}), /* @__PURE__ */ jsx(Dialog$1, {
+		open: ouvert,
+		onOpenChange: setOuvert,
+		children: /* @__PURE__ */ jsxs(DialogContent, {
+			className: "sm:max-w-lg",
+			children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Nouveau client" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Enregistrez un client sans compte, ou rattachez-le à un compte utilisateur existant." })] }), /* @__PURE__ */ jsxs(Tabs, {
+				defaultValue: "sans-compte",
+				className: "w-full",
+				children: [
+					/* @__PURE__ */ jsxs(TabsList, {
+						className: "grid w-full grid-cols-2",
+						children: [/* @__PURE__ */ jsx(TabsTrigger, {
+							value: "sans-compte",
+							children: "Sans compte"
+						}), /* @__PURE__ */ jsx(TabsTrigger, {
+							value: "compte-existant",
+							children: "Compte existant"
+						})]
+					}),
+					/* @__PURE__ */ jsx(TabsContent, {
+						value: "sans-compte",
+						className: "pt-4",
+						children: /* @__PURE__ */ jsxs("form", {
+							onSubmit: handleSubmit(onSubmit),
+							noValidate: true,
+							children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [
+								/* @__PURE__ */ jsxs(Field, {
+									"data-invalid": !!erreurLogo,
+									children: [
+										/* @__PURE__ */ jsx("input", {
+											ref: inputLogoRef,
+											id: "nouveau-client-photo",
+											type: "file",
+											accept: "image/jpeg,image/png,image/webp,image/gif",
+											className: "sr-only",
+											"aria-label": "Photo du client (facultative)",
+											"aria-invalid": !!erreurLogo,
+											"aria-describedby": erreurLogo ? "nouveau-client-photo-erreur" : "nouveau-client-photo-aide",
+											onChange: (event) => choisirLogo(event.currentTarget.files?.[0])
+										}),
+										/* @__PURE__ */ jsxs("label", {
+											htmlFor: "nouveau-client-photo",
+											className: "group flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-border bg-muted/30 p-4 transition-colors hover:border-primary/50 hover:bg-muted/60 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2",
+											children: [
+												/* @__PURE__ */ jsx("span", {
+													className: "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-background text-muted-foreground shadow-sm",
+													children: apercuLogo ? /* @__PURE__ */ jsx("img", {
+														src: apercuLogo,
+														alt: "Aperçu de la photo du client",
+														className: "size-full object-cover"
+													}) : /* @__PURE__ */ jsx(ImagePlusIcon, {
+														className: "size-7",
+														"aria-hidden": "true"
+													})
+												}),
+												/* @__PURE__ */ jsxs("span", {
+													className: "min-w-0 max-w-full flex-1 overflow-hidden",
+													children: [/* @__PURE__ */ jsx("span", {
+														className: "block max-w-full truncate text-sm font-medium text-foreground",
+														title: logo?.name,
+														children: logo ? tronquerAvecEllipses(logo.name) : "Choisir une photo (facultatif)"
+													}), /* @__PURE__ */ jsx("span", {
+														id: "nouveau-client-photo-aide",
+														className: "mt-1 block text-xs text-muted-foreground",
+														children: "JPG, PNG, WebP ou GIF · 2 Mo maximum"
+													})]
+												}),
+												/* @__PURE__ */ jsx(UploadIcon, {
+													className: "size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground",
+													"aria-hidden": "true"
+												})
+											]
+										}),
+										logo && /* @__PURE__ */ jsxs(Button, {
+											type: "button",
+											variant: "ghost",
+											size: "sm",
+											className: "w-fit",
+											onClick: () => {
+												setLogo(null);
+												if (inputLogoRef.current) inputLogoRef.current.value = "";
+											},
+											children: [/* @__PURE__ */ jsx(XIcon, { className: "size-4" }), "Retirer la photo"]
+										}),
+										erreurLogo && /* @__PURE__ */ jsx("p", {
+											id: "nouveau-client-photo-erreur",
+											role: "alert",
+											className: "text-sm text-destructive",
+											children: erreurLogo
+										})
+									]
+								}),
+								/* @__PURE__ */ jsxs(Field, {
+									"data-invalid": !!errors.lastName,
+									children: [
+										/* @__PURE__ */ jsx(FieldLabel, {
+											htmlFor: "nouveau-client-nom",
+											children: "Nom"
+										}),
+										/* @__PURE__ */ jsx(Input, {
+											id: "nouveau-client-nom",
+											autoComplete: "family-name",
+											placeholder: "Ex. : Mukendi",
+											"aria-invalid": !!errors.lastName,
+											"aria-describedby": errors.lastName ? "nouveau-client-nom-erreur" : void 0,
+											...register("lastName")
+										}),
+										/* @__PURE__ */ jsx(FieldError, {
+											id: "nouveau-client-nom-erreur",
+											errors: [errors.lastName]
+										})
+									]
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "grid grid-cols-1 gap-4 sm:grid-cols-2",
+									children: [/* @__PURE__ */ jsxs(Field, {
+										"data-invalid": !!errors.firstName,
+										children: [
+											/* @__PURE__ */ jsxs(FieldLabel, {
+												htmlFor: "nouveau-client-prenom",
+												children: [
+													"Prénom",
+													" ",
+													/* @__PURE__ */ jsx("span", {
+														className: "font-normal text-muted-foreground",
+														children: "(facultatif)"
+													})
+												]
+											}),
+											/* @__PURE__ */ jsx(Input, {
+												id: "nouveau-client-prenom",
+												autoComplete: "given-name",
+												placeholder: "Ex. : Amani",
+												"aria-invalid": !!errors.firstName,
+												"aria-describedby": errors.firstName ? "nouveau-client-prenom-erreur" : void 0,
+												...register("firstName")
+											}),
+											/* @__PURE__ */ jsx(FieldError, {
+												id: "nouveau-client-prenom-erreur",
+												errors: [errors.firstName]
+											})
+										]
+									}), /* @__PURE__ */ jsxs(Field, {
+										"data-invalid": !!errors.email,
+										children: [
+											/* @__PURE__ */ jsxs(FieldLabel, {
+												htmlFor: "nouveau-client-email",
+												children: [
+													"E-mail",
+													" ",
+													/* @__PURE__ */ jsx("span", {
+														className: "font-normal text-muted-foreground",
+														children: "(facultatif)"
+													})
+												]
+											}),
+											/* @__PURE__ */ jsx(Input, {
+												id: "nouveau-client-email",
+												type: "email",
+												autoComplete: "email",
+												placeholder: "client@exemple.cd",
+												"aria-invalid": !!errors.email,
+												"aria-describedby": errors.email ? "nouveau-client-email-erreur" : void 0,
+												...register("email")
+											}),
+											/* @__PURE__ */ jsx(FieldError, {
+												id: "nouveau-client-email-erreur",
+												errors: [errors.email]
+											})
+										]
+									})]
+								})
+							] }), /* @__PURE__ */ jsxs(DialogFooter, {
+								className: "mt-6",
+								children: [/* @__PURE__ */ jsx(Button, {
+									type: "button",
+									variant: "outline",
+									onClick: () => setOuvert(false),
+									disabled: isSubmitting,
+									children: "Annuler"
+								}), /* @__PURE__ */ jsx(Button, {
+									type: "submit",
+									disabled: !isValid || isSubmitting || !!erreurLogo,
+									children: isSubmitting ? "Création…" : "Créer le client"
+								})]
+							})]
+						})
+					}),
+					/* @__PURE__ */ jsxs(TabsContent, {
+						value: "compte-existant",
+						className: "pt-4",
+						children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [/* @__PURE__ */ jsxs(Field, { children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "rattacher-recherche",
+								children: "Rechercher un utilisateur"
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "relative",
+								children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+									id: "rattacher-recherche",
+									value: recherche,
+									onChange: (event) => setRecherche(event.currentTarget.value),
+									placeholder: "Nom ou adresse e-mail…",
+									className: "pl-9"
+								})]
+							}),
+							/* @__PURE__ */ jsx(FieldDescription, { children: "Une invitation sera envoyée à cette personne pour qu’elle confirme son rattachement." })
+						] }), /* @__PURE__ */ jsx("div", {
+							className: "max-h-56 min-h-32 overflow-y-auto rounded-lg border",
+							"aria-busy": chargement,
+							children: chargement ? /* @__PURE__ */ jsx("p", {
+								className: "p-6 text-center text-sm text-muted-foreground",
+								role: "status",
+								children: "Recherche en cours…"
+							}) : erreurRecherche ? /* @__PURE__ */ jsx("p", {
+								className: "p-6 text-center text-sm text-destructive",
+								children: erreurRecherche
+							}) : utilisateurs.length === 0 ? /* @__PURE__ */ jsx("p", {
+								className: "p-6 text-center text-sm text-muted-foreground",
+								children: recherche.trim() ? "Aucun utilisateur disponible ne correspond." : "Saisissez un nom ou un e-mail pour chercher."
+							}) : /* @__PURE__ */ jsx("ul", {
+								className: "divide-y",
+								children: utilisateurs.map((utilisateur) => {
+									const selectionne = selection.has(utilisateur.id);
+									return /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("button", {
+										type: "button",
+										onClick: () => basculerSelection(utilisateur.id),
+										"aria-pressed": selectionne,
+										"aria-label": `${selectionne ? "Désélectionner" : "Sélectionner"} ${nomUtilisateur$2(utilisateur)}`,
+										className: `flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/50 ${selectionne ? "bg-primary/10" : ""}`,
+										children: [
+											/* @__PURE__ */ jsxs(Avatar$1, {
+												className: "size-9 shrink-0",
+												children: [/* @__PURE__ */ jsx(AvatarImage, {
+													src: utilisateur.image ?? void 0,
+													alt: ""
+												}), /* @__PURE__ */ jsx(AvatarFallback, {
+													className: "bg-primary/10 text-sm font-medium text-primary",
+													children: nomUtilisateur$2(utilisateur).charAt(0).toLocaleUpperCase("fr")
+												})]
+											}),
+											/* @__PURE__ */ jsxs("span", {
+												className: "min-w-0 flex-1",
+												children: [/* @__PURE__ */ jsx("span", {
+													className: "block truncate text-sm font-medium",
+													children: nomUtilisateur$2(utilisateur)
+												}), /* @__PURE__ */ jsx("span", {
+													className: "block truncate text-xs text-muted-foreground",
+													children: utilisateur.email || "E-mail non renseigné"
+												})]
+											}),
+											/* @__PURE__ */ jsx("span", {
+												className: `flex size-5 shrink-0 items-center justify-center rounded-full border ${selectionne ? "border-primary bg-primary text-primary-foreground" : "border-muted-foreground/40"}`,
+												"aria-hidden": "true",
+												children: selectionne && /* @__PURE__ */ jsx(Check, { className: "size-3" })
+											})
+										]
+									}) }, utilisateur.id);
+								})
+							})
+						})] }), /* @__PURE__ */ jsxs(DialogFooter, {
+							className: "mt-6",
+							children: [/* @__PURE__ */ jsx(Button, {
+								type: "button",
+								variant: "outline",
+								onClick: () => setOuvert(false),
+								disabled: rattachementEnCours,
+								children: "Annuler"
+							}), /* @__PURE__ */ jsx(Button, {
+								type: "button",
+								onClick: rattacher,
+								disabled: selection.size === 0 || rattachementEnCours,
+								children: rattachementEnCours ? "Rattachement…" : `Rattacher ${selection.size > 1 ? `${selection.size} comptes` : "le compte"}`
+							})]
+						})]
+					})
+				]
+			})]
+		})
+	})] });
+}
+//#endregion
+//#region app/components/ui/alert-dialog.tsx
+function AlertDialog$1({ ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Root, {
+		"data-slot": "alert-dialog",
+		...props
+	});
+}
+function AlertDialogPortal({ ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Portal, {
+		"data-slot": "alert-dialog-portal",
+		...props
+	});
+}
+function AlertDialogOverlay({ className, ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Backdrop, {
+		"data-slot": "alert-dialog-overlay",
+		className: cn$1("fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0", className),
+		...props
+	});
+}
+function AlertDialogContent({ className, size = "default", ...props }) {
+	return /* @__PURE__ */ jsxs(AlertDialogPortal, { children: [/* @__PURE__ */ jsx(AlertDialogOverlay, {}), /* @__PURE__ */ jsx(AlertDialog.Popup, {
+		"data-slot": "alert-dialog-content",
+		"data-size": size,
+		className: cn$1("group/alert-dialog-content fixed top-1/2 left-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none data-[size=default]:max-w-xs data-[size=sm]:max-w-xs data-[size=default]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
+		...props
+	})] });
+}
+function AlertDialogHeader({ className, ...props }) {
+	return /* @__PURE__ */ jsx("div", {
+		"data-slot": "alert-dialog-header",
+		className: cn$1("grid grid-rows-[auto_1fr] place-items-center gap-1.5 text-center has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] has-data-[slot=alert-dialog-media]:gap-x-4 sm:group-data-[size=default]/alert-dialog-content:place-items-start sm:group-data-[size=default]/alert-dialog-content:text-left sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]", className),
+		...props
+	});
+}
+function AlertDialogFooter({ className, ...props }) {
+	return /* @__PURE__ */ jsx("div", {
+		"data-slot": "alert-dialog-footer",
+		className: cn$1("-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 sm:flex-row sm:justify-end", className),
+		...props
+	});
+}
+function AlertDialogTitle({ className, ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Title, {
+		"data-slot": "alert-dialog-title",
+		className: cn$1("font-heading text-base font-medium sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2", className),
+		...props
+	});
+}
+function AlertDialogDescription({ className, ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Description, {
+		"data-slot": "alert-dialog-description",
+		className: cn$1("text-sm text-balance text-muted-foreground md:text-pretty *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground", className),
+		...props
+	});
+}
+function AlertDialogAction({ className, ...props }) {
+	return /* @__PURE__ */ jsx(Button, {
+		"data-slot": "alert-dialog-action",
+		className: cn$1(className),
+		...props
+	});
+}
+function AlertDialogCancel({ className, variant = "outline", size = "default", ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Close, {
+		"data-slot": "alert-dialog-cancel",
+		className: cn$1(className),
+		render: /* @__PURE__ */ jsx(Button, {
+			variant,
+			size
+		}),
+		...props
+	});
+}
+//#endregion
 //#region app/routes/clients/clients.tsx
 var clients_exports = /* @__PURE__ */ __exportAll({ default: () => clients_default });
+var FormulaireClientSchema = z.object({
+	firstName: z.string().trim().max(50, "Le prénom ne peut pas dépasser 50 caractères.").refine((value) => value.length === 0 || value.length >= 4, "Le prénom doit contenir au moins 4 caractères."),
+	lastName: z.string().trim().max(50, "Le nom ne peut pas dépasser 50 caractères.").refine((value) => value.length === 0 || value.length >= 4, "Le nom doit contenir au moins 4 caractères."),
+	email: z.string().trim().toLowerCase().refine((value) => value.length === 0 || z.email().safeParse(value).success, "L’adresse e-mail est invalide.")
+}).refine(({ firstName, lastName, email }) => Boolean(firstName || lastName || email), {
+	message: "Renseignez au moins un nom, un prénom ou une adresse e-mail.",
+	path: ["email"]
+});
 var clients_default = UNSAFE_withComponentProps(function Clients() {
 	const { businessId } = useBusiness();
 	const [recherche, setRecherche] = useState("");
 	const [saisie, setSaisie] = useState("");
+	const [filtreCompte, setFiltreCompte] = useState("tous");
+	const [filtreVerification, setFiltreVerification] = useState("tous");
+	const [taillePage, setTaillePage] = useState(10);
+	const [page, setPage] = useState(0);
 	const [ouvert, setOuvert] = useState(false);
 	const [enEdition, setEnEdition] = useState(null);
+	const [aSupprimer, setASupprimer] = useState(null);
+	const [suppressionEnCours, setSuppressionEnCours] = useState(false);
+	const [renvoiEnCours, setRenvoiEnCours] = useState(null);
+	const [logo, setLogo] = useState(null);
+	const [erreurLogo, setErreurLogo] = useState(null);
+	const [apercuLogo, setApercuLogo] = useState(null);
+	const inputLogoRef = useRef(null);
 	const charger = useCallback(() => listerClients(businessId, recherche || void 0), [businessId, recherche]);
-	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
+	const { donnees, chargement, erreur, recharger, ajouter, retirer } = useListe(charger, !!businessId);
+	useEffect(() => {
+		if (!logo) {
+			setApercuLogo(enEdition?.profile === "http://localhost:3000/public/images/profile-logo/image-par-defaut.png" ? enEdition.userImage ?? enEdition.profile : enEdition?.profile ?? null);
+			return;
+		}
+		const url = URL.createObjectURL(logo);
+		setApercuLogo(url);
+		return () => URL.revokeObjectURL(url);
+	}, [logo, enEdition]);
+	useEffect(() => {
+		const timeout = window.setTimeout(() => {
+			setRecherche(saisie.trim());
+			setPage(0);
+		}, 300);
+		return () => window.clearTimeout(timeout);
+	}, [saisie]);
+	const clientsFiltres = donnees.filter((client) => {
+		if (filtreCompte === "avec-compte" && !client.userId) return false;
+		if (filtreCompte === "sans-compte" && client.userId) return false;
+		if (filtreVerification === "verifies" && client.isVerified === false) return false;
+		if (filtreVerification === "en-attente" && client.isVerified !== false) return false;
+		return true;
+	});
+	const nombrePages = Math.ceil(clientsFiltres.length / taillePage);
+	const pageCourante = Math.min(page, Math.max(0, nombrePages - 1));
+	const clientsAffiches = clientsFiltres.slice(pageCourante * taillePage, (pageCourante + 1) * taillePage);
+	const debut = clientsFiltres.length === 0 ? 0 : pageCourante * taillePage + 1;
+	const fin = Math.min((pageCourante + 1) * taillePage, clientsFiltres.length);
 	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
-		resolver: zodResolver(ClientSchema),
-		mode: "onTouched",
+		resolver: zodResolver(FormulaireClientSchema),
+		mode: "onChange",
 		defaultValues: {
 			firstName: "",
 			lastName: "",
 			email: ""
 		}
 	});
-	const ouvrirCreation = () => {
-		setEnEdition(null);
-		reset({
-			firstName: "",
-			lastName: "",
-			email: ""
-		});
-		setOuvert(true);
+	const ajouterClientCree = (client) => {
+		ajouter(client);
+		setPage(0);
+		recharger();
 	};
 	const ouvrirEdition = (client) => {
 		setEnEdition(client);
+		setLogo(null);
+		setErreurLogo(null);
+		if (inputLogoRef.current) inputLogoRef.current.value = "";
 		reset({
 			firstName: client.firstName ?? "",
 			lastName: client.lastName ?? "",
@@ -1392,31 +2109,76 @@ var clients_default = UNSAFE_withComponentProps(function Clients() {
 		setOuvert(true);
 	};
 	const onSubmit = async (form) => {
-		const donneesUtiles = {
-			...form.firstName?.trim() ? { firstName: form.firstName.trim() } : {},
-			...form.lastName?.trim() ? { lastName: form.lastName.trim() } : {},
-			...form.email?.trim() ? { email: form.email.trim() } : {}
+		if (!businessId || !enEdition) return;
+		const donneesModification = {
+			firstName: form.firstName || null,
+			lastName: form.lastName || null,
+			email: form.email || null
 		};
-		const action = enEdition ? modifierClient(businessId, enEdition.id, donneesUtiles) : creerClient(businessId, donneesUtiles);
+		const action = logo ? modifierClientAvecLogo(businessId, enEdition.id, donneesModification, logo) : modifierClient(businessId, enEdition.id, donneesModification);
 		await toast.promise(action, {
-			loading: enEdition ? "Modification…" : "Création…",
+			loading: "Modification…",
 			success: () => {
 				setOuvert(false);
+				setLogo(null);
 				recharger();
-				return enEdition ? "Client modifié" : "Client créé";
+				return "Client modifié";
 			},
 			error: (e) => e.message
 		}).unwrap();
 	};
+	const choisirLogo = (fichier) => {
+		setErreurLogo(null);
+		if (!fichier) {
+			setLogo(null);
+			return;
+		}
+		if (![
+			"image/jpeg",
+			"image/png",
+			"image/webp",
+			"image/gif"
+		].includes(fichier.type)) {
+			setLogo(null);
+			setErreurLogo("Choisissez une image JPG, PNG, WebP ou GIF.");
+			return;
+		}
+		if (fichier.size > 2097152) {
+			setLogo(null);
+			setErreurLogo("L’image ne doit pas dépasser 2 Mo.");
+			return;
+		}
+		setLogo(fichier);
+	};
+	const renvoyerInvitation = async (client) => {
+		if (!businessId) return;
+		setRenvoiEnCours(client.id);
+		try {
+			const result = await renvoyerInvitationClient(businessId, client.id);
+			toast.success(result.message);
+			recharger();
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "Le renvoi de l’invitation a échoué.");
+		} finally {
+			setRenvoiEnCours(null);
+		}
+	};
 	const supprimer = async (client) => {
-		await toast.promise(supprimerClient(businessId, client.id), {
-			loading: "Suppression…",
-			success: () => {
-				recharger();
-				return "Client supprimé";
-			},
-			error: (e) => e.message
-		}).unwrap();
+		if (!businessId) return;
+		setSuppressionEnCours(true);
+		try {
+			await toast.promise(supprimerClient(businessId, client.id), {
+				loading: "Suppression…",
+				success: () => {
+					retirer(client.id, (element) => element.id);
+					setASupprimer(null);
+					return "Client supprimé";
+				},
+				error: (e) => e.message
+			}).unwrap();
+		} finally {
+			setSuppressionEnCours(false);
+		}
 	};
 	return /* @__PURE__ */ jsxs(PageRessource, {
 		titre: "Clients",
@@ -1425,146 +2187,1931 @@ var clients_default = UNSAFE_withComponentProps(function Clients() {
 		businessId,
 		chargement,
 		erreur,
-		vide: donnees.length === 0,
-		messageVide: "Aucun client enregistré pour le moment.",
 		onReessayer: recharger,
-		action: /* @__PURE__ */ jsxs(Button, {
-			onClick: ouvrirCreation,
-			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouveau client"]
+		action: /* @__PURE__ */ jsx(CreerClient, {
+			businessId,
+			onCreated: ajouterClientCree,
+			onInvited: recharger
 		}),
-		outils: /* @__PURE__ */ jsxs("form", {
-			onSubmit: (e) => {
-				e.preventDefault();
-				setRecherche(saisie);
-			},
-			className: "flex max-w-sm items-center gap-2",
-			children: [/* @__PURE__ */ jsxs("div", {
-				className: "relative flex-1",
-				children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
-					value: saisie,
-					onChange: (e) => setSaisie(e.target.value),
-					placeholder: "Rechercher un client…",
-					"aria-label": "Rechercher un client",
-					className: "pl-9"
-				})]
-			}), /* @__PURE__ */ jsx(Button, {
-				type: "submit",
-				variant: "outline",
-				children: "Rechercher"
-			})]
+		outils: /* @__PURE__ */ jsxs("div", {
+			className: "flex w-full max-w-3xl flex-wrap items-center gap-2",
+			children: [
+				/* @__PURE__ */ jsxs("div", {
+					className: "relative min-w-48 flex-1",
+					children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+						value: saisie,
+						onChange: (e) => setSaisie(e.target.value),
+						placeholder: "Rechercher par nom ou e-mail…",
+						"aria-label": "Rechercher un client",
+						className: "pl-9"
+					})]
+				}),
+				/* @__PURE__ */ jsxs(NativeSelect, {
+					value: filtreCompte,
+					onChange: (event) => {
+						const valeur = event.currentTarget.value;
+						if (valeur === "tous" || valeur === "avec-compte" || valeur === "sans-compte") {
+							setFiltreCompte(valeur);
+							setPage(0);
+						}
+					},
+					"aria-label": "Filtrer les clients par compte utilisateur",
+					className: "min-w-40",
+					children: [
+						/* @__PURE__ */ jsx(NativeSelectOption, {
+							value: "tous",
+							children: "Tous les clients"
+						}),
+						/* @__PURE__ */ jsx(NativeSelectOption, {
+							value: "avec-compte",
+							children: "Avec compte"
+						}),
+						/* @__PURE__ */ jsx(NativeSelectOption, {
+							value: "sans-compte",
+							children: "Sans compte"
+						})
+					]
+				}),
+				/* @__PURE__ */ jsxs(NativeSelect, {
+					value: filtreVerification,
+					onChange: (event) => {
+						const valeur = event.currentTarget.value;
+						if (valeur === "tous" || valeur === "verifies" || valeur === "en-attente") {
+							setFiltreVerification(valeur);
+							setPage(0);
+						}
+					},
+					"aria-label": "Filtrer les clients par état de vérification",
+					className: "min-w-40",
+					children: [
+						/* @__PURE__ */ jsx(NativeSelectOption, {
+							value: "tous",
+							children: "Vérifiés et en attente"
+						}),
+						/* @__PURE__ */ jsx(NativeSelectOption, {
+							value: "verifies",
+							children: "Vérifiés"
+						}),
+						/* @__PURE__ */ jsx(NativeSelectOption, {
+							value: "en-attente",
+							children: "En attente"
+						})
+					]
+				})
+			]
 		}),
-		children: [/* @__PURE__ */ jsx("div", {
-			className: "overflow-hidden rounded-lg border",
-			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableHead, { children: "Nom" }),
-				/* @__PURE__ */ jsx(TableHead, { children: "Email" }),
-				/* @__PURE__ */ jsx(TableHead, {
+		children: [
+			/* @__PURE__ */ jsx("div", {
+				className: "overflow-hidden rounded-lg border",
+				children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [/* @__PURE__ */ jsx(TableHead, { children: "Nom du client" }), /* @__PURE__ */ jsx(TableHead, {
 					className: "w-[1%] text-right",
 					children: "Actions"
-				})
-			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((client) => /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "font-medium",
-					children: client.fullName || [client.firstName, client.lastName].filter(Boolean).join(" ") || "—"
-				}),
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "text-muted-foreground",
-					children: client.email || "—"
-				}),
-				/* @__PURE__ */ jsxs(TableCell, {
+				})] }) }), /* @__PURE__ */ jsx(TableBody, { children: clientsAffiches.length === 0 ? /* @__PURE__ */ jsx(TableRow, { children: /* @__PURE__ */ jsx(TableCell, {
+					colSpan: 2,
+					className: "h-24 text-center text-muted-foreground",
+					children: recherche || filtreCompte !== "tous" || filtreVerification !== "tous" ? "Aucun client ne correspond à ce filtre." : "Aucun client enregistré pour le moment."
+				}) }) : clientsAffiches.map((client) => /* @__PURE__ */ jsxs(TableRow, { children: [/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-3",
+					children: [/* @__PURE__ */ jsxs(Avatar$1, {
+						className: "size-9",
+						children: [/* @__PURE__ */ jsx(AvatarImage, {
+							src: client.userImage && client.profile === "http://localhost:3000/public/images/profile-logo/image-par-defaut.png" ? client.userImage : client.profile || client.userImage || "http://localhost:3000/public/images/profile-logo/image-par-defaut.png",
+							alt: client.fullName || "Profil du client"
+						}), /* @__PURE__ */ jsx(AvatarFallback, { children: (client.fullName || [client.firstName, client.lastName].filter(Boolean).join(" ") || "C").charAt(0).toLocaleUpperCase("fr") })]
+					}), /* @__PURE__ */ jsxs("div", {
+						className: "min-w-0",
+						children: [
+							/* @__PURE__ */ jsx(Link, {
+								to: `/clients/${client.id}`,
+								className: "font-medium text-primary underline-offset-4 hover:underline",
+								children: tronquerAvecEllipses(client.fullName || [client.firstName, client.lastName].filter(Boolean).join(" ") || "—", 42)
+							}),
+							/* @__PURE__ */ jsx("p", {
+								className: "truncate text-sm text-muted-foreground",
+								children: client.email || "E-mail non renseigné"
+							}),
+							client.isVerified === false && /* @__PURE__ */ jsx("p", {
+								className: "text-xs text-amber-700",
+								children: "Invitation en attente de validation"
+							})
+						]
+					})]
+				}) }), /* @__PURE__ */ jsxs(TableCell, {
 					className: "text-right whitespace-nowrap",
-					children: [/* @__PURE__ */ jsx(Button, {
-						variant: "ghost",
-						size: "sm",
-						onClick: () => ouvrirEdition(client),
-						children: "Modifier"
-					}), /* @__PURE__ */ jsx(Button, {
-						variant: "ghost",
-						size: "sm",
-						"aria-label": `Supprimer ${client.fullName ?? "ce client"}`,
-						onClick: () => supprimer(client),
-						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
-					})]
-				})
-			] }, client.id)) })] })
-		}), /* @__PURE__ */ jsx(Dialog$1, {
-			open: ouvert,
-			onOpenChange: setOuvert,
-			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier le client" : "Nouveau client" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Tous les champs sont facultatifs côté serveur : renseignez au moins un identifiant pour retrouver ce client." })] }), /* @__PURE__ */ jsxs("form", {
-				onSubmit: handleSubmit(onSubmit),
-				noValidate: true,
-				children: [/* @__PURE__ */ jsx(FieldGroup, { children: /* @__PURE__ */ jsxs(FieldSet, { children: [
-					/* @__PURE__ */ jsx(FieldLegend, {
-						variant: "label",
-						children: "Identité"
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.firstName,
-						children: [
-							/* @__PURE__ */ jsx(FieldLabel, {
-								htmlFor: "firstName",
-								children: "Prénom"
-							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "firstName",
-								placeholder: "Ex : Amani",
-								"aria-invalid": !!errors.firstName,
-								...register("firstName")
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.firstName] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.lastName,
-						children: [
-							/* @__PURE__ */ jsx(FieldLabel, {
-								htmlFor: "lastName",
-								children: "Nom"
-							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "lastName",
-								placeholder: "Ex : Kabila",
-								"aria-invalid": !!errors.lastName,
-								...register("lastName")
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.lastName] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.email,
-						children: [
-							/* @__PURE__ */ jsx(FieldLabel, {
-								htmlFor: "email",
-								children: "Email"
-							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "email",
-								type: "email",
-								placeholder: "client@exemple.cd",
-								"aria-invalid": !!errors.email,
-								...register("email")
-							}),
-							errors.email ? /* @__PURE__ */ jsx(FieldError, { errors: [errors.email] }) : /* @__PURE__ */ jsx(FieldDescription, { children: "Sert à rattacher le client à un compte existant." })
-						]
-					})
-				] }) }), /* @__PURE__ */ jsxs(DialogFooter, {
-					className: "mt-6",
-					children: [/* @__PURE__ */ jsx(Button, {
-						type: "button",
-						variant: "outline",
-						onClick: () => setOuvert(false),
-						disabled: isSubmitting,
-						children: "Annuler"
-					}), /* @__PURE__ */ jsx(Button, {
-						type: "submit",
-						disabled: !isValid || isSubmitting,
-						children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer le client"
-					})]
+					children: [
+						client.isVerified === false && client.invitationExpiresAt && new Date(client.invitationExpiresAt).getTime() <= Date.now() && /* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "ghost",
+							size: "icon",
+							className: "border",
+							onClick: () => void renvoyerInvitation(client),
+							disabled: renvoiEnCours === client.id,
+							"aria-label": `Renvoyer l’invitation à ${client.fullName ?? "ce client"}`,
+							title: "Renvoyer l’invitation",
+							children: /* @__PURE__ */ jsx(SendIcon, { className: "size-4" })
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							variant: "ghost",
+							size: "icon",
+							className: "border",
+							onClick: () => ouvrirEdition(client),
+							disabled: Boolean(client.userId),
+							"aria-label": `Modifier ${client.fullName ?? "ce client"}`,
+							title: "Modifier",
+							children: /* @__PURE__ */ jsx(PencilIcon, { className: "size-4" })
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							variant: "ghost",
+							size: "icon",
+							className: "border border-destructive/30 text-destructive hover:bg-destructive/10",
+							"aria-label": `Supprimer ${client.fullName ?? "ce client"}`,
+							title: "Supprimer",
+							onClick: () => setASupprimer(client),
+							children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+						})
+					]
+				})] }, client.id)) })] })
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: "flex flex-wrap items-center justify-between gap-4",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-2 text-sm text-muted-foreground",
+					children: [
+						/* @__PURE__ */ jsx("label", {
+							htmlFor: "clients-par-page",
+							children: "Clients par page"
+						}),
+						/* @__PURE__ */ jsxs(NativeSelect, {
+							id: "clients-par-page",
+							value: taillePage,
+							onChange: (event) => {
+								setTaillePage(Number(event.currentTarget.value));
+								setPage(0);
+							},
+							"aria-label": "Nombre de clients par page",
+							children: [
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 10,
+									children: "10"
+								}),
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 20,
+									children: "20"
+								}),
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 50,
+									children: "50"
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("span", {
+							"aria-live": "polite",
+							children: [
+								debut,
+								"–",
+								fin,
+								" sur ",
+								clientsFiltres.length
+							]
+						})
+					]
+				}), /* @__PURE__ */ jsxs("nav", {
+					"aria-label": "Pagination des clients",
+					className: "flex items-center gap-2",
+					children: [
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage(pageCourante - 1),
+							disabled: pageCourante === 0,
+							"aria-label": "Page précédente",
+							children: "Précédent"
+						}),
+						/* @__PURE__ */ jsxs("span", {
+							"aria-current": "page",
+							className: "text-sm tabular-nums",
+							children: [
+								nombrePages === 0 ? 0 : pageCourante + 1,
+								" / ",
+								nombrePages
+							]
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage(pageCourante + 1),
+							disabled: pageCourante >= nombrePages - 1,
+							"aria-label": "Page suivante",
+							children: "Suivant"
+						})
+					]
 				})]
-			})] })
-		})]
+			}),
+			/* @__PURE__ */ jsx(Dialog$1, {
+				open: ouvert,
+				onOpenChange: setOuvert,
+				children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Modifier le client" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Renseignez au moins un nom, un prénom ou une adresse e-mail pour retrouver ce client." })] }), /* @__PURE__ */ jsxs("form", {
+					onSubmit: handleSubmit(onSubmit),
+					noValidate: true,
+					children: [/* @__PURE__ */ jsx(FieldGroup, { children: /* @__PURE__ */ jsxs(FieldSet, { children: [
+						/* @__PURE__ */ jsx(FieldLegend, {
+							variant: "label",
+							children: "Identité"
+						}),
+						/* @__PURE__ */ jsxs(Field, {
+							"data-invalid": !!erreurLogo,
+							children: [
+								/* @__PURE__ */ jsx("input", {
+									ref: inputLogoRef,
+									id: "nouveau-client-logo",
+									type: "file",
+									accept: "image/jpeg,image/png,image/webp,image/gif",
+									className: "sr-only",
+									"aria-label": "Logo du client (facultatif)",
+									"aria-invalid": !!erreurLogo,
+									onChange: (event) => choisirLogo(event.currentTarget.files?.[0])
+								}),
+								/* @__PURE__ */ jsxs("label", {
+									htmlFor: "nouveau-client-logo",
+									className: "group flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-border bg-muted/30 p-4 transition-colors hover:border-primary/50 hover:bg-muted/60",
+									children: [
+										/* @__PURE__ */ jsx("span", {
+											className: "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-background text-muted-foreground shadow-sm",
+											children: apercuLogo ? /* @__PURE__ */ jsx("img", {
+												src: apercuLogo,
+												alt: "Aperçu du profil client",
+												className: "size-full object-cover"
+											}) : /* @__PURE__ */ jsx(ImagePlusIcon, {
+												className: "size-7",
+												"aria-hidden": "true"
+											})
+										}),
+										/* @__PURE__ */ jsxs("span", {
+											className: "min-w-0 flex-1",
+											children: [/* @__PURE__ */ jsx("span", {
+												className: "block truncate text-sm font-medium",
+												children: logo ? logo.name : "Choisir le logo du client (facultatif)"
+											}), /* @__PURE__ */ jsx("span", {
+												className: "mt-1 block text-xs text-muted-foreground",
+												children: "JPG, PNG, WebP ou GIF · 2 Mo maximum"
+											})]
+										}),
+										/* @__PURE__ */ jsx(UploadIcon, {
+											className: "size-4 shrink-0 text-muted-foreground",
+											"aria-hidden": "true"
+										})
+									]
+								}),
+								logo && /* @__PURE__ */ jsxs(Button, {
+									type: "button",
+									variant: "ghost",
+									size: "sm",
+									className: "w-fit",
+									onClick: () => {
+										setLogo(null);
+										if (inputLogoRef.current) inputLogoRef.current.value = "";
+									},
+									children: [/* @__PURE__ */ jsx(XIcon, { className: "size-4" }), "Annuler le changement de logo"]
+								}),
+								erreurLogo && /* @__PURE__ */ jsx("p", {
+									role: "alert",
+									className: "text-sm text-destructive",
+									children: erreurLogo
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "grid grid-cols-1 gap-4 sm:grid-cols-2",
+							children: [/* @__PURE__ */ jsxs(Field, {
+								"data-invalid": !!errors.lastName,
+								children: [
+									/* @__PURE__ */ jsx(FieldLabel, {
+										htmlFor: "lastName",
+										children: "Nom"
+									}),
+									/* @__PURE__ */ jsx(Input, {
+										id: "lastName",
+										placeholder: "Ex : Kabila",
+										"aria-invalid": !!errors.lastName,
+										...register("lastName")
+									}),
+									/* @__PURE__ */ jsx(FieldError, { errors: [errors.lastName] })
+								]
+							}), /* @__PURE__ */ jsxs(Field, {
+								"data-invalid": !!errors.firstName,
+								children: [
+									/* @__PURE__ */ jsx(FieldLabel, {
+										htmlFor: "firstName",
+										children: "Prénom"
+									}),
+									/* @__PURE__ */ jsx(Input, {
+										id: "firstName",
+										placeholder: "Ex : Amani",
+										"aria-invalid": !!errors.firstName,
+										...register("firstName")
+									}),
+									/* @__PURE__ */ jsx(FieldError, { errors: [errors.firstName] })
+								]
+							})]
+						}),
+						/* @__PURE__ */ jsxs(Field, {
+							"data-invalid": !!errors.email,
+							children: [
+								/* @__PURE__ */ jsx(FieldLabel, {
+									htmlFor: "email",
+									children: "Email"
+								}),
+								/* @__PURE__ */ jsx(Input, {
+									id: "email",
+									type: "email",
+									placeholder: "client@exemple.cd",
+									"aria-invalid": !!errors.email,
+									disabled: !!enEdition?.userId,
+									...register("email")
+								}),
+								enEdition?.userId ? /* @__PURE__ */ jsx(FieldDescription, { children: "Cette adresse provient du compte utilisateur rattaché." }) : errors.email ? /* @__PURE__ */ jsx(FieldError, { errors: [errors.email] }) : /* @__PURE__ */ jsx(FieldDescription, { children: "Sert à rattacher le client à un compte existant." })
+							]
+						})
+					] }) }), /* @__PURE__ */ jsxs(DialogFooter, {
+						className: "mt-6",
+						children: [/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							onClick: () => setOuvert(false),
+							disabled: isSubmitting,
+							children: "Annuler"
+						}), /* @__PURE__ */ jsx(Button, {
+							type: "submit",
+							disabled: !isValid || isSubmitting || !!erreurLogo,
+							children: isSubmitting ? "Enregistrement…" : "Enregistrer"
+						})]
+					})]
+				})] })
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: aSupprimer !== null,
+				onOpenChange: (open) => {
+					if (!open && !suppressionEnCours) setASupprimer(null);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: "Supprimer ce client ?" }), /* @__PURE__ */ jsxs(AlertDialogDescription, { children: [
+					"Le client « ",
+					aSupprimer?.fullName || "sans nom",
+					" » sera supprimé. Cette action est irréversible."
+				] })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: suppressionEnCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: "destructive",
+					disabled: suppressionEnCours,
+					onClick: () => {
+						if (aSupprimer) supprimer(aSupprimer);
+					},
+					children: suppressionEnCours ? "Suppression…" : "Supprimer"
+				})] })] })
+			})
+		]
 	});
 });
+//#endregion
+//#region app/lib/apis.ts
+var creer_business = async (form) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/api/businesses`, {
+		method: "POST",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(form)
+	});
+	const responseText = await response.text();
+	let result = null;
+	if (responseText) try {
+		result = JSON.parse(responseText);
+	} catch {
+		result = { message: responseText };
+	}
+	if (!response.ok) throw new Error(result?.message || "La création du business a échoué");
+	return result;
+};
+var creer_user = async () => {
+	const token = await getToken();
+	if (!token) throw new Error("Votre session a expiré. Veuillez vous reconnecter.");
+	const response = await fetch(`${API}/auth/createUser`, {
+		method: "POST",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		}
+	});
+	const responseText = await response.text();
+	let result = null;
+	if (responseText) try {
+		result = JSON.parse(responseText);
+	} catch {
+		result = null;
+	}
+	if (!response.ok) throw new Error(result?.message || `L'enregistrement a échoué (HTTP ${response.status}).`);
+	if (!result) throw new Error("Le serveur a renvoyé une réponse invalide lors de l'enregistrement.");
+	return result;
+};
+var is_welcome = async () => {
+	const token = await getToken();
+	const response = await fetch(`${API}/auth/is-welcome`, {
+		method: "PUT",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		}
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Create data failed");
+	console.log(result);
+	return result;
+};
+var supprimer_user = async () => {
+	const token = await getToken();
+	try {
+		await fetch(`${API}/auth/deleteUser`, {
+			method: "POST",
+			headers: {
+				"Authorization": `${token}`,
+				"Content-Type": "application/json"
+			}
+		});
+	} catch (error) {
+		console.error(error);
+	}
+};
+var creer_contact = async (form) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/contacts`, {
+		method: "POST",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(form)
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Form validation failed");
+	console.log(result);
+	return result;
+};
+var modifier_contact = async (id, form) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/contacts/${id}`, {
+		method: "PUT",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(form)
+	});
+	const result = await response.json();
+	if (!response.ok || result.success === false) throw new Error(result.message || "La modification du contact a échoué.");
+	return result;
+};
+var items_contact = async () => {
+	const token = await getToken();
+	const response = await fetch(`${API}/contacts`, {
+		method: "GET",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		}
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Fetching data failed");
+	return result;
+};
+var supprimer_contact = async (id) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/contacts/${id}`, {
+		method: "DELETE",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		}
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Remove data failed");
+	console.log(result);
+	return result;
+};
+var verifier_contact = async (contactId, token) => {
+	const client_token = await getToken();
+	const response = await fetch(`${API}/contacts/${contactId}/verifier`, {
+		method: "PUT",
+		headers: {
+			"Authorization": `${client_token}`,
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({ token })
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Verfication data failed");
+	console.log(result);
+	return result;
+};
+var items_adresse = async (businessId, clientId, fournisseurId) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/adresses`, {
+		method: "GET",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		}
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "get data failed");
+	console.log(result);
+	return result;
+};
+var creer_adresse = async (form) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/adresses`, {
+		method: "POST",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(form)
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Create data failed");
+	console.log(result);
+	return result;
+};
+var supprimer_adresse = async (id) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/adresses/${id}`, {
+		method: "DELETE",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		}
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "Delete data failed");
+	console.log(result);
+	return result;
+};
+var modifier_adresse = async (id, form) => {
+	const token = await getToken();
+	const response = await fetch(`${API}/adresses/${id}`, {
+		method: "PUT",
+		headers: {
+			"Authorization": `${token}`,
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(form)
+	});
+	const result = await response.json();
+	if (!response.ok) throw new Error(result.message || "update data failed");
+	console.log(result);
+	return result;
+};
+//#endregion
+//#region app/components/ressource/avatar-ressource.tsx
+/**
+* Les images « par défaut » du serveur pointent sur localhost et renvoient
+* souvent un 404 : on les traite comme absentes pour afficher directement
+* l'avatar généré plutôt qu'attendre l'échec du chargement.
+*/
+function estImagePlaceholder(url) {
+	if (!url?.trim()) return true;
+	return url.includes("image-par-defaut") || url.includes("default-logo") || url.includes("image-par-default");
+}
+function initiales(nom) {
+	const mots = nom.trim().split(/\s+/).filter((mot) => /\p{L}/u.test(mot));
+	if (mots.length === 0) return "?";
+	if (mots.length === 1) return mots[0].slice(0, 2).toLocaleUpperCase("fr");
+	return (mots[0][0] + mots[1][0]).toLocaleUpperCase("fr");
+}
+/** Teinte stable dérivée du nom, pour que chaque fiche garde la même couleur. */
+var TEINTES = [
+	"bg-sky-100 text-sky-900",
+	"bg-emerald-100 text-emerald-900",
+	"bg-amber-100 text-amber-900",
+	"bg-violet-100 text-violet-900",
+	"bg-rose-100 text-rose-900",
+	"bg-teal-100 text-teal-900"
+];
+function teinte(nom) {
+	let somme = 0;
+	for (const caractere of nom) somme = (somme + caractere.codePointAt(0)) % 4096;
+	return TEINTES[somme % TEINTES.length];
+}
+/**
+* Affiche le logo ou la photo si elle existe, sinon un avatar généré à partir
+* des initiales. Utilisé sur les fiches client, fournisseur et travailleur.
+*/
+function AvatarRessource({ src, nom, className, classNameTexte }) {
+	const image = estImagePlaceholder(src) ? null : src;
+	return /* @__PURE__ */ jsxs(Avatar$1, {
+		className: cn$1("size-16", className),
+		children: [image && /* @__PURE__ */ jsx(AvatarImage, {
+			src: image,
+			alt: nom,
+			className: "object-cover"
+		}), /* @__PURE__ */ jsx(AvatarFallback, {
+			className: cn$1("font-semibold", teinte(nom), classNameTexte),
+			children: initiales(nom)
+		})]
+	});
+}
+//#endregion
+//#region app/routes/clients/detail.tsx
+var detail_exports$2 = /* @__PURE__ */ __exportAll({ default: () => detail_default$2 });
+var InformationsClientSchema = z.object({
+	firstName: z.string().trim().max(50, "Le prénom ne peut pas dépasser 50 caractères.").refine((value) => value.length === 0 || value.length >= 4, "Le prénom doit contenir au moins 4 caractères."),
+	lastName: z.string().trim().max(50, "Le nom ne peut pas dépasser 50 caractères.").refine((value) => value.length === 0 || value.length >= 4, "Le nom doit contenir au moins 4 caractères."),
+	email: z.union([z.literal(""), z.email("L’adresse e-mail est invalide.")]),
+	sex: z.enum(["HOMME", "FEMME"]).or(z.literal("")),
+	birthday: z.union([z.literal(""), z.iso.date("La date de naissance est invalide.")]),
+	pays: z.string().max(50, "Le pays ne peut pas dépasser 50 caractères."),
+	ville: z.string().max(50, "La ville ne peut pas dépasser 50 caractères."),
+	region: z.string().max(50, "La région ne peut pas dépasser 50 caractères."),
+	adresse: z.string().max(50, "L’adresse ne peut pas dépasser 50 caractères."),
+	codePostal: z.string().max(20, "Le code postal ne peut pas dépasser 20 caractères.")
+});
+var detail_default$2 = UNSAFE_withComponentProps(function DetailClient() {
+	const { businessId } = useBusiness();
+	const { id } = useParams();
+	const navigate = useNavigate();
+	const [client, setClient] = useState(null);
+	const [chargement, setChargement] = useState(true);
+	const [erreur, setErreur] = useState(null);
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+	const [sex, setSex] = useState("");
+	const [birthday, setBirthday] = useState("");
+	const [pays, setPays] = useState("");
+	const [ville, setVille] = useState("");
+	const [region, setRegion] = useState("");
+	const [adresse, setAdresse] = useState("");
+	const [codePostal, setCodePostal] = useState("");
+	const [erreursFormulaire, setErreursFormulaire] = useState({});
+	const [contactEdite, setContactEdite] = useState(null);
+	const [typeContact, setTypeContact] = useState("PHONE");
+	const [emailContact, setEmailContact] = useState("");
+	const [telephone, setTelephone] = useState("");
+	const [dialogContact, setDialogContact] = useState(false);
+	const [aSupprimer, setASupprimer] = useState(null);
+	const [enCours, setEnCours] = useState(false);
+	const [enregistrementInfos, setEnregistrementInfos] = useState(false);
+	const [logo, setLogo] = useState(null);
+	const [apercuLogo, setApercuLogo] = useState(null);
+	const [erreurLogo, setErreurLogo] = useState(null);
+	const [renvoiEnCours, setRenvoiEnCours] = useState(false);
+	const inputLogoRef = useRef(null);
+	const charger = useCallback(async () => {
+		if (!businessId || !id) return;
+		setChargement(true);
+		setErreur(null);
+		try {
+			const resultat = await lireClient(businessId, id);
+			setClient(resultat);
+			setFirstName(resultat.firstName ?? "");
+			setLastName(resultat.lastName ?? "");
+			setEmail(resultat.email ?? "");
+			setSex(resultat.sex === "HOMME" || resultat.sex === "FEMME" ? resultat.sex : "");
+			setBirthday(resultat.birthday?.slice(0, 10) ?? "");
+			const adresseAffichee = resultat.adresses[0] ?? resultat.userAdresses[0];
+			setPays(adresseAffichee?.pays ?? "");
+			setVille(adresseAffichee?.ville ?? "");
+			setRegion(adresseAffichee?.region ?? "");
+			setAdresse(adresseAffichee?.adresse ?? "");
+			setCodePostal(adresseAffichee?.codePostal ?? "");
+		} catch (error) {
+			setErreur(error instanceof Error ? error.message : "Impossible de charger le client.");
+		} finally {
+			setChargement(false);
+		}
+	}, [businessId, id]);
+	useEffect(() => {
+		charger();
+	}, [charger]);
+	useEffect(() => {
+		if (!logo) {
+			setApercuLogo(client?.profile ?? null);
+			return;
+		}
+		const url = URL.createObjectURL(logo);
+		setApercuLogo(url);
+		return () => URL.revokeObjectURL(url);
+	}, [client?.profile, logo]);
+	const executerMutation = async (operation, succes, rafraichir = true) => {
+		setEnCours(true);
+		try {
+			await operation();
+			toast.success(succes);
+			if (rafraichir) await charger();
+			return true;
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "L’opération a échoué.");
+			return false;
+		} finally {
+			setEnCours(false);
+		}
+	};
+	const enregistrerInformations = async (event) => {
+		event.preventDefault();
+		if (!businessId || !id || !client) return;
+		const validation = InformationsClientSchema.safeParse({
+			firstName,
+			lastName,
+			email,
+			sex,
+			birthday,
+			pays,
+			ville,
+			region,
+			adresse,
+			codePostal
+		});
+		if (!validation.success) {
+			const erreurs = {};
+			for (const issue of validation.error.issues) {
+				const champ = issue.path[0];
+				if (typeof champ === "string") erreurs[champ] = issue.message;
+			}
+			setErreursFormulaire(erreurs);
+			return;
+		}
+		setErreursFormulaire({});
+		const values = validation.data;
+		const firstNameChanged = values.firstName !== (client.firstName ?? "");
+		const lastNameChanged = values.lastName !== (client.lastName ?? "");
+		const emailChanged = values.email !== (client.email ?? "");
+		const sexChanged = values.sex !== (client.sex ?? "");
+		const birthdayChanged = values.birthday !== (client.birthday?.slice(0, 10) ?? "");
+		const clientChanged = firstNameChanged || lastNameChanged || emailChanged || sexChanged || birthdayChanged;
+		const existingAddress = client.adresses[0];
+		const addressChanged = values.pays !== (existingAddress?.pays ?? "") || values.ville !== (existingAddress?.ville ?? "") || values.region !== (existingAddress?.region ?? "") || values.adresse !== (existingAddress?.adresse ?? "") || values.codePostal !== (existingAddress?.codePostal ?? "");
+		const profileChanged = logo !== null;
+		if (!clientChanged && !addressChanged && !profileChanged) return;
+		setEnregistrementInfos(true);
+		try {
+			await executerMutation(async () => {
+				if (clientChanged || profileChanged) {
+					const form = {
+						...firstNameChanged ? { firstName: values.firstName || null } : {},
+						...lastNameChanged ? { lastName: values.lastName || null } : {},
+						...emailChanged ? { email: values.email || null } : {},
+						...sexChanged ? { sex: values.sex || null } : {},
+						...birthdayChanged ? { birthday: values.birthday ? (/* @__PURE__ */ new Date(`${values.birthday}T00:00:00.000Z`)).toISOString() : null } : {}
+					};
+					let profilEnregistre = client.profile;
+					if (profileChanged) profilEnregistre = (await modifierClientAvecLogo(businessId, id, form, logo)).data.profile ?? profilEnregistre;
+					else await modifierClient(businessId, id, form);
+					setClient((current) => current ? {
+						...current,
+						profile: profilEnregistre ?? current.profile ?? "http://localhost:3000/public/images/profile-logo/image-par-defaut.png"
+					} : current);
+					setLogo(null);
+				}
+				let addressUpdated = existingAddress;
+				if (addressChanged) {
+					const addressForm = {
+						pays: values.pays,
+						ville: values.ville,
+						region: values.region,
+						adresse: values.adresse,
+						codePostal: values.codePostal,
+						clientId: id
+					};
+					const result = existingAddress ? await modifier_adresse(existingAddress.id, addressForm) : await creer_adresse(addressForm);
+					if (!result.success) throw new Error(result.message || "La mise à jour de l’adresse a échoué.");
+					const addressId = existingAddress?.id ?? result.data?.id;
+					if (typeof addressId !== "string") throw new Error("L’adresse a été enregistrée, mais sa référence est introuvable.");
+					addressUpdated = {
+						id: addressId,
+						pays: values.pays,
+						ville: values.ville,
+						region: values.region,
+						adresse: values.adresse,
+						codePostal: values.codePostal || null
+					};
+				}
+				const persistedFirstName = values.firstName;
+				const persistedLastName = values.lastName;
+				const persistedEmail = values.email;
+				const fullName = [persistedFirstName, persistedLastName].filter(Boolean).join(" ");
+				setClient((current) => current ? {
+					...current,
+					...clientChanged ? {
+						firstName: persistedFirstName || null,
+						lastName: persistedLastName || null,
+						fullName: fullName || null,
+						email: persistedEmail || null,
+						sex: values.sex || null,
+						birthday: values.birthday ? (/* @__PURE__ */ new Date(`${values.birthday}T00:00:00.000Z`)).toISOString() : null
+					} : {},
+					adresses: addressUpdated ? [addressUpdated, ...current.adresses.slice(1)] : current.adresses
+				} : current);
+				setFirstName(persistedFirstName);
+				setLastName(persistedLastName);
+				setEmail(persistedEmail);
+				setSex(values.sex);
+				setBirthday(values.birthday);
+			}, "Les informations du client ont été modifiées.", false);
+		} finally {
+			setEnregistrementInfos(false);
+		}
+	};
+	const choisirLogo = (fichier) => {
+		setErreurLogo(null);
+		if (!fichier) {
+			setLogo(null);
+			return;
+		}
+		if (![
+			"image/jpeg",
+			"image/png",
+			"image/webp",
+			"image/gif"
+		].includes(fichier.type)) {
+			setLogo(null);
+			setErreurLogo("Choisissez une image JPG, PNG, WebP ou GIF.");
+			return;
+		}
+		if (fichier.size > 2097152) {
+			setLogo(null);
+			setErreurLogo("L’image ne doit pas dépasser 2 Mo.");
+			return;
+		}
+		setLogo(fichier);
+	};
+	const renvoyerInvitation = async () => {
+		if (!businessId || !client) return;
+		setRenvoiEnCours(true);
+		try {
+			const resultat = await renvoyerInvitationClient(businessId, client.id);
+			toast.success(resultat.message);
+			await charger();
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "Le renvoi de l’invitation a échoué.");
+		} finally {
+			setRenvoiEnCours(false);
+		}
+	};
+	const informationsModifiees = client !== null && (firstName !== (client.firstName ?? "") || lastName !== (client.lastName ?? "") || email !== (client.email ?? "") || sex !== (client.sex ?? "") || birthday !== (client.birthday?.slice(0, 10) ?? "") || logo !== null || pays !== (client.adresses[0]?.pays ?? "") || ville !== (client.adresses[0]?.ville ?? "") || region !== (client.adresses[0]?.region ?? "") || adresse !== (client.adresses[0]?.adresse ?? "") || codePostal !== (client.adresses[0]?.codePostal ?? ""));
+	const ouvrirCreationContact = () => {
+		setContactEdite(null);
+		setTypeContact("PHONE");
+		setEmailContact("");
+		setTelephone("");
+		setDialogContact(true);
+	};
+	const ouvrirModificationContact = (item) => {
+		setContactEdite(item);
+		setTypeContact(item.type === "EMAIL" ? "EMAIL" : "PHONE");
+		setEmailContact(item.email ?? "");
+		setTelephone(item.phone ?? "");
+		setDialogContact(true);
+	};
+	const enregistrerContact = async (event) => {
+		event.preventDefault();
+		if (!id) return;
+		const form = typeContact === "EMAIL" ? {
+			type: "EMAIL",
+			email: emailContact,
+			phone: null,
+			clientId: id
+		} : {
+			type: "PHONE",
+			phone: telephone,
+			email: null,
+			clientId: id
+		};
+		if (await executerMutation(async () => {
+			const result = contactEdite ? await modifier_contact(contactEdite.id, form) : await creer_contact(form);
+			if (!result.success) throw new Error(result.message || "L’enregistrement du contact a échoué.");
+			const contactId = contactEdite?.id ?? result.data?.id;
+			if (typeof contactId !== "string") throw new Error("Le contact a été enregistré, mais sa référence est introuvable.");
+			const updatedContact = {
+				id: contactId,
+				type: typeContact,
+				label: contactEdite?.label ?? result.data?.label ?? null,
+				email: typeContact === "EMAIL" ? emailContact : null,
+				phone: typeContact === "PHONE" ? telephone : null,
+				status: contactEdite?.status ?? result.data?.status ?? "EN_ATTENTE"
+			};
+			setClient((current) => current ? {
+				...current,
+				contacts: contactEdite ? current.contacts.map((item) => item.id === updatedContact.id ? updatedContact : item) : [...current.contacts, updatedContact]
+			} : current);
+		}, contactEdite ? "Le contact a été modifié." : "Le contact a été ajouté.", false)) setDialogContact(false);
+	};
+	const confirmerSuppression = async () => {
+		if (!aSupprimer || !businessId) return;
+		if (aSupprimer.type === "client") {
+			if (await executerMutation(() => supprimerClient(businessId, aSupprimer.id).then(() => void 0), "Le client a été supprimé.", false)) navigate("/clients");
+			return;
+		}
+		if (await executerMutation(async () => {
+			const result = await supprimer_contact(aSupprimer.id);
+			if (!result.success) throw new Error(result.message || "La suppression du contact a échoué.");
+			setClient((current) => current ? {
+				...current,
+				contacts: current.contacts.filter((contact) => contact.id !== aSupprimer.id)
+			} : current);
+		}, "Le contact a été supprimé.", false)) setASupprimer(null);
+	};
+	if (chargement) return /* @__PURE__ */ jsx("p", {
+		className: "p-6 text-sm text-muted-foreground",
+		children: "Chargement du client…"
+	});
+	if (erreur || !client) return /* @__PURE__ */ jsxs("main", {
+		className: "space-y-4 p-6",
+		children: [/* @__PURE__ */ jsx("p", {
+			role: "alert",
+			className: "text-destructive",
+			children: erreur ?? "Client introuvable."
+		}), /* @__PURE__ */ jsx(Link, {
+			to: "/clients",
+			className: "inline-flex h-8 items-center rounded-lg border px-3 text-sm hover:bg-muted",
+			children: "Retour aux clients"
+		})]
+	});
+	const nomClient = client.fullName || [client.firstName, client.lastName].filter(Boolean).join(" ") || "Client";
+	const compteExistant = Boolean(client.userId);
+	const imageClient = client.userImage || (client.profile && client.profile !== "http://localhost:3000/public/images/profile-logo/image-par-defaut.png" ? client.profile : "/images/profil-client-par-defaut.svg");
+	const paysSelect = items.find((item) => item.value?.toLowerCase() === pays.toLowerCase())?.value ?? null;
+	const adresseDuCompte = client.adresses.length === 0 && client.userAdresses.length > 0;
+	return /* @__PURE__ */ jsxs("main", {
+		className: "space-y-5 p-4 lg:p-6",
+		children: [
+			/* @__PURE__ */ jsxs(Link, {
+				to: "/clients",
+				className: "inline-flex h-8 w-fit items-center gap-2 rounded-lg px-2.5 text-sm font-medium hover:bg-muted",
+				children: [/* @__PURE__ */ jsx(ArrowLeft, { className: "size-4" }), " Retour aux clients"]
+			}),
+			/* @__PURE__ */ jsxs("header", { children: [
+				/* @__PURE__ */ jsx("h1", {
+					className: "text-2xl font-semibold",
+					children: nomClient
+				}),
+				/* @__PURE__ */ jsx("p", {
+					className: "text-sm text-muted-foreground",
+					children: client.isVerified ? "Client vérifié" : "Invitation en attente de validation"
+				}),
+				client.isVerified === false && client.invitationExpiresAt && new Date(client.invitationExpiresAt).getTime() <= Date.now() && /* @__PURE__ */ jsxs(Button, {
+					type: "button",
+					variant: "outline",
+					className: "mt-2",
+					onClick: () => void renvoyerInvitation(),
+					disabled: renvoiEnCours,
+					children: [/* @__PURE__ */ jsx(Send, { className: "size-4" }), renvoiEnCours ? "Envoi…" : "Renvoyer l’invitation"]
+				})
+			] }),
+			/* @__PURE__ */ jsxs(Tabs, {
+				defaultValue: "activites",
+				className: "w-full",
+				children: [
+					/* @__PURE__ */ jsxs(TabsList, {
+						className: "h-auto w-full flex-wrap justify-start",
+						children: [/* @__PURE__ */ jsx(TabsTrigger, {
+							value: "activites",
+							children: "Activités"
+						}), /* @__PURE__ */ jsx(TabsTrigger, {
+							value: "informations",
+							children: "Informations"
+						})]
+					}),
+					/* @__PURE__ */ jsxs(TabsContent, {
+						value: "activites",
+						className: "space-y-3 pt-4",
+						children: [/* @__PURE__ */ jsx("h2", {
+							className: "text-lg font-medium",
+							children: "Activités du client"
+						}), /* @__PURE__ */ jsx("p", {
+							className: "rounded-lg border p-5 text-sm text-muted-foreground",
+							children: "Les opérations de vente ne sont pas encore associées aux clients dans les données actuelles."
+						})]
+					}),
+					/* @__PURE__ */ jsxs(TabsContent, {
+						value: "informations",
+						className: "space-y-4 pt-4",
+						children: [
+							/* @__PURE__ */ jsxs("section", {
+								className: "space-y-4 rounded-xl border p-4",
+								children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+									className: "font-semibold",
+									children: "Informations du client"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: "Identité et adresse principale."
+								})] }), /* @__PURE__ */ jsx("form", {
+									onSubmit: enregistrerInformations,
+									children: /* @__PURE__ */ jsxs("fieldset", {
+										disabled: compteExistant,
+										className: "m-0 min-w-0 space-y-4 border-0 p-0",
+										children: [
+											/* @__PURE__ */ jsxs("div", {
+												className: "space-y-2",
+												children: [
+													/* @__PURE__ */ jsx("span", {
+														className: "text-sm font-medium",
+														children: "Logo du client"
+													}),
+													/* @__PURE__ */ jsx("input", {
+														ref: inputLogoRef,
+														id: "client-profile-logo",
+														type: "file",
+														accept: "image/jpeg,image/png,image/webp,image/gif",
+														className: "sr-only",
+														"aria-label": "Logo du client",
+														"aria-invalid": !!erreurLogo,
+														onChange: (event) => choisirLogo(event.currentTarget.files?.[0])
+													}),
+													/* @__PURE__ */ jsxs("label", {
+														htmlFor: "client-profile-logo",
+														className: "group flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-border bg-muted/30 p-4 transition-colors hover:border-primary/50 hover:bg-muted/60",
+														children: [
+															/* @__PURE__ */ jsx("span", {
+																className: "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-background text-muted-foreground shadow-sm",
+																children: logo && apercuLogo ? /* @__PURE__ */ jsx("img", {
+																	src: apercuLogo,
+																	alt: "Aperçu du logo client",
+																	className: "size-full object-cover"
+																}) : /* @__PURE__ */ jsx("img", {
+																	src: imageClient,
+																	alt: client.userImage ? `Photo de ${nomClient}` : "Image par défaut du client",
+																	className: "size-full object-cover"
+																})
+															}),
+															/* @__PURE__ */ jsxs("span", {
+																className: "min-w-0 flex-1",
+																children: [/* @__PURE__ */ jsx("span", {
+																	className: "block truncate text-sm font-medium",
+																	children: logo?.name ?? "Choisir le logo (facultatif)"
+																}), /* @__PURE__ */ jsx("span", {
+																	className: "mt-1 block text-xs text-muted-foreground",
+																	children: "JPG, PNG, WebP ou GIF · 2 Mo maximum"
+																})]
+															}),
+															/* @__PURE__ */ jsx(Upload, {
+																className: "size-4 shrink-0 text-muted-foreground",
+																"aria-hidden": "true"
+															})
+														]
+													}),
+													logo && /* @__PURE__ */ jsxs(Button, {
+														type: "button",
+														variant: "ghost",
+														size: "sm",
+														className: "w-fit",
+														onClick: () => {
+															setLogo(null);
+															if (inputLogoRef.current) inputLogoRef.current.value = "";
+														},
+														children: [/* @__PURE__ */ jsx(X, { className: "size-4" }), "Annuler le changement de logo"]
+													}),
+													erreurLogo && /* @__PURE__ */ jsx("p", {
+														role: "alert",
+														className: "text-sm text-destructive",
+														children: erreurLogo
+													})
+												]
+											}),
+											/* @__PURE__ */ jsxs("div", {
+												className: "grid gap-4 sm:grid-cols-2",
+												children: [/* @__PURE__ */ jsxs("label", {
+													className: "block space-y-1 text-sm",
+													children: [
+														/* @__PURE__ */ jsx("span", { children: "Nom" }),
+														/* @__PURE__ */ jsx(Input, {
+															value: lastName,
+															onChange: (event) => setLastName(event.currentTarget.value),
+															placeholder: "Nom",
+															"aria-invalid": !!erreursFormulaire.lastName
+														}),
+														erreursFormulaire.lastName && /* @__PURE__ */ jsx("span", {
+															className: "text-sm text-destructive",
+															children: erreursFormulaire.lastName
+														})
+													]
+												}), /* @__PURE__ */ jsxs("label", {
+													className: "block space-y-1 text-sm",
+													children: [
+														/* @__PURE__ */ jsx("span", { children: "Prénom" }),
+														/* @__PURE__ */ jsx(Input, {
+															value: firstName,
+															onChange: (event) => setFirstName(event.currentTarget.value),
+															placeholder: "Prénom",
+															"aria-invalid": !!erreursFormulaire.firstName
+														}),
+														erreursFormulaire.firstName && /* @__PURE__ */ jsx("span", {
+															className: "text-sm text-destructive",
+															children: erreursFormulaire.firstName
+														})
+													]
+												})]
+											}),
+											/* @__PURE__ */ jsxs("label", {
+												className: "block space-y-1 text-sm",
+												children: [
+													/* @__PURE__ */ jsx("span", { children: "E-mail" }),
+													/* @__PURE__ */ jsx(Input, {
+														type: "email",
+														value: email,
+														onChange: (event) => setEmail(event.currentTarget.value),
+														placeholder: "Adresse e-mail",
+														"aria-invalid": !!erreursFormulaire.email,
+														disabled: !!client.userId,
+														"aria-describedby": client.userId ? "client-email-aide" : void 0
+													}),
+													client.userId && /* @__PURE__ */ jsx("span", {
+														id: "client-email-aide",
+														className: "text-xs text-muted-foreground",
+														children: "Cette adresse provient du compte utilisateur rattaché."
+													}),
+													erreursFormulaire.email && /* @__PURE__ */ jsx("span", {
+														className: "text-sm text-destructive",
+														children: erreursFormulaire.email
+													})
+												]
+											}),
+											/* @__PURE__ */ jsxs("div", {
+												className: "grid gap-4 sm:grid-cols-2",
+												children: [/* @__PURE__ */ jsxs("label", {
+													className: "block space-y-1 text-sm",
+													children: [/* @__PURE__ */ jsx("span", { children: "Sexe" }), /* @__PURE__ */ jsxs(Select, {
+														value: sex || null,
+														onValueChange: (value) => setSex(value === "HOMME" || value === "FEMME" ? value : ""),
+														children: [/* @__PURE__ */ jsx(SelectTrigger, {
+															className: "w-full",
+															"aria-label": "Sexe",
+															children: /* @__PURE__ */ jsx(SelectValue, { placeholder: "Sélectionner" })
+														}), /* @__PURE__ */ jsx(SelectContent, { children: /* @__PURE__ */ jsxs(SelectGroup, { children: [/* @__PURE__ */ jsx(SelectItem, {
+															value: "HOMME",
+															children: "Homme"
+														}), /* @__PURE__ */ jsx(SelectItem, {
+															value: "FEMME",
+															children: "Femme"
+														})] }) })]
+													})]
+												}), /* @__PURE__ */ jsxs("label", {
+													className: "block space-y-1 text-sm",
+													children: [
+														/* @__PURE__ */ jsx("span", { children: "Date de naissance" }),
+														/* @__PURE__ */ jsx(Input, {
+															type: "date",
+															value: birthday,
+															max: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
+															onChange: (event) => setBirthday(event.currentTarget.value),
+															"aria-invalid": !!erreursFormulaire.birthday
+														}),
+														erreursFormulaire.birthday && /* @__PURE__ */ jsx("span", {
+															className: "text-sm text-destructive",
+															children: erreursFormulaire.birthday
+														})
+													]
+												})]
+											}),
+											/* @__PURE__ */ jsxs("div", {
+												className: "space-y-3",
+												children: [
+													/* @__PURE__ */ jsx("h3", {
+														className: "text-sm font-medium",
+														children: "Adresse"
+													}),
+													/* @__PURE__ */ jsx("p", {
+														className: "text-sm text-muted-foreground",
+														children: compteExistant ? "Les informations de ce compte utilisateur sont en lecture seule." : adresseDuCompte ? "Pré-remplie depuis le compte utilisateur rattaché. L’enregistrer en crée une copie propre à votre business." : "Indiquez l’adresse principale du client."
+													}),
+													/* @__PURE__ */ jsxs("div", {
+														className: "grid gap-4 sm:grid-cols-2",
+														children: [
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [/* @__PURE__ */ jsx("span", { children: "Pays" }), /* @__PURE__ */ jsxs(Select, {
+																	value: paysSelect,
+																	onValueChange: (value) => setPays(value ?? ""),
+																	children: [/* @__PURE__ */ jsx(SelectTrigger, {
+																		className: "w-full",
+																		"aria-label": "Pays",
+																		children: /* @__PURE__ */ jsx(SelectValue, { placeholder: "Sélectionner un pays" })
+																	}), /* @__PURE__ */ jsx(SelectContent, { children: /* @__PURE__ */ jsx(SelectGroup, { children: items.filter((item) => item.value !== null).map((item) => /* @__PURE__ */ jsx(SelectItem, {
+																		value: item.value,
+																		children: item.label
+																	}, item.value)) }) })]
+																})]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [/* @__PURE__ */ jsx("span", { children: "Ville" }), /* @__PURE__ */ jsx(Input, {
+																	value: ville,
+																	onChange: (event) => setVille(event.currentTarget.value),
+																	placeholder: "Ville"
+																})]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [/* @__PURE__ */ jsx("span", { children: "Région / Commune" }), /* @__PURE__ */ jsx(Input, {
+																	value: region,
+																	onChange: (event) => setRegion(event.currentTarget.value),
+																	placeholder: "Région / Commune"
+																})]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [/* @__PURE__ */ jsx("span", { children: "Adresse" }), /* @__PURE__ */ jsx(Input, {
+																	value: adresse,
+																	onChange: (event) => setAdresse(event.currentTarget.value),
+																	placeholder: "Adresse"
+																})]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "col-span-full block space-y-1 text-sm",
+																children: [/* @__PURE__ */ jsx("span", { children: "Code postal (optionnel)" }), /* @__PURE__ */ jsx(Input, {
+																	value: codePostal,
+																	onChange: (event) => setCodePostal(event.currentTarget.value),
+																	placeholder: "Code postal"
+																})]
+															})
+														]
+													})
+												]
+											}),
+											/* @__PURE__ */ jsx("div", {
+												className: "flex justify-end",
+												children: /* @__PURE__ */ jsxs(Button, {
+													type: "submit",
+													disabled: compteExistant || enCours || !informationsModifiees || !!erreurLogo,
+													children: [enregistrementInfos && /* @__PURE__ */ jsx(Loader2, {
+														className: "size-4 animate-spin",
+														"aria-hidden": "true"
+													}), "Personnaliser"]
+												})
+											})
+										]
+									})
+								})]
+							}),
+							/* @__PURE__ */ jsxs("section", {
+								className: "space-y-4 rounded-xl border p-4",
+								children: [
+									/* @__PURE__ */ jsxs("div", {
+										className: "flex items-start justify-between gap-3",
+										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+											className: "font-semibold",
+											children: "Contacts"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "text-sm text-muted-foreground",
+											children: "Coordonnées téléphoniques et e-mail du client."
+										})] }), client.contacts.length < 3 && /* @__PURE__ */ jsxs(Button, {
+											variant: "outline",
+											className: "border",
+											onClick: ouvrirCreationContact,
+											disabled: client.contacts.length >= 3,
+											children: [/* @__PURE__ */ jsx(Plus, {}), " Ajouter"]
+										})]
+									}),
+									client.contacts.length >= 3 && /* @__PURE__ */ jsx("p", {
+										className: "text-sm text-muted-foreground",
+										children: "Le client a atteint la limite de trois contacts."
+									}),
+									client.contacts.length ? /* @__PURE__ */ jsx("ul", {
+										className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+										children: client.contacts.map((item) => /* @__PURE__ */ jsxs("li", {
+											className: "flex items-center justify-between gap-3 rounded-lg border p-3",
+											children: [/* @__PURE__ */ jsxs("span", {
+												className: "flex min-w-0 items-center gap-2 text-sm",
+												children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
+													className: "truncate",
+													children: item.email || item.phone || item.label || "Contact"
+												})]
+											}), !compteExistant && /* @__PURE__ */ jsxs("div", {
+												className: "flex shrink-0 gap-1",
+												children: [/* @__PURE__ */ jsx(Button, {
+													variant: "ghost",
+													size: "icon",
+													className: "border",
+													"aria-label": "Modifier le contact",
+													onClick: () => ouvrirModificationContact(item),
+													children: /* @__PURE__ */ jsx(Pencil, {})
+												}), /* @__PURE__ */ jsx(Button, {
+													variant: "ghost",
+													size: "icon",
+													className: "border text-destructive",
+													"aria-label": "Supprimer le contact",
+													onClick: () => setASupprimer({
+														type: "contact",
+														id: item.id,
+														label: item.email || item.phone || item.label || "ce contact"
+													}),
+													children: /* @__PURE__ */ jsx(Trash2, {})
+												})]
+											})]
+										}, item.id))
+									}) : /* @__PURE__ */ jsx("p", {
+										className: "text-sm text-muted-foreground",
+										children: client.userContacts.length ? "Aucun contact propre à ce client." : "Aucun contact renseigné."
+									}),
+									compteExistant && /* @__PURE__ */ jsxs("div", {
+										className: "space-y-2 border-t pt-4",
+										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
+											className: "text-sm font-medium",
+											children: "Contacts du compte utilisateur"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "text-sm text-muted-foreground",
+											children: "Renseignés par la personne sur son compte. Ils ne sont pas modifiables depuis votre business."
+										})] }), client.userContacts.length > 0 ? /* @__PURE__ */ jsx("ul", {
+											className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+											children: client.userContacts.map((item) => /* @__PURE__ */ jsxs("li", {
+												className: "flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 p-3",
+												children: [/* @__PURE__ */ jsxs("span", {
+													className: "flex min-w-0 items-center gap-2 text-sm",
+													children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
+														className: "truncate",
+														children: item.email || item.phone || item.label || "Contact"
+													})]
+												}), item.status === "VERIFIE" && /* @__PURE__ */ jsx("span", {
+													className: "shrink-0 text-xs text-muted-foreground",
+													children: "Vérifié"
+												})]
+											}, item.id))
+										}) : /* @__PURE__ */ jsx("p", {
+											className: "text-sm text-muted-foreground",
+											children: "Aucun contact n’est renseigné sur ce compte utilisateur."
+										})]
+									})
+								]
+							}),
+							/* @__PURE__ */ jsxs("section", {
+								className: "space-y-4 rounded-xl border border-destructive/30 p-4",
+								children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+									className: "font-semibold",
+									children: "Zone de danger"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: "La suppression retirera définitivement ce client du business."
+								})] }), /* @__PURE__ */ jsxs(Button, {
+									variant: "destructive",
+									className: "border border-destructive",
+									disabled: enCours,
+									onClick: () => setASupprimer({
+										type: "client",
+										id: client.id,
+										label: nomClient
+									}),
+									children: [/* @__PURE__ */ jsx(Trash2, {}), " Supprimer le client"]
+								})]
+							})
+						]
+					})
+				]
+			}),
+			/* @__PURE__ */ jsx(Dialog$1, {
+				open: dialogContact,
+				onOpenChange: setDialogContact,
+				children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: contactEdite ? "Modifier le contact" : "Ajouter un contact" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Ajoutez un numéro de téléphone ou une adresse e-mail." })] }), /* @__PURE__ */ jsxs("form", {
+					onSubmit: enregistrerContact,
+					className: "space-y-3",
+					children: [
+						/* @__PURE__ */ jsxs("label", {
+							className: "block space-y-1 text-sm",
+							children: [/* @__PURE__ */ jsx("span", { children: "Type" }), /* @__PURE__ */ jsxs("select", {
+								className: "h-9 w-full rounded-lg border border-input bg-background px-3",
+								value: typeContact,
+								onChange: (event) => setTypeContact(event.currentTarget.value),
+								children: [/* @__PURE__ */ jsx("option", {
+									value: "PHONE",
+									children: "Téléphone"
+								}), /* @__PURE__ */ jsx("option", {
+									value: "EMAIL",
+									children: "E-mail"
+								})]
+							})]
+						}),
+						typeContact === "EMAIL" ? /* @__PURE__ */ jsx(Input, {
+							type: "email",
+							value: emailContact,
+							onChange: (event) => setEmailContact(event.currentTarget.value),
+							placeholder: "Adresse e-mail",
+							required: true
+						}) : /* @__PURE__ */ jsxs("label", {
+							className: "block space-y-1 text-sm",
+							children: [/* @__PURE__ */ jsx("span", { children: "Numéro de téléphone" }), /* @__PURE__ */ jsx(Input, {
+								type: "tel",
+								value: telephone,
+								onChange: (event) => setTelephone(event.currentTarget.value),
+								placeholder: "Téléphone (+243…)",
+								required: true
+							})]
+						}),
+						/* @__PURE__ */ jsxs(DialogFooter, { children: [/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							onClick: () => setDialogContact(false),
+							children: "Annuler"
+						}), /* @__PURE__ */ jsxs(Button, {
+							type: "submit",
+							disabled: enCours,
+							children: [enCours && /* @__PURE__ */ jsx(Loader2, {
+								className: "size-4 animate-spin",
+								"aria-hidden": "true"
+							}), contactEdite ? "Enregistrer" : "Ajouter"]
+						})] })
+					]
+				})] })
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: aSupprimer !== null,
+				onOpenChange: (open) => {
+					if (!open && !enCours) setASupprimer(null);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: "Confirmer la suppression" }), /* @__PURE__ */ jsxs(AlertDialogDescription, { children: [aSupprimer?.type === "client" ? `Le client « ${aSupprimer.label} » sera supprimé.` : `Le contact « ${aSupprimer?.label} » sera supprimé.`, " Cette action est irréversible."] })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: enCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: "destructive",
+					disabled: enCours,
+					onClick: () => void confirmerSuppression(),
+					children: enCours ? "Suppression…" : "Supprimer"
+				})] })] })
+			})
+		]
+	});
+});
+//#endregion
+//#region app/routes/clients/valider-invitation.tsx
+var valider_invitation_exports$2 = /* @__PURE__ */ __exportAll({ default: () => valider_invitation_default$2 });
+var valider_invitation_default$2 = UNSAFE_withComponentProps(function ValiderInvitationClient() {
+	const { invitationId } = useParams();
+	const navigate = useNavigate();
+	const [code, setCode] = useState("");
+	const [enCours, setEnCours] = useState(false);
+	const valider = async (event) => {
+		event.preventDefault();
+		if (!invitationId || !/^\d{6}$/.test(code)) {
+			toast.error("Saisissez le code à 6 chiffres reçu par e-mail.");
+			return;
+		}
+		setEnCours(true);
+		try {
+			const resultat = await validerInvitationClient(invitationId, code);
+			toast.success(resultat.message);
+			navigate("/acceuil", { replace: true });
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "Impossible de valider cette invitation.");
+		} finally {
+			setEnCours(false);
+		}
+	};
+	return /* @__PURE__ */ jsx("main", {
+		className: "mx-auto flex w-full max-w-md flex-1 items-center px-4 py-10",
+		children: /* @__PURE__ */ jsxs("form", {
+			onSubmit: valider,
+			className: "w-full space-y-5 rounded-xl border p-6",
+			children: [
+				/* @__PURE__ */ jsxs("div", {
+					className: "space-y-2",
+					children: [/* @__PURE__ */ jsx("h1", {
+						className: "text-xl font-semibold",
+						children: "Valider l’invitation client"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: "Connectez-vous avec le compte invité, puis saisissez le code à 6 chiffres envoyé par e-mail. Le code expire après 15 minutes."
+					})]
+				}),
+				/* @__PURE__ */ jsx(Input, {
+					value: code,
+					onChange: (event) => setCode(event.currentTarget.value.replace(/\D/g, "").slice(0, 6)),
+					inputMode: "numeric",
+					autoComplete: "one-time-code",
+					placeholder: "000000",
+					"aria-label": "Code de validation à 6 chiffres",
+					required: true,
+					className: "h-11 text-center text-lg tracking-[0.5em]"
+				}),
+				/* @__PURE__ */ jsx(Button, {
+					type: "submit",
+					className: "w-full",
+					disabled: enCours || code.length !== 6,
+					children: enCours ? "Validation…" : "Confirmer l’invitation"
+				})
+			]
+		})
+	});
+});
+//#endregion
+//#region app/components/fournisseurs/creer-fournisseur.tsx
+var formulaireFournisseurSchema = z.object({
+	nom: z.string().trim().min(4, "Le nom doit contenir au moins 4 caractères.").max(50, "Le nom ne peut pas dépasser 50 caractères."),
+	email: z.union([z.literal(""), z.email("Saisissez une adresse e-mail valide.")]).optional()
+});
+function nomUtilisateur$1(utilisateur) {
+	return utilisateur.full_name?.trim() || utilisateur.clients?.fullName?.trim() || utilisateur.contacts.find((contact) => contact.label?.trim())?.label?.trim() || utilisateur.contacts.find((contact) => contact.email?.trim())?.email?.trim() || `Utilisateur ${utilisateur.id.slice(-6)}`;
+}
+function emailUtilisateur$1(utilisateur) {
+	if (utilisateur.email?.trim()) return utilisateur.email.trim();
+	if (utilisateur.clients?.email?.trim()) return utilisateur.clients.email.trim();
+	return utilisateur.contacts.find((contact) => contact.label?.trim())?.email?.trim() || utilisateur.contacts.find((contact) => contact.email?.trim())?.email?.trim() || "E-mail non renseigné";
+}
+function CreerFournisseur({ businessId, onCreated, onInvited }) {
+	const [ouvert, setOuvert] = useState(false);
+	const [logo, setLogo] = useState(null);
+	const [erreurLogo, setErreurLogo] = useState(null);
+	const [apercuLogo, setApercuLogo] = useState(null);
+	const inputLogoRef = useRef(null);
+	const [recherche, setRecherche] = useState("");
+	const [utilisateurs, setUtilisateurs] = useState([]);
+	const [selection, setSelection] = useState(() => /* @__PURE__ */ new Set());
+	const [chargement, setChargement] = useState(false);
+	const [erreurRecherche, setErreurRecherche] = useState(null);
+	const [rattachementEnCours, setRattachementEnCours] = useState(false);
+	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(formulaireFournisseurSchema),
+		mode: "onTouched",
+		defaultValues: {
+			nom: "",
+			email: ""
+		}
+	});
+	useEffect(() => {
+		if (!logo) {
+			setApercuLogo(null);
+			return;
+		}
+		const url = URL.createObjectURL(logo);
+		setApercuLogo(url);
+		return () => URL.revokeObjectURL(url);
+	}, [logo]);
+	useEffect(() => {
+		if (!ouvert) {
+			setRecherche("");
+			setUtilisateurs([]);
+			setSelection(/* @__PURE__ */ new Set());
+			setErreurRecherche(null);
+		}
+	}, [ouvert]);
+	useEffect(() => {
+		if (!ouvert) return;
+		const terme = recherche.trim();
+		if (!terme || !businessId) {
+			setUtilisateurs([]);
+			setChargement(false);
+			return;
+		}
+		let annule = false;
+		setChargement(true);
+		setErreurRecherche(null);
+		const timeout = window.setTimeout(() => {
+			listerUtilisateursFournisseurDisponibles(businessId, terme).then((resultat) => {
+				if (!annule) setUtilisateurs(resultat);
+			}).catch((error) => {
+				if (!annule) setErreurRecherche(error.message || "Impossible de charger les utilisateurs.");
+			}).finally(() => {
+				if (!annule) setChargement(false);
+			});
+		}, 300);
+		return () => {
+			annule = true;
+			window.clearTimeout(timeout);
+		};
+	}, [
+		businessId,
+		ouvert,
+		recherche
+	]);
+	const choisirLogo = (fichier) => {
+		setErreurLogo(null);
+		if (!fichier) {
+			setLogo(null);
+			return;
+		}
+		if (![
+			"image/jpeg",
+			"image/png",
+			"image/webp",
+			"image/gif"
+		].includes(fichier.type)) {
+			setLogo(null);
+			setErreurLogo("Choisissez une image JPG, PNG, WebP ou GIF.");
+			return;
+		}
+		if (fichier.size > 2097152) {
+			setLogo(null);
+			setErreurLogo("L’image ne doit pas dépasser 2 Mo.");
+			return;
+		}
+		setLogo(fichier);
+	};
+	const basculerSelection = (id) => {
+		setSelection((courante) => {
+			const suivante = new Set(courante);
+			if (suivante.has(id)) suivante.delete(id);
+			else suivante.add(id);
+			return suivante;
+		});
+	};
+	const onSubmit = async (valeurs) => {
+		if (!businessId) {
+			toast.error("Aucun business n’est sélectionné.");
+			return;
+		}
+		const fournisseur = {
+			nom: valeurs.nom.trim(),
+			...valeurs.email?.trim() ? { email: valeurs.email.trim() } : {}
+		};
+		await toast.promise(creerFournisseurAvecLogo(businessId, fournisseur, logo ?? void 0), {
+			loading: "Création du fournisseur…",
+			success: ({ data: cree, message }) => {
+				reset({
+					nom: "",
+					email: ""
+				});
+				setLogo(null);
+				setErreurLogo(null);
+				if (inputLogoRef.current) inputLogoRef.current.value = "";
+				setOuvert(false);
+				onCreated(cree);
+				return message;
+			},
+			error: (error) => error.message
+		}).unwrap();
+	};
+	const rattacher = async () => {
+		if (!businessId || selection.size === 0) return;
+		setRattachementEnCours(true);
+		try {
+			await toast.promise(inviterUtilisateursCommeFournisseurs(businessId, Array.from(selection)), {
+				loading: "Envoi des invitations fournisseur…",
+				success: ({ data, message }) => {
+					setOuvert(false);
+					onInvited(data);
+					return message;
+				},
+				error: (error) => error.message
+			}).unwrap();
+		} finally {
+			setRattachementEnCours(false);
+		}
+	};
+	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs(Button, {
+		type: "button",
+		disabled: !businessId,
+		onClick: () => setOuvert(true),
+		children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouveau fournisseur"]
+	}), /* @__PURE__ */ jsx(Dialog$1, {
+		open: ouvert,
+		onOpenChange: setOuvert,
+		children: /* @__PURE__ */ jsxs(DialogContent, {
+			className: "sm:max-w-lg",
+			children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Nouveau fournisseur" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Enregistrez un fournisseur sans compte, ou rattachez-le à un compte utilisateur existant." })] }), /* @__PURE__ */ jsxs(Tabs, {
+				defaultValue: "sans-compte",
+				className: "w-full",
+				children: [
+					/* @__PURE__ */ jsxs(TabsList, {
+						className: "grid w-full grid-cols-2",
+						children: [/* @__PURE__ */ jsx(TabsTrigger, {
+							value: "sans-compte",
+							children: "Sans compte"
+						}), /* @__PURE__ */ jsx(TabsTrigger, {
+							value: "compte-existant",
+							children: "Compte existant"
+						})]
+					}),
+					/* @__PURE__ */ jsx(TabsContent, {
+						value: "sans-compte",
+						className: "pt-4",
+						children: /* @__PURE__ */ jsxs("form", {
+							onSubmit: handleSubmit(onSubmit),
+							noValidate: true,
+							children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [
+								/* @__PURE__ */ jsxs(Field, {
+									"data-invalid": !!erreurLogo,
+									children: [
+										/* @__PURE__ */ jsx("input", {
+											ref: inputLogoRef,
+											id: "nouveau-fournisseur-logo",
+											type: "file",
+											accept: "image/jpeg,image/png,image/webp,image/gif",
+											className: "sr-only",
+											"aria-label": "Icône du fournisseur (facultative)",
+											"aria-invalid": !!erreurLogo,
+											"aria-describedby": erreurLogo ? "nouveau-fournisseur-logo-erreur" : "nouveau-fournisseur-logo-aide",
+											onChange: (event) => choisirLogo(event.currentTarget.files?.[0])
+										}),
+										/* @__PURE__ */ jsxs("label", {
+											htmlFor: "nouveau-fournisseur-logo",
+											className: "group flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-border bg-muted/30 p-4 transition-colors hover:border-primary/50 hover:bg-muted/60 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2",
+											children: [
+												/* @__PURE__ */ jsx("span", {
+													className: "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-background text-muted-foreground shadow-sm",
+													children: apercuLogo ? /* @__PURE__ */ jsx("img", {
+														src: apercuLogo,
+														alt: "Aperçu de l’icône du fournisseur",
+														className: "size-full object-cover"
+													}) : /* @__PURE__ */ jsx(ImagePlusIcon, {
+														className: "size-7",
+														"aria-hidden": "true"
+													})
+												}),
+												/* @__PURE__ */ jsxs("span", {
+													className: "min-w-0 max-w-full flex-1 overflow-hidden",
+													children: [/* @__PURE__ */ jsx("span", {
+														className: "block max-w-full truncate text-sm font-medium text-foreground",
+														title: logo?.name,
+														children: logo ? tronquerAvecEllipses(logo.name) : "Choisir une icône (facultatif)"
+													}), /* @__PURE__ */ jsx("span", {
+														id: "nouveau-fournisseur-logo-aide",
+														className: "mt-1 block text-xs text-muted-foreground",
+														children: "JPG, PNG, WebP ou GIF · 2 Mo maximum"
+													})]
+												}),
+												/* @__PURE__ */ jsx(UploadIcon, {
+													className: "size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground",
+													"aria-hidden": "true"
+												})
+											]
+										}),
+										logo && /* @__PURE__ */ jsxs(Button, {
+											type: "button",
+											variant: "ghost",
+											size: "sm",
+											className: "w-fit",
+											onClick: () => {
+												setLogo(null);
+												if (inputLogoRef.current) inputLogoRef.current.value = "";
+											},
+											children: [/* @__PURE__ */ jsx(XIcon, { className: "size-4" }), "Retirer l’icône"]
+										}),
+										erreurLogo && /* @__PURE__ */ jsx("p", {
+											id: "nouveau-fournisseur-logo-erreur",
+											role: "alert",
+											className: "text-sm text-destructive",
+											children: erreurLogo
+										})
+									]
+								}),
+								/* @__PURE__ */ jsxs(Field, {
+									"data-invalid": !!errors.nom,
+									children: [
+										/* @__PURE__ */ jsx(FieldLabel, {
+											htmlFor: "nouveau-fournisseur-nom",
+											children: "Nom"
+										}),
+										/* @__PURE__ */ jsx(Input, {
+											id: "nouveau-fournisseur-nom",
+											autoComplete: "organization",
+											placeholder: "Ex. : Textile Bukavu",
+											"aria-invalid": !!errors.nom,
+											"aria-describedby": errors.nom ? "nouveau-fournisseur-nom-erreur" : void 0,
+											...register("nom")
+										}),
+										/* @__PURE__ */ jsx(FieldError, {
+											id: "nouveau-fournisseur-nom-erreur",
+											errors: [errors.nom]
+										})
+									]
+								}),
+								/* @__PURE__ */ jsxs(Field, {
+									"data-invalid": !!errors.email,
+									children: [
+										/* @__PURE__ */ jsxs(FieldLabel, {
+											htmlFor: "nouveau-fournisseur-email",
+											children: [
+												"E-mail",
+												" ",
+												/* @__PURE__ */ jsx("span", {
+													className: "font-normal text-muted-foreground",
+													children: "(facultatif)"
+												})
+											]
+										}),
+										/* @__PURE__ */ jsx(Input, {
+											id: "nouveau-fournisseur-email",
+											type: "email",
+											autoComplete: "email",
+											placeholder: "contact@exemple.cd",
+											"aria-invalid": !!errors.email,
+											"aria-describedby": errors.email ? "nouveau-fournisseur-email-erreur" : void 0,
+											...register("email")
+										}),
+										/* @__PURE__ */ jsx(FieldError, {
+											id: "nouveau-fournisseur-email-erreur",
+											errors: [errors.email]
+										})
+									]
+								})
+							] }), /* @__PURE__ */ jsxs(DialogFooter, {
+								className: "mt-6",
+								children: [/* @__PURE__ */ jsx(Button, {
+									type: "button",
+									variant: "outline",
+									onClick: () => setOuvert(false),
+									disabled: isSubmitting,
+									children: "Annuler"
+								}), /* @__PURE__ */ jsx(Button, {
+									type: "submit",
+									disabled: !isValid || isSubmitting || !!erreurLogo,
+									children: isSubmitting ? "Création…" : "Créer le fournisseur"
+								})]
+							})]
+						})
+					}),
+					/* @__PURE__ */ jsxs(TabsContent, {
+						value: "compte-existant",
+						className: "pt-4",
+						children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [/* @__PURE__ */ jsxs(Field, { children: [
+							/* @__PURE__ */ jsx(FieldLabel, {
+								htmlFor: "rattacher-fournisseur-recherche",
+								children: "Rechercher un utilisateur"
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "relative",
+								children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+									id: "rattacher-fournisseur-recherche",
+									value: recherche,
+									onChange: (event) => setRecherche(event.currentTarget.value),
+									placeholder: "Nom, e-mail ou téléphone…",
+									className: "pl-9"
+								})]
+							}),
+							/* @__PURE__ */ jsx(FieldDescription, { children: "Une invitation sera envoyée à chaque personne pour qu’elle confirme son rattachement." })
+						] }), /* @__PURE__ */ jsx("div", {
+							className: "max-h-56 min-h-32 overflow-y-auto rounded-lg border",
+							"aria-busy": chargement,
+							children: chargement ? /* @__PURE__ */ jsx("p", {
+								className: "p-6 text-center text-sm text-muted-foreground",
+								role: "status",
+								children: "Recherche en cours…"
+							}) : erreurRecherche ? /* @__PURE__ */ jsx("p", {
+								className: "p-6 text-center text-sm text-destructive",
+								children: erreurRecherche
+							}) : utilisateurs.length === 0 ? /* @__PURE__ */ jsx("p", {
+								className: "p-6 text-center text-sm text-muted-foreground",
+								children: recherche.trim() ? "Aucun utilisateur disponible ne correspond." : "Saisissez un nom, un e-mail ou un téléphone pour chercher."
+							}) : /* @__PURE__ */ jsx("ul", {
+								className: "divide-y",
+								children: utilisateurs.map((utilisateur) => {
+									const selectionne = selection.has(utilisateur.id);
+									return /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("button", {
+										type: "button",
+										onClick: () => basculerSelection(utilisateur.id),
+										"aria-pressed": selectionne,
+										"aria-label": `${selectionne ? "Désélectionner" : "Sélectionner"} ${nomUtilisateur$1(utilisateur)}`,
+										className: `flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/50 ${selectionne ? "bg-primary/10" : ""}`,
+										children: [
+											/* @__PURE__ */ jsxs(Avatar$1, {
+												className: "size-9 shrink-0",
+												children: [/* @__PURE__ */ jsx(AvatarImage, {
+													src: utilisateur.image ?? utilisateur.clients?.profile,
+													alt: ""
+												}), /* @__PURE__ */ jsx(AvatarFallback, {
+													className: "bg-primary/10 text-sm font-medium text-primary",
+													children: nomUtilisateur$1(utilisateur).charAt(0).toLocaleUpperCase("fr")
+												})]
+											}),
+											/* @__PURE__ */ jsxs("span", {
+												className: "min-w-0 flex-1",
+												children: [/* @__PURE__ */ jsx("span", {
+													className: "block truncate text-sm font-medium",
+													children: nomUtilisateur$1(utilisateur)
+												}), /* @__PURE__ */ jsx("span", {
+													className: "block truncate text-xs text-muted-foreground",
+													children: emailUtilisateur$1(utilisateur)
+												})]
+											}),
+											/* @__PURE__ */ jsx("span", {
+												className: `flex size-5 shrink-0 items-center justify-center rounded-full border ${selectionne ? "border-primary bg-primary text-primary-foreground" : "border-muted-foreground/40"}`,
+												"aria-hidden": "true",
+												children: selectionne && /* @__PURE__ */ jsx(Check, { className: "size-3" })
+											})
+										]
+									}) }, utilisateur.id);
+								})
+							})
+						})] }), /* @__PURE__ */ jsxs(DialogFooter, {
+							className: "mt-6",
+							children: [/* @__PURE__ */ jsx(Button, {
+								type: "button",
+								variant: "outline",
+								onClick: () => setOuvert(false),
+								disabled: rattachementEnCours,
+								children: "Annuler"
+							}), /* @__PURE__ */ jsx(Button, {
+								type: "button",
+								onClick: rattacher,
+								disabled: selection.size === 0 || rattachementEnCours,
+								children: rattachementEnCours ? "Rattachement…" : `Rattacher ${selection.size > 1 ? `${selection.size} comptes` : "le compte"}`
+							})]
+						})]
+					})
+				]
+			})]
+		})
+	})] });
+}
 //#endregion
 //#region app/routes/fournisseurs/fournisseurs.tsx
 var fournisseurs_exports = /* @__PURE__ */ __exportAll({ default: () => fournisseurs_default });
@@ -1572,69 +4119,200 @@ var fournisseurs_default = UNSAFE_withComponentProps(function Fournisseurs() {
 	const { businessId } = useBusiness();
 	const [recherche, setRecherche] = useState("");
 	const [saisie, setSaisie] = useState("");
+	const [filtreCompte, setFiltreCompte] = useState("tous");
+	const [taillePage, setTaillePage] = useState(10);
+	const [page, setPage] = useState(0);
 	const [ouvert, setOuvert] = useState(false);
 	const [enEdition, setEnEdition] = useState(null);
-	const charger = useCallback(() => listerFournisseurs(businessId, recherche || void 0), [businessId, recherche]);
-	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
+	const [aSupprimer, setASupprimer] = useState(null);
+	const [suppressionEnCours, setSuppressionEnCours] = useState(false);
+	const [renvoiEnCours, setRenvoiEnCours] = useState(null);
+	const [logo, setLogo] = useState(null);
+	const [erreurLogo, setErreurLogo] = useState(null);
+	const [logoInitial, setLogoInitial] = useState(null);
+	const [apercuLogo, setApercuLogo] = useState(null);
+	const inputLogoRef = useRef(null);
+	useEffect(() => {
+		if (!logo) {
+			setApercuLogo(logoInitial);
+			return;
+		}
+		const url = URL.createObjectURL(logo);
+		setApercuLogo(url);
+		return () => URL.revokeObjectURL(url);
+	}, [logo, logoInitial]);
+	useEffect(() => {
+		const timeout = window.setTimeout(() => {
+			setRecherche(saisie.trim());
+			setPage(0);
+		}, 300);
+		return () => window.clearTimeout(timeout);
+	}, [saisie]);
+	const charger = useCallback(async () => {
+		return (await listerFournisseurs(businessId, recherche || void 0)).map((fournisseur) => ({
+			id: fournisseur.id,
+			nom: fournisseur.nom ?? void 0,
+			email: fournisseur.email ?? void 0,
+			logo: fournisseur.logo,
+			userImage: fournisseur.userImage,
+			website: fournisseur.website ?? void 0,
+			userId: fournisseur.userId,
+			isVerified: fournisseur.isVerified,
+			invitationExpiresAt: fournisseur.invitationExpiresAt
+		}));
+	}, [businessId, recherche]);
+	const { donnees, chargement, erreur, recharger, ajouter, mettreAJour, retirer } = useListe(charger, !!businessId);
+	const fournisseursFiltres = donnees.filter((fournisseur) => {
+		if (filtreCompte === "avec-compte") return !!fournisseur.userId;
+		if (filtreCompte === "sans-compte") return !fournisseur.userId;
+		return true;
+	});
+	const nombrePages = Math.ceil(fournisseursFiltres.length / taillePage);
+	const pageCourante = Math.min(page, Math.max(0, nombrePages - 1));
+	const fournisseursAffiches = fournisseursFiltres.slice(pageCourante * taillePage, (pageCourante + 1) * taillePage);
+	const debut = fournisseursFiltres.length === 0 ? 0 : pageCourante * taillePage + 1;
+	const fin = Math.min((pageCourante + 1) * taillePage, fournisseursFiltres.length);
 	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
 		resolver: zodResolver(FournisseurSchema),
 		mode: "onTouched",
 		defaultValues: {
 			nom: "",
 			email: "",
-			website: "",
-			description: ""
+			website: ""
 		}
 	});
-	const ouvrirCreation = () => {
-		setEnEdition(null);
-		reset({
-			nom: "",
-			email: "",
-			website: "",
-			description: ""
-		});
-		setOuvert(true);
-	};
 	const ouvrirEdition = (f) => {
 		setEnEdition(f);
+		setLogo(null);
+		setErreurLogo(null);
+		setLogoInitial(f.logo ?? null);
+		if (inputLogoRef.current) inputLogoRef.current.value = "";
 		reset({
 			nom: f.nom ?? "",
 			email: f.email ?? "",
-			website: f.website ?? "",
-			description: f.description ?? ""
+			website: f.website ?? ""
 		});
 		setOuvert(true);
 	};
+	const choisirLogo = (fichier) => {
+		setErreurLogo(null);
+		if (!fichier) {
+			setLogo(null);
+			return;
+		}
+		if (![
+			"image/jpeg",
+			"image/png",
+			"image/webp",
+			"image/gif"
+		].includes(fichier.type)) {
+			setLogo(null);
+			setErreurLogo("Choisissez une image JPG, PNG, WebP ou GIF.");
+			return;
+		}
+		if (fichier.size > 2097152) {
+			setLogo(null);
+			setErreurLogo("L’image ne doit pas dépasser 2 Mo.");
+			return;
+		}
+		setLogo(fichier);
+	};
 	const onSubmit = async (form) => {
+		if (!enEdition) return;
 		const utiles = {
 			...form.nom?.trim() ? { nom: form.nom.trim() } : {},
 			...form.email?.trim() ? { email: form.email.trim() } : {},
-			...form.website?.trim() ? { website: form.website.trim() } : {},
-			...form.description?.trim() ? { description: form.description.trim() } : {}
+			...form.website?.trim() ? { website: form.website.trim() } : {}
 		};
-		const action = enEdition ? modifierFournisseur(businessId, enEdition.id, utiles) : creerFournisseur(businessId, utiles);
-		await toast.promise(action, {
-			loading: enEdition ? "Modification…" : "Création…",
-			success: () => {
+		await toast.promise(modifierFournisseurAvecLogo(businessId, enEdition.id, utiles, logo ?? void 0), {
+			loading: "Modification…",
+			success: ({ data: fournisseur, message }) => {
+				const fournisseurMisAJour = {
+					id: fournisseur.id,
+					nom: fournisseur.nom ?? void 0,
+					email: fournisseur.email ?? void 0,
+					logo: fournisseur.logo,
+					userImage: enEdition.userImage,
+					website: fournisseur.website ?? void 0,
+					userId: fournisseur.userId,
+					isVerified: fournisseur.isVerified,
+					invitationExpiresAt: fournisseur.invitationExpiresAt
+				};
+				const terme = recherche.trim().toLocaleLowerCase("fr");
+				if (!terme || fournisseurMisAJour.nom?.toLocaleLowerCase("fr").includes(terme)) mettreAJour(fournisseurMisAJour, (element) => element.id);
+				else retirer(fournisseurMisAJour.id, (element) => element.id);
 				setOuvert(false);
-				recharger();
-				return enEdition ? "Fournisseur modifié" : "Fournisseur créé";
+				setLogo(null);
+				setLogoInitial(null);
+				setErreurLogo(null);
+				if (inputLogoRef.current) inputLogoRef.current.value = "";
+				return message;
 			},
 			error: (e) => e.message
 		}).unwrap();
 	};
-	const supprimer = async (f) => {
-		await toast.promise(supprimerFournisseur(businessId, f.id), {
-			loading: "Suppression…",
-			success: () => {
-				recharger();
-				return "Fournisseur supprimé";
-			},
-			error: (e) => e.message
-		}).unwrap();
+	const confirmerSuppression = async () => {
+		if (!aSupprimer || !businessId) return;
+		setSuppressionEnCours(true);
+		try {
+			await toast.promise(supprimerFournisseur(businessId, aSupprimer.id), {
+				loading: "Suppression…",
+				success: ({ data: fournisseur, message }) => {
+					retirer(fournisseur.id, (element) => element.id);
+					return message;
+				},
+				error: (e) => e.message
+			}).unwrap();
+			setASupprimer(null);
+		} finally {
+			setSuppressionEnCours(false);
+		}
 	};
-	return /* @__PURE__ */ jsxs(PageRessource, {
+	const ajouterFournisseurCree = (fournisseur) => {
+		const terme = recherche.trim().toLocaleLowerCase("fr");
+		if (terme && !fournisseur.nom?.toLocaleLowerCase("fr").includes(terme)) return;
+		ajouter({
+			id: fournisseur.id,
+			nom: fournisseur.nom ?? void 0,
+			email: fournisseur.email ?? void 0,
+			logo: fournisseur.logo,
+			userImage: fournisseur.userImage,
+			website: fournisseur.website ?? void 0,
+			userId: fournisseur.userId,
+			isVerified: fournisseur.isVerified,
+			invitationExpiresAt: fournisseur.invitationExpiresAt
+		});
+		setPage(0);
+	};
+	const ajouterUtilisateursFournisseurs = (fournisseurs) => {
+		const terme = recherche.trim().toLocaleLowerCase("fr");
+		const correspondants = fournisseurs.filter((fournisseur) => !terme || fournisseur.nom?.toLocaleLowerCase("fr").includes(terme));
+		correspondants.forEach((fournisseur) => {
+			ajouter({
+				id: fournisseur.id,
+				nom: fournisseur.nom ?? void 0,
+				email: fournisseur.email ?? void 0,
+				logo: fournisseur.logo,
+				userImage: fournisseur.userImage,
+				website: fournisseur.website ?? void 0,
+				userId: fournisseur.userId,
+				isVerified: fournisseur.isVerified,
+				invitationExpiresAt: fournisseur.invitationExpiresAt
+			});
+		});
+		if (correspondants.length > 0) setPage(0);
+		recharger();
+	};
+	const renvoyerInvitation = async (fournisseur) => {
+		if (!businessId) return;
+		setRenvoiEnCours(fournisseur.id);
+		try {
+			await renvoyerInvitationFournisseur(businessId, fournisseur.id);
+		} catch {} finally {
+			setRenvoiEnCours(null);
+		}
+	};
+	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs(PageRessource, {
 		titre: "Fournisseurs",
 		description: "Les fournisseurs auprès desquels vous vous approvisionnez.",
 		businessRequis: true,
@@ -1644,18 +4322,15 @@ var fournisseurs_default = UNSAFE_withComponentProps(function Fournisseurs() {
 		vide: donnees.length === 0,
 		messageVide: "Aucun fournisseur enregistré pour le moment.",
 		onReessayer: recharger,
-		action: /* @__PURE__ */ jsxs(Button, {
-			onClick: ouvrirCreation,
-			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouveau fournisseur"]
+		action: /* @__PURE__ */ jsx(CreerFournisseur, {
+			businessId,
+			onCreated: ajouterFournisseurCree,
+			onInvited: ajouterUtilisateursFournisseurs
 		}),
-		outils: /* @__PURE__ */ jsxs("form", {
-			onSubmit: (e) => {
-				e.preventDefault();
-				setRecherche(saisie);
-			},
-			className: "flex max-w-sm items-center gap-2",
+		outils: /* @__PURE__ */ jsxs("div", {
+			className: "flex w-full max-w-3xl flex-wrap items-center gap-2",
 			children: [/* @__PURE__ */ jsxs("div", {
-				className: "relative flex-1",
+				className: "relative min-w-48 flex-1",
 				children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
 					value: saisie,
 					onChange: (e) => setSaisie(e.target.value),
@@ -1663,218 +4338,2063 @@ var fournisseurs_default = UNSAFE_withComponentProps(function Fournisseurs() {
 					"aria-label": "Rechercher un fournisseur",
 					className: "pl-9"
 				})]
-			}), /* @__PURE__ */ jsx(Button, {
-				type: "submit",
-				variant: "outline",
-				children: "Rechercher"
+			}), /* @__PURE__ */ jsxs(NativeSelect, {
+				value: filtreCompte,
+				onChange: (event) => {
+					const valeur = event.currentTarget.value;
+					if (valeur === "tous" || valeur === "avec-compte" || valeur === "sans-compte") {
+						setFiltreCompte(valeur);
+						setPage(0);
+					}
+				},
+				"aria-label": "Filtrer les fournisseurs par compte utilisateur",
+				className: "min-w-40",
+				children: [
+					/* @__PURE__ */ jsx(NativeSelectOption, {
+						value: "tous",
+						children: "Tous les fournisseurs"
+					}),
+					/* @__PURE__ */ jsx(NativeSelectOption, {
+						value: "avec-compte",
+						children: "Avec compte"
+					}),
+					/* @__PURE__ */ jsx(NativeSelectOption, {
+						value: "sans-compte",
+						children: "Sans compte"
+					})
+				]
 			})]
 		}),
-		children: [/* @__PURE__ */ jsx("div", {
-			className: "overflow-hidden rounded-lg border",
-			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableHead, { children: "Nom" }),
-				/* @__PURE__ */ jsx(TableHead, { children: "Email" }),
-				/* @__PURE__ */ jsx(TableHead, { children: "Site web" }),
-				/* @__PURE__ */ jsx(TableHead, {
+		children: [
+			/* @__PURE__ */ jsx("div", {
+				className: "overflow-hidden rounded-lg border",
+				children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [/* @__PURE__ */ jsx(TableHead, { children: "Nom du fournisseur" }), /* @__PURE__ */ jsx(TableHead, {
 					className: "w-[1%] text-right",
 					children: "Actions"
-				})
-			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((f) => /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "font-medium",
-					children: f.nom || "—"
-				}),
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "text-muted-foreground",
-					children: f.email || "—"
-				}),
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "text-muted-foreground",
-					children: f.website || "—"
-				}),
-				/* @__PURE__ */ jsxs(TableCell, {
-					className: "text-right whitespace-nowrap",
-					children: [/* @__PURE__ */ jsx(Button, {
-						variant: "ghost",
-						size: "sm",
-						onClick: () => ouvrirEdition(f),
-						children: "Modifier"
-					}), /* @__PURE__ */ jsx(Button, {
-						variant: "ghost",
-						size: "sm",
-						"aria-label": `Supprimer ${f.nom ?? "ce fournisseur"}`,
-						onClick: () => supprimer(f),
-						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+				})] }) }), /* @__PURE__ */ jsx(TableBody, { children: fournisseursAffiches.length === 0 ? /* @__PURE__ */ jsx(TableRow, { children: /* @__PURE__ */ jsx(TableCell, {
+					colSpan: 2,
+					className: "h-24 text-center text-muted-foreground",
+					children: "Aucun fournisseur ne correspond à ce filtre."
+				}) }) : fournisseursAffiches.map((f) => /* @__PURE__ */ jsxs(TableRow, { children: [/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-3 font-medium",
+					children: [/* @__PURE__ */ jsxs(Avatar$1, {
+						className: "size-9",
+						children: [/* @__PURE__ */ jsx(AvatarImage, {
+							src: f.logo && f.logo !== "http://localhost:3000/uploads/fournisseurs/default-logo-fournisseur.png" ? f.logo : f.userImage || f.logo || "http://localhost:3000/uploads/fournisseurs/default-logo-fournisseur.png",
+							alt: f.nom || "Logo du fournisseur"
+						}), /* @__PURE__ */ jsx(AvatarFallback, { children: (f.nom || "F").charAt(0).toLocaleUpperCase("fr") })]
+					}), /* @__PURE__ */ jsx(Link, {
+						to: `/fournisseurs/${f.id}`,
+						className: "text-primary underline-offset-4 hover:underline",
+						children: f.nom || "—"
 					})]
-				})
-			] }, f.id)) })] })
-		}), /* @__PURE__ */ jsx(Dialog$1, {
-			open: ouvert,
-			onOpenChange: setOuvert,
-			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier le fournisseur" : "Nouveau fournisseur" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Renseignez au moins le nom pour identifier ce fournisseur dans vos achats." })] }), /* @__PURE__ */ jsxs("form", {
-				onSubmit: handleSubmit(onSubmit),
-				noValidate: true,
-				children: [/* @__PURE__ */ jsx(FieldGroup, { children: /* @__PURE__ */ jsxs(FieldSet, { children: [
-					/* @__PURE__ */ jsx(FieldLegend, {
-						variant: "label",
-						children: "Coordonnées"
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.nom,
+				}) }), /* @__PURE__ */ jsx(TableCell, {
+					className: "text-right whitespace-nowrap",
+					children: /* @__PURE__ */ jsxs("div", {
+						className: "flex items-center justify-end gap-1",
 						children: [
-							/* @__PURE__ */ jsx(FieldLabel, {
-								htmlFor: "nom",
-								children: "Nom"
+							f.isVerified === false && f.invitationExpiresAt !== null && f.invitationExpiresAt !== void 0 && new Date(f.invitationExpiresAt).getTime() <= Date.now() && /* @__PURE__ */ jsx(Button, {
+								type: "button",
+								variant: "ghost",
+								size: "icon",
+								className: "size-8 border border-border text-muted-foreground",
+								onClick: () => void renvoyerInvitation(f),
+								disabled: renvoiEnCours === f.id,
+								"aria-label": `Renvoyer l’invitation à ${f.nom ?? "ce fournisseur"}`,
+								title: "Renvoyer l’invitation",
+								children: /* @__PURE__ */ jsx(SendIcon, { className: "size-4" })
 							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "nom",
-								placeholder: "Ex : Textile Bukavu",
-								"aria-invalid": !!errors.nom,
-								...register("nom")
+							!f.userId && /* @__PURE__ */ jsx(Button, {
+								type: "button",
+								variant: "ghost",
+								size: "icon",
+								className: "size-8 border border-border text-muted-foreground",
+								onClick: () => ouvrirEdition(f),
+								"aria-label": `Modifier ${f.nom ?? "ce fournisseur"}`,
+								title: "Modifier",
+								children: /* @__PURE__ */ jsx(PencilIcon, { className: "size-4" })
 							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.nom] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.email,
-						children: [
-							/* @__PURE__ */ jsx(FieldLabel, {
-								htmlFor: "email",
-								children: "Email"
-							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "email",
-								type: "email",
-								placeholder: "contact@exemple.cd",
-								"aria-invalid": !!errors.email,
-								...register("email")
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.email] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.website,
-						children: [
-							/* @__PURE__ */ jsx(FieldLabel, {
-								htmlFor: "website",
-								children: "Site web"
-							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "website",
-								type: "url",
-								placeholder: "https://exemple.cd",
-								"aria-invalid": !!errors.website,
-								...register("website")
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.website] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.description,
-						children: [
-							/* @__PURE__ */ jsx(FieldLabel, {
-								htmlFor: "description",
-								children: "Description"
-							}),
-							/* @__PURE__ */ jsx(Textarea, {
-								id: "description",
-								rows: 3,
-								placeholder: "Ce qu'il fournit, conditions…",
-								"aria-invalid": !!errors.description,
-								...register("description")
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.description] })
+							/* @__PURE__ */ jsx(Button, {
+								type: "button",
+								variant: "ghost",
+								size: "icon",
+								className: "size-8 border border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive",
+								onClick: () => setASupprimer(f),
+								"aria-label": `Supprimer ${f.nom ?? "ce fournisseur"}`,
+								title: "Supprimer",
+								children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4" })
+							})
 						]
 					})
-				] }) }), /* @__PURE__ */ jsxs(DialogFooter, {
-					className: "mt-6",
-					children: [/* @__PURE__ */ jsx(Button, {
-						type: "button",
-						variant: "outline",
-						onClick: () => setOuvert(false),
-						disabled: isSubmitting,
-						children: "Annuler"
-					}), /* @__PURE__ */ jsx(Button, {
-						type: "submit",
-						disabled: !isValid || isSubmitting,
-						children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer le fournisseur"
-					})]
+				})] }, f.id)) })] })
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: "flex flex-wrap items-center justify-between gap-4",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-2 text-sm text-muted-foreground",
+					children: [
+						/* @__PURE__ */ jsx("label", {
+							htmlFor: "fournisseurs-par-page",
+							children: "Fournisseurs par page"
+						}),
+						/* @__PURE__ */ jsxs(NativeSelect, {
+							id: "fournisseurs-par-page",
+							value: taillePage,
+							onChange: (event) => {
+								setTaillePage(Number(event.currentTarget.value));
+								setPage(0);
+							},
+							"aria-label": "Nombre de fournisseurs par page",
+							children: [
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 10,
+									children: "10"
+								}),
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 20,
+									children: "20"
+								}),
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 50,
+									children: "50"
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("span", {
+							"aria-live": "polite",
+							children: [
+								debut,
+								"–",
+								fin,
+								" sur ",
+								fournisseursFiltres.length
+							]
+						})
+					]
+				}), /* @__PURE__ */ jsxs("nav", {
+					"aria-label": "Pagination des fournisseurs",
+					className: "flex items-center gap-2",
+					children: [
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage(pageCourante - 1),
+							disabled: pageCourante === 0,
+							"aria-label": "Page précédente",
+							children: "Précédent"
+						}),
+						/* @__PURE__ */ jsxs("span", {
+							"aria-current": "page",
+							className: "text-sm tabular-nums",
+							children: [
+								nombrePages === 0 ? 0 : pageCourante + 1,
+								" / ",
+								nombrePages
+							]
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage(pageCourante + 1),
+							disabled: pageCourante >= nombrePages - 1,
+							"aria-label": "Page suivante",
+							children: "Suivant"
+						})
+					]
 				})]
-			})] })
-		})]
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: aSupprimer !== null,
+				onOpenChange: (open) => {
+					if (!open && !suppressionEnCours) setASupprimer(null);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: "Supprimer ce fournisseur ?" }), /* @__PURE__ */ jsxs(AlertDialogDescription, { children: [
+					"Le fournisseur « ",
+					aSupprimer?.nom || "sans nom",
+					" » sera supprimé. Cette action est irréversible."
+				] })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: suppressionEnCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: "destructive",
+					disabled: suppressionEnCours,
+					onClick: confirmerSuppression,
+					children: suppressionEnCours ? "Suppression…" : "Supprimer"
+				})] })] })
+			}),
+			/* @__PURE__ */ jsx(Dialog$1, {
+				open: ouvert,
+				onOpenChange: setOuvert,
+				children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Modifier le fournisseur" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Renseignez au moins le nom pour identifier ce fournisseur dans vos achats." })] }), /* @__PURE__ */ jsxs("form", {
+					onSubmit: handleSubmit(onSubmit),
+					noValidate: true,
+					children: [/* @__PURE__ */ jsx(FieldGroup, { children: /* @__PURE__ */ jsxs(FieldSet, { children: [
+						/* @__PURE__ */ jsx(FieldLegend, {
+							variant: "label",
+							children: "Coordonnées"
+						}),
+						/* @__PURE__ */ jsxs(Field, {
+							"data-invalid": !!erreurLogo,
+							children: [
+								/* @__PURE__ */ jsx("input", {
+									ref: inputLogoRef,
+									id: "modifier-fournisseur-logo",
+									type: "file",
+									accept: "image/jpeg,image/png,image/webp,image/gif",
+									className: "sr-only",
+									"aria-label": "Icône du fournisseur (facultative)",
+									"aria-invalid": !!erreurLogo,
+									"aria-describedby": erreurLogo ? "modifier-fournisseur-logo-erreur" : "modifier-fournisseur-logo-aide",
+									onChange: (event) => choisirLogo(event.currentTarget.files?.[0])
+								}),
+								/* @__PURE__ */ jsxs("label", {
+									htmlFor: "modifier-fournisseur-logo",
+									className: "group flex cursor-pointer items-center gap-4 rounded-xl border border-dashed border-border bg-muted/30 p-4 transition-colors hover:border-primary/50 hover:bg-muted/60 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2",
+									children: [
+										/* @__PURE__ */ jsx("span", {
+											className: "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-background text-muted-foreground shadow-sm",
+											children: apercuLogo ? /* @__PURE__ */ jsx("img", {
+												src: apercuLogo,
+												alt: "Aperçu de l’icône du fournisseur",
+												className: "size-full object-cover"
+											}) : /* @__PURE__ */ jsx(ImagePlusIcon, {
+												className: "size-7",
+												"aria-hidden": "true"
+											})
+										}),
+										/* @__PURE__ */ jsxs("span", {
+											className: "min-w-0 max-w-full flex-1 overflow-hidden",
+											children: [/* @__PURE__ */ jsx("span", {
+												className: "block max-w-full truncate text-sm font-medium text-foreground",
+												title: logo?.name,
+												children: logo ? tronquerAvecEllipses(logo.name) : "Changer l’icône (facultatif)"
+											}), /* @__PURE__ */ jsx("span", {
+												id: "modifier-fournisseur-logo-aide",
+												className: "mt-1 block text-xs text-muted-foreground",
+												children: "JPG, PNG, WebP ou GIF · 2 Mo maximum"
+											})]
+										}),
+										/* @__PURE__ */ jsx(UploadIcon, {
+											className: "size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground",
+											"aria-hidden": "true"
+										})
+									]
+								}),
+								logo && /* @__PURE__ */ jsxs(Button, {
+									type: "button",
+									variant: "ghost",
+									size: "sm",
+									className: "w-fit",
+									onClick: () => {
+										setLogo(null);
+										if (inputLogoRef.current) inputLogoRef.current.value = "";
+									},
+									children: [/* @__PURE__ */ jsx(XIcon, { className: "size-4" }), "Annuler le changement d’icône"]
+								}),
+								erreurLogo && /* @__PURE__ */ jsx("p", {
+									id: "modifier-fournisseur-logo-erreur",
+									role: "alert",
+									className: "text-sm text-destructive",
+									children: erreurLogo
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs(Field, {
+							"data-invalid": !!errors.nom,
+							children: [
+								/* @__PURE__ */ jsx(FieldLabel, {
+									htmlFor: "nom",
+									children: "Nom"
+								}),
+								/* @__PURE__ */ jsx(Input, {
+									id: "nom",
+									placeholder: "Ex : Textile Bukavu",
+									"aria-invalid": !!errors.nom,
+									...register("nom")
+								}),
+								/* @__PURE__ */ jsx(FieldError, { errors: [errors.nom] })
+							]
+						}),
+						/* @__PURE__ */ jsxs("div", {
+							className: "grid grid-cols-1 gap-4 sm:grid-cols-2",
+							children: [/* @__PURE__ */ jsxs(Field, {
+								"data-invalid": !!errors.email,
+								children: [
+									/* @__PURE__ */ jsx(FieldLabel, {
+										htmlFor: "email",
+										children: "Email"
+									}),
+									/* @__PURE__ */ jsx(Input, {
+										id: "email",
+										type: "email",
+										placeholder: "contact@exemple.cd",
+										"aria-invalid": !!errors.email,
+										disabled: !!enEdition?.userId,
+										...register("email")
+									}),
+									enEdition?.userId ? /* @__PURE__ */ jsx(FieldDescription, { children: "Cette adresse provient du compte utilisateur rattaché." }) : /* @__PURE__ */ jsx(FieldError, { errors: [errors.email] })
+								]
+							}), /* @__PURE__ */ jsxs(Field, {
+								"data-invalid": !!errors.website,
+								children: [
+									/* @__PURE__ */ jsx(FieldLabel, {
+										htmlFor: "website",
+										children: "Site web"
+									}),
+									/* @__PURE__ */ jsx(Input, {
+										id: "website",
+										type: "url",
+										placeholder: "https://exemple.cd",
+										"aria-invalid": !!errors.website,
+										...register("website")
+									}),
+									/* @__PURE__ */ jsx(FieldError, { errors: [errors.website] })
+								]
+							})]
+						})
+					] }) }), /* @__PURE__ */ jsxs(DialogFooter, {
+						className: "mt-6",
+						children: [/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							onClick: () => setOuvert(false),
+							disabled: isSubmitting,
+							children: "Annuler"
+						}), /* @__PURE__ */ jsx(Button, {
+							type: "submit",
+							disabled: !isValid || isSubmitting,
+							children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer le fournisseur"
+						})]
+					})]
+				})] })
+			})
+		]
+	}) });
+});
+//#endregion
+//#region app/routes/fournisseurs/valider-invitation.tsx
+var valider_invitation_exports$1 = /* @__PURE__ */ __exportAll({ default: () => valider_invitation_default$1 });
+var valider_invitation_default$1 = UNSAFE_withComponentProps(function ValiderInvitationFournisseur() {
+	const { invitationId } = useParams();
+	const navigate = useNavigate();
+	const [code, setCode] = useState("");
+	const [enCours, setEnCours] = useState(false);
+	const valider = async (event) => {
+		event.preventDefault();
+		if (!invitationId || !/^\d{6}$/.test(code)) {
+			toast.error("Saisissez le code à 6 chiffres reçu par e-mail.");
+			return;
+		}
+		setEnCours(true);
+		try {
+			const resultat = await validerInvitationFournisseur(invitationId, code);
+			toast.success(resultat.message);
+			navigate("/acceuil", { replace: true });
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "Impossible de valider cette invitation.");
+		} finally {
+			setEnCours(false);
+		}
+	};
+	return /* @__PURE__ */ jsx("main", {
+		className: "mx-auto flex w-full max-w-md flex-1 items-center px-4 py-10",
+		children: /* @__PURE__ */ jsxs("form", {
+			onSubmit: valider,
+			className: "w-full space-y-5 rounded-xl border p-6",
+			children: [
+				/* @__PURE__ */ jsxs("div", {
+					className: "space-y-2",
+					children: [/* @__PURE__ */ jsx("h1", {
+						className: "text-xl font-semibold",
+						children: "Valider l’invitation fournisseur"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: "Saisissez le code à 6 chiffres envoyé à l’adresse e-mail associée à votre compte. Le code expire après 15 minutes."
+					})]
+				}),
+				/* @__PURE__ */ jsx(Input, {
+					value: code,
+					onChange: (event) => setCode(event.currentTarget.value.replace(/\D/g, "").slice(0, 6)),
+					inputMode: "numeric",
+					autoComplete: "one-time-code",
+					placeholder: "000000",
+					"aria-label": "Code de validation à 6 chiffres",
+					required: true,
+					className: "h-11 text-center text-lg tracking-[0.5em]"
+				}),
+				/* @__PURE__ */ jsx(Button, {
+					type: "submit",
+					className: "w-full",
+					disabled: enCours || code.length !== 6,
+					children: enCours ? "Validation…" : "Confirmer l’invitation"
+				})
+			]
+		})
 	});
 });
 //#endregion
+//#region app/routes/fournisseurs/detail.tsx
+var detail_exports$1 = /* @__PURE__ */ __exportAll({ default: () => detail_default$1 });
+var InformationsFournisseurSchema = z.object({
+	nom: z.string().trim().min(4, "Le nom doit contenir au moins 4 caractères.").max(50, "Le nom ne peut pas dépasser 50 caractères."),
+	email: z.union([z.literal(""), z.email("L’adresse e-mail est invalide.")]),
+	website: z.union([z.literal(""), z.url("L’adresse du site web est invalide.")]),
+	pays: z.string().max(50, "Le pays ne peut pas dépasser 50 caractères."),
+	ville: z.string().max(50, "La ville ne peut pas dépasser 50 caractères."),
+	region: z.string().max(50, "La région ne peut pas dépasser 50 caractères."),
+	adresse: z.string().max(50, "L’adresse ne peut pas dépasser 50 caractères."),
+	codePostal: z.string().max(20, "Le code postal ne peut pas dépasser 20 caractères.")
+});
+var detail_default$1 = UNSAFE_withComponentProps(function DetailFournisseur() {
+	const { businessId } = useBusiness();
+	const { id } = useParams();
+	const navigate = useNavigate();
+	const [fournisseur, setFournisseur] = useState(null);
+	const [chargement, setChargement] = useState(true);
+	const [erreur, setErreur] = useState(null);
+	const [nom, setNom] = useState("");
+	const [email, setEmail] = useState("");
+	const [website, setWebsite] = useState("");
+	const [adresse, setAdresse] = useState("");
+	const [ville, setVille] = useState("");
+	const [region, setRegion] = useState("");
+	const [pays, setPays] = useState("");
+	const [codePostal, setCodePostal] = useState("");
+	const [erreursFormulaire, setErreursFormulaire] = useState({});
+	const [telephone, setTelephone] = useState("");
+	const [contactEdite, setContactEdite] = useState(null);
+	const [dialogContact, setDialogContact] = useState(false);
+	const [aSupprimer, setASupprimer] = useState(null);
+	const [enCours, setEnCours] = useState(false);
+	const [enregistrementInfos, setEnregistrementInfos] = useState(false);
+	const charger = useCallback(async () => {
+		if (!businessId || !id) return;
+		setChargement(true);
+		setErreur(null);
+		try {
+			const resultat = await lireFournisseur(businessId, id);
+			setFournisseur(resultat);
+			setNom(resultat.nom ?? "");
+			setEmail(resultat.email ?? "");
+			setWebsite(resultat.website ?? "");
+			const adresseAffichee = resultat.adresses[0] ?? resultat.userAdresses[0];
+			setPays(adresseAffichee?.pays ?? "");
+			setVille(adresseAffichee?.ville ?? "");
+			setRegion(adresseAffichee?.region ?? "");
+			setAdresse(adresseAffichee?.adresse ?? "");
+			setCodePostal(adresseAffichee?.codePostal ?? "");
+		} catch (error) {
+			setErreur(error instanceof Error ? error.message : "Impossible de charger le fournisseur.");
+		} finally {
+			setChargement(false);
+		}
+	}, [businessId, id]);
+	useEffect(() => {
+		charger();
+	}, [charger]);
+	const executerMutation = async (operation, succes, afficherSucces = true, afficherErreur = true, rafraichir = true) => {
+		setEnCours(true);
+		try {
+			await operation();
+			if (afficherSucces) toast.success(succes);
+			if (rafraichir) await charger();
+			return true;
+		} catch (error) {
+			if (afficherErreur) toast.error(error instanceof Error ? error.message : "L’opération a échoué.");
+			return false;
+		} finally {
+			setEnCours(false);
+		}
+	};
+	const enregistrerInfos = async (event) => {
+		event.preventDefault();
+		if (!businessId || !id || !fournisseur) return;
+		const validation = InformationsFournisseurSchema.safeParse({
+			nom,
+			email,
+			website,
+			pays,
+			ville,
+			region,
+			adresse,
+			codePostal
+		});
+		if (!validation.success) {
+			const erreurs = {};
+			for (const issue of validation.error.issues) {
+				const champ = issue.path[0];
+				if (typeof champ === "string") erreurs[champ] = issue.message;
+			}
+			setErreursFormulaire(erreurs);
+			return;
+		}
+		setErreursFormulaire({});
+		const valeurs = validation.data;
+		const nomModifie = valeurs.nom !== (fournisseur.nom ?? "");
+		const emailModifie = valeurs.email !== (fournisseur.email ?? "");
+		const websiteModifie = valeurs.website !== (fournisseur.website ?? "");
+		const fournisseurModifie = nomModifie || emailModifie || websiteModifie;
+		const adresseExistante = fournisseur.adresses[0];
+		const adresseModifiee = valeurs.pays !== (adresseExistante?.pays ?? "") || valeurs.ville !== (adresseExistante?.ville ?? "") || valeurs.region !== (adresseExistante?.region ?? "") || valeurs.adresse !== (adresseExistante?.adresse ?? "") || valeurs.codePostal !== (adresseExistante?.codePostal ?? "");
+		setEnregistrementInfos(true);
+		try {
+			await executerMutation(async () => {
+				if (fournisseurModifie) {
+					const fournisseurForm = {
+						...nomModifie ? { nom: valeurs.nom } : {},
+						...emailModifie ? { email: valeurs.email } : {},
+						...websiteModifie ? { website: valeurs.website } : {}
+					};
+					await modifierFournisseur(businessId, id, fournisseurForm);
+				}
+				let adresseMiseAJour = adresseExistante;
+				if (adresseModifiee) {
+					const adresseForm = {
+						pays: valeurs.pays,
+						ville: valeurs.ville,
+						region: valeurs.region,
+						adresse: valeurs.adresse,
+						codePostal: valeurs.codePostal,
+						fournisseurId: id
+					};
+					const resultatAdresse = adresseExistante ? await modifier_adresse(adresseExistante.id, adresseForm) : await creer_adresse(adresseForm);
+					if (!resultatAdresse.success) throw new Error(resultatAdresse.message || "La mise à jour de l’adresse a échoué.");
+					const adresseId = adresseExistante?.id ?? resultatAdresse.data?.id;
+					if (typeof adresseId !== "string") throw new Error("L’adresse a été enregistrée, mais sa référence est introuvable.");
+					adresseMiseAJour = {
+						id: adresseId,
+						pays: valeurs.pays,
+						ville: valeurs.ville,
+						region: valeurs.region,
+						adresse: valeurs.adresse,
+						codePostal: valeurs.codePostal || null
+					};
+				}
+				setFournisseur((courant) => courant ? {
+					...courant,
+					...fournisseurModifie ? {
+						nom: valeurs.nom,
+						email: valeurs.email || null,
+						website: valeurs.website || null
+					} : {},
+					adresses: adresseMiseAJour ? [adresseMiseAJour, ...courant.adresses.slice(1)] : courant.adresses
+				} : courant);
+			}, "Les informations du fournisseur ont été modifiées.", true, true, false);
+		} finally {
+			setEnregistrementInfos(false);
+		}
+	};
+	const informationsModifiees = fournisseur !== null && (nom !== (fournisseur.nom ?? "") || email !== (fournisseur.email ?? "") || website !== (fournisseur.website ?? "") || pays !== (fournisseur.adresses[0]?.pays ?? "") || ville !== (fournisseur.adresses[0]?.ville ?? "") || region !== (fournisseur.adresses[0]?.region ?? "") || adresse !== (fournisseur.adresses[0]?.adresse ?? "") || codePostal !== (fournisseur.adresses[0]?.codePostal ?? ""));
+	const ouvrirCreationContact = () => {
+		setContactEdite(null);
+		setTelephone("");
+		setDialogContact(true);
+	};
+	const ouvrirModificationContact = (item) => {
+		setContactEdite(item);
+		setTelephone(item.phone ?? "");
+		setDialogContact(true);
+	};
+	const enregistrerContact = async (event) => {
+		event.preventDefault();
+		if (!id) return;
+		const form = {
+			type: "PHONE",
+			phone: telephone,
+			email: null,
+			fournisseurId: id
+		};
+		if (await executerMutation(async () => {
+			const resultat = contactEdite ? await modifier_contact(contactEdite.id, form) : await creer_contact(form);
+			if (!resultat.success) throw new Error(resultat.message);
+			const contactId = contactEdite?.id ?? resultat.data?.id;
+			if (typeof contactId !== "string") throw new Error("Le contact a été enregistré, mais sa référence est introuvable.");
+			const contactMisAJour = {
+				id: contactId,
+				type: "PHONE",
+				label: contactEdite?.label ?? resultat.data?.label ?? null,
+				email: null,
+				phone: telephone,
+				status: contactEdite?.status ?? resultat.data?.status ?? "EN_ATTENTE"
+			};
+			setFournisseur((courant) => {
+				if (!courant) return courant;
+				const contacts = contactEdite ? courant.contacts.map((contact) => contact.id === contactMisAJour.id ? contactMisAJour : contact) : [...courant.contacts, contactMisAJour];
+				return {
+					...courant,
+					contacts
+				};
+			});
+		}, contactEdite ? "Le contact a été modifié." : "Le contact a été ajouté.", true, true, false)) setDialogContact(false);
+	};
+	const confirmerSuppression = async () => {
+		if (!aSupprimer) return;
+		if (aSupprimer.type === "fournisseur" && businessId) {
+			if (await executerMutation(() => supprimerFournisseur(businessId, aSupprimer.id), "Le fournisseur a été supprimé.", false, false)) navigate("/fournisseurs");
+		} else if (aSupprimer.type === "contact") {
+			if (await executerMutation(async () => {
+				const resultat = await supprimer_contact(aSupprimer.id);
+				if (!resultat.success) throw new Error(resultat.message || "La suppression du contact a échoué.");
+				setFournisseur((courant) => courant ? {
+					...courant,
+					contacts: courant.contacts.filter((contact) => contact.id !== aSupprimer.id)
+				} : courant);
+			}, "Le contact a été supprimé.", true, true, false)) setASupprimer(null);
+		}
+	};
+	if (chargement) return /* @__PURE__ */ jsx("p", {
+		className: "p-6 text-sm text-muted-foreground",
+		children: "Chargement du fournisseur…"
+	});
+	if (erreur || !fournisseur) return /* @__PURE__ */ jsxs("main", {
+		className: "space-y-4 p-6",
+		children: [/* @__PURE__ */ jsx("p", {
+			role: "alert",
+			className: "text-destructive",
+			children: erreur ?? "Fournisseur introuvable."
+		}), /* @__PURE__ */ jsx(Link, {
+			to: "/fournisseurs",
+			className: "inline-flex h-8 items-center rounded-lg border px-3 text-sm hover:bg-muted",
+			children: "Retour aux fournisseurs"
+		})]
+	});
+	const adresseDuCompte = fournisseur.adresses.length === 0 && fournisseur.userAdresses.length > 0;
+	const compteExistant = Boolean(fournisseur.userId);
+	const invitationExpiree = fournisseur.invitationExpiresAt !== null && fournisseur.invitationExpiresAt !== void 0 && new Date(fournisseur.invitationExpiresAt).getTime() <= Date.now();
+	return /* @__PURE__ */ jsxs("main", {
+		className: "space-y-5 p-4 lg:p-6",
+		children: [
+			/* @__PURE__ */ jsxs(Link, {
+				to: "/fournisseurs",
+				className: "inline-flex h-8 w-fit items-center gap-2 rounded-lg px-2.5 text-sm font-medium hover:bg-muted",
+				children: [/* @__PURE__ */ jsx(ArrowLeft, { className: "size-4" }), " Retour aux fournisseurs"]
+			}),
+			/* @__PURE__ */ jsxs("header", { children: [/* @__PURE__ */ jsx("h1", {
+				className: "text-2xl font-semibold",
+				children: fournisseur.nom || "Fournisseur"
+			}), /* @__PURE__ */ jsx("p", {
+				className: "text-sm text-muted-foreground",
+				children: fournisseur.isVerified ? "Fournisseur vérifié" : "Invitation en attente de validation"
+			})] }),
+			/* @__PURE__ */ jsxs(Tabs, {
+				defaultValue: "activites",
+				className: "w-full",
+				children: [
+					/* @__PURE__ */ jsxs(TabsList, {
+						className: "h-auto w-full flex-wrap justify-start",
+						children: [/* @__PURE__ */ jsx(TabsTrigger, {
+							value: "activites",
+							children: "Activités"
+						}), /* @__PURE__ */ jsx(TabsTrigger, {
+							value: "informations",
+							children: "Informations"
+						})]
+					}),
+					/* @__PURE__ */ jsxs(TabsContent, {
+						value: "activites",
+						className: "space-y-3 pt-4",
+						children: [/* @__PURE__ */ jsx("h2", {
+							className: "text-lg font-medium",
+							children: "Activités du fournisseur"
+						}), fournisseur.details.length === 0 ? /* @__PURE__ */ jsx("p", {
+							className: "rounded-lg border p-5 text-sm text-muted-foreground",
+							children: "Aucune activité d’achat enregistrée."
+						}) : /* @__PURE__ */ jsx("ul", {
+							className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+							children: fournisseur.details.map((detail) => /* @__PURE__ */ jsxs("li", {
+								className: "rounded-lg border p-4",
+								children: [
+									/* @__PURE__ */ jsx("p", {
+										className: "font-medium",
+										children: detail.article.designation
+									}),
+									/* @__PURE__ */ jsxs("p", {
+										className: "text-sm text-muted-foreground",
+										children: [
+											detail.qtte,
+											" unité(s) · ",
+											detail.pu,
+											" ",
+											detail.devise.symbole,
+											" / unité · Total",
+											" ",
+											detail.pt,
+											" ",
+											detail.devise.symbole
+										]
+									}),
+									/* @__PURE__ */ jsxs("p", {
+										className: "text-xs text-muted-foreground",
+										children: [new Date(detail.achat?.dateAchat ?? detail.createdAt).toLocaleString("fr-FR"), detail.achat ? ` · Achat ${detail.achat.status.toLowerCase()}` : ""]
+									})
+								]
+							}, detail.id))
+						})]
+					}),
+					/* @__PURE__ */ jsxs(TabsContent, {
+						value: "informations",
+						className: "space-y-4 pt-4",
+						children: [
+							/* @__PURE__ */ jsxs("section", {
+								className: "space-y-4 rounded-xl border p-4",
+								children: [/* @__PURE__ */ jsxs("div", {
+									className: "flex items-center gap-4",
+									children: [/* @__PURE__ */ jsxs(Avatar$1, {
+										className: "size-16",
+										children: [/* @__PURE__ */ jsx(AvatarImage, {
+											src: fournisseur.userImage || (fournisseur.logo && fournisseur.logo !== "http://localhost:3000/uploads/fournisseurs/default-logo-fournisseur.png" ? fournisseur.logo : "/images/fournisseurs/fournisseur-par-defaut.svg"),
+											alt: fournisseur.nom || "Logo du fournisseur",
+											className: "object-cover"
+										}), /* @__PURE__ */ jsx(AvatarFallback, {
+											className: "bg-background",
+											children: /* @__PURE__ */ jsx("img", {
+												src: "/images/fournisseurs/fournisseur-par-defaut.svg",
+												alt: "",
+												className: "size-full object-cover"
+											})
+										})]
+									}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+										className: "font-semibold",
+										children: "Informations du fournisseur"
+									}), /* @__PURE__ */ jsx("p", {
+										className: "text-sm text-muted-foreground",
+										children: "Coordonnées et identité du fournisseur."
+									})] })]
+								}), /* @__PURE__ */ jsx("form", {
+									onSubmit: enregistrerInfos,
+									children: /* @__PURE__ */ jsxs("fieldset", {
+										disabled: compteExistant,
+										className: "m-0 min-w-0 space-y-4 border-0 p-0",
+										children: [
+											/* @__PURE__ */ jsxs("label", {
+												className: "block space-y-1 text-sm",
+												children: [
+													/* @__PURE__ */ jsx("span", { children: "Nom" }),
+													/* @__PURE__ */ jsx(Input, {
+														value: nom,
+														onChange: (event) => setNom(event.currentTarget.value),
+														placeholder: "Nom du fournisseur",
+														required: true,
+														"aria-invalid": !!erreursFormulaire.nom
+													}),
+													erreursFormulaire.nom && /* @__PURE__ */ jsx("span", {
+														className: "text-sm text-destructive",
+														children: erreursFormulaire.nom
+													})
+												]
+											}),
+											/* @__PURE__ */ jsxs("div", {
+												className: "grid gap-4 sm:grid-cols-2",
+												children: [/* @__PURE__ */ jsxs("label", {
+													className: "block space-y-1 text-sm",
+													children: [
+														/* @__PURE__ */ jsx("span", { children: "E-mail" }),
+														/* @__PURE__ */ jsx(Input, {
+															type: "email",
+															value: email,
+															onChange: (event) => setEmail(event.currentTarget.value),
+															placeholder: "Adresse e-mail",
+															"aria-invalid": !!erreursFormulaire.email,
+															disabled: !!fournisseur.userId,
+															"aria-describedby": fournisseur.userId ? "fournisseur-email-aide" : void 0
+														}),
+														fournisseur.userId ? /* @__PURE__ */ jsx("span", {
+															id: "fournisseur-email-aide",
+															className: "text-xs text-muted-foreground",
+															children: "Cette adresse provient du compte utilisateur rattaché."
+														}) : erreursFormulaire.email && /* @__PURE__ */ jsx("span", {
+															className: "text-sm text-destructive",
+															children: erreursFormulaire.email
+														})
+													]
+												}), /* @__PURE__ */ jsxs("label", {
+													className: "block space-y-1 text-sm",
+													children: [
+														/* @__PURE__ */ jsx("span", { children: "Site web" }),
+														/* @__PURE__ */ jsx(Input, {
+															type: "url",
+															value: website,
+															onChange: (event) => setWebsite(event.currentTarget.value),
+															placeholder: "https://exemple.com",
+															"aria-invalid": !!erreursFormulaire.website
+														}),
+														erreursFormulaire.website && /* @__PURE__ */ jsx("span", {
+															className: "text-sm text-destructive",
+															children: erreursFormulaire.website
+														})
+													]
+												})]
+											}),
+											/* @__PURE__ */ jsxs("div", {
+												className: "space-y-3",
+												children: [
+													/* @__PURE__ */ jsx("h3", {
+														className: "text-sm font-medium",
+														children: "Adresse"
+													}),
+													/* @__PURE__ */ jsx("p", {
+														className: "text-sm text-muted-foreground",
+														children: compteExistant ? "Les informations de ce compte utilisateur sont en lecture seule." : adresseDuCompte ? "Pré-remplie depuis le compte utilisateur rattaché. L’enregistrer en crée une copie propre à votre business." : "Indiquez l’adresse principale du fournisseur."
+													}),
+													/* @__PURE__ */ jsxs("div", {
+														className: "grid gap-4 sm:grid-cols-2",
+														children: [
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [
+																	/* @__PURE__ */ jsx("span", { children: "Pays" }),
+																	/* @__PURE__ */ jsxs(Select, {
+																		value: pays || null,
+																		onValueChange: (value) => setPays(value ?? ""),
+																		children: [/* @__PURE__ */ jsx(SelectTrigger, {
+																			className: "w-full",
+																			"aria-label": "Pays",
+																			children: /* @__PURE__ */ jsx(SelectValue, { placeholder: "Sélectionner un pays" })
+																		}), /* @__PURE__ */ jsx(SelectContent, { children: /* @__PURE__ */ jsx(SelectGroup, { children: items.filter((item) => item.value !== null).map((item) => /* @__PURE__ */ jsx(SelectItem, {
+																			value: item.value,
+																			children: item.label
+																		}, item.value)) }) })]
+																	}),
+																	erreursFormulaire.pays && /* @__PURE__ */ jsx("span", {
+																		className: "text-sm text-destructive",
+																		children: erreursFormulaire.pays
+																	})
+																]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [
+																	/* @__PURE__ */ jsx("span", { children: "Ville" }),
+																	/* @__PURE__ */ jsx(Input, {
+																		value: ville,
+																		onChange: (event) => setVille(event.currentTarget.value),
+																		placeholder: "Ville",
+																		"aria-invalid": !!erreursFormulaire.ville
+																	}),
+																	erreursFormulaire.ville && /* @__PURE__ */ jsx("span", {
+																		className: "text-sm text-destructive",
+																		children: erreursFormulaire.ville
+																	})
+																]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [
+																	/* @__PURE__ */ jsx("span", { children: "Région / Commune" }),
+																	/* @__PURE__ */ jsx(Input, {
+																		value: region,
+																		onChange: (event) => setRegion(event.currentTarget.value),
+																		placeholder: "Région / Commune",
+																		"aria-invalid": !!erreursFormulaire.region
+																	}),
+																	erreursFormulaire.region && /* @__PURE__ */ jsx("span", {
+																		className: "text-sm text-destructive",
+																		children: erreursFormulaire.region
+																	})
+																]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "block space-y-1 text-sm",
+																children: [
+																	/* @__PURE__ */ jsx("span", { children: "Adresse" }),
+																	/* @__PURE__ */ jsx(Input, {
+																		value: adresse,
+																		onChange: (event) => setAdresse(event.currentTarget.value),
+																		placeholder: "Adresse",
+																		"aria-invalid": !!erreursFormulaire.adresse
+																	}),
+																	erreursFormulaire.adresse && /* @__PURE__ */ jsx("span", {
+																		className: "text-sm text-destructive",
+																		children: erreursFormulaire.adresse
+																	})
+																]
+															}),
+															/* @__PURE__ */ jsxs("label", {
+																className: "col-span-full block space-y-1 text-sm",
+																children: [
+																	/* @__PURE__ */ jsx("span", { children: "Code postal (optionnel)" }),
+																	/* @__PURE__ */ jsx(Input, {
+																		value: codePostal,
+																		onChange: (event) => setCodePostal(event.currentTarget.value),
+																		placeholder: "Code postal",
+																		"aria-invalid": !!erreursFormulaire.codePostal
+																	}),
+																	erreursFormulaire.codePostal && /* @__PURE__ */ jsx("span", {
+																		className: "text-sm text-destructive",
+																		children: erreursFormulaire.codePostal
+																	})
+																]
+															})
+														]
+													})
+												]
+											}),
+											/* @__PURE__ */ jsx("div", {
+												className: "flex justify-end",
+												children: /* @__PURE__ */ jsxs(Button, {
+													type: "submit",
+													disabled: compteExistant || enCours || !informationsModifiees,
+													children: [enregistrementInfos && /* @__PURE__ */ jsx(Loader2, {
+														className: "size-4 animate-spin",
+														"aria-hidden": "true"
+													}), "Personnaliser"]
+												})
+											})
+										]
+									})
+								})]
+							}),
+							/* @__PURE__ */ jsxs("section", {
+								className: "space-y-4 rounded-xl border p-4",
+								children: [
+									/* @__PURE__ */ jsxs("div", {
+										className: "flex items-start justify-between gap-3",
+										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+											className: "font-semibold",
+											children: "Contacts"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "text-sm text-muted-foreground",
+											children: "Ajoutez jusqu’à deux contacts pour joindre le fournisseur."
+										})] }), fournisseur.contacts.length < 2 && /* @__PURE__ */ jsxs(Button, {
+											variant: "outline",
+											className: "border",
+											onClick: ouvrirCreationContact,
+											children: [/* @__PURE__ */ jsx(Plus, {}), " Ajouter"]
+										})]
+									}),
+									fournisseur.contacts.length ? /* @__PURE__ */ jsx("ul", {
+										className: "grid grid-cols-2 gap-2",
+										children: fournisseur.contacts.map((item) => /* @__PURE__ */ jsxs("li", {
+											className: "flex items-center justify-between gap-3 rounded-lg border p-3",
+											children: [/* @__PURE__ */ jsxs("span", {
+												className: "flex min-w-0 items-center gap-2 text-sm",
+												children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
+													className: "truncate",
+													children: item.email || item.phone || item.label || "Contact"
+												})]
+											}), !compteExistant && /* @__PURE__ */ jsxs("div", {
+												className: "flex shrink-0 gap-1",
+												children: [/* @__PURE__ */ jsx(Button, {
+													variant: "ghost",
+													size: "icon",
+													className: "border",
+													"aria-label": "Modifier le contact",
+													onClick: () => ouvrirModificationContact(item),
+													children: /* @__PURE__ */ jsx(Pencil, {})
+												}), /* @__PURE__ */ jsx(Button, {
+													variant: "ghost",
+													size: "icon",
+													className: "border text-destructive",
+													"aria-label": "Supprimer le contact",
+													onClick: () => setASupprimer({
+														type: "contact",
+														id: item.id,
+														label: item.email || item.phone || item.label || "ce contact"
+													}),
+													children: /* @__PURE__ */ jsx(Trash2, {})
+												})]
+											})]
+										}, item.id))
+									}) : /* @__PURE__ */ jsx("p", {
+										className: "text-sm text-muted-foreground",
+										children: fournisseur.userContacts.length ? "Aucun contact propre à ce fournisseur." : "Aucun contact renseigné."
+									}),
+									compteExistant && /* @__PURE__ */ jsxs("div", {
+										className: "space-y-2 border-t pt-4",
+										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
+											className: "text-sm font-medium",
+											children: "Contacts du compte utilisateur"
+										}), /* @__PURE__ */ jsx("p", {
+											className: "text-sm text-muted-foreground",
+											children: "Renseignés par la personne sur son compte. Ils ne sont pas modifiables depuis votre business."
+										})] }), fournisseur.userContacts.length > 0 ? /* @__PURE__ */ jsx("ul", {
+											className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+											children: fournisseur.userContacts.map((item) => /* @__PURE__ */ jsxs("li", {
+												className: "flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 p-3",
+												children: [/* @__PURE__ */ jsxs("span", {
+													className: "flex min-w-0 items-center gap-2 text-sm",
+													children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
+														className: "truncate",
+														children: item.email || item.phone || item.label || "Contact"
+													})]
+												}), item.status === "VERIFIE" && /* @__PURE__ */ jsx("span", {
+													className: "shrink-0 text-xs text-muted-foreground",
+													children: "Vérifié"
+												})]
+											}, item.id))
+										}) : /* @__PURE__ */ jsx("p", {
+											className: "text-sm text-muted-foreground",
+											children: "Aucun contact n’est renseigné sur ce compte utilisateur."
+										})]
+									})
+								]
+							}),
+							/* @__PURE__ */ jsxs("section", {
+								className: "space-y-4 rounded-xl border p-4",
+								children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+									className: "font-semibold",
+									children: "Zone de danger"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: "La suppression du fournisseur supprimera également toutes ses opérations."
+								})] }), /* @__PURE__ */ jsxs("div", {
+									className: "flex flex-wrap gap-2",
+									children: [
+										!fournisseur.isVerified && invitationExpiree && /* @__PURE__ */ jsxs(Button, {
+											variant: "outline",
+											className: "border",
+											disabled: enCours,
+											onClick: () => void executerMutation(() => renvoyerInvitationFournisseur(businessId, fournisseur.id), "Le courriel d’invitation a été renvoyé.", false, false),
+											children: [/* @__PURE__ */ jsx(Send, {}), " Renvoyer l’invitation"]
+										}),
+										!fournisseur.isVerified && !invitationExpiree && /* @__PURE__ */ jsx("p", {
+											className: "self-center text-sm text-muted-foreground",
+											children: "L’invitation n’a pas encore expiré."
+										}),
+										/* @__PURE__ */ jsxs(Button, {
+											variant: "destructive",
+											className: "border border-destructive",
+											disabled: enCours,
+											onClick: () => setASupprimer({
+												type: "fournisseur",
+												id: fournisseur.id,
+												label: fournisseur.nom || "ce fournisseur"
+											}),
+											children: [/* @__PURE__ */ jsx(Trash2, {}), " Supprimer le fournisseur"]
+										})
+									]
+								})]
+							})
+						]
+					})
+				]
+			}),
+			/* @__PURE__ */ jsx(Dialog$1, {
+				open: dialogContact,
+				onOpenChange: setDialogContact,
+				children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: contactEdite ? "Modifier le contact" : "Ajouter un contact" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Ajoutez une adresse e-mail ou un numéro de téléphone." })] }), /* @__PURE__ */ jsxs("form", {
+					onSubmit: enregistrerContact,
+					className: "space-y-3",
+					children: [/* @__PURE__ */ jsxs("label", {
+						className: "block space-y-1 text-sm",
+						children: [/* @__PURE__ */ jsx("span", { children: "Numéro de téléphone" }), /* @__PURE__ */ jsx(Input, {
+							type: "tel",
+							value: telephone,
+							onChange: (event) => setTelephone(event.currentTarget.value),
+							placeholder: "Téléphone (+243…)",
+							required: true
+						})]
+					}), /* @__PURE__ */ jsxs(DialogFooter, { children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						onClick: () => setDialogContact(false),
+						children: "Annuler"
+					}), /* @__PURE__ */ jsxs(Button, {
+						type: "submit",
+						disabled: enCours,
+						children: [enCours && /* @__PURE__ */ jsx(Loader2, {
+							className: "size-4 animate-spin",
+							"aria-hidden": "true"
+						}), contactEdite ? "Enregistrer" : "Ajouter"]
+					})] })]
+				})] })
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: aSupprimer !== null,
+				onOpenChange: (open) => {
+					if (!open && !enCours) setASupprimer(null);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: "Confirmer la suppression" }), /* @__PURE__ */ jsxs(AlertDialogDescription, { children: [
+					aSupprimer?.type === "fournisseur" ? `Le fournisseur « ${aSupprimer.label} » sera supprimé.` : `Le contact « ${aSupprimer?.label} » sera supprimé.`,
+					" ",
+					"Cette action est irréversible."
+				] })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: enCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: "destructive",
+					disabled: enCours,
+					onClick: () => void confirmerSuppression(),
+					children: enCours ? "Suppression…" : "Supprimer"
+				})] })] })
+			})
+		]
+	});
+});
+//#endregion
+//#region app/components/travailleurs/inviter-travailleur.tsx
+function nomUtilisateur(utilisateur) {
+	return utilisateur.full_name?.trim() || utilisateur.contacts.find((contact) => contact.label?.trim())?.label?.trim() || utilisateur.contacts.find((contact) => contact.email?.trim())?.email?.trim() || `Utilisateur ${utilisateur.id.slice(-6)}`;
+}
+function emailUtilisateur(utilisateur) {
+	if (utilisateur.email?.trim()) return utilisateur.email.trim();
+	return utilisateur.contacts.find((contact) => contact.label?.trim())?.email?.trim() || utilisateur.contacts.find((contact) => contact.email?.trim())?.email?.trim() || "E-mail non renseigné";
+}
+function InviterTravailleur({ businessId, open, onOpenChange, onAdded }) {
+	const [utilisateurs, setUtilisateurs] = useState([]);
+	const [selection, setSelection] = useState(() => /* @__PURE__ */ new Set());
+	const [recherche, setRecherche] = useState("");
+	const [chargement, setChargement] = useState(false);
+	const [erreur, setErreur] = useState(null);
+	const [ajoutEnCours, setAjoutEnCours] = useState(false);
+	useEffect(() => {
+		if (!open) return;
+		setSelection(/* @__PURE__ */ new Set());
+		setRecherche("");
+		setUtilisateurs([]);
+		setErreur(null);
+	}, [open]);
+	useEffect(() => {
+		if (!open) return;
+		const terme = recherche.trim();
+		if (!terme) {
+			setUtilisateurs([]);
+			setErreur(null);
+			setChargement(false);
+			return;
+		}
+		if (!businessId) {
+			setErreur("Aucun business n’est sélectionné.");
+			return;
+		}
+		let annule = false;
+		setChargement(true);
+		setErreur(null);
+		setUtilisateurs([]);
+		const timeout = window.setTimeout(() => {
+			listerUtilisateursAgentDisponibles(businessId, terme).then((resultat) => {
+				if (!annule) setUtilisateurs(resultat);
+			}).catch((error) => {
+				if (!annule) setErreur(error.message || "Impossible de charger les utilisateurs.");
+			}).finally(() => {
+				if (!annule) setChargement(false);
+			});
+		}, 300);
+		return () => {
+			annule = true;
+			window.clearTimeout(timeout);
+		};
+	}, [
+		businessId,
+		open,
+		recherche
+	]);
+	const basculerSelection = (id) => {
+		setSelection((courante) => {
+			const suivante = new Set(courante);
+			if (suivante.has(id)) suivante.delete(id);
+			else suivante.add(id);
+			return suivante;
+		});
+	};
+	const ajouterSelection = async () => {
+		if (!businessId || selection.size === 0) return;
+		setAjoutEnCours(true);
+		try {
+			await toast.promise(inviterUtilisateursCommeAgents(businessId, Array.from(selection)), {
+				loading: "Envoi des invitations…",
+				success: ({ data, message }) => {
+					onAdded(data);
+					onOpenChange(false);
+					return message;
+				},
+				error: (error) => error.message
+			}).unwrap();
+		} finally {
+			setAjoutEnCours(false);
+		}
+	};
+	return /* @__PURE__ */ jsx(Dialog$1, {
+		open,
+		onOpenChange: (ouvert) => {
+			if (!ajoutEnCours) onOpenChange(ouvert);
+		},
+		children: /* @__PURE__ */ jsxs(DialogContent, {
+			className: "flex max-h-[85dvh] flex-col gap-0 overflow-hidden",
+			children: [
+				/* @__PURE__ */ jsxs(DialogHeader, {
+					className: "pb-3",
+					children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Inviter des travailleurs" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Sélectionnez les utilisateurs à inviter dans votre équipe. Les personnes déjà rattachées à ce business et votre propre compte ne sont pas proposées." })]
+				}),
+				/* @__PURE__ */ jsxs("div", {
+					className: "relative pb-3",
+					children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+						value: recherche,
+						onChange: (event) => setRecherche(event.currentTarget.value),
+						placeholder: "Rechercher par nom, e-mail ou téléphone…",
+						"aria-label": "Rechercher un utilisateur",
+						className: "pl-9"
+					})]
+				}),
+				/* @__PURE__ */ jsx("div", {
+					className: "min-h-32 max-h-[40dvh] overflow-y-auto rounded-lg border",
+					"aria-busy": chargement,
+					children: chargement ? /* @__PURE__ */ jsx("p", {
+						className: "p-6 text-center text-sm text-muted-foreground",
+						role: "status",
+						children: "Chargement des utilisateurs…"
+					}) : erreur ? /* @__PURE__ */ jsxs("div", {
+						className: "space-y-3 p-6 text-center",
+						children: [/* @__PURE__ */ jsx("p", {
+							className: "text-sm text-destructive",
+							children: erreur
+						}), /* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => onOpenChange(false),
+							children: "Fermer"
+						})]
+					}) : utilisateurs.length === 0 ? /* @__PURE__ */ jsx("p", {
+						className: "p-6 text-center text-sm text-muted-foreground",
+						children: recherche.trim() ? "Aucun utilisateur ne correspond à la recherche." : "Lancez une recherche pour afficher les utilisateurs."
+					}) : /* @__PURE__ */ jsx("ul", {
+						className: "divide-y",
+						children: utilisateurs.map((utilisateur) => {
+							const selectionne = selection.has(utilisateur.id);
+							return /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs("button", {
+								type: "button",
+								onClick: () => basculerSelection(utilisateur.id),
+								"aria-pressed": selectionne,
+								"aria-label": `${selectionne ? "Désélectionner" : "Sélectionner"} ${nomUtilisateur(utilisateur)}`,
+								className: `flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/50 ${selectionne ? "bg-primary/10" : ""}`,
+								children: [
+									/* @__PURE__ */ jsxs(Avatar$1, {
+										className: "size-9 shrink-0",
+										children: [/* @__PURE__ */ jsx(AvatarImage, {
+											src: utilisateur.image ?? void 0,
+											alt: ""
+										}), /* @__PURE__ */ jsx(AvatarFallback, {
+											className: "bg-primary/10 text-sm font-medium text-primary",
+											children: nomUtilisateur(utilisateur).charAt(0).toLocaleUpperCase("fr")
+										})]
+									}),
+									/* @__PURE__ */ jsxs("span", {
+										className: "min-w-0 flex-1",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "block truncate text-sm font-medium",
+											children: nomUtilisateur(utilisateur)
+										}), /* @__PURE__ */ jsx("span", {
+											className: "block truncate text-xs text-muted-foreground",
+											children: emailUtilisateur(utilisateur)
+										})]
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: `flex size-5 shrink-0 items-center justify-center rounded-full border ${selectionne ? "border-primary bg-primary text-primary-foreground" : "border-muted-foreground/40"}`,
+										"aria-hidden": "true",
+										children: selectionne && /* @__PURE__ */ jsx(Check, { className: "size-3" })
+									})
+								]
+							}) }, utilisateur.id);
+						})
+					})
+				}),
+				/* @__PURE__ */ jsxs(DialogFooter, {
+					className: "mt-4 flex-row items-center justify-between gap-3",
+					children: [/* @__PURE__ */ jsx(Button, {
+						type: "button",
+						variant: "outline",
+						onClick: () => onOpenChange(false),
+						disabled: ajoutEnCours,
+						children: "Annuler"
+					}), /* @__PURE__ */ jsx(Button, {
+						type: "button",
+						onClick: ajouterSelection,
+						disabled: chargement || !!erreur || selection.size === 0 || ajoutEnCours,
+						children: ajoutEnCours ? "Envoi…" : `Envoyer les invitations (${selection.size})`
+					})]
+				})
+			]
+		})
+	});
+}
+//#endregion
 //#region app/routes/travailleurs/travailleurs.tsx
 var travailleurs_exports = /* @__PURE__ */ __exportAll({ default: () => travailleurs_default });
+function nomAgent$1(agent) {
+	return agent.fullName?.trim() || agent.email?.trim() || "Travailleur sans nom";
+}
 var travailleurs_default = UNSAFE_withComponentProps(function Travailleurs() {
 	const { businessId } = useBusiness();
-	const charger = useCallback(() => listerAgents(businessId), [businessId]);
-	const { donnees, chargement, erreur, recharger } = useListe(charger, !!businessId);
-	const agir = async (promesse, enCours, succes) => {
-		await toast.promise(promesse, {
-			loading: enCours,
-			success: () => {
-				recharger();
-				return succes;
-			},
-			error: (e) => e.message
-		}).unwrap();
+	const [recherche, setRecherche] = useState("");
+	const [saisie, setSaisie] = useState("");
+	const [filtreStatut, setFiltreStatut] = useState("tous");
+	const [taillePage, setTaillePage] = useState(10);
+	const [page, setPage] = useState(0);
+	const [invitationOuverte, setInvitationOuverte] = useState(false);
+	const [aSupprimer, setASupprimer] = useState(null);
+	const [changementStatutAConfirmer, setChangementStatutAConfirmer] = useState(null);
+	const [suppressionEnCours, setSuppressionEnCours] = useState(false);
+	const [renvoiEnCours, setRenvoiEnCours] = useState(null);
+	const [statutEnCours, setStatutEnCours] = useState(null);
+	useEffect(() => {
+		const timeout = window.setTimeout(() => {
+			setRecherche(saisie.trim());
+			setPage(0);
+		}, 300);
+		return () => window.clearTimeout(timeout);
+	}, [saisie]);
+	const charger = useCallback(() => listerAgents(businessId, {
+		...recherche ? { search: recherche } : {},
+		...filtreStatut === "tous" ? {} : { status: filtreStatut }
+	}), [
+		businessId,
+		recherche,
+		filtreStatut
+	]);
+	const { donnees, chargement, erreur, recharger, ajouter, mettreAJour, retirer } = useListe(charger, !!businessId);
+	const nombrePages = Math.ceil(donnees.length / taillePage);
+	const pageCourante = Math.min(page, Math.max(0, nombrePages - 1));
+	const agentsAffiches = donnees.slice(pageCourante * taillePage, (pageCourante + 1) * taillePage);
+	const debut = donnees.length === 0 ? 0 : pageCourante * taillePage + 1;
+	const fin = Math.min((pageCourante + 1) * taillePage, donnees.length);
+	const ajouterAgentsInvites = (agents) => {
+		agents.forEach((agent) => ajouter(agent));
+		if (agents.length > 0) setPage(0);
+		recharger();
 	};
-	return /* @__PURE__ */ jsx(PageRessource, {
+	const changerStatut = async (agent, bloquer) => {
+		if (!businessId) return;
+		setStatutEnCours(agent.id);
+		try {
+			await toast.promise(bloquer ? bloquerAgent(businessId, agent.id) : activerAgent(businessId, agent.id), {
+				loading: bloquer ? "Blocage…" : "Réactivation…",
+				success: ({ message }) => {
+					mettreAJour({
+						...agent,
+						status: bloquer ? "BLOQUE" : "ACTIF"
+					}, (element) => element.id);
+					return message;
+				},
+				error: (e) => e.message
+			}).unwrap();
+		} finally {
+			setStatutEnCours(null);
+		}
+	};
+	const renvoyerInvitation = async (agent) => {
+		if (!businessId) return;
+		setRenvoiEnCours(agent.id);
+		try {
+			const resultat = await renvoyerInvitationAgent(businessId, agent.id);
+			toast.success(resultat.message);
+			recharger();
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "Le renvoi de l’invitation a échoué.");
+		} finally {
+			setRenvoiEnCours(null);
+		}
+	};
+	const confirmerSuppression = async () => {
+		if (!aSupprimer || !businessId) return;
+		setSuppressionEnCours(true);
+		try {
+			await toast.promise(supprimerAgent(businessId, aSupprimer.id), {
+				loading: "Retrait…",
+				success: ({ message }) => {
+					retirer(aSupprimer.id, (element) => element.id);
+					return message;
+				},
+				error: (e) => e.message
+			}).unwrap();
+			setASupprimer(null);
+		} finally {
+			setSuppressionEnCours(false);
+		}
+	};
+	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs(PageRessource, {
 		titre: "Travailleurs",
-		description: "Les agents rattachés à votre business. Ils rejoignent l'équipe en acceptant une invitation.",
+		description: "Les agents rattachés à votre business. Ils rejoignent l’équipe en acceptant une invitation.",
 		businessRequis: true,
 		businessId,
 		chargement,
 		erreur,
-		vide: donnees.length === 0,
-		messageVide: "Aucun agent dans votre équipe. Invitez quelqu'un pour commencer.",
+		vide: donnees.length === 0 && !recherche && filtreStatut === "tous",
+		messageVide: "Aucun travailleur dans votre équipe. Invitez quelqu’un pour commencer.",
 		onReessayer: recharger,
-		children: /* @__PURE__ */ jsx("div", {
-			className: "overflow-hidden rounded-lg border",
-			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableHead, { children: "Agent" }),
-				/* @__PURE__ */ jsx(TableHead, { children: "Statut" }),
-				/* @__PURE__ */ jsx(TableHead, { children: "Depuis" }),
-				/* @__PURE__ */ jsx(TableHead, {
-					className: "w-[1%] text-right",
-					children: "Actions"
-				})
-			] }) }), /* @__PURE__ */ jsx(TableBody, { children: donnees.map((agent) => /* @__PURE__ */ jsxs(TableRow, { children: [
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "font-medium",
-					children: agent.userId
-				}),
-				/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx(Badge, {
-					variant: agent.status === "ACTIF" ? "secondary" : "destructive",
-					children: agent.status === "ACTIF" ? "Actif" : "Bloqué"
-				}) }),
-				/* @__PURE__ */ jsx(TableCell, {
-					className: "text-muted-foreground",
-					children: agent.createdAt ? new Date(agent.createdAt).toLocaleDateString("fr-FR") : "—"
-				}),
-				/* @__PURE__ */ jsxs(TableCell, {
-					className: "text-right whitespace-nowrap",
-					children: [agent.status === "ACTIF" ? /* @__PURE__ */ jsxs(Button, {
-						variant: "ghost",
-						size: "sm",
-						onClick: () => agir(bloquerAgent(businessId, agent.id), "Blocage…", "Agent bloqué"),
-						children: [/* @__PURE__ */ jsx(BanIcon, { className: "size-4" }), "Bloquer"]
-					}) : /* @__PURE__ */ jsxs(Button, {
-						variant: "ghost",
-						size: "sm",
-						onClick: () => agir(activerAgent(businessId, agent.id), "Activation…", "Agent réactivé"),
-						children: [/* @__PURE__ */ jsx(CheckCircle2Icon, { className: "size-4" }), "Réactiver"]
-					}), /* @__PURE__ */ jsx(Button, {
-						variant: "ghost",
-						size: "sm",
-						"aria-label": "Retirer cet agent",
-						onClick: () => agir(supprimerAgent(businessId, agent.id), "Retrait…", "Agent retiré"),
-						children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+		action: /* @__PURE__ */ jsxs(Button, {
+			type: "button",
+			disabled: !businessId,
+			onClick: () => setInvitationOuverte(true),
+			children: [/* @__PURE__ */ jsx(UserPlusIcon, { className: "size-4" }), "Inviter un travailleur"]
+		}),
+		outils: /* @__PURE__ */ jsxs("div", {
+			className: "flex w-full max-w-3xl flex-wrap items-center gap-2",
+			children: [/* @__PURE__ */ jsxs("div", {
+				className: "relative min-w-48 flex-1",
+				children: [/* @__PURE__ */ jsx(SearchIcon, { className: "pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+					value: saisie,
+					onChange: (e) => setSaisie(e.target.value),
+					placeholder: "Rechercher par nom ou e-mail…",
+					"aria-label": "Rechercher un travailleur",
+					className: "pl-9"
+				})]
+			}), /* @__PURE__ */ jsxs(NativeSelect, {
+				value: filtreStatut,
+				onChange: (event) => {
+					const valeur = event.currentTarget.value;
+					if (valeur === "tous" || valeur === "ACTIF" || valeur === "BLOQUE") {
+						setFiltreStatut(valeur);
+						setPage(0);
+					}
+				},
+				"aria-label": "Filtrer les travailleurs par statut",
+				className: "min-w-40",
+				children: [
+					/* @__PURE__ */ jsx(NativeSelectOption, {
+						value: "tous",
+						children: "Tous les statuts"
+					}),
+					/* @__PURE__ */ jsx(NativeSelectOption, {
+						value: "ACTIF",
+						children: "Actifs"
+					}),
+					/* @__PURE__ */ jsx(NativeSelectOption, {
+						value: "BLOQUE",
+						children: "Bloqués"
+					})
+				]
+			})]
+		}),
+		children: [
+			/* @__PURE__ */ jsx("div", {
+				className: "overflow-hidden rounded-lg border",
+				children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+					/* @__PURE__ */ jsx(TableHead, { children: "Travailleur" }),
+					/* @__PURE__ */ jsx(TableHead, { children: "Statut" }),
+					/* @__PURE__ */ jsx(TableHead, { children: "Depuis" }),
+					/* @__PURE__ */ jsx(TableHead, {
+						className: "w-[1%] text-right",
+						children: "Actions"
+					})
+				] }) }), /* @__PURE__ */ jsx(TableBody, { children: agentsAffiches.length === 0 ? /* @__PURE__ */ jsx(TableRow, { children: /* @__PURE__ */ jsx(TableCell, {
+					colSpan: 4,
+					className: "h-24 text-center text-muted-foreground",
+					children: "Aucun travailleur ne correspond à ce filtre."
+				}) }) : agentsAffiches.map((agent) => /* @__PURE__ */ jsxs(TableRow, { children: [
+					/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsxs("div", {
+						className: "flex items-center gap-3",
+						children: [/* @__PURE__ */ jsxs(Avatar$1, {
+							className: "size-9",
+							children: [/* @__PURE__ */ jsx(AvatarImage, {
+								src: agent.userImage ?? void 0,
+								alt: nomAgent$1(agent)
+							}), /* @__PURE__ */ jsx(AvatarFallback, { children: nomAgent$1(agent).charAt(0).toLocaleUpperCase("fr") })]
+						}), /* @__PURE__ */ jsxs("div", {
+							className: "min-w-0",
+							children: [
+								/* @__PURE__ */ jsx(Link, {
+									to: `/travailleurs/${agent.id}`,
+									className: "font-medium text-primary underline-offset-4 hover:underline",
+									children: tronquerAvecEllipses(nomAgent$1(agent), 42)
+								}),
+								/* @__PURE__ */ jsx("p", {
+									className: "truncate text-sm text-muted-foreground",
+									children: agent.email || "E-mail non renseigné"
+								}),
+								!agent.isVerified && /* @__PURE__ */ jsx("p", {
+									className: "text-xs text-amber-700",
+									children: "Invitation en attente de validation"
+								})
+							]
+						})]
+					}) }),
+					/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx(Badge, {
+						variant: agent.status === "ACTIF" ? "secondary" : "destructive",
+						children: agent.status === "ACTIF" ? "Actif" : "Bloqué"
+					}) }),
+					/* @__PURE__ */ jsx(TableCell, {
+						className: "text-muted-foreground",
+						children: agent.createdAt ? new Date(agent.createdAt).toLocaleDateString("fr-FR") : "—"
+					}),
+					/* @__PURE__ */ jsx(TableCell, {
+						className: "text-right whitespace-nowrap",
+						children: /* @__PURE__ */ jsxs("div", {
+							className: "flex items-center justify-end gap-1",
+							children: [
+								!agent.isVerified && agent.invitationExpiresAt && new Date(agent.invitationExpiresAt).getTime() <= Date.now() && /* @__PURE__ */ jsx(Button, {
+									type: "button",
+									variant: "ghost",
+									size: "icon",
+									className: "size-8 border border-border text-muted-foreground",
+									onClick: () => void renvoyerInvitation(agent),
+									disabled: renvoiEnCours === agent.id,
+									"aria-label": `Renvoyer l’invitation à ${nomAgent$1(agent)}`,
+									title: "Renvoyer l’invitation",
+									children: /* @__PURE__ */ jsx(SendIcon, { className: "size-4" })
+								}),
+								/* @__PURE__ */ jsx(Button, {
+									type: "button",
+									variant: "ghost",
+									size: "icon",
+									className: "size-8 border border-border text-muted-foreground",
+									onClick: () => {
+										setChangementStatutAConfirmer({
+											agent,
+											bloquer: agent.status === "ACTIF"
+										});
+									},
+									disabled: statutEnCours === agent.id,
+									"aria-label": agent.status === "ACTIF" ? `Bloquer ${nomAgent$1(agent)}` : `Réactiver ${nomAgent$1(agent)}`,
+									title: agent.status === "ACTIF" ? "Bloquer" : "Réactiver",
+									children: agent.status === "ACTIF" ? /* @__PURE__ */ jsx(BanIcon, { className: "size-4" }) : /* @__PURE__ */ jsx(CheckCircle2Icon, { className: "size-4" })
+								}),
+								/* @__PURE__ */ jsx(Button, {
+									type: "button",
+									variant: "ghost",
+									size: "icon",
+									className: "size-8 border border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive",
+									onClick: () => setASupprimer(agent),
+									"aria-label": `Retirer ${nomAgent$1(agent)}`,
+									title: "Retirer de l’équipe",
+									children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4" })
+								})
+							]
+						})
+					})
+				] }, agent.id)) })] })
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: "flex flex-wrap items-center justify-between gap-4",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-2 text-sm text-muted-foreground",
+					children: [
+						/* @__PURE__ */ jsx("label", {
+							htmlFor: "travailleurs-par-page",
+							children: "Travailleurs par page"
+						}),
+						/* @__PURE__ */ jsxs(NativeSelect, {
+							id: "travailleurs-par-page",
+							value: taillePage,
+							onChange: (event) => {
+								setTaillePage(Number(event.currentTarget.value));
+								setPage(0);
+							},
+							"aria-label": "Nombre de travailleurs par page",
+							children: [
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 10,
+									children: "10"
+								}),
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 20,
+									children: "20"
+								}),
+								/* @__PURE__ */ jsx(NativeSelectOption, {
+									value: 50,
+									children: "50"
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("span", {
+							"aria-live": "polite",
+							children: [
+								debut,
+								"–",
+								fin,
+								" sur ",
+								donnees.length
+							]
+						})
+					]
+				}), /* @__PURE__ */ jsxs("nav", {
+					"aria-label": "Pagination des travailleurs",
+					className: "flex items-center gap-2",
+					children: [
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage(pageCourante - 1),
+							disabled: pageCourante === 0,
+							"aria-label": "Page précédente",
+							children: "Précédent"
+						}),
+						/* @__PURE__ */ jsxs("span", {
+							"aria-current": "page",
+							className: "text-sm tabular-nums",
+							children: [
+								nombrePages === 0 ? 0 : pageCourante + 1,
+								" / ",
+								nombrePages
+							]
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage(pageCourante + 1),
+							disabled: pageCourante >= nombrePages - 1,
+							"aria-label": "Page suivante",
+							children: "Suivant"
+						})
+					]
+				})]
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: aSupprimer !== null,
+				onOpenChange: (open) => {
+					if (!open && !suppressionEnCours) setASupprimer(null);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: "Retirer ce travailleur ?" }), /* @__PURE__ */ jsxs(AlertDialogDescription, { children: [
+					"« ",
+					aSupprimer ? nomAgent$1(aSupprimer) : "",
+					" » sera retiré de votre équipe et perdra ses accès. Cette action est irréversible."
+				] })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: suppressionEnCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: "destructive",
+					disabled: suppressionEnCours,
+					onClick: confirmerSuppression,
+					children: suppressionEnCours ? "Retrait…" : "Retirer"
+				})] })] })
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: changementStatutAConfirmer !== null,
+				onOpenChange: (open) => {
+					if (!statutEnCours && !open) setChangementStatutAConfirmer(null);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: changementStatutAConfirmer?.bloquer ? "Bloquer ce travailleur ?" : "Débloquer ce travailleur ?" }), /* @__PURE__ */ jsx(AlertDialogDescription, { children: changementStatutAConfirmer?.bloquer ? `« ${nomAgent$1(changementStatutAConfirmer.agent)} » ne pourra plus accéder à ce business tant qu’il ne sera pas réactivé.` : changementStatutAConfirmer ? `« ${nomAgent$1(changementStatutAConfirmer.agent)} » pourra de nouveau accéder à ce business.` : "" })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: statutEnCours !== null,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: changementStatutAConfirmer?.bloquer ? "destructive" : "default",
+					disabled: statutEnCours !== null,
+					onClick: () => {
+						if (!changementStatutAConfirmer) return;
+						const confirmation = changementStatutAConfirmer;
+						setChangementStatutAConfirmer(null);
+						changerStatut(confirmation.agent, confirmation.bloquer);
+					},
+					children: statutEnCours ? changementStatutAConfirmer?.bloquer ? "Blocage…" : "Réactivation…" : changementStatutAConfirmer?.bloquer ? "Bloquer" : "Débloquer"
+				})] })] })
+			})
+		]
+	}), /* @__PURE__ */ jsx(InviterTravailleur, {
+		businessId,
+		open: invitationOuverte,
+		onOpenChange: setInvitationOuverte,
+		onAdded: ajouterAgentsInvites
+	})] });
+});
+//#endregion
+//#region app/routes/travailleurs/detail.tsx
+var detail_exports = /* @__PURE__ */ __exportAll({ default: () => detail_default });
+function nomAgent(agent) {
+	return agent.fullName?.trim() || agent.email?.trim() || "Travailleur sans nom";
+}
+var detail_default = UNSAFE_withComponentProps(function DetailTravailleur() {
+	const { id } = useParams();
+	const navigate = useNavigate();
+	const { businessId } = useBusiness();
+	const [agent, setAgent] = useState(null);
+	const [chargement, setChargement] = useState(true);
+	const [erreur, setErreur] = useState(null);
+	const [suppressionOuverte, setSuppressionOuverte] = useState(false);
+	const [changementStatutOuvert, setChangementStatutOuvert] = useState(false);
+	const [enCours, setEnCours] = useState(false);
+	const charger = useCallback(async () => {
+		if (!businessId || !id) return;
+		setChargement(true);
+		setErreur(null);
+		try {
+			setAgent(await lireAgent(businessId, id));
+		} catch (error) {
+			setErreur(error instanceof Error ? error.message : "Travailleur introuvable.");
+		} finally {
+			setChargement(false);
+		}
+	}, [businessId, id]);
+	useEffect(() => {
+		charger();
+	}, [charger]);
+	const changerStatut = async () => {
+		if (!agent || !businessId) return;
+		const bloquer = agent.status === "ACTIF";
+		setEnCours(true);
+		try {
+			await toast.promise(bloquer ? bloquerAgent(businessId, agent.id) : activerAgent(businessId, agent.id), {
+				loading: bloquer ? "Blocage…" : "Réactivation…",
+				success: ({ message }) => {
+					setAgent({
+						...agent,
+						status: bloquer ? "BLOQUE" : "ACTIF"
+					});
+					return message;
+				},
+				error: (e) => e.message
+			}).unwrap();
+		} finally {
+			setEnCours(false);
+		}
+	};
+	const renvoyerInvitation = async () => {
+		if (!agent || !businessId) return;
+		setEnCours(true);
+		try {
+			const resultat = await renvoyerInvitationAgent(businessId, agent.id);
+			toast.success(resultat.message);
+			await charger();
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "Le renvoi de l’invitation a échoué.");
+		} finally {
+			setEnCours(false);
+		}
+	};
+	const confirmerSuppression = async () => {
+		if (!agent || !businessId) return;
+		setEnCours(true);
+		try {
+			await toast.promise(supprimerAgent(businessId, agent.id), {
+				loading: "Retrait…",
+				success: ({ message }) => message,
+				error: (e) => e.message
+			}).unwrap();
+			navigate("/travailleurs");
+		} finally {
+			setEnCours(false);
+		}
+	};
+	if (chargement) return /* @__PURE__ */ jsx("p", {
+		className: "p-6 text-sm text-muted-foreground",
+		children: "Chargement du travailleur…"
+	});
+	if (erreur || !agent) return /* @__PURE__ */ jsxs("main", {
+		className: "space-y-4 p-6",
+		children: [/* @__PURE__ */ jsx("p", {
+			role: "alert",
+			className: "text-destructive",
+			children: erreur ?? "Travailleur introuvable."
+		}), /* @__PURE__ */ jsx(Link, {
+			to: "/travailleurs",
+			className: "inline-flex h-8 items-center rounded-lg border px-3 text-sm hover:bg-muted",
+			children: "Retour aux travailleurs"
+		})]
+	});
+	const adressePrincipale = agent.adresses[0] ?? null;
+	const autresAdresses = agent.adresses.slice(1);
+	const invitationExpiree = !agent.isVerified && agent.invitationExpiresAt !== null && new Date(agent.invitationExpiresAt).getTime() <= Date.now();
+	return /* @__PURE__ */ jsxs("main", {
+		className: "space-y-5 p-4 lg:p-6",
+		children: [
+			/* @__PURE__ */ jsxs(Link, {
+				to: "/travailleurs",
+				className: "inline-flex h-8 w-fit items-center gap-2 rounded-lg px-2.5 text-sm font-medium hover:bg-muted",
+				children: [/* @__PURE__ */ jsx(ArrowLeft, { className: "size-4" }), " Retour aux travailleurs"]
+			}),
+			/* @__PURE__ */ jsxs("header", {
+				className: "flex flex-wrap items-start justify-between gap-4",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-4",
+					children: [/* @__PURE__ */ jsx(AvatarRessource, {
+						src: agent.userImage,
+						nom: nomAgent(agent),
+						className: "size-14",
+						classNameTexte: "text-lg"
+					}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsxs("div", {
+						className: "flex flex-wrap items-center gap-2",
+						children: [/* @__PURE__ */ jsx("h1", {
+							className: "text-2xl font-semibold",
+							children: nomAgent(agent)
+						}), /* @__PURE__ */ jsx(Badge, {
+							variant: agent.status === "ACTIF" ? "secondary" : "destructive",
+							children: agent.status === "ACTIF" ? "Actif" : "Bloqué"
+						})]
+					}), /* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: agent.isVerified ? `Dans l’équipe depuis le ${new Date(agent.createdAt).toLocaleDateString("fr-FR")}` : "Invitation en attente de validation"
+					})] })]
+				}), /* @__PURE__ */ jsxs("div", {
+					className: "flex flex-wrap items-center gap-2",
+					children: [
+						invitationExpiree && /* @__PURE__ */ jsxs(Button, {
+							type: "button",
+							variant: "outline",
+							onClick: () => void renvoyerInvitation(),
+							disabled: enCours,
+							children: [/* @__PURE__ */ jsx(SendIcon, { className: "size-4" }), "Renvoyer l’invitation"]
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							onClick: () => {
+								setChangementStatutOuvert(true);
+							},
+							disabled: enCours,
+							children: agent.status === "ACTIF" ? /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(BanIcon, { className: "size-4" }), "Bloquer"] }) : /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(CheckCircle2Icon, { className: "size-4" }), "Réactiver"] })
+						}),
+						/* @__PURE__ */ jsxs(Button, {
+							type: "button",
+							variant: "outline",
+							className: "border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive",
+							onClick: () => setSuppressionOuverte(true),
+							disabled: enCours,
+							children: [/* @__PURE__ */ jsx(Trash2Icon, { className: "size-4" }), "Retirer"]
+						})
+					]
+				})]
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: "space-y-4",
+				children: [
+					/* @__PURE__ */ jsxs("section", {
+						className: "space-y-4 rounded-xl border p-4",
+						children: [/* @__PURE__ */ jsxs("div", {
+							className: "flex items-center gap-4",
+							children: [/* @__PURE__ */ jsx(AvatarRessource, {
+								src: agent.userImage,
+								nom: nomAgent(agent)
+							}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+								className: "font-semibold",
+								children: "Identité"
+							}), /* @__PURE__ */ jsx("p", {
+								className: "text-sm text-muted-foreground",
+								children: "Ces informations proviennent du compte utilisateur et ne sont pas modifiables depuis votre business."
+							})] })]
+						}), /* @__PURE__ */ jsxs("dl", {
+							className: "grid grid-cols-1 gap-4 sm:grid-cols-2",
+							children: [
+								/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("dt", {
+									className: "text-sm text-muted-foreground",
+									children: "Nom complet"
+								}), /* @__PURE__ */ jsx("dd", {
+									className: "font-medium",
+									children: agent.fullName || "—"
+								})] }),
+								/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("dt", {
+									className: "text-sm text-muted-foreground",
+									children: "E-mail"
+								}), /* @__PURE__ */ jsx("dd", {
+									className: "font-medium",
+									children: agent.email || "—"
+								})] }),
+								/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("dt", {
+									className: "text-sm text-muted-foreground",
+									children: "Date de naissance"
+								}), /* @__PURE__ */ jsx("dd", {
+									className: "font-medium",
+									children: agent.birthday ? new Date(agent.birthday).toLocaleDateString("fr-FR") : "—"
+								})] }),
+								/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("dt", {
+									className: "text-sm text-muted-foreground",
+									children: "Membre depuis"
+								}), /* @__PURE__ */ jsx("dd", {
+									className: "font-medium",
+									children: new Date(agent.createdAt).toLocaleDateString("fr-FR")
+								})] }),
+								agent.bio && /* @__PURE__ */ jsxs("div", {
+									className: "sm:col-span-2",
+									children: [/* @__PURE__ */ jsx("dt", {
+										className: "text-sm text-muted-foreground",
+										children: "Bio"
+									}), /* @__PURE__ */ jsx("dd", { children: agent.bio })]
+								})
+							]
+						})]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: "space-y-3 rounded-xl border p-4",
+						children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+							className: "font-semibold",
+							children: "Adresse"
+						}), /* @__PURE__ */ jsx("p", {
+							className: "text-sm text-muted-foreground",
+							children: adressePrincipale ? "Renseignée par la personne sur son compte. Elle n’est pas modifiable depuis votre business." : "Aucune adresse enregistrée sur ce compte."
+						})] }), adressePrincipale && /* @__PURE__ */ jsxs("div", {
+							className: "grid gap-4 sm:grid-cols-2",
+							children: [
+								/* @__PURE__ */ jsxs("label", {
+									className: "block space-y-1 text-sm",
+									children: [/* @__PURE__ */ jsx("span", { children: "Pays" }), /* @__PURE__ */ jsx(Input, {
+										value: adressePrincipale.pays,
+										disabled: true
+									})]
+								}),
+								/* @__PURE__ */ jsxs("label", {
+									className: "block space-y-1 text-sm",
+									children: [/* @__PURE__ */ jsx("span", { children: "Ville" }), /* @__PURE__ */ jsx(Input, {
+										value: adressePrincipale.ville,
+										disabled: true
+									})]
+								}),
+								/* @__PURE__ */ jsxs("label", {
+									className: "block space-y-1 text-sm",
+									children: [/* @__PURE__ */ jsx("span", { children: "Région" }), /* @__PURE__ */ jsx(Input, {
+										value: adressePrincipale.region,
+										disabled: true
+									})]
+								}),
+								/* @__PURE__ */ jsxs("label", {
+									className: "block space-y-1 text-sm",
+									children: [/* @__PURE__ */ jsx("span", { children: "Code postal" }), /* @__PURE__ */ jsx(Input, {
+										value: adressePrincipale.codePostal ?? "",
+										disabled: true
+									})]
+								}),
+								/* @__PURE__ */ jsxs("label", {
+									className: "block space-y-1 text-sm sm:col-span-2",
+									children: [/* @__PURE__ */ jsx("span", { children: "Adresse" }), /* @__PURE__ */ jsx(Input, {
+										value: adressePrincipale.adresse,
+										disabled: true
+									})]
+								})
+							]
+						})]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: "space-y-3 rounded-xl border p-4",
+						children: [/* @__PURE__ */ jsx("h2", {
+							className: "font-semibold",
+							children: "Contacts"
+						}), agent.contacts.length === 0 ? /* @__PURE__ */ jsx("p", {
+							className: "text-sm text-muted-foreground",
+							children: "Aucun contact enregistré sur ce compte."
+						}) : /* @__PURE__ */ jsx("ul", {
+							className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+							children: agent.contacts.map((contact) => /* @__PURE__ */ jsxs("li", {
+								className: "flex items-start gap-3 rounded-lg border p-3",
+								children: [contact.type === "EMAIL" ? /* @__PURE__ */ jsx(MailIcon, { className: "mt-0.5 size-4 shrink-0 text-muted-foreground" }) : /* @__PURE__ */ jsx(PhoneIcon, { className: "mt-0.5 size-4 shrink-0 text-muted-foreground" }), /* @__PURE__ */ jsxs("div", {
+									className: "min-w-0",
+									children: [/* @__PURE__ */ jsx("p", {
+										className: "truncate font-medium",
+										children: contact.email || contact.phone || "—"
+									}), /* @__PURE__ */ jsxs("p", {
+										className: "text-xs text-muted-foreground",
+										children: [contact.label || contact.type.toLowerCase(), contact.status === "VERIFIE" ? " · vérifié" : ""]
+									})]
+								})]
+							}, contact.id))
+						})]
+					}),
+					autresAdresses.length > 0 && /* @__PURE__ */ jsxs("section", {
+						className: "space-y-3 rounded-xl border p-4",
+						children: [/* @__PURE__ */ jsx("h2", {
+							className: "font-semibold",
+							children: "Autres adresses"
+						}), /* @__PURE__ */ jsx("ul", {
+							className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+							children: autresAdresses.map((adresse) => /* @__PURE__ */ jsxs("li", {
+								className: "flex items-start gap-3 rounded-lg border p-3",
+								children: [/* @__PURE__ */ jsx(MapPinIcon, { className: "mt-0.5 size-4 shrink-0 text-muted-foreground" }), /* @__PURE__ */ jsxs("div", {
+									className: "min-w-0",
+									children: [/* @__PURE__ */ jsx("p", {
+										className: "font-medium",
+										children: adresse.adresse
+									}), /* @__PURE__ */ jsxs("p", {
+										className: "text-sm text-muted-foreground",
+										children: [[
+											adresse.ville,
+											adresse.region,
+											adresse.pays
+										].filter(Boolean).join(", "), adresse.codePostal ? ` · ${adresse.codePostal}` : ""]
+									})]
+								})]
+							}, adresse.id))
+						})]
+					})
+				]
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: suppressionOuverte,
+				onOpenChange: (open) => {
+					if (!enCours) setSuppressionOuverte(open);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: "Retirer ce travailleur ?" }), /* @__PURE__ */ jsxs(AlertDialogDescription, { children: [
+					"« ",
+					nomAgent(agent),
+					" » sera retiré de votre équipe et perdra ses accès. Cette action est irréversible."
+				] })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: enCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: "destructive",
+					disabled: enCours,
+					onClick: confirmerSuppression,
+					children: enCours ? "Retrait…" : "Retirer"
+				})] })] })
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: changementStatutOuvert,
+				onOpenChange: (open) => {
+					if (!enCours) setChangementStatutOuvert(open);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: agent.status === "ACTIF" ? "Bloquer ce travailleur ?" : "Débloquer ce travailleur ?" }), /* @__PURE__ */ jsx(AlertDialogDescription, { children: agent.status === "ACTIF" ? `« ${nomAgent(agent)} » ne pourra plus accéder à ce business tant qu’il ne sera pas réactivé.` : `« ${nomAgent(agent)} » pourra de nouveau accéder à ce business.` })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: enCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					variant: agent.status === "ACTIF" ? "destructive" : "default",
+					disabled: enCours,
+					onClick: () => {
+						setChangementStatutOuvert(false);
+						changerStatut();
+					},
+					children: enCours ? agent.status === "ACTIF" ? "Blocage…" : "Réactivation…" : agent.status === "ACTIF" ? "Bloquer" : "Débloquer"
+				})] })] })
+			})
+		]
+	});
+});
+//#endregion
+//#region app/routes/travailleurs/valider-invitation.tsx
+var valider_invitation_exports = /* @__PURE__ */ __exportAll({ default: () => valider_invitation_default });
+var valider_invitation_default = UNSAFE_withComponentProps(function ValiderInvitationTravailleur() {
+	const { invitationId } = useParams();
+	const navigate = useNavigate();
+	const [code, setCode] = useState("");
+	const [enCours, setEnCours] = useState(false);
+	const valider = async (event) => {
+		event.preventDefault();
+		if (!invitationId || !/^\d{6}$/.test(code)) {
+			toast.error("Saisissez le code à 6 chiffres reçu par e-mail.");
+			return;
+		}
+		setEnCours(true);
+		try {
+			const resultat = await validerInvitationAgent(invitationId, code);
+			toast.success(resultat.message);
+			navigate("/acceuil", { replace: true });
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "Impossible de valider cette invitation.");
+		} finally {
+			setEnCours(false);
+		}
+	};
+	return /* @__PURE__ */ jsx("main", {
+		className: "mx-auto flex w-full max-w-md flex-1 items-center px-4 py-10",
+		children: /* @__PURE__ */ jsxs("form", {
+			onSubmit: valider,
+			className: "w-full space-y-5 rounded-xl border p-6",
+			children: [
+				/* @__PURE__ */ jsxs("div", {
+					className: "space-y-2",
+					children: [/* @__PURE__ */ jsx("h1", {
+						className: "text-xl font-semibold",
+						children: "Valider votre invitation"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: "Saisissez le code à 6 chiffres envoyé à l’adresse e-mail associée à votre compte. Le code expire après 15 minutes."
 					})]
+				}),
+				/* @__PURE__ */ jsx(Input, {
+					value: code,
+					onChange: (event) => setCode(event.currentTarget.value.replace(/\D/g, "").slice(0, 6)),
+					inputMode: "numeric",
+					autoComplete: "one-time-code",
+					placeholder: "000000",
+					"aria-label": "Code de validation à 6 chiffres",
+					required: true,
+					className: "h-11 text-center text-lg tracking-[0.5em]"
+				}),
+				/* @__PURE__ */ jsx(Button, {
+					type: "submit",
+					className: "w-full",
+					disabled: enCours || code.length !== 6,
+					children: enCours ? "Validation…" : "Confirmer l’invitation"
 				})
-			] }, agent.id)) })] })
+			]
 		})
 	});
 });
@@ -2125,179 +6645,6 @@ var caisses_default = UNSAFE_withComponentProps(function Caisses() {
 	});
 });
 //#endregion
-//#region app/lib/apis.ts
-var creer_business = async (form) => {
-	const token = await getToken();
-	const response = await fetch(`${API}/api/businesses`, {
-		method: "POST",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		},
-		body: JSON.stringify(form)
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Create data failed");
-	return result;
-};
-var creer_user = async () => {
-	const token = await getToken();
-	const response = await fetch(`${API}/auth/createUser`, {
-		method: "POST",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		}
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Create data failed");
-	console.log(result);
-	return result;
-};
-var is_welcome = async () => {
-	const token = await getToken();
-	const response = await fetch(`${API}/auth/is-welcome`, {
-		method: "PUT",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		}
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Create data failed");
-	console.log(result);
-	return result;
-};
-var supprimer_user = async () => {
-	const token = await getToken();
-	try {
-		await fetch(`${API}/auth/deleteUser`, {
-			method: "POST",
-			headers: {
-				"Authorization": `${token}`,
-				"Content-Type": "application/json"
-			}
-		});
-	} catch (error) {
-		console.error(error);
-	}
-};
-var creer_contact = async (form) => {
-	const token = await getToken();
-	const response = await fetch(`${API}/contacts`, {
-		method: "POST",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		},
-		body: JSON.stringify(form)
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Form validation failed");
-	console.log(result);
-	return result;
-};
-var items_contact = async () => {
-	const token = await getToken();
-	const response = await fetch(`${API}/contacts`, {
-		method: "GET",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		}
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Fetching data failed");
-	return result;
-};
-var supprimer_contact = async (id) => {
-	const token = await getToken();
-	const response = await fetch(`${API}/contacts/${id}`, {
-		method: "DELETE",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		}
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Remove data failed");
-	console.log(result);
-	return result;
-};
-var verifier_contact = async (contactId, token) => {
-	const client_token = await getToken();
-	const response = await fetch(`${API}/contacts/${contactId}/verifier`, {
-		method: "PUT",
-		headers: {
-			"Authorization": `${client_token}`,
-			"Content-Type": "application/json"
-		},
-		body: JSON.stringify({ token })
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Verfication data failed");
-	console.log(result);
-	return result;
-};
-var items_adresse = async (businessId, clientId, fournisseurId) => {
-	const token = await getToken();
-	const response = await fetch(`${API}/adresses`, {
-		method: "GET",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		}
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "get data failed");
-	console.log(result);
-	return result;
-};
-var creer_adresse = async (form) => {
-	const token = await getToken();
-	const response = await fetch(`${API}/adresses`, {
-		method: "POST",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		},
-		body: JSON.stringify(form)
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Create data failed");
-	console.log(result);
-	return result;
-};
-var supprimer_adresse = async (id) => {
-	const token = await getToken();
-	const response = await fetch(`${API}/adresses/${id}`, {
-		method: "DELETE",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		}
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "Delete data failed");
-	console.log(result);
-	return result;
-};
-var modifier_adresse = async (id, form) => {
-	const token = await getToken();
-	const response = await fetch(`${API}/adresses/${id}`, {
-		method: "PUT",
-		headers: {
-			"Authorization": `${token}`,
-			"Content-Type": "application/json"
-		},
-		body: JSON.stringify(form)
-	});
-	const result = await response.json();
-	if (!response.ok) throw new Error(result.message || "update data failed");
-	console.log(result);
-	return result;
-};
-//#endregion
 //#region app/routes/parametres/parametres.tsx
 var parametres_exports = /* @__PURE__ */ __exportAll({
 	default: () => parametres_default,
@@ -2456,14 +6803,28 @@ function meta$2({}) {
 }
 var welcome_default = UNSAFE_withComponentProps(function Welcome() {
 	const navigate = useNavigate();
+	const [erreur, setErreur] = useState(null);
+	const [tentative, setTentative] = useState(0);
+	const [enregistrementEnCours, setEnregistrementEnCours] = useState(true);
 	useEffect(() => {
+		let annule = false;
 		const creerUser = async () => {
-			await creer_user().then((res) => {
+			setEnregistrementEnCours(true);
+			setErreur(null);
+			try {
+				const res = await creer_user();
 				if (!res.success && res.redirect) navigate("/", { replace: true });
-			});
+			} catch (error) {
+				if (!annule) setErreur(error instanceof Error ? error.message : "Impossible d'enregistrer les informations de votre compte.");
+			} finally {
+				if (!annule) setEnregistrementEnCours(false);
+			}
 		};
 		creerUser();
-	}, []);
+		return () => {
+			annule = true;
+		};
+	}, [navigate, tentative]);
 	const isWelcome = async () => {
 		await is_welcome().then((res) => {
 			if (res.success) navigate("/");
@@ -2475,6 +6836,19 @@ var welcome_default = UNSAFE_withComponentProps(function Welcome() {
 			to: "/",
 			children: "Home page"
 		}),
+		enregistrementEnCours && /* @__PURE__ */ jsx("p", {
+			role: "status",
+			children: "Enregistrement des informations de votre compte…"
+		}),
+		erreur && /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("p", {
+			role: "alert",
+			children: erreur
+		}), /* @__PURE__ */ jsx(Button, {
+			type: "button",
+			disabled: enregistrementEnCours,
+			onClick: () => setTentative((valeur) => valeur + 1),
+			children: "Réessayer"
+		})] }),
 		/* @__PURE__ */ jsx(Button, {
 			className: "primary",
 			onClick: isWelcome,
@@ -3631,6 +8005,7 @@ function Requis() {
 }
 var page_default = UNSAFE_withComponentProps(function BusinessForm() {
 	const navigate = useNavigate();
+	const { aUnBusiness, pret, recharger } = useBusiness();
 	const [complementsOuverts, setComplementsOuverts] = useState(false);
 	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
 		resolver: zodResolver(BusinessSchema),
@@ -3643,6 +8018,15 @@ var page_default = UNSAFE_withComponentProps(function BusinessForm() {
 			description: ""
 		}
 	});
+	if (!pret) return /* @__PURE__ */ jsx("div", {
+		role: "status",
+		className: "p-4",
+		children: "Chargement…"
+	});
+	if (aUnBusiness) return /* @__PURE__ */ jsx(Navigate, {
+		to: "/acceuil",
+		replace: true
+	});
 	const onSubmit = async (data) => {
 		const form = {
 			nom: data.nom,
@@ -3652,13 +8036,14 @@ var page_default = UNSAFE_withComponentProps(function BusinessForm() {
 		};
 		await toast.promise(creer_business(form), {
 			loading: "Création du business en cours…",
-			success: () => {
+			success: (result) => {
 				reset();
+				recharger();
 				navigate("/acceuil");
-				return "Votre business a été créé";
+				return result?.message || "Votre business a été créé";
 			},
 			error: (err) => err.message || "La création a échoué"
-		}).unwrap();
+		}).unwrap().catch(() => void 0);
 	};
 	return /* @__PURE__ */ jsx("div", {
 		className: "mx-auto w-full max-w-2xl px-4 py-6 lg:px-6",
@@ -4148,9 +8533,11 @@ function Layout({ children }) {
 }
 var ProtectedRoute = () => {
 	const { isLoaded, isSignedIn } = useAuth();
-	const navigate = useNavigate();
 	if (!isLoaded) return /* @__PURE__ */ jsx("div", { children: "Loading authentication..." });
-	if (!isSignedIn) navigate("/sign-up", { replace: true });
+	if (!isSignedIn) return /* @__PURE__ */ jsx(Navigate, {
+		to: "/sign-up",
+		replace: true
+	});
 	return /* @__PURE__ */ jsx(Outlet, {});
 };
 var root_default = UNSAFE_withComponentProps(function App({ loaderData }) {
@@ -4160,7 +8547,10 @@ var root_default = UNSAFE_withComponentProps(function App({ loaderData }) {
 		"/sign-in",
 		"/sign-up",
 		"/sign-in/factor-one",
-		"/welcome"
+		"/welcome",
+		"/clients/valider-invitation/:invitationId",
+		"/fournisseurs/valider-invitation/:invitationId",
+		"/travailleurs/valider-invitation/:invitationId"
 	].includes(location.pathname);
 	let [page, setPage] = useState("Current Page");
 	return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsx(ClerkProvider, {
@@ -4227,12 +8617,36 @@ var root_default = UNSAFE_withComponentProps(function App({ loaderData }) {
 								element: /* @__PURE__ */ jsx(clients_default, {})
 							}),
 							/* @__PURE__ */ jsx(Route, {
+								path: "/clients/valider-invitation/:invitationId",
+								element: /* @__PURE__ */ jsx(valider_invitation_default$2, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
+								path: "/clients/:id",
+								element: /* @__PURE__ */ jsx(detail_default$2, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
 								path: "/fournisseurs",
 								element: /* @__PURE__ */ jsx(fournisseurs_default, {})
 							}),
 							/* @__PURE__ */ jsx(Route, {
+								path: "/fournisseurs/:id",
+								element: /* @__PURE__ */ jsx(detail_default$1, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
+								path: "/fournisseurs/valider-invitation/:invitationId",
+								element: /* @__PURE__ */ jsx(valider_invitation_default$1, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
 								path: "/travailleurs",
 								element: /* @__PURE__ */ jsx(travailleurs_default, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
+								path: "/travailleurs/valider-invitation/:invitationId",
+								element: /* @__PURE__ */ jsx(valider_invitation_default, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
+								path: "/travailleurs/:id",
+								element: /* @__PURE__ */ jsx(detail_default, {})
 							}),
 							/* @__PURE__ */ jsx(Route, {
 								path: "/caisses",
@@ -4775,12 +9189,8 @@ var aides_default = UNSAFE_withComponentProps(function Aides() {
 //#region \0virtual:react-router/server-manifest
 var server_manifest_default = {
 	"entry": {
-		"module": "/assets/entry.client-B44Z6adk.js",
-		"imports": [
-			"/assets/rolldown-runtime-hePW80VL.js",
-			"/assets/admin-BtS6y-sF.js",
-			"/assets/clerk-RS1SG_Tj.js"
-		],
+		"module": "/assets/entry.client-DJk2Q3bq.js",
+		"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DDjUWroy.js"],
 		"css": []
 	},
 	"routes": {
@@ -4797,41 +9207,51 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": true,
-			"module": "/assets/root-BRTMlXn0.js",
+			"module": "/assets/root-CPpTRqgF.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/clerk-RS1SG_Tj.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/ui-BVD8b3OD.js",
-				"/assets/profile-CLnHleqN.js",
-				"/assets/switch-B0hxJjCq.js",
-				"/assets/acceuil-DFiTNjLE.js",
-				"/assets/home-DBYFGNSx.js",
-				"/assets/notifications-BQTYrczU.js",
-				"/assets/commandes-D9t7yzUw.js",
-				"/assets/ventes-CWkYckbk.js",
-				"/assets/articles-D62uVdvs2.js",
-				"/assets/achats-Byd4dohw.js",
-				"/assets/clients-DfujkNt6.js",
-				"/assets/fournisseurs-B07G7vzF.js",
-				"/assets/travailleurs-D8UD8Gws.js",
-				"/assets/caisses-3jnr_ym9.js",
-				"/assets/parametres-Dqtkjhmc.js",
-				"/assets/page-BHM7HG-p.js",
-				"/assets/page-Chm-XXSY.js",
-				"/assets/welcome-D1W2lZVs.js",
-				"/assets/page-D8siq90n.js",
-				"/assets/promotions-CSMWynN7.js",
-				"/assets/charts-CX2LHfGF.js",
-				"/assets/vendor-BB_HCXhT.js",
-				"/assets/card-DuTL90fD.js",
-				"/assets/apis-B8R9BB44.js",
-				"/assets/alert-Dw1x3RUG.js",
-				"/assets/textarea-ClEOVw9l.js",
-				"/assets/native-select-DpVQMhiZ.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/profile-B3qO1Pyr.js",
+				"/assets/avatar-BCX5K0QS.js",
+				"/assets/clerk-C_JvYzjK.js",
+				"/assets/acceuil-D7jVaxXD.js",
+				"/assets/home-CrMjB8_J.js",
+				"/assets/notifications-Bx1C-M0V.js",
+				"/assets/commandes-BRAKvdDx.js",
+				"/assets/ventes-D_UYFWq2.js",
+				"/assets/articles-CilPTbs9.js",
+				"/assets/achats-BSj-KmKd.js",
+				"/assets/clients-DUwPs2dh.js",
+				"/assets/detail-PpEZnvJ9.js",
+				"/assets/valider-invitation-CeTytRoV.js",
+				"/assets/fournisseurs-DYBFc_VF.js",
+				"/assets/valider-invitation-DJPiLm95.js",
+				"/assets/detail-CoPsG_MA.js",
+				"/assets/travailleurs-CJjOVRLX.js",
+				"/assets/detail-CypbbsEw.js",
+				"/assets/valider-invitation-BeqcG5O0.js",
+				"/assets/caisses-DzMKheDa.js",
+				"/assets/parametres--yRt7Cwa.js",
+				"/assets/page-C0ho4w-M.js",
+				"/assets/page-BO6X63Yv.js",
+				"/assets/welcome-Dd6DRMJc.js",
+				"/assets/page-EVvlTosV.js",
+				"/assets/promotions-D844PiEQ.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js",
+				"/assets/card-ByHb0aF3.js",
+				"/assets/apis-BaQWYjXy.js",
+				"/assets/switch-CwWXBor6.js",
+				"/assets/alert-BhMUVgDH.js",
+				"/assets/textarea-rYX1mxRK.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/alert-dialog-BNdWC40a.js",
+				"/assets/forms-DlnA6V6_.js",
+				"/assets/avatar-ressource-DK2aEXop.js"
 			],
-			"css": ["/assets/app-C0pQUMKt.css"],
+			"css": ["/assets/app-CpzgLij_.css"],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
 			"clientMiddlewareModule": void 0,
@@ -4850,13 +9270,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/home-C5ADRk4t.js",
+			"module": "/assets/home-DL-9tXt2.js",
 			"imports": [
-				"/assets/home-DBYFGNSx.js",
+				"/assets/home-CrMjB8_J.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/clerk-RS1SG_Tj.js",
-				"/assets/alert-Dw1x3RUG.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/alert-BhMUVgDH.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4877,16 +9296,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/docs-BnJRwLKJ.js",
+			"module": "/assets/docs-CWAs9Q9F.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/ui-BVD8b3OD.js",
-				"/assets/switch-B0hxJjCq.js",
-				"/assets/alert-Dw1x3RUG.js",
-				"/assets/charts-CX2LHfGF.js",
-				"/assets/vendor-BB_HCXhT.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/avatar-BCX5K0QS.js",
+				"/assets/alert-BhMUVgDH.js",
+				"/assets/switch-CwWXBor6.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4907,13 +9327,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-DWpSH94h.js",
+			"module": "/assets/page-CV_WXo79.js",
 			"imports": [
-				"/assets/page-BHM7HG-p.js",
+				"/assets/page-C0ho4w-M.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/clerk-RS1SG_Tj.js",
-				"/assets/card-DuTL90fD.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/clerk-C_JvYzjK.js",
+				"/assets/card-ByHb0aF3.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4934,13 +9354,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-8nbdRn60.js",
+			"module": "/assets/page-_EZ0zwYP.js",
 			"imports": [
-				"/assets/page-Chm-XXSY.js",
+				"/assets/page-BO6X63Yv.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/clerk-RS1SG_Tj.js",
-				"/assets/card-DuTL90fD.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/clerk-C_JvYzjK.js",
+				"/assets/card-ByHb0aF3.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4961,12 +9381,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/welcome-IaiRLLKd.js",
+			"module": "/assets/welcome-CZetGbgb.js",
 			"imports": [
-				"/assets/welcome-D1W2lZVs.js",
+				"/assets/welcome-Dd6DRMJc.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/apis-B8R9BB44.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/apis-BaQWYjXy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -4987,11 +9407,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/acceuil-CAnanP9z.js",
+			"module": "/assets/acceuil-C1ZgU9FV.js",
 			"imports": [
-				"/assets/acceuil-DFiTNjLE.js",
+				"/assets/acceuil-D7jVaxXD.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js"
+				"/assets/admin-DDjUWroy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5012,12 +9432,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/dashboard-jtal3xzL.js",
+			"module": "/assets/dashboard-BcftVsVc.js",
 			"imports": [
-				"/assets/dashboard-CbjJJbrC.js",
+				"/assets/dashboard-q9qRQ38q.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/charts-DPqxfEhR.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5038,11 +9458,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/commandes-BjLIVFGv.js",
+			"module": "/assets/commandes-leHiTrqp.js",
 			"imports": [
-				"/assets/commandes-D9t7yzUw.js",
+				"/assets/commandes-BRAKvdDx.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js"
+				"/assets/admin-DDjUWroy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5063,11 +9483,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/ventes-Be4hMFtM.js",
+			"module": "/assets/ventes-DtQUlEUb.js",
 			"imports": [
-				"/assets/ventes-CWkYckbk.js",
+				"/assets/ventes-D_UYFWq2.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js"
+				"/assets/admin-DDjUWroy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5088,18 +9508,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-TT-g2GDI.js",
+			"module": "/assets/page-C6a5pWuc.js",
 			"imports": [
-				"/assets/page-D8siq90n.js",
+				"/assets/page-EVvlTosV.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/vendor-BB_HCXhT.js",
-				"/assets/ui-BVD8b3OD.js",
-				"/assets/card-DuTL90fD.js",
-				"/assets/textarea-ClEOVw9l.js",
-				"/assets/apis-B8R9BB44.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/vendor-DCvTQ-yt.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/card-ByHb0aF3.js",
+				"/assets/textarea-rYX1mxRK.js",
+				"/assets/apis-BaQWYjXy.js",
+				"/assets/charts-DPqxfEhR.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5120,19 +9540,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/profile-C7WOqcFk.js",
+			"module": "/assets/profile-CR5qseIp.js",
 			"imports": [
-				"/assets/profile-CLnHleqN.js",
+				"/assets/profile-B3qO1Pyr.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/clerk-RS1SG_Tj.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/vendor-BB_HCXhT.js",
-				"/assets/ui-BVD8b3OD.js",
-				"/assets/switch-B0hxJjCq.js",
-				"/assets/card-DuTL90fD.js",
-				"/assets/apis-B8R9BB44.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/vendor-DCvTQ-yt.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/avatar-BCX5K0QS.js",
+				"/assets/card-ByHb0aF3.js",
+				"/assets/apis-BaQWYjXy.js",
+				"/assets/switch-CwWXBor6.js",
+				"/assets/charts-DPqxfEhR.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5153,11 +9573,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/notifications-DuL86q_f.js",
+			"module": "/assets/notifications-CPMXO_Ja.js",
 			"imports": [
-				"/assets/notifications-BQTYrczU.js",
+				"/assets/notifications-Bx1C-M0V.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js"
+				"/assets/admin-DDjUWroy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5178,14 +9598,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/achats-DpRo4Pxj.js",
+			"module": "/assets/achats-CJB7lI-K.js",
 			"imports": [
-				"/assets/achats-Byd4dohw.js",
+				"/assets/achats-BSj-KmKd.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/native-select-DpVQMhiZ.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/charts-DPqxfEhR.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5206,14 +9626,75 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/travailleurs-By9symnu.js",
+			"module": "/assets/travailleurs-C4fyymXk.js",
 			"imports": [
-				"/assets/travailleurs-D8UD8Gws.js",
+				"/assets/travailleurs-CJjOVRLX.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/ui-BVD8b3OD.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/avatar-BCX5K0QS.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/alert-dialog-BNdWC40a.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/travailleurs/detail": {
+			"id": "routes/travailleurs/detail",
+			"parentId": "root",
+			"path": "/travailleurs/:id",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/detail-DSH9Io2w.js",
+			"imports": [
+				"/assets/detail-CypbbsEw.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/alert-dialog-BNdWC40a.js",
+				"/assets/avatar-ressource-DK2aEXop.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js",
+				"/assets/avatar-BCX5K0QS.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/travailleurs/valider-invitation": {
+			"id": "routes/travailleurs/valider-invitation",
+			"parentId": "root",
+			"path": "/travailleurs/valider-invitation/:invitationId",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/valider-invitation-CoQyzkVC.js",
+			"imports": [
+				"/assets/valider-invitation-BeqcG5O0.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-DDjUWroy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5234,12 +9715,77 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/clients-Wopo-WWf.js",
+			"module": "/assets/clients-CUpgoa1y.js",
 			"imports": [
-				"/assets/clients-DfujkNt6.js",
+				"/assets/clients-DUwPs2dh.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/ui-BVD8b3OD.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/avatar-BCX5K0QS.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/alert-dialog-BNdWC40a.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/clients/detail": {
+			"id": "routes/clients/detail",
+			"parentId": "root",
+			"path": "/clients/:id",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/detail-CsyWzXa2.js",
+			"imports": [
+				"/assets/detail-PpEZnvJ9.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/forms-DlnA6V6_.js",
+				"/assets/alert-dialog-BNdWC40a.js",
+				"/assets/apis-BaQWYjXy.js",
+				"/assets/avatar-ressource-DK2aEXop.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js",
+				"/assets/avatar-BCX5K0QS.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/clients/valider-invitation": {
+			"id": "routes/clients/valider-invitation",
+			"parentId": "root",
+			"path": "/clients/valider-invitation/:invitationId",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/valider-invitation-DlmEtNMy.js",
+			"imports": [
+				"/assets/valider-invitation-CeTytRoV.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-DDjUWroy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5260,13 +9806,76 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/fournisseurs-DnfQngPt.js",
+			"module": "/assets/fournisseurs-DmL2roOH.js",
 			"imports": [
-				"/assets/fournisseurs-B07G7vzF.js",
+				"/assets/fournisseurs-DYBFc_VF.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/ui-BVD8b3OD.js",
-				"/assets/textarea-ClEOVw9l.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/avatar-BCX5K0QS.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/alert-dialog-BNdWC40a.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/fournisseurs/detail": {
+			"id": "routes/fournisseurs/detail",
+			"parentId": "root",
+			"path": "/fournisseurs/:id",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/detail-DdUbap__.js",
+			"imports": [
+				"/assets/detail-CoPsG_MA.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/avatar-BCX5K0QS.js",
+				"/assets/alert-dialog-BNdWC40a.js",
+				"/assets/apis-BaQWYjXy.js",
+				"/assets/avatar-ressource-DK2aEXop.js",
+				"/assets/charts-DPqxfEhR.js",
+				"/assets/vendor-DCvTQ-yt.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/fournisseurs/valider-invitation": {
+			"id": "routes/fournisseurs/valider-invitation",
+			"parentId": "root",
+			"path": "/fournisseurs/valider-invitation/:invitationId",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/valider-invitation-BPguRCJn.js",
+			"imports": [
+				"/assets/valider-invitation-DJPiLm95.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-DDjUWroy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5287,15 +9896,15 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/articles-CIuCsCcP.js",
+			"module": "/assets/articles-DGGrBuKd.js",
 			"imports": [
-				"/assets/articles-D62uVdvs2.js",
+				"/assets/articles-CilPTbs9.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/textarea-ClEOVw9l.js",
-				"/assets/native-select-DpVQMhiZ.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/textarea-rYX1mxRK.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/charts-DPqxfEhR.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5316,15 +9925,15 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/promotions-DYMFKdec.js",
+			"module": "/assets/promotions-CODrnYik.js",
 			"imports": [
-				"/assets/promotions-CSMWynN7.js",
+				"/assets/promotions-D844PiEQ.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/textarea-ClEOVw9l.js",
-				"/assets/native-select-DpVQMhiZ.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/textarea-rYX1mxRK.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/charts-DPqxfEhR.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5345,14 +9954,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/caisses-DtvWEe6Y.js",
+			"module": "/assets/caisses-CiY7bbCq.js",
 			"imports": [
-				"/assets/caisses-3jnr_ym9.js",
+				"/assets/caisses-DzMKheDa.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/dashboard-CbjJJbrC.js",
-				"/assets/native-select-DpVQMhiZ.js",
-				"/assets/charts-CX2LHfGF.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/native-select-DbjOonhl.js",
+				"/assets/charts-DPqxfEhR.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5373,8 +9982,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/aides-CmDLymHb.js",
-			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-BtS6y-sF.js"],
+			"module": "/assets/aides-3C-Q3ncz.js",
+			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DDjUWroy.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -5394,14 +10003,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/parametres-CFro1KYP.js",
+			"module": "/assets/parametres-f1p7HVkG.js",
 			"imports": [
-				"/assets/parametres-Dqtkjhmc.js",
+				"/assets/parametres--yRt7Cwa.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-BtS6y-sF.js",
-				"/assets/ui-BVD8b3OD.js",
-				"/assets/card-DuTL90fD.js",
-				"/assets/apis-B8R9BB44.js"
+				"/assets/admin-DDjUWroy.js",
+				"/assets/ui-BmCKeUE8.js",
+				"/assets/card-ByHb0aF3.js",
+				"/assets/apis-BaQWYjXy.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -5422,8 +10031,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/businesses-D_9aZ2Bm.js",
-			"imports": ["/assets/admin-BtS6y-sF.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/businesses-Bl4j-Fc_.js",
+			"imports": ["/assets/admin-DDjUWroy.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -5443,8 +10052,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/offres-DGQi5TJj.js",
-			"imports": ["/assets/admin-BtS6y-sF.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/offres-sYV-2NlV.js",
+			"imports": ["/assets/admin-DDjUWroy.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -5464,8 +10073,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/categories-CD9LMZ0R.js",
-			"imports": ["/assets/admin-BtS6y-sF.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/categories-Cj24yqLp.js",
+			"imports": ["/assets/admin-DDjUWroy.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -5473,8 +10082,8 @@ var server_manifest_default = {
 			"hydrateFallbackModule": void 0
 		}
 	},
-	"url": "/assets/manifest-7f23e464.js",
-	"version": "7f23e464",
+	"url": "/assets/manifest-b211eb78.js",
+	"version": "b211eb78",
 	"sri": void 0
 };
 //#endregion
@@ -5615,6 +10224,22 @@ var routes = {
 		caseSensitive: void 0,
 		module: travailleurs_exports
 	},
+	"routes/travailleurs/detail": {
+		id: "routes/travailleurs/detail",
+		parentId: "root",
+		path: "/travailleurs/:id",
+		index: void 0,
+		caseSensitive: void 0,
+		module: detail_exports
+	},
+	"routes/travailleurs/valider-invitation": {
+		id: "routes/travailleurs/valider-invitation",
+		parentId: "root",
+		path: "/travailleurs/valider-invitation/:invitationId",
+		index: void 0,
+		caseSensitive: void 0,
+		module: valider_invitation_exports
+	},
 	"routes/clients/clients": {
 		id: "routes/clients/clients",
 		parentId: "root",
@@ -5623,6 +10248,22 @@ var routes = {
 		caseSensitive: void 0,
 		module: clients_exports
 	},
+	"routes/clients/detail": {
+		id: "routes/clients/detail",
+		parentId: "root",
+		path: "/clients/:id",
+		index: void 0,
+		caseSensitive: void 0,
+		module: detail_exports$2
+	},
+	"routes/clients/valider-invitation": {
+		id: "routes/clients/valider-invitation",
+		parentId: "root",
+		path: "/clients/valider-invitation/:invitationId",
+		index: void 0,
+		caseSensitive: void 0,
+		module: valider_invitation_exports$2
+	},
 	"routes/fournisseurs/fournisseurs": {
 		id: "routes/fournisseurs/fournisseurs",
 		parentId: "root",
@@ -5630,6 +10271,22 @@ var routes = {
 		index: void 0,
 		caseSensitive: void 0,
 		module: fournisseurs_exports
+	},
+	"routes/fournisseurs/detail": {
+		id: "routes/fournisseurs/detail",
+		parentId: "root",
+		path: "/fournisseurs/:id",
+		index: void 0,
+		caseSensitive: void 0,
+		module: detail_exports$1
+	},
+	"routes/fournisseurs/valider-invitation": {
+		id: "routes/fournisseurs/valider-invitation",
+		parentId: "root",
+		path: "/fournisseurs/valider-invitation/:invitationId",
+		index: void 0,
+		caseSensitive: void 0,
+		module: valider_invitation_exports$1
 	},
 	"routes/articles/articles": {
 		id: "routes/articles/articles",

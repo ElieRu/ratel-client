@@ -12,24 +12,27 @@ type Methode = "GET" | "POST" | "PUT" | "DELETE";
 export async function requete<T = unknown>(
   methode: Methode,
   chemin: string,
-  corps?: unknown
+  corps?: unknown,
+  notifications = true
 ): Promise<T> {
-  const resultat = await envoyerRequete<T>(methode, chemin, corps);
+  const resultat = await envoyerRequete<T>(methode, chemin, corps, notifications);
   return resultat.data;
 }
 
 export async function requeteAvecMessage<T>(
   methode: Methode,
   chemin: string,
-  corps?: unknown
+  corps?: unknown,
+  notifications = true
 ): Promise<{ data: T; message: string }> {
-  return envoyerRequete<T>(methode, chemin, corps);
+  return envoyerRequete<T>(methode, chemin, corps, notifications);
 }
 
 async function envoyerRequete<T>(
   methode: Methode,
   chemin: string,
-  corps?: unknown
+  corps?: unknown,
+  notifications = true
 ): Promise<{ data: T; message: string }> {
   const token = await getToken();
 
@@ -46,13 +49,13 @@ async function envoyerRequete<T>(
 
   if (!response.ok || result?.success === false) {
     const error = new Error(result?.message || "La requête a échoué");
-    if (methode !== "GET") toast.error(error.message);
+    if (notifications && methode !== "GET") toast.error(error.message);
     throw error;
   }
 
   const message =
     typeof result?.message === "string" ? result.message : "Opération réussie";
-  if (methode !== "GET") toast.success(message);
+  if (notifications && methode !== "GET") toast.success(message);
 
   return {
     data: (result?.data ?? result) as T,
@@ -62,24 +65,27 @@ async function envoyerRequete<T>(
 
 export async function requeteMultipart<T = unknown>(
   chemin: string,
-  corps: FormData
+  corps: FormData,
+  notifications = true
 ): Promise<T> {
-  const resultat = await envoyerMultipart<T>(chemin, corps);
+  const resultat = await envoyerMultipart<T>(chemin, corps, "POST", notifications);
   return resultat.data;
 }
 
 export async function requeteMultipartAvecMessage<T>(
   chemin: string,
   corps: FormData,
-  methode: Methode = "POST"
+  methode: Methode = "POST",
+  notifications = true
 ): Promise<{ data: T; message: string }> {
-  return envoyerMultipart<T>(chemin, corps, methode);
+  return envoyerMultipart<T>(chemin, corps, methode, notifications);
 }
 
 async function envoyerMultipart<T>(
   chemin: string,
   corps: FormData,
-  methode: Methode = "POST"
+  methode: Methode = "POST",
+  notifications = true
 ): Promise<{ data: T; message: string }> {
   const token = await getToken();
   const response = await fetch(`${API}${chemin}`, {
@@ -91,13 +97,13 @@ async function envoyerMultipart<T>(
   const result = await response.json().catch(() => null);
   if (!response.ok || result?.success === false) {
     const error = new Error(result?.message || "Le téléversement a échoué");
-    if (methode !== "GET") toast.error(error.message);
+    if (notifications && methode !== "GET") toast.error(error.message);
     throw error;
   }
 
   const message =
     typeof result?.message === "string" ? result.message : "Opération réussie";
-  if (methode !== "GET") toast.success(message);
+  if (notifications && methode !== "GET") toast.success(message);
 
   return {
     data: (result?.data ?? result) as T,

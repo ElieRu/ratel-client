@@ -57,8 +57,28 @@ type Pages = {
   "/travailleurs": {
     params: {};
   };
+  "/travailleurs/:id": {
+    params: {
+      "id": string;
+    };
+  };
+  "/travailleurs/valider-invitation/:invitationId": {
+    params: {
+      "invitationId": string;
+    };
+  };
   "/clients": {
     params: {};
+  };
+  "/clients/:id": {
+    params: {
+      "id": string;
+    };
+  };
+  "/clients/valider-invitation/:invitationId": {
+    params: {
+      "invitationId": string;
+    };
   };
   "/fournisseurs": {
     params: {};
@@ -102,7 +122,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/businesses/creer" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/clients" | "/fournisseurs" | "/fournisseurs/:id" | "/fournisseurs/valider-invitation/:invitationId" | "/articles" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
+    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/businesses/creer" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/travailleurs/:id" | "/travailleurs/valider-invitation/:invitationId" | "/clients" | "/clients/:id" | "/clients/valider-invitation/:invitationId" | "/fournisseurs" | "/fournisseurs/:id" | "/fournisseurs/valider-invitation/:invitationId" | "/articles" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
   };
   "./routes/home.tsx": {
     id: "routes/home";
@@ -160,9 +180,25 @@ type RouteFiles = {
     id: "routes/travailleurs/travailleurs";
     page: "/travailleurs";
   };
+  "./routes/travailleurs/detail.tsx": {
+    id: "routes/travailleurs/detail";
+    page: "/travailleurs/:id";
+  };
+  "./routes/travailleurs/valider-invitation.tsx": {
+    id: "routes/travailleurs/valider-invitation";
+    page: "/travailleurs/valider-invitation/:invitationId";
+  };
   "./routes/clients/clients.tsx": {
     id: "routes/clients/clients";
     page: "/clients";
+  };
+  "./routes/clients/detail.tsx": {
+    id: "routes/clients/detail";
+    page: "/clients/:id";
+  };
+  "./routes/clients/valider-invitation.tsx": {
+    id: "routes/clients/valider-invitation";
+    page: "/clients/valider-invitation/:invitationId";
   };
   "./routes/fournisseurs/fournisseurs.tsx": {
     id: "routes/fournisseurs/fournisseurs";
@@ -226,7 +262,11 @@ type RouteModules = {
   "routes/notifications/notifications": typeof import("./app/./routes/notifications/notifications.tsx");
   "routes/achats/achats": typeof import("./app/./routes/achats/achats.tsx");
   "routes/travailleurs/travailleurs": typeof import("./app/./routes/travailleurs/travailleurs.tsx");
+  "routes/travailleurs/detail": typeof import("./app/./routes/travailleurs/detail.tsx");
+  "routes/travailleurs/valider-invitation": typeof import("./app/./routes/travailleurs/valider-invitation.tsx");
   "routes/clients/clients": typeof import("./app/./routes/clients/clients.tsx");
+  "routes/clients/detail": typeof import("./app/./routes/clients/detail.tsx");
+  "routes/clients/valider-invitation": typeof import("./app/./routes/clients/valider-invitation.tsx");
   "routes/fournisseurs/fournisseurs": typeof import("./app/./routes/fournisseurs/fournisseurs.tsx");
   "routes/fournisseurs/detail": typeof import("./app/./routes/fournisseurs/detail.tsx");
   "routes/fournisseurs/valider-invitation": typeof import("./app/./routes/fournisseurs/valider-invitation.tsx");

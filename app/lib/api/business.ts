@@ -198,23 +198,171 @@ export const desabonner = (businessId: string) =>
 /* Clients — monté sur /businesses                                     */
 /* ------------------------------------------------------------------ */
 
+export type ClientEnregistre = Omit<
+  Client,
+  "firstName" | "lastName" | "fullName" | "email" | "sex" | "birthday" | "profile"
+> & {
+  id: string;
+  businessId: string;
+  userId: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  fullName?: string | null;
+  email?: string | null;
+  sex?: string | null;
+  birthday?: string | null;
+  profile?: string | null;
+  userImage?: string | null;
+  isVerified?: boolean;
+  invitationExpiresAt?: string | null;
+};
+
+export type AdresseRessource = {
+  id: string;
+  adresse: string;
+  ville: string;
+  region: string;
+  pays: string;
+  codePostal: string | null;
+};
+
+export type ContactRessource = {
+  id: string;
+  type: "EMAIL" | "PHONE" | "WHATSAPP";
+  label: string | null;
+  email: string | null;
+  phone: string | null;
+  status: string;
+};
+
+export type ClientDetail = ClientEnregistre & {
+  createdAt: string;
+  updatedAt: string;
+  adresses: AdresseRessource[];
+  contacts: ContactRessource[];
+  /** Adresses et contacts du compte utilisateur rattaché, s'il y en a un. */
+  userAdresses: AdresseRessource[];
+  userContacts: ContactRessource[];
+};
+
+export const DEFAULT_CLIENT_PROFILE =
+  "http://localhost:3000/public/images/profile-logo/image-par-defaut.png";
+
+export type ClientModification = Omit<
+  Client,
+  "firstName" | "lastName" | "email" | "sex" | "birthday"
+> & {
+  firstName?: string | null;
+  lastName?: string | null;
+  email?: string | null;
+  sex?: string | null;
+  birthday?: Date | string | null;
+};
+
 export const listerClients = (businessId: string, search?: string) =>
-  requete<any[]>("GET", `/businesses/${businessId}/clients${query({ search })}`);
+  requete<ClientEnregistre[]>("GET", `/businesses/${businessId}/clients${query({ search })}`);
 
 export const creerClient = (businessId: string, form: Client) =>
-  requete("POST", `/businesses/${businessId}/clients`, form);
+  requete("POST", `/businesses/${businessId}/clients`, form, false);
+
+export const creerClientAvecLogo = (
+  businessId: string,
+  form: ClientModification,
+  logo?: File
+) => {
+  const corps = new FormData();
+  Object.entries(form).forEach(([key, value]) => {
+    if (value !== undefined) corps.set(key, value === null ? "null" : String(value));
+  });
+  if (logo) corps.set("logo", logo);
+  return requeteMultipartAvecMessage<ClientEnregistre>(
+    `/businesses/${businessId}/clients/avec-logo`,
+    corps,
+    "POST",
+    false
+  );
+};
 
 export const lireClient = (businessId: string, id: string) =>
-  requete("GET", `/businesses/${businessId}/clients/${id}`);
+  requete<ClientDetail>("GET", `/businesses/${businessId}/clients/${id}`);
 
-export const modifierClient = (businessId: string, id: string, form: Client) =>
-  requete("PUT", `/businesses/${businessId}/clients/${id}`, form);
+export const modifierClient = (businessId: string, id: string, form: ClientModification) =>
+  requete("PUT", `/businesses/${businessId}/clients/${id}`, form, false);
+
+export const modifierClientAvecLogo = (
+  businessId: string,
+  id: string,
+  form: ClientModification,
+  logo: File
+) => {
+  const corps = new FormData();
+  Object.entries(form).forEach(([key, value]) => {
+    if (value !== undefined) corps.set(key, value === null ? "null" : String(value));
+  });
+  corps.set("logo", logo);
+  return requeteMultipartAvecMessage<ClientEnregistre>(
+    `/businesses/${businessId}/clients/${id}/avec-logo`,
+    corps,
+    "PUT",
+    false
+  );
+};
 
 export const supprimerClient = (businessId: string, id: string) =>
-  requete("DELETE", `/businesses/${businessId}/clients/${id}`);
+  requete("DELETE", `/businesses/${businessId}/clients/${id}`, undefined, false);
+
+export const renvoyerInvitationClient = (businessId: string, id: string) =>
+  requeteAvecMessage<{ success: boolean }>(
+    "POST",
+    `/businesses/${businessId}/clients/${id}/resend-invitation`,
+    undefined,
+    false
+  );
 
 export const supprimerClients = (businessId: string, ids: string[]) =>
   requete("DELETE", `/businesses/${businessId}/clients`, ids);
+
+export type UtilisateurClientDisponible = {
+  id: string;
+  full_name: string | null;
+  image: string | null;
+  email: string | null;
+};
+
+export type InvitationClientEnvoyee = {
+  id: string;
+  userId: string;
+  fullName: string | null;
+  email: string;
+  expiresAt: string;
+};
+
+export const listerUtilisateursClientDisponibles = (
+  businessId: string,
+  search?: string
+) =>
+  requete<UtilisateurClientDisponible[]>(
+    "GET",
+    `/businesses/${businessId}/clients-utilisateurs-disponibles${query({ search })}`
+  );
+
+export const inviterUtilisateursCommeClients = (
+  businessId: string,
+  userIds: string[]
+) =>
+  requeteAvecMessage<InvitationClientEnvoyee[]>(
+    "POST",
+    `/businesses/${businessId}/clients-utilisateurs`,
+    userIds,
+    false
+  );
+
+export const validerInvitationClient = (invitationId: string, code: string) =>
+  requeteAvecMessage<null>(
+    "POST",
+    `/businesses/clients-invitations/${invitationId}/verify`,
+    { code }
+  );
 
 /* ------------------------------------------------------------------ */
 /* Fournisseurs — monté sur /businesses                                */
@@ -239,22 +387,11 @@ export const DEFAULT_FOURNISSEUR_LOGO =
 export type FournisseurDetail = FournisseurEnregistre & {
   createdAt: string;
   updatedAt: string;
-  adresses: Array<{
-    id: string;
-    adresse: string;
-    ville: string;
-    region: string;
-    pays: string;
-    codePostal: string | null;
-  }>;
-  contacts: Array<{
-    id: string;
-    type: "EMAIL" | "PHONE" | "WHATSAPP";
-    label: string | null;
-    email: string | null;
-    phone: string | null;
-    status: string;
-  }>;
+  adresses: AdresseRessource[];
+  contacts: ContactRessource[];
+  /** Adresses et contacts du compte utilisateur rattaché, s'il y en a un. */
+  userAdresses: AdresseRessource[];
+  userContacts: ContactRessource[];
   details: Array<{
     id: string;
     qtte: number;
@@ -414,23 +551,128 @@ export const caisseParDefaut = (businessId: string, id: string) =>
 /* Agents (travailleurs) — monté sur /businesses                       */
 /* ------------------------------------------------------------------ */
 
-export const listerAgents = (businessId: string) =>
-  requete<any[]>("GET", `/businesses/${businessId}/agents`);
+export type StatutAgent = "ACTIF" | "BLOQUE";
+
+export type AgentEnregistre = {
+  id: string;
+  status: StatutAgent;
+  userId: string;
+  createdAt: string;
+  fullName: string | null;
+  email: string | null;
+  userImage: string | null;
+  isVerified: boolean;
+  invitationExpiresAt: string | null;
+};
+
+export type AgentDetail = AgentEnregistre & {
+  updatedAt: string;
+  bio: string | null;
+  birthday: string | null;
+  adresses: Array<{
+    id: string;
+    adresse: string;
+    ville: string;
+    region: string;
+    pays: string;
+    codePostal: string | null;
+  }>;
+  contacts: Array<{
+    id: string;
+    type: "EMAIL" | "PHONE" | "WHATSAPP";
+    label: string | null;
+    email: string | null;
+    phone: string | null;
+    status: string;
+  }>;
+};
+
+export type UtilisateurAgentDisponible = {
+  id: string;
+  full_name: string | null;
+  image: string | null;
+  email: string | null;
+  contacts: Array<{
+    id: string;
+    label: string | null;
+    email: string | null;
+    phone: string | null;
+  }>;
+};
+
+export const listerAgents = (
+  businessId: string,
+  params?: { search?: string; status?: StatutAgent }
+) =>
+  requete<AgentEnregistre[]>(
+    "GET",
+    `/businesses/${businessId}/agents${query({ ...params })}`
+  );
 
 export const lireAgent = (businessId: string, id: string) =>
-  requete("GET", `/businesses/${businessId}/agents/${id}`);
+  requete<AgentDetail>("GET", `/businesses/${businessId}/agents/${id}`);
+
+export const listerUtilisateursAgentDisponibles = (
+  businessId: string,
+  search?: string
+) =>
+  requete<UtilisateurAgentDisponible[]>(
+    "GET",
+    `/businesses/${businessId}/agents-utilisateurs-disponibles${query({ search })}`
+  );
+
+export const inviterUtilisateursCommeAgents = (
+  businessId: string,
+  userIds: string[]
+) =>
+  requeteAvecMessage<AgentEnregistre[]>(
+    "POST",
+    `/businesses/${businessId}/agents-utilisateurs`,
+    userIds,
+    false
+  );
+
+export const validerInvitationAgent = (invitationId: string, code: string) =>
+  requeteAvecMessage<null>(
+    "POST",
+    `/businesses/agents-invitations/${invitationId}/verify`,
+    { code }
+  );
+
+export const renvoyerInvitationAgent = (businessId: string, id: string) =>
+  requeteAvecMessage<{ success: boolean }>(
+    "POST",
+    `/businesses/${businessId}/agents/${id}/resend-invitation`,
+    undefined,
+    false
+  );
 
 export const supprimerAgent = (businessId: string, id: string) =>
-  requete("DELETE", `/businesses/${businessId}/agents/${id}`);
+  requeteAvecMessage<AgentEnregistre>(
+    "DELETE",
+    `/businesses/${businessId}/agents/${id}`,
+    undefined,
+    false
+  );
 
 export const supprimerAgents = (businessId: string, ids: string[]) =>
   requete("DELETE", `/businesses/${businessId}/agents`, ids);
 
 export const bloquerAgent = (businessId: string, id: string) =>
-  requete("PUT", `/businesses/${businessId}/agents/${id}/status-bloque`);
+  requeteAvecMessage<AgentEnregistre>(
+    "PUT",
+    `/businesses/${businessId}/agents/${id}/status-bloque`,
+    undefined,
+    false
+  );
 
 export const activerAgent = (businessId: string, id: string) =>
-  requete("PUT", `/businesses/${businessId}/agents/${id}/status-actif`);
+  requeteAvecMessage<AgentEnregistre>(
+    "PUT",
+    `/businesses/${businessId}/agents/${id}/status-actif`,
+    undefined,
+    false
+  );
 
 /* ------------------------------------------------------------------ */
 /* Invitations — monté sur /businesses                                 */

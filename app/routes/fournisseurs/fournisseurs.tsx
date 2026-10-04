@@ -29,7 +29,6 @@ import {
 import { PageRessource } from "@/components/ressource/page-ressource";
 import { useListe } from "@/components/ressource/use-liste";
 import { CreerFournisseur } from "@/components/fournisseurs/creer-fournisseur";
-import { AjouterUtilisateurFournisseur } from "@/components/fournisseurs/ajouter-utilisateur-fournisseur";
 
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -53,6 +52,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import {
   Field,
+  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -87,7 +87,6 @@ export default function Fournisseurs() {
   const [taillePage, setTaillePage] = useState(10);
   const [page, setPage] = useState(0);
   const [ouvert, setOuvert] = useState(false);
-  const [ajoutUtilisateurOuvert, setAjoutUtilisateurOuvert] = useState(false);
   const [enEdition, setEnEdition] = useState<LigneFournisseur | null>(null);
   const [aSupprimer, setASupprimer] = useState<LigneFournisseur | null>(null);
   const [suppressionEnCours, setSuppressionEnCours] = useState(false);
@@ -362,7 +361,7 @@ export default function Fournisseurs() {
         <CreerFournisseur
           businessId={businessId}
           onCreated={ajouterFournisseurCree}
-          onAddExistingUser={() => setAjoutUtilisateurOuvert(true)}
+          onInvited={ajouterUtilisateursFournisseurs}
         />
       }
       outils={
@@ -459,7 +458,7 @@ export default function Fournisseurs() {
                         <SendIcon className="size-4" />
                       </Button>
                     )}
-                    <Button
+                    {!f.userId && <Button
                       type="button"
                       variant="ghost"
                       size="icon"
@@ -469,7 +468,7 @@ export default function Fournisseurs() {
                       title="Modifier"
                     >
                       <PencilIcon className="size-4" />
-                    </Button>
+                    </Button>}
                     <Button
                       type="button"
                       variant="ghost"
@@ -684,9 +683,16 @@ export default function Fournisseurs() {
                       type="email"
                       placeholder="contact@exemple.cd"
                       aria-invalid={!!errors.email}
+                      disabled={!!enEdition?.userId}
                       {...register("email")}
                     />
-                    <FieldError errors={[errors.email]} />
+                    {enEdition?.userId ? (
+                      <FieldDescription>
+                        Cette adresse provient du compte utilisateur rattaché.
+                      </FieldDescription>
+                    ) : (
+                      <FieldError errors={[errors.email]} />
+                    )}
                   </Field>
 
                   <Field data-invalid={!!errors.website}>
@@ -726,12 +732,6 @@ export default function Fournisseurs() {
         </DialogContent>
       </Dialog>
     </PageRessource>
-      <AjouterUtilisateurFournisseur
-        businessId={businessId}
-        open={ajoutUtilisateurOuvert}
-        onOpenChange={setAjoutUtilisateurOuvert}
-        onAdded={ajouterUtilisateursFournisseurs}
-      />
     </>
   );
 }

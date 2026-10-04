@@ -20,6 +20,7 @@ import {
   modifierFournisseur,
   renvoyerInvitationFournisseur,
   supprimerFournisseur,
+  DEFAULT_FOURNISSEUR_LOGO,
   type FournisseurDetail,
 } from "@/lib/api/business";
 import {
@@ -42,6 +43,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { items } from "@/lib/utils";
+import { AvatarRessource } from "@/components/ressource/avatar-ressource";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -111,11 +114,14 @@ export default function DetailFournisseur() {
       setNom(resultat.nom ?? "");
       setEmail(resultat.email ?? "");
       setWebsite(resultat.website ?? "");
-      setPays(resultat.adresses[0]?.pays ?? "");
-      setVille(resultat.adresses[0]?.ville ?? "");
-      setRegion(resultat.adresses[0]?.region ?? "");
-      setAdresse(resultat.adresses[0]?.adresse ?? "");
-      setCodePostal(resultat.adresses[0]?.codePostal ?? "");
+      // Un fournisseur rattaché à un compte n'a souvent pas d'adresse propre :
+      // on retombe alors sur celle du compte pour pré-remplir le formulaire.
+      const adresseAffichee = resultat.adresses[0] ?? resultat.userAdresses[0];
+      setPays(adresseAffichee?.pays ?? "");
+      setVille(adresseAffichee?.ville ?? "");
+      setRegion(adresseAffichee?.region ?? "");
+      setAdresse(adresseAffichee?.adresse ?? "");
+      setCodePostal(adresseAffichee?.codePostal ?? "");
     } catch (error) {
       setErreur(
         error instanceof Error
@@ -377,6 +383,10 @@ export default function DetailFournisseur() {
     );
   }
 
+  const adresseDuCompte =
+    fournisseur.adresses.length === 0 && fournisseur.userAdresses.length > 0;
+  const compteExistant = Boolean(fournisseur.userId);
+
   const invitationExpiree =
     fournisseur.invitationExpiresAt !== null &&
     fournisseur.invitationExpiresAt !== undefined &&
@@ -436,13 +446,39 @@ export default function DetailFournisseur() {
 
         <TabsContent value="informations" className="space-y-4 pt-4">
           <section className="space-y-4 rounded-xl border p-4">
-            <div>
-              <h2 className="font-semibold">Informations du fournisseur</h2>
-              <p className="text-sm text-muted-foreground">
-                Coordonnées et identité du fournisseur.
-              </p>
+            <div className="flex items-center gap-4">
+              <Avatar className="size-16">
+                <AvatarImage
+                  src={
+                    fournisseur.userImage ||
+                    (fournisseur.logo && fournisseur.logo !== DEFAULT_FOURNISSEUR_LOGO
+                      ? fournisseur.logo
+                      : "/images/fournisseurs/fournisseur-par-defaut.svg"
+                    )
+                  }
+                  alt={fournisseur.nom || "Logo du fournisseur"}
+                  className="object-cover"
+                />
+                <AvatarFallback className="bg-background">
+                  <img
+                    src="/images/fournisseurs/fournisseur-par-defaut.svg"
+                    alt=""
+                    className="size-full object-cover"
+                  />
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <h2 className="font-semibold">Informations du fournisseur</h2>
+                <p className="text-sm text-muted-foreground">
+                  Coordonnées et identité du fournisseur.
+                </p>
+              </div>
             </div>
-            <form onSubmit={enregistrerInfos} className="space-y-4">
+            <form onSubmit={enregistrerInfos}>
+              <fieldset
+                disabled={compteExistant}
+                className="m-0 min-w-0 space-y-4 border-0 p-0"
+              >
               <label className="block space-y-1 text-sm">
                 <span>Nom</span>
                 <Input value={nom} onChange={(event) => setNom(event.currentTarget.value)} placeholder="Nom du fournisseur" required aria-invalid={!!erreursFormulaire.nom} />
@@ -451,8 +487,22 @@ export default function DetailFournisseur() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block space-y-1 text-sm">
                   <span>E-mail</span>
-                  <Input type="email" value={email} onChange={(event) => setEmail(event.currentTarget.value)} placeholder="Adresse e-mail" aria-invalid={!!erreursFormulaire.email} />
-                  {erreursFormulaire.email && <span className="text-sm text-destructive">{erreursFormulaire.email}</span>}
+                  <Input
+                    type="email"
+                    value={email}
+                    onChange={(event) => setEmail(event.currentTarget.value)}
+                    placeholder="Adresse e-mail"
+                    aria-invalid={!!erreursFormulaire.email}
+                    disabled={!!fournisseur.userId}
+                    aria-describedby={fournisseur.userId ? "fournisseur-email-aide" : undefined}
+                  />
+                  {fournisseur.userId ? (
+                    <span id="fournisseur-email-aide" className="text-xs text-muted-foreground">
+                      Cette adresse provient du compte utilisateur rattaché.
+                    </span>
+                  ) : (
+                    erreursFormulaire.email && <span className="text-sm text-destructive">{erreursFormulaire.email}</span>
+                  )}
                 </label>
                 <label className="block space-y-1 text-sm">
                   <span>Site web</span>
@@ -463,7 +513,11 @@ export default function DetailFournisseur() {
               <div className="space-y-3">
                 <h3 className="text-sm font-medium">Adresse</h3>
                 <p className="text-sm text-muted-foreground">
-                  Indiquez l’adresse principale du fournisseur.
+                  {compteExistant
+                    ? "Les informations de ce compte utilisateur sont en lecture seule."
+                    : adresseDuCompte
+                    ? "Pré-remplie depuis le compte utilisateur rattaché. L’enregistrer en crée une copie propre à votre business."
+                    : "Indiquez l’adresse principale du fournisseur."}
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <label className="block space-y-1 text-sm">
@@ -507,45 +561,93 @@ export default function DetailFournisseur() {
                 </div>
               </div>
               <div className="flex justify-end">
-                <Button type="submit" disabled={enCours || !informationsModifiees}>
+                <Button
+                  type="submit"
+                  disabled={compteExistant || enCours || !informationsModifiees}
+                >
                   {enregistrementInfos && <Loader2 className="size-4 animate-spin" aria-hidden="true" />}
                   Personnaliser
                 </Button>
               </div>
+              </fieldset>
             </form>
           </section>
 
           <section className="space-y-4 rounded-xl border p-4">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <h2 className="font-semibold">Contacts</h2>
-                <p className="text-sm text-muted-foreground">
-                  Ajoutez jusqu’à deux contacts pour joindre le fournisseur.
-                </p>
-              </div>
-              {fournisseur.contacts.length < 2 && (
-                <Button variant="outline" className="border" onClick={ouvrirCreationContact}>
-                <Plus /> Ajouter
-                </Button>
-              )}
-            </div>
-            {fournisseur.contacts.length ? (
-              <ul className="grid grid-cols-2 gap-2">
-                {fournisseur.contacts.map((item) => (
-                  <li key={item.id} className="flex items-center justify-between gap-3 rounded-lg border p-3">
-                    <span className="flex min-w-0 items-center gap-2 text-sm">
-                      {item.type === "EMAIL" ? <Mail className="size-4 shrink-0" /> : <Phone className="size-4 shrink-0" />}
-                      <span className="truncate">{item.email || item.phone || item.label || "Contact"}</span>
-                    </span>
-                    <div className="flex shrink-0 gap-1">
-                      <Button variant="ghost" size="icon" className="border" aria-label="Modifier le contact" onClick={() => ouvrirModificationContact(item)}><Pencil /></Button>
-                      <Button variant="ghost" size="icon" className="border text-destructive" aria-label="Supprimer le contact" onClick={() => setASupprimer({ type: "contact", id: item.id, label: item.email || item.phone || item.label || "ce contact" })}><Trash2 /></Button>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+            {compteExistant ? (
+              <>
+                <div>
+                  <h2 className="font-semibold">Contacts de l’utilisateur invité</h2>
+                  <p className="text-sm text-muted-foreground">
+                    Coordonnées renseignées sur son compte. Elles ne sont pas
+                    modifiables depuis votre business.
+                  </p>
+                </div>
+                {fournisseur.userContacts.length > 0 ? (
+                  <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {fournisseur.userContacts.map((item) => (
+                      <li
+                        key={item.id}
+                        className="flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 p-3"
+                      >
+                        <span className="flex min-w-0 items-center gap-2 text-sm">
+                          {item.type === "EMAIL" ? <Mail className="size-4 shrink-0" /> : <Phone className="size-4 shrink-0" />}
+                          <span className="truncate">{item.email || item.phone || item.label || "Contact"}</span>
+                        </span>
+                        {item.status === "VERIFIE" && (
+                          <span className="shrink-0 text-xs text-muted-foreground">Vérifié</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    Aucun contact n’est renseigné sur ce compte utilisateur.
+                  </p>
+                )}
+              </>
             ) : (
-              <p className="text-sm text-muted-foreground">Aucun contact renseigné.</p>
+              <>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h2 className="font-semibold">Contacts</h2>
+                    <p className="text-sm text-muted-foreground">
+                      Ajoutez jusqu’à deux contacts pour joindre le fournisseur.
+                    </p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="border"
+                    onClick={ouvrirCreationContact}
+                    disabled={fournisseur.contacts.length >= 2}
+                  >
+                    <Plus /> Ajouter
+                  </Button>
+                </div>
+                {fournisseur.contacts.length >= 2 && (
+                  <p className="text-sm text-muted-foreground">
+                    Le fournisseur a atteint la limite de deux contacts.
+                  </p>
+                )}
+                {fournisseur.contacts.length ? (
+                  <ul className="grid grid-cols-2 gap-2">
+                    {fournisseur.contacts.map((item) => (
+                      <li key={item.id} className="flex items-center justify-between gap-3 rounded-lg border p-3">
+                        <span className="flex min-w-0 items-center gap-2 text-sm">
+                          {item.type === "EMAIL" ? <Mail className="size-4 shrink-0" /> : <Phone className="size-4 shrink-0" />}
+                          <span className="truncate">{item.email || item.phone || item.label || "Contact"}</span>
+                        </span>
+                        <div className="flex shrink-0 gap-1">
+                          <Button variant="ghost" size="icon" className="border" aria-label="Modifier le contact" onClick={() => ouvrirModificationContact(item)}><Pencil /></Button>
+                          <Button variant="ghost" size="icon" className="border text-destructive" aria-label="Supprimer le contact" onClick={() => setASupprimer({ type: "contact", id: item.id, label: item.email || item.phone || item.label || "ce contact" })}><Trash2 /></Button>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-muted-foreground">Aucun contact renseigné.</p>
+                )}
+              </>
             )}
           </section>
 
@@ -602,7 +704,7 @@ export default function DetailFournisseur() {
         </TabsContent>
       </Tabs>
 
-      <Dialog open={dialogContact} onOpenChange={setDialogContact}>
+      {!compteExistant && <Dialog open={dialogContact} onOpenChange={setDialogContact}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>{contactEdite ? "Modifier le contact" : "Ajouter un contact"}</DialogTitle>
@@ -628,7 +730,7 @@ export default function DetailFournisseur() {
             </DialogFooter>
           </form>
         </DialogContent>
-      </Dialog>
+      </Dialog>}
 
       <AlertDialog
         open={aSupprimer !== null}

@@ -24,7 +24,7 @@ export default function ValiderInvitationFournisseur() {
     try {
       const resultat = await validerInvitationFournisseur(invitationId, code);
       toast.success(resultat.message);
-      navigate("/fournisseurs", { replace: true });
+      navigate("/acceuil", { replace: true });
     } catch (error) {
       toast.error(
         error instanceof Error

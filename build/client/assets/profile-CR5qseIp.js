@@ -1,0 +1,1 @@
+import{n as e,t}from"./profile-B3qO1Pyr.js";export{e as default,t as meta};
