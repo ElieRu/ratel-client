@@ -1,0 +1,1 @@
+import{t as e}from"./achats-qI0gYAne.js";export{e as default};

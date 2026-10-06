@@ -140,14 +140,9 @@ export const OffreSchema = z.object({
 });
 
 export const DeviseSchema = z.object({
-    nom: z.string()
-        .min(4, "Pas moins de 4 caractères")
-        .max(50, "Pas plus de 50 caractères")
-        .trim()
-        .toLowerCase(),
     type: z.enum(TypeDevise, "Le type de devise est incorrecte"),
     symbole: z.string("Le symbole de devise est incorrecte"),
-    tauxVente: z.int()
+    tauxVente: z.number().finite().nonnegative()
 });
 
 export const ArticleSchema = z.object({
@@ -424,4 +419,3 @@ export type DetailEnStock = z.infer<typeof DetailEnStockSchema>;
 export type ArrayDetail = z.infer<typeof ArrayDetailSchema>;
 export type AchatDetail = z.infer<typeof ArrayDetailSchema>;
 export type StatusAchat = z.infer<typeof StatusAchatSchema>;
-

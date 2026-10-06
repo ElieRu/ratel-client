@@ -143,19 +143,27 @@ export const supprimerAttribut = (id: string) =>
 /* ------------------------------------------------------------------ */
 
 export const listerDevises = (businessId: string) =>
-  requete<any[]>("GET", `/devises/${businessId}`);
+  requete<DeviseAvecRelations[]>("GET", `/devises/${businessId}`);
 
 export const creerDevise = (businessId: string, form: Devise) =>
   requete("POST", `/devises/${businessId}`, form);
 
-export const modifierDevise = (id: string, form: Devise) =>
-  requete("PUT", `/devises/${id}`, form);
+export type DeviseAvecRelations = Devise & {
+  id: string;
+  businessId: string;
+  parDefaut: boolean | null;
+  createdAt: string;
+  updatedAt: string;
+};
 
-export const supprimerDevise = (id: string) =>
-  requete("DELETE", `/devises/${id}`);
+export const modifierDevise = (businessId: string, id: string, form: Devise) =>
+  requete("PUT", `/devises/${businessId}/${id}`, form);
+
+export const supprimerDevise = (businessId: string, id: string) =>
+  requete("DELETE", `/devises/${businessId}/${id}`, undefined, false);
 
 export const deviseParDefaut = (businessId: string, id: string) =>
-  requete("PUT", `/devises/${businessId}/${id}/defaut`);
+  requete("PUT", `/devises/${businessId}/${id}/defaut`, undefined, false);
 
 /* ------------------------------------------------------------------ */
 /* Promotions — monté sur /promotions                                  */

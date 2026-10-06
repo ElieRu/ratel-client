@@ -1,0 +1,1 @@
+import{Qt as e,Ut as t}from"./admin-DhgiKoT4.js";function n(n){return e(t,n)}export{n as t};

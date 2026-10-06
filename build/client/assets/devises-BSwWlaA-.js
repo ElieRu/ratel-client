@@ -1,0 +1,1 @@
+import{r as e}from"./rolldown-runtime-hePW80VL.js";import{Ro as t,_o as n}from"./admin-DhgiKoT4.js";import{t as r}from"./gestion-devises-Bq-1HIAJ.js";var i=e(n(),1),a=t(function(){return(0,i.jsx)(r,{})});export{a as default};

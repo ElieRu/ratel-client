@@ -1,0 +1,1 @@
+import{t as e}from"./detail-coq40ewN.js";export{e as default};

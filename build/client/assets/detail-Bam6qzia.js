@@ -1,0 +1,1 @@
+import{t as e}from"./detail-BEA3Kx7o.js";export{e as default};

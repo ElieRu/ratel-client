@@ -110,6 +110,9 @@ type Pages = {
   "/caisses": {
     params: {};
   };
+  "/devises": {
+    params: {};
+  };
   "/aides": {
     params: {};
   };
@@ -130,7 +133,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/businesses/creer" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/travailleurs/:id" | "/travailleurs/valider-invitation/:invitationId" | "/clients" | "/clients/:id" | "/clients/valider-invitation/:invitationId" | "/fournisseurs" | "/fournisseurs/:id" | "/fournisseurs/valider-invitation/:invitationId" | "/articles" | "/articles/nouveau" | "/articles/:id" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
+    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/businesses/creer" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/travailleurs/:id" | "/travailleurs/valider-invitation/:invitationId" | "/clients" | "/clients/:id" | "/clients/valider-invitation/:invitationId" | "/fournisseurs" | "/fournisseurs/:id" | "/fournisseurs/valider-invitation/:invitationId" | "/articles" | "/articles/nouveau" | "/articles/:id" | "/promotions" | "/caisses" | "/devises" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
   };
   "./routes/home.tsx": {
     id: "routes/home";
@@ -240,6 +243,10 @@ type RouteFiles = {
     id: "routes/caisses/caisses";
     page: "/caisses";
   };
+  "./routes/devises/devises.tsx": {
+    id: "routes/devises/devises";
+    page: "/devises";
+  };
   "./routes/aides/aides.tsx": {
     id: "routes/aides/aides";
     page: "/aides";
@@ -291,6 +298,7 @@ type RouteModules = {
   "routes/articles/detail": typeof import("./app/./routes/articles/detail.tsx");
   "routes/promotions/promotions": typeof import("./app/./routes/promotions/promotions.tsx");
   "routes/caisses/caisses": typeof import("./app/./routes/caisses/caisses.tsx");
+  "routes/devises/devises": typeof import("./app/./routes/devises/devises.tsx");
   "routes/aides/aides": typeof import("./app/./routes/aides/aides.tsx");
   "routes/parametres/parametres": typeof import("./app/./routes/parametres/parametres.tsx");
   "routes/admin/businesses": typeof import("./app/./routes/admin/businesses.tsx");

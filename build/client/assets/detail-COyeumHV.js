@@ -1,0 +1,1 @@
+import{t as e}from"./detail-BWQTQuqs.js";export{e as default};

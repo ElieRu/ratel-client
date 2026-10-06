@@ -1,0 +1,1 @@
+import{t as e}from"./valider-invitation-DUYoAbO-.js";export{e as default};

@@ -41,6 +41,7 @@ export default [
   route("/articles/:id", `./routes/articles/detail.tsx`),
   route("/promotions", `./routes/promotions/promotions.tsx`),
   route("/caisses", `./routes/caisses/caisses.tsx`),
+  route("/devises", `./routes/devises/devises.tsx`),
   route("/aides", `./routes/aides/aides.tsx`),
   route("/parametres", `./routes/parametres/parametres.tsx`),
 

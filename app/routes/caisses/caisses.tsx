@@ -52,7 +52,7 @@ import {
 const requis = champsRequis(CaisseSchema.shape);
 
 type LigneCaisse = Caisse & { id: string; parDefaut?: boolean };
-type LigneDevise = { id: string; nom?: string; symbole?: string; type?: string };
+type LigneDevise = { id: string; symbole?: string; type?: string };
 
 export default function Caisses() {
   const { businessId } = useBusiness();
@@ -288,7 +288,7 @@ export default function Caisses() {
                     </NativeSelectOption>
                     {devises.map((devise) => (
                       <NativeSelectOption key={devise.id} value={devise.id}>
-                        {devise.nom ?? devise.type} ({devise.symbole})
+                        {devise.type} ({devise.symbole})
                       </NativeSelectOption>
                     ))}
                   </NativeSelect>

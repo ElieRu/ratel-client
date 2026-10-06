@@ -1,0 +1,1 @@
+import{t as e}from"./travailleurs-B0tJLz6L.js";export{e as default};

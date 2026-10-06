@@ -1,0 +1,1 @@
+import{t as e}from"./valider-invitation-CiTYcz0C.js";export{e as default};

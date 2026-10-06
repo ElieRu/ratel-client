@@ -1,0 +1,1 @@
+import{t as e}from"./promotions-BO8YSQ70.js";export{e as default};

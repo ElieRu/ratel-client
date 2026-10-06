@@ -1,7 +1,7 @@
 import { t as __exportAll } from "./assets/rolldown-runtime-D7D4PA-g.js";
 import { t as entry_server_node_exports } from "./assets/router-DKeukR6m.js";
-import { _ as DropdownMenuItem, a as TabsList, b as DropdownMenuTrigger, c as SelectContent, d as SelectTrigger, f as SelectValue, g as DropdownMenuGroup, h as DropdownMenuContent, i as TabsContent, l as SelectGroup, m as DropdownMenu, n as dashboard_exports, o as TabsTrigger, p as Checkbox, r as Tabs, s as Select, t as dashboard_default, u as SelectItem, v as DropdownMenuLabel, x as useIsMobile, y as DropdownMenuSeparator } from "./assets/dashboard-CQMOTT75.js";
-import { $ as listerCategories, At as TableCell, B as creerFournisseurAvecLogo, Bt as Input, C as FieldError, Ct as supprimerFournisseur, D as FieldSet, Dt as validerInvitationFournisseur, E as FieldLegend, Et as validerInvitationClient, F as changerStatusAchat, Ft as Badge, G as lireAgent, Gt as items, H as inviterUtilisateursCommeAgents, Ht as API, I as changerStatusPromotion, It as BusinessProvider, J as lireFournisseur, K as lireArticle, Kt as tronquerAvecEllipses, L as creerArticleAvecImages, Lt as useBusiness, M as activerAgent, Mt as TableHeader, N as bloquerAgent, Nt as TableRow, O as useListe, Ot as Table, P as caisseParDefaut, Pt as Label, Q as listerCaisses, R as creerCaisse, Rt as Skeleton, S as FieldDescription, St as supprimerClient, T as FieldLabel, Tt as validerInvitationAgent, U as inviterUtilisateursCommeClients, Ut as champsRequis, V as creerPromotion, Vt as Button, W as inviterUtilisateursCommeFournisseurs, Wt as cn$1, X as listerAgents, Y as listerAchats, Z as listerArticles, _ as DialogFooter, _t as renvoyerInvitationFournisseur, a as businesses_default, at as listerUtilisateursAgentDisponibles, b as DialogTrigger, bt as supprimerArticle, c as BusinessSchema, ct as modifierArticleAvecImages, d as FournisseurSchema, dt as modifierClientAvecLogo, et as listerClients, f as PromotionSchema, ft as modifierFournisseur, g as DialogDescription, gt as renvoyerInvitationClient, h as DialogContent, ht as renvoyerInvitationAgent, i as offres_exports, it as listerPromotions, jt as TableHead, k as PageRessource, kt as TableBody, l as CaisseSchema, lt as modifierCaisse, m as DialogClose, mt as modifierModeAffichageArticles, n as categories_exports, nt as listerFournisseurs, o as businesses_exports, ot as listerUtilisateursClientDisponibles, p as Dialog$1, pt as modifierFournisseurAvecLogo, q as lireClient, r as offres_default, rt as listerJaimes, s as AdresseSchema, st as listerUtilisateursFournisseurDisponibles, t as categories_default, tt as listerDevises, u as ContactSchema, ut as modifierClient, v as DialogHeader, vt as supprimerAchat, w as FieldGroup, wt as supprimerPromotion, x as Field, xt as supprimerCaisse, y as DialogTitle, yt as supprimerAgent, z as creerClientAvecLogo, zt as Separator } from "./assets/admin-BBWRalwY.js";
+import { _ as DropdownMenuItem, a as TabsList, b as DropdownMenuTrigger, c as SelectContent, d as SelectTrigger, f as SelectValue, g as DropdownMenuGroup, h as DropdownMenuContent, i as TabsContent, l as SelectGroup, m as DropdownMenu, n as dashboard_exports, o as TabsTrigger, p as Checkbox, r as Tabs, s as Select, t as dashboard_default, u as SelectItem, v as DropdownMenuLabel, x as useIsMobile, y as DropdownMenuSeparator } from "./assets/dashboard-7F6djdw_.js";
+import { $ as listerAgents, A as PageRessource, At as validerInvitationAgent, B as creerClientAvecLogo, Bt as Badge, C as FieldDescription, Ct as supprimerAgent, D as FieldLegend, Dt as supprimerDevise, E as FieldLabel, Et as supprimerClient, F as caisseParDefaut, Ft as TableCell, G as inviterUtilisateursCommeAgents, Gt as Input, H as creerFournisseurAvecLogo, Ht as useBusiness, I as changerStatusAchat, It as TableHead, J as lireAgent, Jt as champsRequis, K as inviterUtilisateursCommeClients, Kt as Button, L as changerStatusPromotion, Lt as TableHeader, Mt as validerInvitationFournisseur, N as activerAgent, Nt as Table, O as FieldSet, Ot as supprimerFournisseur, P as bloquerAgent, Pt as TableBody, Q as listerAchats, R as creerArticleAvecImages, Rt as TableRow, S as Field, St as supprimerAchat, T as FieldGroup, Tt as supprimerCaisse, U as creerPromotion, Ut as Skeleton, V as creerDevise, Vt as BusinessProvider, W as deviseParDefaut, Wt as Separator, X as lireClient, Xt as items, Y as lireArticle, Yt as cn$1, Z as lireFournisseur, Zt as tronquerAvecEllipses, _ as DialogDescription, _t as modifierFournisseurAvecLogo, a as businesses_default, at as listerFournisseurs, b as DialogTitle, bt as renvoyerInvitationClient, c as BusinessSchema, ct as listerUtilisateursAgentDisponibles, d as DeviseSchema, dt as modifierArticleAvecImages, et as listerArticles, f as FournisseurSchema, ft as modifierCaisse, g as DialogContent, gt as modifierFournisseur, h as DialogClose, ht as modifierDevise, i as offres_exports, it as listerDevises, jt as validerInvitationClient, k as useListe, kt as supprimerPromotion, l as CaisseSchema, lt as listerUtilisateursClientDisponibles, m as Dialog$1, mt as modifierClientAvecLogo, n as categories_exports, nt as listerCategories, o as businesses_exports, ot as listerJaimes, p as PromotionSchema, pt as modifierClient, q as inviterUtilisateursCommeFournisseurs, qt as API, r as offres_default, rt as listerClients, s as AdresseSchema, st as listerPromotions, t as categories_default, tt as listerCaisses, u as ContactSchema, ut as listerUtilisateursFournisseurDisponibles, v as DialogFooter, vt as modifierModeAffichageArticles, w as FieldError, wt as supprimerArticle, x as DialogTrigger, xt as renvoyerInvitationFournisseur, y as DialogHeader, yt as renvoyerInvitationAgent, z as creerCaisse, zt as Label } from "./assets/admin-Bc0_r4k8.js";
 import { Link, Links, Meta, Navigate, Outlet, Route, Routes, Scripts, ScrollRestoration, UNSAFE_withComponentProps, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, useLocation, useNavigate, useParams } from "react-router";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import * as React$1 from "react";
@@ -11,7 +11,7 @@ import { useRender } from "@base-ui/react/use-render";
 import { cva } from "class-variance-authority";
 import "cn";
 import { Dialog } from "@base-ui/react/dialog";
-import { AlertTriangle, AlertTriangleIcon, ArrowLeft, ArrowRight, BadgePercent, BanIcon, Bell, BellIcon, Building2, CalendarArrowUp, CalendarDays, ChartPie, Check, CheckCircle2, CheckCircle2Icon, CheckIcon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, EllipsisVerticalIcon, FileText, Gauge, Grid2X2, Heart, Home, ImagePlus, ImagePlusIcon, Landmark, List, ListCheck, Loader2, Loader2Icon, LogOutIcon, Mail, MailIcon, MapPin, MapPinIcon, MessageSquare, MoreHorizontalIcon, PanelLeftIcon, Pencil, PencilIcon, Phone, PhoneIcon, Plus, PlusIcon, Search, SearchIcon, Send, SendIcon, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, Trash2Icon, Upload, UploadIcon, UserPlusIcon, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
+import { AlertTriangle, AlertTriangleIcon, ArrowLeft, ArrowRight, BadgePercent, BanIcon, Bell, BellIcon, Building2, CalendarArrowUp, CalendarDays, ChartPie, Check, CheckCircle2, CheckCircle2Icon, CheckIcon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, Ellipsis, EllipsisVerticalIcon, FileText, Gauge, Grid2X2, Heart, Home, ImagePlus, ImagePlusIcon, Landmark, List, ListCheck, Loader2, Loader2Icon, LogOutIcon, Mail, MailIcon, MapPin, MapPinIcon, MessageSquare, MoreHorizontalIcon, PanelLeftIcon, Pencil, PencilIcon, Phone, PhoneIcon, Plus, PlusIcon, Search, SearchIcon, Send, SendIcon, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, Trash2Icon, Upload, UploadIcon, UserPlusIcon, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
 import { Tooltip } from "@base-ui/react/tooltip";
 import { Avatar } from "@base-ui/react/avatar";
 import { ClerkProvider, Show, SignIn, SignOutButton, SignUp, UserButton, getToken, useAuth, useUser } from "@clerk/react-router";
@@ -812,7 +812,7 @@ function SiteHeader({ title }) {
 }
 //#endregion
 //#region app/app.css?url
-var app_default = "/assets/app-CIjMoGwK.css";
+var app_default = "/assets/app-COrgCX3R.css";
 //#endregion
 //#region app/routes/acceuil/acceuil.tsx
 var acceuil_exports = /* @__PURE__ */ __exportAll({
@@ -1626,7 +1626,7 @@ function FormulaireArticle({ article, enregistrement, onCancel, onSave }) {
 							}), devises.map((devise) => /* @__PURE__ */ jsxs(NativeSelectOption, {
 								value: devise.id,
 								children: [
-									devise.nom ?? devise.type,
+									devise.type,
 									" ",
 									devise.symbole ? `(${devise.symbole})` : ""
 								]
@@ -7166,7 +7166,7 @@ var caisses_default = UNSAFE_withComponentProps(function Caisses() {
 								}), devises.map((devise) => /* @__PURE__ */ jsxs(NativeSelectOption, {
 									value: devise.id,
 									children: [
-										devise.nom ?? devise.type,
+										devise.type,
 										" (",
 										devise.symbole,
 										")"
@@ -7195,6 +7195,304 @@ var caisses_default = UNSAFE_withComponentProps(function Caisses() {
 	});
 });
 //#endregion
+//#region app/components/devises/gestion-devises.tsx
+var symbolePourType = (type) => type === "USD" ? "$" : "Fc";
+var TYPES_DEVISE = ["CDF", "USD"];
+function GestionDevises({ inline = false }) {
+	const { businessId } = useBusiness();
+	const [dialogOuvert, setDialogOuvert] = useState(false);
+	const [enEdition, setEnEdition] = useState(null);
+	const [confirmation, setConfirmation] = useState(null);
+	const [actionEnCours, setActionEnCours] = useState(false);
+	const chargerDevises = useCallback(() => businessId ? listerDevises(businessId) : Promise.resolve([]), [businessId]);
+	const { donnees: devises, chargement, erreur, recharger } = useListe(chargerDevises, !!businessId);
+	const { register, handleSubmit, reset, setValue, watch, formState: { errors, isSubmitting, isValid } } = useForm({
+		resolver: zodResolver(DeviseSchema),
+		mode: "onTouched",
+		defaultValues: {
+			type: "CDF",
+			symbole: "Fc",
+			tauxVente: 0
+		}
+	});
+	const typeSelectionne = watch("type");
+	const typesDisponibles = TYPES_DEVISE.filter((type) => !devises.some((devise) => devise.type === type));
+	const ouvrirCreation = () => {
+		const premierTypeDisponible = typesDisponibles[0] ?? "CDF";
+		setEnEdition(null);
+		reset({
+			type: premierTypeDisponible,
+			symbole: symbolePourType(premierTypeDisponible),
+			tauxVente: 0
+		});
+		setDialogOuvert(true);
+	};
+	const ouvrirModification = (devise) => {
+		setEnEdition(devise);
+		reset({
+			type: devise.type,
+			symbole: symbolePourType(devise.type),
+			tauxVente: Number(devise.tauxVente ?? 0)
+		});
+		setDialogOuvert(true);
+	};
+	const enregistrer = async (form) => {
+		if (!businessId) return;
+		const deviseFormulaire = {
+			...form,
+			symbole: symbolePourType(form.type)
+		};
+		const requete = enEdition ? modifierDevise(businessId, enEdition.id, deviseFormulaire) : creerDevise(businessId, deviseFormulaire);
+		try {
+			await toast.promise(requete, {
+				loading: enEdition ? "Modification de la devise…" : "Ajout de la devise…",
+				success: enEdition ? "Devise modifiée." : "Devise ajoutée.",
+				error: (cause) => cause.message
+			}).unwrap();
+			setDialogOuvert(false);
+			setEnEdition(null);
+			recharger();
+		} catch {}
+	};
+	const validerAction = async () => {
+		if (!businessId || !confirmation) return;
+		setActionEnCours(true);
+		const { devise, type } = confirmation;
+		const requete = type === "default" ? deviseParDefaut(businessId, devise.id) : supprimerDevise(businessId, devise.id);
+		try {
+			await toast.promise(requete, {
+				loading: type === "default" ? "Mise à jour…" : "Suppression…",
+				success: type === "default" ? `${devise.type} est maintenant la devise par défaut.` : "Devise supprimée.",
+				error: (cause) => cause.message
+			}).unwrap();
+			setConfirmation(null);
+			recharger();
+		} catch {} finally {
+			setActionEnCours(false);
+		}
+	};
+	const contenu = /* @__PURE__ */ jsxs("div", {
+		className: inline ? "space-y-4" : void 0,
+		children: [
+			inline && /* @__PURE__ */ jsx("div", {
+				className: "flex justify-end",
+				children: /* @__PURE__ */ jsxs(Button, {
+					onClick: ouvrirCreation,
+					disabled: typesDisponibles.length === 0,
+					children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Ajouter une devise"]
+				})
+			}),
+			inline && chargement ? /* @__PURE__ */ jsx("p", {
+				className: "rounded-lg border p-6 text-center text-sm text-muted-foreground",
+				children: "Chargement des devises…"
+			}) : inline && erreur ? /* @__PURE__ */ jsxs("div", {
+				className: "flex flex-wrap items-center justify-between gap-3 rounded-lg border border-destructive/40 p-4",
+				children: [/* @__PURE__ */ jsx("p", {
+					role: "alert",
+					className: "text-sm text-destructive",
+					children: erreur
+				}), /* @__PURE__ */ jsx(Button, {
+					variant: "outline",
+					onClick: recharger,
+					children: "Réessayer"
+				})]
+			}) : devises.length > 0 ? /* @__PURE__ */ jsx("div", {
+				className: "grid gap-4 sm:grid-cols-2",
+				children: devises.map((devise) => /* @__PURE__ */ jsxs("article", {
+					className: "flex min-h-40 flex-col justify-between gap-4 rounded-xl border p-4",
+					children: [/* @__PURE__ */ jsxs("div", {
+						className: "flex items-start justify-between gap-3",
+						children: [/* @__PURE__ */ jsxs("div", {
+							className: "min-w-0",
+							children: [/* @__PURE__ */ jsx("p", {
+								className: "truncate font-semibold",
+								children: devise.type
+							}), /* @__PURE__ */ jsxs("p", {
+								className: "mt-1 text-sm text-muted-foreground",
+								children: [
+									devise.type,
+									" · ",
+									symbolePourType(devise.type)
+								]
+							})]
+						}), /* @__PURE__ */ jsxs(DropdownMenu, { children: [/* @__PURE__ */ jsx(DropdownMenuTrigger, {
+							render: /* @__PURE__ */ jsx(Button, {
+								type: "button",
+								variant: "ghost",
+								size: "icon",
+								"aria-label": `Actions pour ${devise.type}`
+							}),
+							children: /* @__PURE__ */ jsx(Ellipsis, { className: "size-4" })
+						}), /* @__PURE__ */ jsxs(DropdownMenuContent, {
+							align: "end",
+							children: [
+								/* @__PURE__ */ jsxs(DropdownMenuItem, {
+									onSelect: () => ouvrirModification(devise),
+									children: [/* @__PURE__ */ jsx(Pencil, {}), "Modifier"]
+								}),
+								!devise.parDefaut && /* @__PURE__ */ jsxs(DropdownMenuItem, {
+									onSelect: () => setConfirmation({
+										type: "default",
+										devise
+									}),
+									children: [/* @__PURE__ */ jsx(Star, {}), "Définir par défaut"]
+								}),
+								/* @__PURE__ */ jsxs(DropdownMenuItem, {
+									variant: "destructive",
+									onSelect: () => setConfirmation({
+										type: "delete",
+										devise
+									}),
+									children: [/* @__PURE__ */ jsx(Trash2, {}), "Supprimer"]
+								})
+							]
+						})] })]
+					}), /* @__PURE__ */ jsxs("div", {
+						className: "flex items-end justify-between gap-3",
+						children: [/* @__PURE__ */ jsxs("p", {
+							className: "text-sm tabular-nums text-muted-foreground",
+							children: [
+								"Taux de vente :",
+								" ",
+								Number(devise.tauxVente ?? 0).toLocaleString("fr-FR"),
+								" ",
+								symbolePourType(devise.type)
+							]
+						}), devise.parDefaut && /* @__PURE__ */ jsxs(Badge, {
+							variant: "secondary",
+							children: [/* @__PURE__ */ jsx(Check, { className: "size-3.5" }), "Par défaut"]
+						})]
+					})]
+				}, devise.id))
+			}) : /* @__PURE__ */ jsx("p", {
+				className: "rounded-lg border border-dashed p-8 text-center text-sm text-muted-foreground",
+				children: "Aucune devise n’est encore rattachée à ce business."
+			}),
+			/* @__PURE__ */ jsx(Dialog$1, {
+				open: dialogOuvert,
+				onOpenChange: (ouvert) => {
+					setDialogOuvert(ouvert);
+					if (!ouvert) setEnEdition(null);
+				},
+				children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier la devise" : "Ajouter une devise" }), /* @__PURE__ */ jsx(DialogDescription, { children: "La devise sera rattachée au business actif. Chaque type ne peut être ajouté qu’une seule fois." })] }), /* @__PURE__ */ jsxs("form", {
+					onSubmit: handleSubmit(enregistrer),
+					noValidate: true,
+					children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [
+						/* @__PURE__ */ jsxs(Field, {
+							"data-invalid": !!errors.type,
+							children: [
+								/* @__PURE__ */ jsx(FieldLabel, {
+									htmlFor: "devise-type",
+									children: "Type de devise"
+								}),
+								/* @__PURE__ */ jsxs(NativeSelect, {
+									id: "devise-type",
+									"aria-invalid": !!errors.type,
+									...register("type", { onChange: (event) => {
+										const type = event.currentTarget.value;
+										setValue("symbole", symbolePourType(type), {
+											shouldDirty: true,
+											shouldValidate: true
+										});
+									} }),
+									children: [/* @__PURE__ */ jsx(NativeSelectOption, {
+										value: "CDF",
+										disabled: devises.some((devise) => devise.type === "CDF" && devise.id !== enEdition?.id),
+										children: "CDF — Franc congolais"
+									}), /* @__PURE__ */ jsx(NativeSelectOption, {
+										value: "USD",
+										disabled: devises.some((devise) => devise.type === "USD" && devise.id !== enEdition?.id),
+										children: "USD — Dollar américain"
+									})]
+								}),
+								/* @__PURE__ */ jsx(FieldError, { errors: [errors.type] })
+							]
+						}),
+						/* @__PURE__ */ jsxs(Field, {
+							"data-invalid": !!errors.tauxVente,
+							children: [
+								/* @__PURE__ */ jsxs(FieldLabel, {
+									htmlFor: "devise-taux",
+									children: [
+										"Taux de vente (",
+										typeSelectionne === "USD" ? "CDF par USD" : "USD par CDF",
+										")"
+									]
+								}),
+								/* @__PURE__ */ jsx(Input, {
+									id: "devise-taux",
+									type: "number",
+									min: "0",
+									step: "0.0001",
+									inputMode: "decimal",
+									"aria-invalid": !!errors.tauxVente,
+									...register("tauxVente", { valueAsNumber: true })
+								}),
+								/* @__PURE__ */ jsx(FieldError, { errors: [errors.tauxVente] }),
+								/* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: typeSelectionne === "USD" ? "Indiquez combien de francs congolais vaut 1 dollar américain." : "Indiquez combien de dollars américains vaut 1 franc congolais."
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("p", {
+							className: "text-sm text-muted-foreground",
+							children: ["Symbole : ", symbolePourType(typeSelectionne)]
+						})
+					] }), /* @__PURE__ */ jsxs(DialogFooter, {
+						className: "mt-6",
+						children: [/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							onClick: () => setDialogOuvert(false),
+							disabled: isSubmitting,
+							children: "Annuler"
+						}), /* @__PURE__ */ jsx(Button, {
+							type: "submit",
+							disabled: !isValid || isSubmitting,
+							children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Ajouter"
+						})]
+					})]
+				})] })
+			}),
+			/* @__PURE__ */ jsx(AlertDialog$1, {
+				open: confirmation !== null,
+				onOpenChange: (ouvert) => {
+					if (!ouvert && !actionEnCours) setConfirmation(null);
+				},
+				children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: confirmation?.type === "default" ? "Définir cette devise par défaut ?" : "Supprimer cette devise ?" }), /* @__PURE__ */ jsx(AlertDialogDescription, { children: confirmation?.type === "default" ? `${confirmation.devise.type} deviendra la devise par défaut de ce business.` : `La devise ${confirmation?.devise.type ?? ""} sera supprimée. Cette action peut être empêchée si elle est déjà utilisée.` })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+					disabled: actionEnCours,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(AlertDialogAction, {
+					onClick: (event) => {
+						event.preventDefault();
+						validerAction();
+					},
+					disabled: actionEnCours,
+					className: confirmation?.type === "delete" ? "bg-destructive text-white hover:bg-destructive/90" : void 0,
+					children: actionEnCours ? "Traitement…" : confirmation?.type === "default" ? "Confirmer" : "Supprimer"
+				})] })] })
+			})
+		]
+	});
+	if (inline) return contenu;
+	return /* @__PURE__ */ jsx(PageRessource, {
+		titre: "Gestion des devises",
+		description: "Gérez les devises rattachées à votre business.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		onReessayer: recharger,
+		action: /* @__PURE__ */ jsxs(Button, {
+			onClick: ouvrirCreation,
+			disabled: typesDisponibles.length === 0,
+			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Ajouter une devise"]
+		}),
+		children: contenu
+	});
+}
+//#endregion
 //#region app/routes/parametres/parametres.tsx
 var parametres_exports = /* @__PURE__ */ __exportAll({
 	default: () => parametres_default,
@@ -7208,37 +7506,45 @@ function meta$5({}) {
 }
 var parametres_default = UNSAFE_withComponentProps(function Parametres() {
 	const [open, setOpen] = useState(false);
+	const { businessId } = useBusiness();
 	const removeAccount = async () => {
 		await supprimer_user();
 	};
-	return /* @__PURE__ */ jsxs("div", { children: [
-		/* @__PURE__ */ jsx("li", { children: "application" }),
-		/* @__PURE__ */ jsx("li", { children: "devises" }),
-		/* @__PURE__ */ jsx(Card, { children: /* @__PURE__ */ jsxs(CardHeader, { children: [
-			/* @__PURE__ */ jsx(CardTitle, { children: "Danger zone" }),
-			/* @__PURE__ */ jsx(CardDescription, { children: "Description" }),
-			/* @__PURE__ */ jsx(CardContent, { children: /* @__PURE__ */ jsxs(Dialog$1, {
-				onOpenChange: setOpen,
-				open,
-				children: [/* @__PURE__ */ jsx(DialogTrigger, {
-					render: /* @__PURE__ */ jsx(Button, { variant: "destructive" }),
-					children: "Supprimer le comte"
-				}), /* @__PURE__ */ jsxs(DialogContent, {
-					className: "sm:max-w-lg",
-					children: [/* @__PURE__ */ jsxs("div", {
-						className: "flex items-start space-x-4",
-						children: [/* @__PURE__ */ jsx("div", {
-							className: "flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100",
-							children: /* @__PURE__ */ jsx(AlertTriangleIcon, { className: "h-6 w-6 text-red-600" })
-						}), /* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Supprimer le compte" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Are you sure you want to delete your account? All of your data will be permanently removed. This action cannot be undone." })] })]
-					}), /* @__PURE__ */ jsx(DialogFooter, { children: /* @__PURE__ */ jsx(Button, {
-						variant: "destructive",
-						onClick: removeAccount
-					}) })]
+	return /* @__PURE__ */ jsxs("div", {
+		className: "space-y-4 p-4 lg:p-6",
+		children: [businessId && /* @__PURE__ */ jsxs(Card, { children: [/* @__PURE__ */ jsxs(CardHeader, { children: [/* @__PURE__ */ jsx(CardTitle, { children: "Gestion des devises" }), /* @__PURE__ */ jsx(CardDescription, { children: "Ajoutez, modifiez ou supprimez les devises associées à votre business." })] }), /* @__PURE__ */ jsx(CardContent, { children: /* @__PURE__ */ jsx(GestionDevises, { inline: true }) })] }), /* @__PURE__ */ jsxs(Card, { children: [/* @__PURE__ */ jsxs(CardHeader, { children: [/* @__PURE__ */ jsx(CardTitle, { children: "Zone de danger" }), /* @__PURE__ */ jsx(CardDescription, { children: "Gérez les paramètres sensibles de votre compte et de votre business." })] }), /* @__PURE__ */ jsx(CardContent, {
+			className: "space-y-6",
+			children: /* @__PURE__ */ jsxs("section", {
+				className: "space-y-3 rounded-lg border border-destructive/40 p-4",
+				children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+					className: "font-medium",
+					children: "Suppression du compte"
+				}), /* @__PURE__ */ jsx("p", {
+					className: "text-sm text-muted-foreground",
+					children: "La suppression du compte est définitive."
+				})] }), /* @__PURE__ */ jsxs(Dialog$1, {
+					onOpenChange: setOpen,
+					open,
+					children: [/* @__PURE__ */ jsx(DialogTrigger, {
+						render: /* @__PURE__ */ jsx(Button, { variant: "destructive" }),
+						children: "Supprimer le compte"
+					}), /* @__PURE__ */ jsxs(DialogContent, {
+						className: "sm:max-w-lg",
+						children: [/* @__PURE__ */ jsxs("div", {
+							className: "flex items-start space-x-4",
+							children: [/* @__PURE__ */ jsx("div", {
+								className: "flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-100",
+								children: /* @__PURE__ */ jsx(AlertTriangleIcon, { className: "h-6 w-6 text-red-600" })
+							}), /* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: "Supprimer le compte" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Are you sure you want to delete your account? All of your data will be permanently removed. This action cannot be undone." })] })]
+						}), /* @__PURE__ */ jsx(DialogFooter, { children: /* @__PURE__ */ jsx(Button, {
+							variant: "destructive",
+							onClick: removeAccount
+						}) })]
+					})]
 				})]
-			}) })
-		] }) })
-	] });
+			})
+		})] })]
+	});
 });
 //#endregion
 //#region app/auth/sign-in/[[...sign-in]]/page.tsx
@@ -9729,6 +10035,12 @@ var docs_default = UNSAFE_withComponentProps(function ShadcnInteractiveVariants(
 	});
 });
 //#endregion
+//#region app/routes/devises/devises.tsx
+var devises_exports = /* @__PURE__ */ __exportAll({ default: () => devises_default });
+var devises_default = UNSAFE_withComponentProps(function Devises() {
+	return /* @__PURE__ */ jsx(GestionDevises, {});
+});
+//#endregion
 //#region app/routes/aides/aides.tsx
 var aides_exports = /* @__PURE__ */ __exportAll({
 	default: () => aides_default,
@@ -9747,8 +10059,8 @@ var aides_default = UNSAFE_withComponentProps(function Aides() {
 //#region \0virtual:react-router/server-manifest
 var server_manifest_default = {
 	"entry": {
-		"module": "/assets/entry.client-BwbdmzkL.js",
-		"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-C1UJaEuc.js"],
+		"module": "/assets/entry.client-B-rNw59h.js",
+		"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DhgiKoT4.js"],
 		"css": []
 	},
 	"routes": {
@@ -9765,54 +10077,55 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": true,
-			"module": "/assets/root-DTuWUUoI.js",
+			"module": "/assets/root-Cz70Xnne.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/profile-D0Bnxe5V.js",
-				"/assets/avatar-DWFVrUED.js",
-				"/assets/clerk-CH-P7nbE.js",
-				"/assets/acceuil-fU45-Kzl.js",
-				"/assets/home-Wt-hoFsN.js",
-				"/assets/notifications-CXKyw1jg.js",
-				"/assets/commandes-B-paHrIE.js",
-				"/assets/ventes-Dlsl8E13.js",
-				"/assets/articles-UG4QxWpg.js",
-				"/assets/nouveau-Bdd8kSAM.js",
-				"/assets/detail-BQJw5zOo.js",
-				"/assets/achats-Cmoq9Re7.js",
-				"/assets/clients-BFOQK-Jo.js",
-				"/assets/detail-Bk7cmrtM.js",
-				"/assets/valider-invitation-WxSava4B.js",
-				"/assets/fournisseurs-CnabY807.js",
-				"/assets/valider-invitation-CdJY_eYh.js",
-				"/assets/detail-Doe9vuJg.js",
-				"/assets/travailleurs-BN-xzefy.js",
-				"/assets/detail-DSTiuG0U.js",
-				"/assets/valider-invitation-8LKHRzyo.js",
-				"/assets/caisses-DtGnHyTr.js",
-				"/assets/parametres-Bc-E4WT4.js",
-				"/assets/page-wVr7zRcc.js",
-				"/assets/page-CCZmrRcp.js",
-				"/assets/welcome-CVUIrMG-.js",
-				"/assets/page-SipFcOiW.js",
-				"/assets/promotions-BYqu70fm.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js",
-				"/assets/card-CXiHH_Xb.js",
-				"/assets/apis-RB_cg0fH.js",
-				"/assets/switch-CTf8gaW1.js",
-				"/assets/alert-CgGRRxqd.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/formulaire-article-Bz-PbCxX.js",
-				"/assets/textarea-CsZ-ZDAL.js",
-				"/assets/forms-CdgaCzaC.js",
-				"/assets/avatar-ressource-BTSKVq2i.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/profile-CVsRg7dq.js",
+				"/assets/avatar-vXeOzWPa.js",
+				"/assets/clerk-XpruBfRm.js",
+				"/assets/acceuil-xPH1shkk.js",
+				"/assets/home-CcrLmysD.js",
+				"/assets/notifications-Cyq-VpUt.js",
+				"/assets/commandes-aeZ1VT5C.js",
+				"/assets/ventes-DlnI1m8z.js",
+				"/assets/articles-9FcfkreP.js",
+				"/assets/nouveau-Deuzmo4h.js",
+				"/assets/detail-coq40ewN.js",
+				"/assets/achats-qI0gYAne.js",
+				"/assets/clients-U7fVzM1s.js",
+				"/assets/detail-BWQTQuqs.js",
+				"/assets/valider-invitation-DUYoAbO-.js",
+				"/assets/fournisseurs-BVDdsOS9.js",
+				"/assets/valider-invitation-CiTYcz0C.js",
+				"/assets/detail-BEA3Kx7o.js",
+				"/assets/travailleurs-B0tJLz6L.js",
+				"/assets/detail-BlqKZm7g.js",
+				"/assets/valider-invitation-BMBBhAfM.js",
+				"/assets/caisses-Ct0_Sg15.js",
+				"/assets/parametres-BM-nK7XC.js",
+				"/assets/page-DewqGjZe.js",
+				"/assets/page-Dk9wvT-x.js",
+				"/assets/welcome-BXEmqJSz.js",
+				"/assets/page-zGDgvmUu.js",
+				"/assets/promotions-BO8YSQ70.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js",
+				"/assets/card-C2AyIHXH.js",
+				"/assets/apis-BYPbFXeQ.js",
+				"/assets/switch-DpIQ2axv.js",
+				"/assets/alert-BG_tzkXn.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/formulaire-article-CSFh1mic.js",
+				"/assets/textarea-CRkEf1PV.js",
+				"/assets/forms-DrG295_T.js",
+				"/assets/avatar-ressource-CFlql3Po.js",
+				"/assets/gestion-devises-Bq-1HIAJ.js"
 			],
-			"css": ["/assets/app-DyEC_6oK.css"],
+			"css": ["/assets/app-D9VNfb4C.css"],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
 			"clientMiddlewareModule": void 0,
@@ -9831,12 +10144,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/home-z0GbMTv2.js",
+			"module": "/assets/home-CigZtLly.js",
 			"imports": [
-				"/assets/home-Wt-hoFsN.js",
+				"/assets/home-CcrLmysD.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/alert-CgGRRxqd.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/alert-BG_tzkXn.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9857,17 +10170,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/docs-B95P9fIa.js",
+			"module": "/assets/docs-Dz015Uxf.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/avatar-DWFVrUED.js",
-				"/assets/alert-CgGRRxqd.js",
-				"/assets/switch-CTf8gaW1.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/avatar-vXeOzWPa.js",
+				"/assets/alert-BG_tzkXn.js",
+				"/assets/switch-DpIQ2axv.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9888,13 +10201,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-DT5F-6r-.js",
+			"module": "/assets/page-CnBZ-J_r.js",
 			"imports": [
-				"/assets/page-wVr7zRcc.js",
+				"/assets/page-DewqGjZe.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/clerk-CH-P7nbE.js",
-				"/assets/card-CXiHH_Xb.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/clerk-XpruBfRm.js",
+				"/assets/card-C2AyIHXH.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9915,13 +10228,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-761FXAjG.js",
+			"module": "/assets/page-D2mZkpku.js",
 			"imports": [
-				"/assets/page-CCZmrRcp.js",
+				"/assets/page-Dk9wvT-x.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/clerk-CH-P7nbE.js",
-				"/assets/card-CXiHH_Xb.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/clerk-XpruBfRm.js",
+				"/assets/card-C2AyIHXH.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9942,12 +10255,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/welcome-KIVxYSqL.js",
+			"module": "/assets/welcome-B-u4zw0E.js",
 			"imports": [
-				"/assets/welcome-CVUIrMG-.js",
+				"/assets/welcome-BXEmqJSz.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/apis-RB_cg0fH.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/apis-BYPbFXeQ.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9968,11 +10281,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/acceuil-CPf7u2c5.js",
+			"module": "/assets/acceuil-Be_ej0uh.js",
 			"imports": [
-				"/assets/acceuil-fU45-Kzl.js",
+				"/assets/acceuil-xPH1shkk.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js"
+				"/assets/admin-DhgiKoT4.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9993,12 +10306,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/dashboard-DScwM4dR.js",
+			"module": "/assets/dashboard-B6pJXDhb.js",
 			"imports": [
-				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/dashboard-Dul7jiUA.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/charts-CqGBh3FX.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/charts-DYBj84TQ.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10019,11 +10332,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/commandes-BSNB1pjk.js",
+			"module": "/assets/commandes-vlS13Xa1.js",
 			"imports": [
-				"/assets/commandes-B-paHrIE.js",
+				"/assets/commandes-aeZ1VT5C.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js"
+				"/assets/admin-DhgiKoT4.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10044,11 +10357,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/ventes-VGA4CS_Z.js",
+			"module": "/assets/ventes-CYuEd7NN.js",
 			"imports": [
-				"/assets/ventes-Dlsl8E13.js",
+				"/assets/ventes-DlnI1m8z.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js"
+				"/assets/admin-DhgiKoT4.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10069,18 +10382,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-BuXvMY1W.js",
+			"module": "/assets/page-TJlE6yn1.js",
 			"imports": [
-				"/assets/page-SipFcOiW.js",
+				"/assets/page-zGDgvmUu.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/vendor-uXzeSch6.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/card-CXiHH_Xb.js",
-				"/assets/textarea-CsZ-ZDAL.js",
-				"/assets/apis-RB_cg0fH.js",
-				"/assets/charts-CqGBh3FX.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/vendor-PrbWywdI.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/card-C2AyIHXH.js",
+				"/assets/textarea-CRkEf1PV.js",
+				"/assets/apis-BYPbFXeQ.js",
+				"/assets/charts-DYBj84TQ.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10101,19 +10414,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/profile-DXWtIIP3.js",
+			"module": "/assets/profile-DW-t_oEx.js",
 			"imports": [
-				"/assets/profile-D0Bnxe5V.js",
+				"/assets/profile-CVsRg7dq.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/vendor-uXzeSch6.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/avatar-DWFVrUED.js",
-				"/assets/card-CXiHH_Xb.js",
-				"/assets/apis-RB_cg0fH.js",
-				"/assets/switch-CTf8gaW1.js",
-				"/assets/charts-CqGBh3FX.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/vendor-PrbWywdI.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/avatar-vXeOzWPa.js",
+				"/assets/card-C2AyIHXH.js",
+				"/assets/apis-BYPbFXeQ.js",
+				"/assets/switch-DpIQ2axv.js",
+				"/assets/charts-DYBj84TQ.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10134,11 +10447,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/notifications-CGEW3Lwo.js",
+			"module": "/assets/notifications-KCPUOKXO.js",
 			"imports": [
-				"/assets/notifications-CXKyw1jg.js",
+				"/assets/notifications-Cyq-VpUt.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js"
+				"/assets/admin-DhgiKoT4.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10159,14 +10472,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/achats-LEGNODSF.js",
+			"module": "/assets/achats-BnXtn9x4.js",
 			"imports": [
-				"/assets/achats-Cmoq9Re7.js",
+				"/assets/achats-qI0gYAne.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/charts-CqGBh3FX.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/charts-DYBj84TQ.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10187,18 +10500,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/travailleurs-DvJtjdKH.js",
+			"module": "/assets/travailleurs-DLFQwn3Y.js",
 			"imports": [
-				"/assets/travailleurs-BN-xzefy.js",
+				"/assets/travailleurs-B0tJLz6L.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/avatar-DWFVrUED.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/avatar-vXeOzWPa.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10219,18 +10532,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/detail-qIkLtkBv.js",
+			"module": "/assets/detail-Chn7i4Fw.js",
 			"imports": [
-				"/assets/detail-DSTiuG0U.js",
+				"/assets/detail-BlqKZm7g.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/avatar-ressource-BTSKVq2i.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js",
-				"/assets/avatar-DWFVrUED.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/avatar-ressource-CFlql3Po.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js",
+				"/assets/avatar-vXeOzWPa.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10251,11 +10564,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/valider-invitation-1YWKyFBZ.js",
+			"module": "/assets/valider-invitation-DSHoGw2x.js",
 			"imports": [
-				"/assets/valider-invitation-8LKHRzyo.js",
+				"/assets/valider-invitation-BMBBhAfM.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js"
+				"/assets/admin-DhgiKoT4.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10276,18 +10589,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/clients-Ds1vhdGS.js",
+			"module": "/assets/clients-B29BwreR.js",
 			"imports": [
-				"/assets/clients-BFOQK-Jo.js",
+				"/assets/clients-U7fVzM1s.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/avatar-DWFVrUED.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/avatar-vXeOzWPa.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10308,20 +10621,20 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/detail-Beaw_jyd.js",
+			"module": "/assets/detail-COyeumHV.js",
 			"imports": [
-				"/assets/detail-Bk7cmrtM.js",
+				"/assets/detail-BWQTQuqs.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/forms-CdgaCzaC.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/apis-RB_cg0fH.js",
-				"/assets/avatar-ressource-BTSKVq2i.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js",
-				"/assets/avatar-DWFVrUED.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/forms-DrG295_T.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/apis-BYPbFXeQ.js",
+				"/assets/avatar-ressource-CFlql3Po.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js",
+				"/assets/avatar-vXeOzWPa.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10342,11 +10655,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/valider-invitation-GJj5rVd-.js",
+			"module": "/assets/valider-invitation-BBzRJIJL.js",
 			"imports": [
-				"/assets/valider-invitation-WxSava4B.js",
+				"/assets/valider-invitation-DUYoAbO-.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js"
+				"/assets/admin-DhgiKoT4.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10367,18 +10680,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/fournisseurs-CYz5Ifyb.js",
+			"module": "/assets/fournisseurs-BUnDBVpS.js",
 			"imports": [
-				"/assets/fournisseurs-CnabY807.js",
+				"/assets/fournisseurs-BVDdsOS9.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/avatar-DWFVrUED.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/avatar-vXeOzWPa.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10399,19 +10712,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/detail-Cuuokb7o.js",
+			"module": "/assets/detail-Bam6qzia.js",
 			"imports": [
-				"/assets/detail-Doe9vuJg.js",
+				"/assets/detail-BEA3Kx7o.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/avatar-DWFVrUED.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/apis-RB_cg0fH.js",
-				"/assets/avatar-ressource-BTSKVq2i.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/avatar-vXeOzWPa.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/apis-BYPbFXeQ.js",
+				"/assets/avatar-ressource-CFlql3Po.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10432,11 +10745,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/valider-invitation-DD98siD4.js",
+			"module": "/assets/valider-invitation-CCWNSQO5.js",
 			"imports": [
-				"/assets/valider-invitation-CdJY_eYh.js",
+				"/assets/valider-invitation-CiTYcz0C.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js"
+				"/assets/admin-DhgiKoT4.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10457,17 +10770,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/articles-DLlY0A3z.js",
+			"module": "/assets/articles-CN9ODGGK.js",
 			"imports": [
-				"/assets/articles-UG4QxWpg.js",
+				"/assets/articles-9FcfkreP.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10488,17 +10801,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/nouveau-CPDIio79.js",
+			"module": "/assets/nouveau-CwI0laMI.js",
 			"imports": [
-				"/assets/nouveau-Bdd8kSAM.js",
+				"/assets/nouveau-Deuzmo4h.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/formulaire-article-Bz-PbCxX.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/textarea-CsZ-ZDAL.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/charts-CqGBh3FX.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/formulaire-article-CSFh1mic.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/textarea-CRkEf1PV.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/charts-DYBj84TQ.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10519,19 +10832,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/detail-CZWk9mog.js",
+			"module": "/assets/detail-C3r1sdm_.js",
 			"imports": [
-				"/assets/detail-BQJw5zOo.js",
+				"/assets/detail-coq40ewN.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/alert-dialog-Bn4N_nIq.js",
-				"/assets/formulaire-article-Bz-PbCxX.js",
-				"/assets/charts-CqGBh3FX.js",
-				"/assets/vendor-uXzeSch6.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/textarea-CsZ-ZDAL.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/formulaire-article-CSFh1mic.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/textarea-CRkEf1PV.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10552,15 +10865,15 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/promotions-CpVcgPlR.js",
+			"module": "/assets/promotions-CZGcd9W1.js",
 			"imports": [
-				"/assets/promotions-BYqu70fm.js",
+				"/assets/promotions-BO8YSQ70.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/textarea-CsZ-ZDAL.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/charts-CqGBh3FX.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/textarea-CRkEf1PV.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/charts-DYBj84TQ.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10581,14 +10894,45 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/caisses-krFchDnq.js",
+			"module": "/assets/caisses-AgVEH0k3.js",
 			"imports": [
-				"/assets/caisses-DtGnHyTr.js",
+				"/assets/caisses-Ct0_Sg15.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/dashboard-iFgxSVNy.js",
-				"/assets/native-select-_BnVK_AK.js",
-				"/assets/charts-CqGBh3FX.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/charts-DYBj84TQ.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/devises/devises": {
+			"id": "routes/devises/devises",
+			"parentId": "root",
+			"path": "/devises",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/devises-BSwWlaA-.js",
+			"imports": [
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/gestion-devises-Bq-1HIAJ.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10609,8 +10953,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/aides-C0c32YKP.js",
-			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-C1UJaEuc.js"],
+			"module": "/assets/aides-zqJxItIM.js",
+			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DhgiKoT4.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10630,14 +10974,20 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/parametres-BbJh5Uyc.js",
+			"module": "/assets/parametres-D-_kMQ7p.js",
 			"imports": [
-				"/assets/parametres-Bc-E4WT4.js",
+				"/assets/parametres-BM-nK7XC.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-C1UJaEuc.js",
-				"/assets/ui-CACRHaBU.js",
-				"/assets/card-CXiHH_Xb.js",
-				"/assets/apis-RB_cg0fH.js"
+				"/assets/admin-DhgiKoT4.js",
+				"/assets/ui-DRPP1hRQ.js",
+				"/assets/card-C2AyIHXH.js",
+				"/assets/apis-BYPbFXeQ.js",
+				"/assets/gestion-devises-Bq-1HIAJ.js",
+				"/assets/dashboard-Dul7jiUA.js",
+				"/assets/native-select-Br_6zFvA.js",
+				"/assets/alert-dialog-Bo9hMqg_.js",
+				"/assets/charts-DYBj84TQ.js",
+				"/assets/vendor-PrbWywdI.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10658,8 +11008,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/businesses-tC2_vuh7.js",
-			"imports": ["/assets/admin-C1UJaEuc.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/businesses-foHC78vS.js",
+			"imports": ["/assets/admin-DhgiKoT4.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10679,8 +11029,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/offres-DohuYrTM.js",
-			"imports": ["/assets/admin-C1UJaEuc.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/offres-Bvesgiof.js",
+			"imports": ["/assets/admin-DhgiKoT4.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10700,8 +11050,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/categories-CWuXEFKy.js",
-			"imports": ["/assets/admin-C1UJaEuc.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/categories-Ci_j9Z6k.js",
+			"imports": ["/assets/admin-DhgiKoT4.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10709,8 +11059,8 @@ var server_manifest_default = {
 			"hydrateFallbackModule": void 0
 		}
 	},
-	"url": "/assets/manifest-fc486b62.js",
-	"version": "fc486b62",
+	"url": "/assets/manifest-afba5fb1.js",
+	"version": "afba5fb1",
 	"sri": void 0
 };
 //#endregion
@@ -10954,6 +11304,14 @@ var routes = {
 		index: void 0,
 		caseSensitive: void 0,
 		module: caisses_exports
+	},
+	"routes/devises/devises": {
+		id: "routes/devises/devises",
+		parentId: "root",
+		path: "/devises",
+		index: void 0,
+		caseSensitive: void 0,
+		module: devises_exports
 	},
 	"routes/aides/aides": {
 		id: "routes/aides/aides",

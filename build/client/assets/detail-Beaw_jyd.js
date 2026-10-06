@@ -1,1 +1,0 @@
-import{t as e}from"./detail-Bk7cmrtM.js";export{e as default};

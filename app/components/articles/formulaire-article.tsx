@@ -269,7 +269,7 @@ export function FormulaireArticle({
             <NativeSelectOption value="">Sélectionner une devise</NativeSelectOption>
             {devises.map((devise) => (
               <NativeSelectOption key={devise.id} value={devise.id}>
-                {devise.nom ?? devise.type} {devise.symbole ? `(${devise.symbole})` : ""}
+                {devise.type === "USD" ? "Dollar américain" : "Franc congolais"}
               </NativeSelectOption>
             ))}
           </NativeSelect>

@@ -6,6 +6,8 @@ import { useState } from "react";
 // import { SignOutButton, } from "@clerk/react-router";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { supprimer_user } from "@/lib/apis";
+import { useBusiness } from "@/lib/business-context";
+import { GestionDevises } from "@/components/devises/gestion-devises";
 // import { Show } from "@clerk/react-router";
 
 
@@ -18,22 +20,36 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function Parametres() {
   const [open, setOpen] = useState(false);
+  const { businessId } = useBusiness();
 
   const removeAccount = async () => {
     await supprimer_user();
   }
 
-  return <div>
-    <li>application</li>
-    <li>devises</li>
+  return <div className="space-y-4 p-4 lg:p-6">
+    {businessId && (
+      <Card>
+        <CardContent className="pt-6">
+          <GestionDevises inline />
+        </CardContent>
+      </Card>
+    )}
     <Card>
       <CardHeader>
-        <CardTitle>Danger zone</CardTitle>
-        <CardDescription>Description</CardDescription>
-        <CardContent>
+        <CardTitle>Zone de danger</CardTitle>
+        <CardDescription>Gérez les paramètres sensibles de votre compte et de votre business.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        <section className="space-y-3 rounded-lg border border-destructive/40 p-4">
+          <div>
+            <h2 className="font-medium">Suppression du compte</h2>
+            <p className="text-sm text-muted-foreground">
+              La suppression du compte est définitive.
+            </p>
+          </div>
           <Dialog onOpenChange={setOpen} open={open}>
             <DialogTrigger render={<Button variant="destructive" />}>
-              Supprimer le comte
+              Supprimer le compte
             </DialogTrigger>
             <DialogContent className="sm:max-w-lg">
               <div className="flex items-start space-x-4">
@@ -57,8 +73,8 @@ export default function Parametres() {
               </DialogFooter>
             </DialogContent>
           </Dialog>
-        </CardContent>
-      </CardHeader>
+        </section>
+      </CardContent>
     </Card>
   </div>;
 }

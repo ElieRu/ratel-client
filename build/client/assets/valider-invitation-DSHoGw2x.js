@@ -1,0 +1,1 @@
+import{t as e}from"./valider-invitation-BMBBhAfM.js";export{e as default};

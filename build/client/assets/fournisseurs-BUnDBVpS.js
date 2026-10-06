@@ -1,0 +1,1 @@
+import{t as e}from"./fournisseurs-BVDdsOS9.js";export{e as default};

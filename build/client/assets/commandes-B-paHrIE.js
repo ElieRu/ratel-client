@@ -1,1 +1,0 @@
-import{r as e}from"./rolldown-runtime-hePW80VL.js";import{No as t,fo as n}from"./admin-C1UJaEuc.js";var r=e(n(),1);function i({}){return[{title:`React App`},{name:`description`,content:`Welcome to React Router!`}]}var a=t(function(){return(0,r.jsx)(`div`,{children:(0,r.jsx)(`h1`,{children:`commandes`})})});export{i as n,a as t};

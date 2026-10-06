@@ -1,1 +1,0 @@
-import{Rt as e,qt as t}from"./admin-C1UJaEuc.js";function n(n){return t(e,n)}export{n as t};
