@@ -1,1 +1,0 @@
-import{t as e}from"./detail-CoPsG_MA.js";export{e as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./travailleurs-BN-xzefy.js";export{e as default};

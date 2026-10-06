@@ -1,6 +1,7 @@
 import {
   requete,
   requeteAvecMessage,
+  requeteMultipart,
   requeteMultipartAvecMessage,
   query,
 } from "./client";
@@ -46,19 +47,62 @@ export const supprimerBusiness = (id: string) =>
 /* Articles — monté sur /articles                                      */
 /* ------------------------------------------------------------------ */
 
-export const listerArticles = (search?: string) =>
-  requete<any[]>("GET", `/articles${query({ search })}`);
+export type ImageArticle = {
+  id: string;
+  url: string;
+  alt: string | null;
+  position: number;
+  isDefault: boolean;
+};
+
+export type ArticlesViewMode = "TABLE" | "GRID";
+
+export type ArticleAvecRelations = Article & {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  categorie?: { id: string; nom: string } | null;
+  devise?: { id: string; nom?: string; symbole?: string | null; type?: string } | null;
+  images?: ImageArticle[];
+  stocks?: { qtteDisponible: number }[];
+};
+
+export const listerArticles = (businessId: string, search?: string) =>
+  requete<ArticleAvecRelations[]>(
+    "GET",
+    `/articles${query({ businessId, search })}`
+  );
 
 export const creerArticle = (businessId: string, form: Article) =>
   requete("POST", `/articles/${businessId}`, form);
 
-export const lireArticle = (id: string) => requete("GET", `/articles/${id}`);
+export const creerArticleAvecImages = (businessId: string, form: FormData) =>
+  requeteMultipart(`/articles/${businessId}`, form, false);
+
+export const lireArticle = (id: string) =>
+  requete<ArticleAvecRelations>("GET", `/articles/${id}`);
 
 export const modifierArticle = (id: string, form: Article) =>
   requete("PUT", `/articles/${id}`, form);
 
+export const modifierArticleAvecImages = (id: string, form: FormData) =>
+  requeteMultipartAvecMessage<ArticleAvecRelations>(
+    `/articles/${id}`,
+    form,
+    "PUT",
+    false
+  ).then(({ data }) => data);
+
 export const supprimerArticle = (id: string) =>
-  requete("DELETE", `/articles/${id}`);
+  requete("DELETE", `/articles/${id}`, undefined, false);
+
+export const modifierModeAffichageArticles = (articlesViewMode: ArticlesViewMode) =>
+  requete<{ articlesViewMode: ArticlesViewMode }>(
+    "PUT",
+    "/auth/articles-view-mode",
+    { articlesViewMode },
+    false
+  );
 
 /* ------------------------------------------------------------------ */
 /* Catégories — monté sur /categories                                  */
@@ -156,8 +200,16 @@ export const supprimerPromotions = (businessId: string, ids: string[]) =>
 /* Commentaires — monté sur /commentaires                              */
 /* ------------------------------------------------------------------ */
 
+export type CommentaireArticle = {
+  id: string;
+  commentaire: string;
+  userId: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export const listerCommentaires = (articleId: string) =>
-  requete<any[]>("GET", `/commentaires/${articleId}`);
+  requete<CommentaireArticle[]>("GET", `/commentaires/${articleId}`);
 
 export const creerCommentaire = (articleId: string, form: Commentaire) =>
   requete("POST", `/commentaires/${articleId}`, form);
@@ -173,7 +225,7 @@ export const supprimerCommentaire = (id: string) =>
 /* ------------------------------------------------------------------ */
 
 export const listerJaimes = (articleId: string) =>
-  requete<any[]>("GET", `/jaimes/${articleId}/jaimes`);
+  requete<number>("GET", `/jaimes/${articleId}/jaimes`);
 
 export const jaimer = (articleId: string) =>
   requete("POST", `/jaimes/${articleId}/jaime`);

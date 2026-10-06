@@ -15,6 +15,7 @@ import { requete } from "./api/client";
 
 type Session = {
   business: { id: string; nom: string } | null;
+  user: { articlesViewMode?: "TABLE" | "GRID" } | null;
   role: string;
   aUnBusiness: boolean;
   estAdmin: boolean;
@@ -29,6 +30,7 @@ type BusinessContexte = Session & {
 
 const VIDE: Session = {
   business: null,
+  user: null,
   role: "USER",
   aUnBusiness: false,
   estAdmin: false,

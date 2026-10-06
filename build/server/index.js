@@ -1,7 +1,7 @@
 import { t as __exportAll } from "./assets/rolldown-runtime-D7D4PA-g.js";
 import { t as entry_server_node_exports } from "./assets/router-DKeukR6m.js";
-import { _ as DropdownMenuItem, a as TabsList, b as DropdownMenuTrigger, c as SelectContent, d as SelectTrigger, f as SelectValue, g as DropdownMenuGroup, h as DropdownMenuContent, i as TabsContent, l as SelectGroup, m as DropdownMenu, n as dashboard_exports, o as TabsTrigger, p as Checkbox, r as Tabs, s as Select, t as dashboard_default, u as SelectItem, v as DropdownMenuLabel, x as useIsMobile, y as DropdownMenuSeparator } from "./assets/dashboard-CuUfNxe8.js";
-import { $ as listerUtilisateursFournisseurDisponibles, A as changerStatusPromotion, At as TableHeader, B as lireClient, Bt as API, C as PageRessource, Ct as ContactSchema, D as bloquerAgent, Dt as TableBody, E as activerAgent, Et as Table, F as creerPromotion, Ft as useBusiness, G as listerCaisses, H as listerAchats, Ht as cn$1, I as inviterUtilisateursCommeAgents, It as Skeleton, J as listerDevises, K as listerCategories, L as inviterUtilisateursCommeClients, Lt as Separator, M as creerCaisse, Mt as Label, N as creerClientAvecLogo, Nt as Badge, O as caisseParDefaut, Ot as TableCell, P as creerFournisseurAvecLogo, Pt as BusinessProvider, Q as listerUtilisateursClientDisponibles, R as inviterUtilisateursCommeFournisseurs, Rt as Input, S as useListe, St as CaisseSchema, Tt as PromotionSchema, U as listerAgents, Ut as items, V as lireFournisseur, Vt as champsRequis, W as listerArticles, Wt as tronquerAvecEllipses, X as listerPromotions, Y as listerFournisseurs, Z as listerUtilisateursAgentDisponibles, _ as DialogDescription, _t as validerInvitationClient, a as businesses_default, at as modifierFournisseurAvecLogo, b as DialogTitle, bt as ArticleSchema, c as FieldDescription, ct as renvoyerInvitationFournisseur, d as FieldLabel, dt as supprimerArticle, et as modifierArticle, f as FieldLegend, ft as supprimerCaisse, g as DialogContent, gt as validerInvitationAgent, h as DialogClose, ht as supprimerPromotion, i as offres_exports, it as modifierFournisseur, j as creerArticle, jt as TableRow, k as changerStatusAchat, kt as TableHead, l as FieldError, lt as supprimerAchat, m as Dialog$1, mt as supprimerFournisseur, n as categories_exports, nt as modifierClient, o as businesses_exports, ot as renvoyerInvitationAgent, p as FieldSet, pt as supprimerClient, q as listerClients, r as offres_default, rt as modifierClientAvecLogo, s as Field, st as renvoyerInvitationClient, t as categories_default, tt as modifierCaisse, u as FieldGroup, ut as supprimerAgent, v as DialogFooter, vt as validerInvitationFournisseur, wt as FournisseurSchema, x as DialogTrigger, xt as BusinessSchema, y as DialogHeader, yt as AdresseSchema, z as lireAgent, zt as Button } from "./assets/admin-BkVIuPc6.js";
+import { _ as DropdownMenuItem, a as TabsList, b as DropdownMenuTrigger, c as SelectContent, d as SelectTrigger, f as SelectValue, g as DropdownMenuGroup, h as DropdownMenuContent, i as TabsContent, l as SelectGroup, m as DropdownMenu, n as dashboard_exports, o as TabsTrigger, p as Checkbox, r as Tabs, s as Select, t as dashboard_default, u as SelectItem, v as DropdownMenuLabel, x as useIsMobile, y as DropdownMenuSeparator } from "./assets/dashboard-CQMOTT75.js";
+import { $ as listerCategories, At as TableCell, B as creerFournisseurAvecLogo, Bt as Input, C as FieldError, Ct as supprimerFournisseur, D as FieldSet, Dt as validerInvitationFournisseur, E as FieldLegend, Et as validerInvitationClient, F as changerStatusAchat, Ft as Badge, G as lireAgent, Gt as items, H as inviterUtilisateursCommeAgents, Ht as API, I as changerStatusPromotion, It as BusinessProvider, J as lireFournisseur, K as lireArticle, Kt as tronquerAvecEllipses, L as creerArticleAvecImages, Lt as useBusiness, M as activerAgent, Mt as TableHeader, N as bloquerAgent, Nt as TableRow, O as useListe, Ot as Table, P as caisseParDefaut, Pt as Label, Q as listerCaisses, R as creerCaisse, Rt as Skeleton, S as FieldDescription, St as supprimerClient, T as FieldLabel, Tt as validerInvitationAgent, U as inviterUtilisateursCommeClients, Ut as champsRequis, V as creerPromotion, Vt as Button, W as inviterUtilisateursCommeFournisseurs, Wt as cn$1, X as listerAgents, Y as listerAchats, Z as listerArticles, _ as DialogFooter, _t as renvoyerInvitationFournisseur, a as businesses_default, at as listerUtilisateursAgentDisponibles, b as DialogTrigger, bt as supprimerArticle, c as BusinessSchema, ct as modifierArticleAvecImages, d as FournisseurSchema, dt as modifierClientAvecLogo, et as listerClients, f as PromotionSchema, ft as modifierFournisseur, g as DialogDescription, gt as renvoyerInvitationClient, h as DialogContent, ht as renvoyerInvitationAgent, i as offres_exports, it as listerPromotions, jt as TableHead, k as PageRessource, kt as TableBody, l as CaisseSchema, lt as modifierCaisse, m as DialogClose, mt as modifierModeAffichageArticles, n as categories_exports, nt as listerFournisseurs, o as businesses_exports, ot as listerUtilisateursClientDisponibles, p as Dialog$1, pt as modifierFournisseurAvecLogo, q as lireClient, r as offres_default, rt as listerJaimes, s as AdresseSchema, st as listerUtilisateursFournisseurDisponibles, t as categories_default, tt as listerDevises, u as ContactSchema, ut as modifierClient, v as DialogHeader, vt as supprimerAchat, w as FieldGroup, wt as supprimerPromotion, x as Field, xt as supprimerCaisse, y as DialogTitle, yt as supprimerAgent, z as creerClientAvecLogo, zt as Separator } from "./assets/admin-BBWRalwY.js";
 import { Link, Links, Meta, Navigate, Outlet, Route, Routes, Scripts, ScrollRestoration, UNSAFE_withComponentProps, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, useLocation, useNavigate, useParams } from "react-router";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import * as React$1 from "react";
@@ -11,7 +11,7 @@ import { useRender } from "@base-ui/react/use-render";
 import { cva } from "class-variance-authority";
 import "cn";
 import { Dialog } from "@base-ui/react/dialog";
-import { AlertTriangle, AlertTriangleIcon, ArrowLeft, ArrowRight, BadgePercent, BanIcon, Bell, BellIcon, Building2, CalendarArrowUp, ChartPie, Check, CheckCircle2, CheckCircle2Icon, CheckIcon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, EllipsisVerticalIcon, FileText, Gauge, Home, ImagePlusIcon, Landmark, ListCheck, Loader2, Loader2Icon, LogOutIcon, Mail, MailIcon, MapPin, MapPinIcon, MoreHorizontalIcon, PanelLeftIcon, Pencil, PencilIcon, Phone, PhoneIcon, Plus, PlusIcon, Search, SearchIcon, Send, SendIcon, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, Trash2Icon, Upload, UploadIcon, UserPlusIcon, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
+import { AlertTriangle, AlertTriangleIcon, ArrowLeft, ArrowRight, BadgePercent, BanIcon, Bell, BellIcon, Building2, CalendarArrowUp, CalendarDays, ChartPie, Check, CheckCircle2, CheckCircle2Icon, CheckIcon, ChevronDownIcon, CircleDollarSign, CirclePlus, CircleUserRoundIcon, CommandIcon, EllipsisVerticalIcon, FileText, Gauge, Grid2X2, Heart, Home, ImagePlus, ImagePlusIcon, Landmark, List, ListCheck, Loader2, Loader2Icon, LogOutIcon, Mail, MailIcon, MapPin, MapPinIcon, MessageSquare, MoreHorizontalIcon, PanelLeftIcon, Pencil, PencilIcon, Phone, PhoneIcon, Plus, PlusIcon, Search, SearchIcon, Send, SendIcon, SendToBack, SettingsIcon, ShoppingCart, Star, Trash2, Trash2Icon, Upload, UploadIcon, UserPlusIcon, UserRoundCog, UserRoundIcon, Users, VolumeOffIcon, X, XIcon } from "lucide-react";
 import { Tooltip } from "@base-ui/react/tooltip";
 import { Avatar } from "@base-ui/react/avatar";
 import { ClerkProvider, Show, SignIn, SignOutButton, SignUp, UserButton, getToken, useAuth, useUser } from "@clerk/react-router";
@@ -19,9 +19,9 @@ import { toast } from "sonner";
 import { clerkMiddleware, rootAuthLoader } from "@clerk/react-router/server";
 import { frFR } from "@clerk/localizations/fr-FR";
 import { z } from "zod";
+import { AlertDialog } from "@base-ui/react/alert-dialog";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AlertDialog } from "@base-ui/react/alert-dialog";
 import { Toast } from "@base-ui/react/toast";
 import { AnimatePresence, motion } from "motion/react";
 import { OTPInput, OTPInputContext } from "input-otp";
@@ -812,7 +812,7 @@ function SiteHeader({ title }) {
 }
 //#endregion
 //#region app/app.css?url
-var app_default = "/assets/app-BAvek0Pd.css";
+var app_default = "/assets/app-CIjMoGwK.css";
 //#endregion
 //#region app/routes/acceuil/acceuil.tsx
 var acceuil_exports = /* @__PURE__ */ __exportAll({
@@ -972,141 +972,6 @@ var ventes_default = UNSAFE_withComponentProps(function Ventes() {
 	return /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("h1", { children: "historique des ventes" }) });
 });
 //#endregion
-//#region app/components/data-table-reusable.tsx
-function compareValues(left, right) {
-	if (left == null) return right == null ? 0 : 1;
-	if (right == null) return -1;
-	if (typeof left === "number" && typeof right === "number") return left - right;
-	return String(left).localeCompare(String(right), "fr", {
-		numeric: true,
-		sensitivity: "base"
-	});
-}
-function DataTable({ data, columns, getRowKey, pageSize = 10, emptyMessage = "Aucun résultat." }) {
-	const [tri, setTri] = useState(null);
-	const [page, setPage] = useState(0);
-	const lignesTriees = useMemo(() => {
-		if (!tri) return [...data];
-		const colonne = columns.find(({ id }) => id === tri.columnId);
-		if (!colonne) return [...data];
-		return data.map((row, index) => ({
-			row,
-			index
-		})).sort((left, right) => {
-			const ordre = compareValues(colonne.accessor(left.row), colonne.accessor(right.row));
-			return (tri.direction === "ascending" ? ordre : -ordre) || left.index - right.index;
-		}).map(({ row }) => row);
-	}, [
-		columns,
-		data,
-		tri
-	]);
-	const taillePage = Math.max(1, Math.floor(pageSize));
-	const nombrePages = Math.ceil(lignesTriees.length / taillePage);
-	const pageCourante = Math.min(page, Math.max(0, nombrePages - 1));
-	const lignesPage = lignesTriees.slice(pageCourante * taillePage, (pageCourante + 1) * taillePage);
-	const debut = lignesTriees.length === 0 ? 0 : pageCourante * taillePage + 1;
-	const fin = Math.min((pageCourante + 1) * pageSize, lignesTriees.length);
-	const changerTri = (columnId) => {
-		setTri((courant) => ({
-			columnId,
-			direction: courant?.columnId === columnId && courant.direction === "ascending" ? "descending" : "ascending"
-		}));
-		setPage(0);
-	};
-	return /* @__PURE__ */ jsxs("div", {
-		className: "space-y-3",
-		children: [/* @__PURE__ */ jsx("div", {
-			className: "overflow-hidden rounded-lg border",
-			children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsx(TableRow, { children: columns.map((column) => {
-				const sortDirection = tri?.columnId === column.id ? tri.direction : void 0;
-				return /* @__PURE__ */ jsx(TableHead, {
-					scope: "col",
-					"aria-sort": sortDirection ?? "none",
-					className: column.className,
-					children: column.sortable === false ? column.header : /* @__PURE__ */ jsxs("button", {
-						type: "button",
-						onClick: () => changerTri(column.id),
-						className: "inline-flex items-center gap-1 rounded-sm text-left hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-						children: [
-							column.header,
-							/* @__PURE__ */ jsx("span", {
-								"aria-hidden": "true",
-								children: sortDirection === "ascending" ? "↑" : sortDirection === "descending" ? "↓" : "↕"
-							}),
-							/* @__PURE__ */ jsx("span", {
-								className: "sr-only",
-								children: sortDirection ? `, tri ${sortDirection === "ascending" ? "croissant" : "décroissant"}` : ", activer le tri"
-							})
-						]
-					})
-				}, column.id);
-			}) }) }), /* @__PURE__ */ jsx(TableBody, { children: lignesPage.length > 0 ? lignesPage.map((row) => /* @__PURE__ */ jsx(TableRow, { children: columns.map((column) => /* @__PURE__ */ jsx(TableCell, {
-				className: column.className,
-				children: column.cell ? column.cell(row) : String(column.accessor(row) ?? "—")
-			}, column.id)) }, getRowKey(row))) : /* @__PURE__ */ jsx(TableRow, { children: /* @__PURE__ */ jsx(TableCell, {
-				colSpan: columns.length,
-				className: "h-24 text-center text-muted-foreground",
-				children: emptyMessage
-			}) }) })] })
-		}), /* @__PURE__ */ jsxs("nav", {
-			"aria-label": "Pagination du tableau",
-			className: "flex flex-wrap items-center justify-between gap-3",
-			children: [/* @__PURE__ */ jsxs("p", {
-				"aria-live": "polite",
-				className: "text-sm text-muted-foreground",
-				children: [
-					debut,
-					"–",
-					fin,
-					" sur ",
-					lignesTriees.length
-				]
-			}), /* @__PURE__ */ jsxs("div", {
-				className: "flex items-center gap-2",
-				children: [
-					/* @__PURE__ */ jsx(Button, {
-						type: "button",
-						variant: "outline",
-						size: "sm",
-						onClick: () => setPage(pageCourante - 1),
-						disabled: pageCourante === 0,
-						"aria-label": "Page précédente",
-						children: "Précédent"
-					}),
-					/* @__PURE__ */ jsxs("span", {
-						"aria-current": "page",
-						className: "text-sm tabular-nums",
-						children: [
-							nombrePages === 0 ? 0 : pageCourante + 1,
-							" / ",
-							nombrePages
-						]
-					}),
-					/* @__PURE__ */ jsx(Button, {
-						type: "button",
-						variant: "outline",
-						size: "sm",
-						onClick: () => setPage(pageCourante + 1),
-						disabled: pageCourante >= nombrePages - 1,
-						"aria-label": "Page suivante",
-						children: "Suivant"
-					})
-				]
-			})]
-		})]
-	});
-}
-//#endregion
-//#region app/components/ui/textarea.tsx
-function Textarea({ className, ...props }) {
-	return /* @__PURE__ */ jsx("textarea", {
-		"data-slot": "textarea",
-		className: cn$1("flex field-sizing-content min-h-16 w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", className),
-		...props
-	});
-}
-//#endregion
 //#region app/components/ui/native-select.tsx
 function NativeSelect({ className, size = "default", ...props }) {
 	return /* @__PURE__ */ jsxs("div", {
@@ -1133,70 +998,162 @@ function NativeSelectOption({ className, ...props }) {
 	});
 }
 //#endregion
+//#region app/components/ui/alert-dialog.tsx
+function AlertDialog$1({ ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Root, {
+		"data-slot": "alert-dialog",
+		...props
+	});
+}
+function AlertDialogPortal({ ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Portal, {
+		"data-slot": "alert-dialog-portal",
+		...props
+	});
+}
+function AlertDialogOverlay({ className, ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Backdrop, {
+		"data-slot": "alert-dialog-overlay",
+		className: cn$1("fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0", className),
+		...props
+	});
+}
+function AlertDialogContent({ className, size = "default", ...props }) {
+	return /* @__PURE__ */ jsxs(AlertDialogPortal, { children: [/* @__PURE__ */ jsx(AlertDialogOverlay, {}), /* @__PURE__ */ jsx(AlertDialog.Popup, {
+		"data-slot": "alert-dialog-content",
+		"data-size": size,
+		className: cn$1("group/alert-dialog-content fixed top-1/2 left-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none data-[size=default]:max-w-xs data-[size=sm]:max-w-xs data-[size=default]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
+		...props
+	})] });
+}
+function AlertDialogHeader({ className, ...props }) {
+	return /* @__PURE__ */ jsx("div", {
+		"data-slot": "alert-dialog-header",
+		className: cn$1("grid grid-rows-[auto_1fr] place-items-center gap-1.5 text-center has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] has-data-[slot=alert-dialog-media]:gap-x-4 sm:group-data-[size=default]/alert-dialog-content:place-items-start sm:group-data-[size=default]/alert-dialog-content:text-left sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]", className),
+		...props
+	});
+}
+function AlertDialogFooter({ className, ...props }) {
+	return /* @__PURE__ */ jsx("div", {
+		"data-slot": "alert-dialog-footer",
+		className: cn$1("-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 sm:flex-row sm:justify-end", className),
+		...props
+	});
+}
+function AlertDialogTitle({ className, ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Title, {
+		"data-slot": "alert-dialog-title",
+		className: cn$1("font-heading text-base font-medium sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2", className),
+		...props
+	});
+}
+function AlertDialogDescription({ className, ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Description, {
+		"data-slot": "alert-dialog-description",
+		className: cn$1("text-sm text-balance text-muted-foreground md:text-pretty *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground", className),
+		...props
+	});
+}
+function AlertDialogAction({ className, ...props }) {
+	return /* @__PURE__ */ jsx(Button, {
+		"data-slot": "alert-dialog-action",
+		className: cn$1(className),
+		...props
+	});
+}
+function AlertDialogCancel({ className, variant = "outline", size = "default", ...props }) {
+	return /* @__PURE__ */ jsx(AlertDialog.Close, {
+		"data-slot": "alert-dialog-cancel",
+		className: cn$1(className),
+		render: /* @__PURE__ */ jsx(Button, {
+			variant,
+			size
+		}),
+		...props
+	});
+}
+//#endregion
 //#region app/routes/articles/articles.tsx
 var articles_exports = /* @__PURE__ */ __exportAll({ default: () => articles_default });
-var requis$3 = champsRequis(ArticleSchema.shape);
-var Etoile$1 = () => /* @__PURE__ */ jsx("span", {
-	className: "text-destructive",
-	children: "*"
-});
+var TAILLE_PAGE = 10;
+var IMAGE_PAR_DEFAUT$1 = "/images/articles/article-par-defaut.svg";
 var articles_default = UNSAFE_withComponentProps(function Articles() {
-	const { businessId } = useBusiness();
-	const [ouvert, setOuvert] = useState(false);
-	const [enEdition, setEnEdition] = useState(null);
-	const chargerArticles = useCallback(() => listerArticles(), []);
-	const chargerCategories = useCallback(() => listerCategories(businessId), [businessId]);
-	const chargerDevises = useCallback(() => listerDevises(businessId), [businessId]);
-	const { donnees, chargement, erreur, recharger } = useListe(chargerArticles);
+	const { businessId, user, pret } = useBusiness();
+	const [recherche, setRecherche] = useState("");
+	const [categorieId, setCategorieId] = useState("");
+	const [selection, setSelection] = useState([]);
+	const [page, setPage] = useState(0);
+	const [suppressionCibles, setSuppressionCibles] = useState([]);
+	const [suppressionEnCours, setSuppressionEnCours] = useState(false);
+	const [modeAffichage, setModeAffichage] = useState("TABLE");
+	const [sauvegardeMode, setSauvegardeMode] = useState(false);
+	const chargerArticles = useCallback(() => businessId ? listerArticles(businessId) : Promise.resolve([]), [businessId]);
+	const chargerCategories = useCallback(() => businessId ? listerCategories(businessId) : Promise.resolve([]), [businessId]);
+	const { donnees: articles, chargement, erreur, recharger } = useListe(chargerArticles, !!businessId);
 	const { donnees: categories } = useListe(chargerCategories, !!businessId);
-	const { donnees: devises } = useListe(chargerDevises, !!businessId);
-	const { register, handleSubmit, reset, formState: { errors, isSubmitting, isValid } } = useForm({
-		resolver: zodResolver(ArticleSchema),
-		mode: "onTouched"
-	});
-	const ouvrirCreation = () => {
-		setEnEdition(null);
-		reset({
-			designation: "",
-			pu: 0,
-			description: "",
-			categorieId: categories[0]?.id ?? "",
-			deviseId: devises[0]?.id ?? ""
+	const articlesFiltres = useMemo(() => {
+		const terme = recherche.trim().toLocaleLowerCase("fr");
+		return articles.filter((article) => {
+			const correspondRecherche = !terme || article.designation.toLocaleLowerCase("fr").includes(terme) || (article.description ?? "").toLocaleLowerCase("fr").includes(terme);
+			const correspondCategorie = !categorieId || article.categorieId === categorieId;
+			return correspondRecherche && correspondCategorie;
 		});
-		setOuvert(true);
+	}, [
+		articles,
+		categorieId,
+		recherche
+	]);
+	const nombrePages = Math.ceil(articlesFiltres.length / TAILLE_PAGE);
+	const pageCourante = Math.min(page, Math.max(0, nombrePages - 1));
+	const articlesPage = articlesFiltres.slice(pageCourante * TAILLE_PAGE, (pageCourante + 1) * TAILLE_PAGE);
+	const idsPage = articlesPage.map((article) => article.id);
+	const tousSelectionnes = idsPage.length > 0 && idsPage.every((articleId) => selection.includes(articleId));
+	useEffect(() => {
+		setPage(0);
+	}, [recherche, categorieId]);
+	useEffect(() => {
+		if (pret) setModeAffichage(user?.articlesViewMode === "GRID" ? "GRID" : "TABLE");
+	}, [pret, user?.articlesViewMode]);
+	const changerModeAffichage = async () => {
+		if (sauvegardeMode) return;
+		const modeSuivant = modeAffichage === "TABLE" ? "GRID" : "TABLE";
+		setSauvegardeMode(true);
+		try {
+			await modifierModeAffichageArticles(modeSuivant);
+			setModeAffichage(modeSuivant);
+		} catch (cause) {
+			toast.error(cause instanceof Error ? cause.message : "Le mode d’affichage n’a pas pu être enregistré.");
+		} finally {
+			setSauvegardeMode(false);
+		}
 	};
-	const ouvrirEdition = (article) => {
-		setEnEdition(article);
-		reset({
-			designation: article.designation,
-			pu: Number(article.pu),
-			description: article.description ?? "",
-			categorieId: article.categorieId,
-			deviseId: article.deviseId
+	const basculerSelection = (articleId) => {
+		setSelection((courante) => courante.includes(articleId) ? courante.filter((id) => id !== articleId) : [...courante, articleId]);
+	};
+	const basculerPage = () => {
+		setSelection((courante) => tousSelectionnes ? courante.filter((id) => !idsPage.includes(id)) : [.../* @__PURE__ */ new Set([...courante, ...idsPage])]);
+	};
+	const ouvrirSuppression = (ids) => {
+		setSuppressionCibles(ids);
+	};
+	const supprimerSelection = async () => {
+		if (suppressionCibles.length === 0) return;
+		setSuppressionEnCours(true);
+		const resultats = await Promise.allSettled(suppressionCibles.map((id) => supprimerArticle(id)));
+		const nombreSupprimes = resultats.filter((resultat) => resultat.status === "fulfilled").length;
+		const echecs = resultats.filter((resultat) => resultat.status === "rejected");
+		await new Promise((resolve) => {
+			recharger();
+			window.setTimeout(resolve, 0);
 		});
-		setOuvert(true);
-	};
-	const onSubmit = async (form) => {
-		const action = enEdition ? modifierArticle(enEdition.id, form) : creerArticle(businessId, form);
-		await toast.promise(action, {
-			loading: enEdition ? "Modification…" : "Création…",
-			success: () => {
-				setOuvert(false);
-				recharger();
-				return enEdition ? "Article modifié" : "Article créé";
-			},
-			error: (e) => e.message
-		}).unwrap();
-	};
-	const supprimer = async (article) => {
-		await toast.promise(supprimerArticle(article.id), {
-			loading: "Suppression…",
-			success: () => {
-				recharger();
-				return "Article supprimé";
-			},
-			error: (e) => e.message
-		}).unwrap();
+		setSelection((courante) => courante.filter((id) => resultats[suppressionCibles.indexOf(id)]?.status !== "fulfilled"));
+		if (nombreSupprimes > 0) toast.success(nombreSupprimes === 1 ? "L’article a été supprimé." : `${nombreSupprimes} articles ont été supprimés.`);
+		if (echecs.length > 0) {
+			const premierEchec = echecs[0].reason;
+			toast.error(premierEchec instanceof Error ? `${echecs.length} suppression(s) ont échoué : ${premierEchec.message}` : `${echecs.length} suppression(s) ont échoué.`);
+		}
+		setSuppressionEnCours(false);
+		setSuppressionCibles([]);
 	};
 	return /* @__PURE__ */ jsxs(PageRessource, {
 		titre: "Gestion des articles",
@@ -1205,209 +1162,880 @@ var articles_default = UNSAFE_withComponentProps(function Articles() {
 		businessId,
 		chargement,
 		erreur,
-		vide: donnees.length === 0,
+		vide: articles.length === 0,
 		messageVide: "Aucun article au catalogue pour le moment.",
 		onReessayer: recharger,
 		action: /* @__PURE__ */ jsxs(Button, {
-			onClick: ouvrirCreation,
+			render: /* @__PURE__ */ jsx(Link, { to: "/articles/nouveau" }),
 			children: [/* @__PURE__ */ jsx(PlusIcon, { className: "size-4" }), "Nouvel article"]
 		}),
-		children: [/* @__PURE__ */ jsx(DataTable, {
-			data: donnees,
-			columns: [
-				{
-					id: "designation",
-					header: "Désignation",
-					accessor: (article) => article.designation,
-					cell: (article) => /* @__PURE__ */ jsx("span", {
-						className: "font-medium",
-						children: article.designation
+		outils: /* @__PURE__ */ jsxs("div", {
+			className: "flex flex-wrap items-center gap-3",
+			children: [
+				/* @__PURE__ */ jsxs("label", {
+					className: "relative min-w-[min(100%,18rem)] flex-1",
+					children: [/* @__PURE__ */ jsx(Search, { className: "pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" }), /* @__PURE__ */ jsx(Input, {
+						value: recherche,
+						onChange: (event) => setRecherche(event.currentTarget.value),
+						placeholder: "Rechercher un article…",
+						"aria-label": "Rechercher un article",
+						className: "pl-9"
+					})]
+				}),
+				/* @__PURE__ */ jsxs(NativeSelect, {
+					value: categorieId,
+					onChange: (event) => setCategorieId(event.currentTarget.value),
+					"aria-label": "Filtrer par catégorie",
+					className: "w-full sm:w-56",
+					children: [/* @__PURE__ */ jsx(NativeSelectOption, {
+						value: "",
+						children: "Toutes les catégories"
+					}), categories.map((categorie) => /* @__PURE__ */ jsx(NativeSelectOption, {
+						value: categorie.id,
+						children: categorie.nom
+					}, categorie.id))]
+				}),
+				/* @__PURE__ */ jsx(Button, {
+					type: "button",
+					variant: "outline",
+					size: "icon",
+					"aria-label": modeAffichage === "TABLE" ? "Afficher les articles en grille" : "Afficher les articles en tableau",
+					"aria-pressed": modeAffichage === "GRID",
+					onClick: () => void changerModeAffichage(),
+					disabled: !pret || sauvegardeMode,
+					children: modeAffichage === "TABLE" ? /* @__PURE__ */ jsx(Grid2X2, {}) : /* @__PURE__ */ jsx(List, {})
+				}),
+				/* @__PURE__ */ jsxs(Button, {
+					type: "button",
+					variant: "destructive",
+					disabled: selection.length === 0,
+					onClick: () => ouvrirSuppression(selection),
+					children: [
+						/* @__PURE__ */ jsx(Trash2, {}),
+						" Supprimer (",
+						selection.length,
+						")"
+					]
+				})
+			]
+		}),
+		children: [/* @__PURE__ */ jsxs("div", {
+			className: "space-y-3",
+			children: [modeAffichage === "TABLE" ? /* @__PURE__ */ jsx("div", {
+				className: "overflow-hidden rounded-lg border",
+				children: /* @__PURE__ */ jsxs(Table, { children: [/* @__PURE__ */ jsx(TableHeader, { children: /* @__PURE__ */ jsxs(TableRow, { children: [
+					/* @__PURE__ */ jsx(TableHead, {
+						className: "w-10",
+						children: /* @__PURE__ */ jsx("input", {
+							type: "checkbox",
+							"aria-label": "Sélectionner les articles de cette page",
+							checked: tousSelectionnes,
+							onChange: basculerPage,
+							disabled: idsPage.length === 0,
+							className: "size-4 bg-transparent accent-primary opacity-70"
+						})
+					}),
+					/* @__PURE__ */ jsx(TableHead, { children: "Image" }),
+					/* @__PURE__ */ jsx(TableHead, { children: "Désignation" }),
+					/* @__PURE__ */ jsx(TableHead, { children: "Catégorie" }),
+					/* @__PURE__ */ jsx(TableHead, {
+						className: "text-right",
+						children: "PU"
+					}),
+					/* @__PURE__ */ jsx(TableHead, {
+						className: "text-right",
+						children: "En stock"
 					})
-				},
-				{
-					id: "categorie",
-					header: "Catégorie",
-					accessor: (article) => article.categorie?.nom,
-					cell: (article) => /* @__PURE__ */ jsx("span", {
-						className: "text-muted-foreground",
-						children: article.categorie?.nom ?? "—"
-					})
-				},
-				{
-					id: "pu",
-					header: "Prix unitaire",
-					accessor: (article) => Number(article.pu),
-					cell: (article) => /* @__PURE__ */ jsxs("span", {
-						className: "tabular-nums",
+				] }) }), /* @__PURE__ */ jsx(TableBody, { children: articlesPage.length > 0 ? articlesPage.map((article) => {
+					const image = (article.images?.find((item) => item.isDefault))?.url || IMAGE_PAR_DEFAUT$1;
+					return /* @__PURE__ */ jsxs(TableRow, { children: [
+						/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx("input", {
+							type: "checkbox",
+							"aria-label": `Sélectionner ${article.designation}`,
+							checked: selection.includes(article.id),
+							onChange: () => basculerSelection(article.id),
+							className: "size-4 bg-transparent accent-primary opacity-70"
+						}) }),
+						/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx("img", {
+							src: image,
+							alt: "",
+							className: "size-12 rounded-md border bg-muted object-cover",
+							onError: (event) => {
+								event.currentTarget.src = IMAGE_PAR_DEFAUT$1;
+							}
+						}) }),
+						/* @__PURE__ */ jsx(TableCell, { children: /* @__PURE__ */ jsx(Link, {
+							to: `/articles/${article.id}`,
+							className: "font-medium text-primary underline-offset-4 hover:underline",
+							children: article.designation
+						}) }),
+						/* @__PURE__ */ jsx(TableCell, { children: article.categorie?.nom ?? "—" }),
+						/* @__PURE__ */ jsxs(TableCell, {
+							className: "text-right tabular-nums",
+							children: [
+								Number(article.pu).toLocaleString("fr-FR"),
+								" ",
+								/* @__PURE__ */ jsx("span", {
+									className: "text-muted-foreground",
+									children: article.devise?.symbole ?? ""
+								})
+							]
+						}),
+						/* @__PURE__ */ jsx(TableCell, {
+							className: "text-right tabular-nums",
+							children: article.stocks?.reduce((total, stock) => total + stock.qtteDisponible, 0) || "vide"
+						})
+					] }, article.id);
+				}) : /* @__PURE__ */ jsx(TableRow, { children: /* @__PURE__ */ jsx(TableCell, {
+					colSpan: 6,
+					className: "h-24 text-center text-muted-foreground",
+					children: "Aucun article ne correspond à la recherche."
+				}) }) })] })
+			}) : /* @__PURE__ */ jsx("div", {
+				className: "grid gap-4 sm:grid-cols-2 xl:grid-cols-3",
+				children: articlesPage.length > 0 ? articlesPage.map((article) => {
+					const image = (article.images?.find((item) => item.isDefault))?.url || IMAGE_PAR_DEFAUT$1;
+					const stockDisponible = article.stocks?.reduce((total, stock) => total + stock.qtteDisponible, 0) || 0;
+					return /* @__PURE__ */ jsxs("article", {
+						className: "relative space-y-3 rounded-lg border p-4",
 						children: [
-							Number(article.pu).toLocaleString("fr-FR"),
-							" ",
-							/* @__PURE__ */ jsx("span", {
-								className: "text-muted-foreground",
-								children: article.devise?.symbole ?? ""
+							/* @__PURE__ */ jsx("input", {
+								type: "checkbox",
+								"aria-label": `Sélectionner ${article.designation}`,
+								checked: selection.includes(article.id),
+								onChange: () => basculerSelection(article.id),
+								className: "absolute right-4 top-4 size-4 bg-transparent accent-primary opacity-70"
+							}),
+							/* @__PURE__ */ jsx("img", {
+								src: image,
+								alt: "",
+								className: "aspect-[4/3] w-full rounded-md border bg-muted object-cover",
+								onError: (event) => {
+									event.currentTarget.src = IMAGE_PAR_DEFAUT$1;
+								}
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: "space-y-2",
+								children: [
+									/* @__PURE__ */ jsx(Link, {
+										to: `/articles/${article.id}`,
+										className: "block pr-8 font-medium text-primary underline-offset-4 hover:underline",
+										children: article.designation
+									}),
+									/* @__PURE__ */ jsx("p", {
+										className: "text-sm text-muted-foreground",
+										children: article.categorie?.nom ?? "—"
+									}),
+									/* @__PURE__ */ jsxs("p", {
+										className: "text-sm tabular-nums",
+										children: [
+											"PU : ",
+											Number(article.pu).toLocaleString("fr-FR"),
+											" ",
+											/* @__PURE__ */ jsx("span", {
+												className: "text-muted-foreground",
+												children: article.devise?.symbole ?? ""
+											})
+										]
+									}),
+									/* @__PURE__ */ jsxs("p", {
+										className: "text-sm",
+										children: ["En stock : ", stockDisponible || "vide"]
+									})
+								]
 							})
 						]
-					}),
-					className: "text-right"
+					}, article.id);
+				}) : /* @__PURE__ */ jsx("p", {
+					className: "col-span-full py-10 text-center text-muted-foreground",
+					children: "Aucun article ne correspond à la recherche."
+				})
+			}), /* @__PURE__ */ jsxs("nav", {
+				"aria-label": "Pagination des articles",
+				className: "flex flex-wrap items-center justify-between gap-3",
+				children: [/* @__PURE__ */ jsx("p", {
+					"aria-live": "polite",
+					className: "text-sm text-muted-foreground",
+					children: articlesFiltres.length === 0 ? "0 article" : `${pageCourante * TAILLE_PAGE + 1}–${Math.min((pageCourante + 1) * TAILLE_PAGE, articlesFiltres.length)} sur ${articlesFiltres.length}`
+				}), /* @__PURE__ */ jsxs("div", {
+					className: "flex items-center gap-2",
+					children: [
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage((courante) => Math.max(0, courante - 1)),
+							disabled: pageCourante === 0,
+							children: "Précédent"
+						}),
+						/* @__PURE__ */ jsxs("span", {
+							className: "text-sm tabular-nums",
+							children: [
+								nombrePages === 0 ? 0 : pageCourante + 1,
+								" / ",
+								nombrePages
+							]
+						}),
+						/* @__PURE__ */ jsx(Button, {
+							type: "button",
+							variant: "outline",
+							size: "sm",
+							onClick: () => setPage((courante) => Math.min(nombrePages - 1, courante + 1)),
+							disabled: pageCourante >= nombrePages - 1,
+							children: "Suivant"
+						})
+					]
+				})]
+			})]
+		}), /* @__PURE__ */ jsx(AlertDialog$1, {
+			open: suppressionCibles.length > 0,
+			onOpenChange: (open) => {
+				if (!open && !suppressionEnCours) setSuppressionCibles([]);
+			},
+			children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsxs(AlertDialogTitle, { children: [
+				"Supprimer ",
+				suppressionCibles.length === 1 ? "cet article" : "ces articles",
+				" ?"
+			] }), /* @__PURE__ */ jsx(AlertDialogDescription, { children: suppressionCibles.length === 1 ? "Cette suppression est définitive." : `Cette action supprimera définitivement les ${suppressionCibles.length} articles sélectionnés.` })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+				disabled: suppressionEnCours,
+				children: "Annuler"
+			}), /* @__PURE__ */ jsx(AlertDialogAction, {
+				onClick: (event) => {
+					event.preventDefault();
+					supprimerSelection();
 				},
-				{
-					id: "actions",
-					header: "Actions",
-					accessor: () => null,
-					sortable: false,
-					cell: (article) => /* @__PURE__ */ jsxs("div", {
-						className: "whitespace-nowrap text-right",
-						children: [/* @__PURE__ */ jsx(Button, {
-							variant: "ghost",
-							size: "sm",
-							onClick: () => ouvrirEdition(article),
-							children: "Modifier"
-						}), /* @__PURE__ */ jsx(Button, {
-							variant: "ghost",
-							size: "sm",
-							"aria-label": `Supprimer ${article.designation}`,
-							onClick: () => supprimer(article),
-							children: /* @__PURE__ */ jsx(Trash2Icon, { className: "size-4 text-destructive" })
+				disabled: suppressionEnCours,
+				className: "bg-destructive text-white hover:bg-destructive/90",
+				children: suppressionEnCours ? "Suppression…" : "Confirmer la suppression"
+			})] })] })
+		})]
+	});
+});
+//#endregion
+//#region app/components/ui/textarea.tsx
+function Textarea({ className, ...props }) {
+	return /* @__PURE__ */ jsx("textarea", {
+		"data-slot": "textarea",
+		className: cn$1("flex field-sizing-content min-h-16 w-full rounded-lg border border-input bg-transparent px-2.5 py-2 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", className),
+		...props
+	});
+}
+//#endregion
+//#region app/components/articles/formulaire-article.tsx
+var NOMBRE_IMAGES_MAX = 5;
+var TAILLE_MAX_IMAGE = 2097152;
+var TYPES_IMAGE = /* @__PURE__ */ new Set([
+	"image/jpeg",
+	"image/png",
+	"image/webp",
+	"image/gif"
+]);
+var IMAGE_PAR_DEFAUT = "/images/articles/article-par-defaut.svg";
+var creerCleImage = () => `nouvelle-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+var imagesInitiales = (article) => {
+	const images = article?.images?.slice().sort((a, b) => a.position - b.position).slice(0, NOMBRE_IMAGES_MAX);
+	if (images?.length) return images.map((existing) => ({
+		key: existing.id,
+		existing,
+		file: null
+	}));
+	return [{
+		key: creerCleImage(),
+		file: null
+	}];
+};
+var cleImageParDefaut = (images) => images.find((image) => image.existing?.isDefault)?.key ?? images.find((image) => image.existing)?.key ?? null;
+function FormulaireArticle({ article, enregistrement, onCancel, onSave }) {
+	const { businessId } = useBusiness();
+	const chargerCategories = useCallback(() => businessId ? listerCategories(businessId) : Promise.resolve([]), [businessId]);
+	const chargerDevises = useCallback(() => businessId ? listerDevises(businessId) : Promise.resolve([]), [businessId]);
+	const { donnees: categories, chargement: chargementCategories } = useListe(chargerCategories, !!businessId);
+	const { donnees: devises, chargement: chargementDevises } = useListe(chargerDevises, !!businessId);
+	const [valeurs, setValeurs] = useState({
+		designation: article?.designation ?? "",
+		categorieId: article?.categorieId ?? "",
+		deviseId: article?.deviseId ?? "",
+		pu: article ? String(article.pu) : "",
+		description: article?.description ?? ""
+	});
+	const [images, setImages] = useState(() => imagesInitiales(article));
+	const [imagePrincipaleKey, setImagePrincipaleKey] = useState(() => cleImageParDefaut(imagesInitiales(article)));
+	const [erreursImages, setErreursImages] = useState({});
+	const [glisserImageKey, setGlisserImageKey] = useState(null);
+	const [apercus, setApercus] = useState({});
+	useEffect(() => {
+		const nouveauxApercus = {};
+		for (const image of images) if (image.file) nouveauxApercus[image.key] = URL.createObjectURL(image.file);
+		setApercus(nouveauxApercus);
+		return () => {
+			Object.values(nouveauxApercus).forEach(URL.revokeObjectURL);
+		};
+	}, [images]);
+	useEffect(() => {
+		setValeurs({
+			designation: article?.designation ?? "",
+			categorieId: article?.categorieId ?? "",
+			deviseId: article?.deviseId ?? "",
+			pu: article ? String(article.pu) : "",
+			description: article?.description ?? ""
+		});
+		const imagesArticle = imagesInitiales(article);
+		setImages(imagesArticle);
+		setImagePrincipaleKey(cleImageParDefaut(imagesArticle));
+		setErreursImages({});
+	}, [article]);
+	const changerValeur = (champ, valeur) => {
+		setValeurs((courant) => ({
+			...courant,
+			[champ]: valeur
+		}));
+	};
+	const traiterFichier = (key, fichier) => {
+		if (!fichier) return;
+		if (!TYPES_IMAGE.has(fichier.type)) {
+			setErreursImages((courantes) => ({
+				...courantes,
+				[key]: "Format non pris en charge (JPEG, PNG, WebP ou GIF)."
+			}));
+			return;
+		}
+		if (fichier.size > TAILLE_MAX_IMAGE) {
+			setErreursImages((courantes) => ({
+				...courantes,
+				[key]: "Chaque image ne doit pas dépasser 2 Mo."
+			}));
+			return;
+		}
+		setErreursImages((courantes) => {
+			const suivantes = { ...courantes };
+			delete suivantes[key];
+			return suivantes;
+		});
+		setImages((courantes) => courantes.map((image) => image.key === key ? {
+			...image,
+			existing: void 0,
+			file: fichier
+		} : image));
+		setImagePrincipaleKey((courant) => courant ?? key);
+	};
+	const ajouterImage = () => {
+		if (images.length >= NOMBRE_IMAGES_MAX) return;
+		setImages((courantes) => [...courantes, {
+			key: creerCleImage(),
+			file: null
+		}]);
+	};
+	const supprimerImage = (key) => {
+		const restantes = images.filter((image) => image.key !== key);
+		setImages(restantes);
+		setErreursImages((courantes) => {
+			const suivantes = { ...courantes };
+			delete suivantes[key];
+			return suivantes;
+		});
+		if (imagePrincipaleKey === key) setImagePrincipaleKey(restantes.find((image) => image.file || image.existing)?.key ?? null);
+	};
+	const soumettre = async (event) => {
+		event.preventDefault();
+		if (!valeurs.designation.trim() || !valeurs.categorieId || !valeurs.deviseId || !valeurs.pu) {
+			toast.error("Renseignez la désignation, la catégorie, la devise et le prix unitaire.");
+			return;
+		}
+		const prix = Number(valeurs.pu);
+		if (!Number.isFinite(prix) || prix < 0) {
+			toast.error("Le prix unitaire doit être un nombre positif ou nul.");
+			return;
+		}
+		const imagesRenseignees = images.filter((image) => image.file || image.existing);
+		const principale = imagesRenseignees.find((image) => image.key === imagePrincipaleKey);
+		const ordreImages = [...principale ? [principale] : [], ...imagesRenseignees.filter((image) => image.key !== principale?.key)];
+		const data = new FormData();
+		data.append("designation", valeurs.designation);
+		data.append("categorieId", valeurs.categorieId);
+		data.append("deviseId", valeurs.deviseId);
+		data.append("pu", String(prix));
+		data.append("description", valeurs.description);
+		ordreImages.forEach((image, position) => {
+			if (image.file) data.append(`image${position}`, image.file);
+			else if (image.existing) data.append(`existingImage${position}`, image.existing.id);
+			data.append(`isDefault${position}`, String(image.key === imagePrincipaleKey));
+		});
+		await onSave(data);
+	};
+	const imageAffichee = (image) => apercus[image.key] ?? image.existing?.url ?? null;
+	const chargementOptions = chargementCategories || chargementDevises;
+	return /* @__PURE__ */ jsxs("form", {
+		className: "space-y-5",
+		onSubmit: (event) => void soumettre(event),
+		children: [
+			/* @__PURE__ */ jsxs("div", {
+				className: "grid gap-4 sm:grid-cols-2",
+				children: [
+					/* @__PURE__ */ jsxs(Field, {
+						className: "sm:col-span-2",
+						children: [/* @__PURE__ */ jsx(FieldLabel, {
+							htmlFor: "article-designation",
+							children: "Désignation"
+						}), /* @__PURE__ */ jsx(Input, {
+							id: "article-designation",
+							value: valeurs.designation,
+							onChange: (event) => changerValeur("designation", event.currentTarget.value),
+							minLength: 4,
+							maxLength: 50,
+							required: true
 						})]
 					}),
-					className: "w-[1%] text-right"
-				}
-			],
-			getRowKey: (article) => article.id,
-			pageSize: 10
-		}), /* @__PURE__ */ jsx(Dialog$1, {
-			open: ouvert,
-			onOpenChange: setOuvert,
-			children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: enEdition ? "Modifier l'article" : "Nouvel article" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Les champs marqués d'une étoile sont exigés par le serveur." })] }), /* @__PURE__ */ jsxs("form", {
-				onSubmit: handleSubmit(onSubmit),
-				noValidate: true,
-				children: [/* @__PURE__ */ jsxs(FieldGroup, { children: [/* @__PURE__ */ jsxs(FieldSet, { children: [
-					/* @__PURE__ */ jsx(FieldLegend, {
-						variant: "label",
-						children: "Informations requises"
+					/* @__PURE__ */ jsxs(Field, { children: [
+						/* @__PURE__ */ jsx(FieldLabel, {
+							htmlFor: "article-categorie",
+							children: "Catégorie"
+						}),
+						/* @__PURE__ */ jsxs(NativeSelect, {
+							id: "article-categorie",
+							value: valeurs.categorieId,
+							onChange: (event) => changerValeur("categorieId", event.currentTarget.value),
+							required: true,
+							disabled: chargementOptions,
+							children: [/* @__PURE__ */ jsx(NativeSelectOption, {
+								value: "",
+								children: "Sélectionner une catégorie"
+							}), categories.map((categorie) => /* @__PURE__ */ jsx(NativeSelectOption, {
+								value: categorie.id,
+								children: categorie.nom
+							}, categorie.id))]
+						}),
+						categories.length === 0 && !chargementCategories && /* @__PURE__ */ jsx("p", {
+							className: "text-sm text-destructive",
+							children: "Aucune catégorie disponible pour ce business."
+						})
+					] }),
+					/* @__PURE__ */ jsxs(Field, { children: [
+						/* @__PURE__ */ jsx(FieldLabel, {
+							htmlFor: "article-devise",
+							children: "Devise"
+						}),
+						/* @__PURE__ */ jsxs(NativeSelect, {
+							id: "article-devise",
+							value: valeurs.deviseId,
+							onChange: (event) => changerValeur("deviseId", event.currentTarget.value),
+							required: true,
+							disabled: chargementOptions,
+							children: [/* @__PURE__ */ jsx(NativeSelectOption, {
+								value: "",
+								children: "Sélectionner une devise"
+							}), devises.map((devise) => /* @__PURE__ */ jsxs(NativeSelectOption, {
+								value: devise.id,
+								children: [
+									devise.nom ?? devise.type,
+									" ",
+									devise.symbole ? `(${devise.symbole})` : ""
+								]
+							}, devise.id))]
+						}),
+						devises.length === 0 && !chargementDevises && /* @__PURE__ */ jsx("p", {
+							className: "text-sm text-destructive",
+							children: "Aucune devise disponible pour ce business."
+						})
+					] }),
+					/* @__PURE__ */ jsxs(Field, {
+						className: "sm:col-span-2",
+						children: [/* @__PURE__ */ jsx(FieldLabel, {
+							htmlFor: "article-pu",
+							children: "Prix unitaire (PU)"
+						}), /* @__PURE__ */ jsx(Input, {
+							id: "article-pu",
+							type: "number",
+							step: "0.0001",
+							min: "0",
+							inputMode: "decimal",
+							value: valeurs.pu,
+							onChange: (event) => changerValeur("pu", event.currentTarget.value),
+							required: true
+						})]
 					}),
 					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.designation,
-						children: [
-							/* @__PURE__ */ jsxs(FieldLabel, {
-								htmlFor: "designation",
-								children: ["Désignation ", requis$3.has("designation") && /* @__PURE__ */ jsx(Etoile$1, {})]
-							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "designation",
-								placeholder: "Ex : Pagne wax 6 yards",
-								"aria-required": requis$3.has("designation"),
-								"aria-invalid": !!errors.designation,
-								...register("designation")
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.designation] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.pu,
-						children: [
-							/* @__PURE__ */ jsxs(FieldLabel, {
-								htmlFor: "pu",
-								children: ["Prix unitaire ", requis$3.has("pu") && /* @__PURE__ */ jsx(Etoile$1, {})]
-							}),
-							/* @__PURE__ */ jsx(Input, {
-								id: "pu",
-								type: "number",
-								step: "0.01",
-								inputMode: "decimal",
-								placeholder: "0",
-								"aria-required": requis$3.has("pu"),
-								"aria-invalid": !!errors.pu,
-								...register("pu", { valueAsNumber: true })
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.pu] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.categorieId,
-						children: [
-							/* @__PURE__ */ jsxs(FieldLabel, {
-								htmlFor: "categorieId",
-								children: ["Catégorie ", requis$3.has("categorieId") && /* @__PURE__ */ jsx(Etoile$1, {})]
-							}),
-							/* @__PURE__ */ jsxs(NativeSelect, {
-								id: "categorieId",
-								"aria-required": requis$3.has("categorieId"),
-								"aria-invalid": !!errors.categorieId,
-								...register("categorieId"),
-								children: [/* @__PURE__ */ jsx(NativeSelectOption, {
-									value: "",
-									children: "Sélectionner une catégorie"
-								}), categories.map((c) => /* @__PURE__ */ jsx(NativeSelectOption, {
-									value: c.id,
-									children: c.nom
-								}, c.id))]
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.categorieId] })
-						]
-					}),
-					/* @__PURE__ */ jsxs(Field, {
-						"data-invalid": !!errors.deviseId,
-						children: [
-							/* @__PURE__ */ jsxs(FieldLabel, {
-								htmlFor: "deviseId",
-								children: ["Devise ", requis$3.has("deviseId") && /* @__PURE__ */ jsx(Etoile$1, {})]
-							}),
-							/* @__PURE__ */ jsxs(NativeSelect, {
-								id: "deviseId",
-								"aria-required": requis$3.has("deviseId"),
-								"aria-invalid": !!errors.deviseId,
-								...register("deviseId"),
-								children: [/* @__PURE__ */ jsx(NativeSelectOption, {
-									value: "",
-									children: "Sélectionner une devise"
-								}), devises.map((d) => /* @__PURE__ */ jsxs(NativeSelectOption, {
-									value: d.id,
-									children: [
-										d.nom ?? d.type,
-										" (",
-										d.symbole,
-										")"
-									]
-								}, d.id))]
-							}),
-							/* @__PURE__ */ jsx(FieldError, { errors: [errors.deviseId] })
-						]
+						className: "sm:col-span-2",
+						children: [/* @__PURE__ */ jsx(FieldLabel, {
+							htmlFor: "article-description",
+							children: "Description"
+						}), /* @__PURE__ */ jsx(Textarea, {
+							id: "article-description",
+							rows: 4,
+							value: valeurs.description,
+							onChange: (event) => changerValeur("description", event.currentTarget.value)
+						})]
 					})
-				] }), /* @__PURE__ */ jsxs(Field, {
-					"data-invalid": !!errors.description,
-					children: [
-						/* @__PURE__ */ jsxs(FieldLabel, {
-							htmlFor: "description",
-							children: ["Description ", /* @__PURE__ */ jsx("span", {
-								className: "text-muted-foreground",
-								children: "(facultatif)"
-							})]
-						}),
-						/* @__PURE__ */ jsx(Textarea, {
-							id: "description",
-							rows: 3,
-							placeholder: "Matière, dimensions, provenance…",
-							"aria-invalid": !!errors.description,
-							...register("description")
-						}),
-						/* @__PURE__ */ jsx(FieldError, { errors: [errors.description] })
-					]
-				})] }), /* @__PURE__ */ jsxs(DialogFooter, {
-					className: "mt-6",
-					children: [/* @__PURE__ */ jsx(Button, {
-						type: "button",
-						variant: "outline",
-						onClick: () => setOuvert(false),
-						disabled: isSubmitting,
-						children: "Annuler"
-					}), /* @__PURE__ */ jsx(Button, {
-						type: "submit",
-						disabled: !isValid || isSubmitting,
-						children: isSubmitting ? "Enregistrement…" : enEdition ? "Enregistrer" : "Créer l'article"
-					})]
+				]
+			}),
+			/* @__PURE__ */ jsxs("section", {
+				className: "space-y-3",
+				children: [
+					/* @__PURE__ */ jsx("h2", {
+						className: "font-medium",
+						children: "Images de l’article"
+					}),
+					/* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: "Déposez les images dans la zone ou cliquez pour les choisir. Jusqu’à cinq images, 2 Mo par image."
+					}),
+					/* @__PURE__ */ jsxs("div", {
+						className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
+						children: [images.map((image, position) => {
+							const apercu = imageAffichee(image);
+							const aUnFichier = Boolean(image.file || image.existing);
+							return /* @__PURE__ */ jsxs("div", {
+								className: `h-full space-y-3 rounded-lg border p-3 ${glisserImageKey === image.key ? "border-primary bg-primary/5" : ""}`,
+								onDragOver: (event) => {
+									event.preventDefault();
+									setGlisserImageKey(image.key);
+								},
+								onDragLeave: () => setGlisserImageKey(null),
+								onDrop: (event) => {
+									event.preventDefault();
+									setGlisserImageKey(null);
+									traiterFichier(image.key, event.dataTransfer.files[0]);
+								},
+								children: [
+									/* @__PURE__ */ jsxs("div", {
+										className: "flex items-center justify-between gap-2",
+										children: [/* @__PURE__ */ jsxs("span", {
+											className: "text-sm font-medium",
+											children: ["Image ", position + 1]
+										}), /* @__PURE__ */ jsx(Button, {
+											type: "button",
+											variant: "ghost",
+											size: "icon",
+											"aria-label": `Retirer l’image ${position + 1}`,
+											onClick: () => supprimerImage(image.key),
+											children: /* @__PURE__ */ jsx(Trash2, { className: "size-4" })
+										})]
+									}),
+									/* @__PURE__ */ jsxs("label", {
+										htmlFor: `article-image-${image.key}`,
+										className: "flex min-h-36 cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed bg-muted/30 p-3 text-center hover:border-primary",
+										children: [
+											apercu ? /* @__PURE__ */ jsx("img", {
+												src: apercu,
+												alt: `Aperçu de l’image ${position + 1}`,
+												className: "h-28 w-full rounded object-cover",
+												onError: (event) => {
+													event.currentTarget.src = IMAGE_PAR_DEFAUT;
+												}
+											}) : /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(ImagePlus, { className: "size-8 text-muted-foreground" }), /* @__PURE__ */ jsx("span", {
+												className: "text-sm",
+												children: "Glisser-déposer ou choisir une image"
+											})] }),
+											/* @__PURE__ */ jsx("span", {
+												className: "text-xs text-muted-foreground",
+												children: image.file?.name ?? (image.existing ? "Image enregistrée" : "JPEG, PNG, WebP ou GIF")
+											}),
+											/* @__PURE__ */ jsx("input", {
+												id: `article-image-${image.key}`,
+												type: "file",
+												accept: "image/jpeg,image/png,image/webp,image/gif",
+												className: "sr-only",
+												onChange: (event) => {
+													traiterFichier(image.key, event.currentTarget.files?.[0]);
+													event.currentTarget.value = "";
+												}
+											})
+										]
+									}),
+									erreursImages[image.key] && /* @__PURE__ */ jsx("p", {
+										role: "alert",
+										className: "text-sm text-destructive",
+										children: erreursImages[image.key]
+									}),
+									/* @__PURE__ */ jsxs("label", {
+										className: "flex items-center gap-2 text-sm",
+										children: [/* @__PURE__ */ jsx("input", {
+											type: "radio",
+											name: "image-principale",
+											checked: imagePrincipaleKey === image.key,
+											onChange: () => setImagePrincipaleKey(image.key),
+											disabled: !aUnFichier,
+											className: "size-4 accent-primary"
+										}), "Définir par défaut"]
+									})
+								]
+							}, image.key);
+						}), images.length < NOMBRE_IMAGES_MAX && /* @__PURE__ */ jsxs(Button, {
+							type: "button",
+							variant: "outline",
+							onClick: ajouterImage,
+							className: "h-full w-full min-h-56 border-dashed",
+							children: [/* @__PURE__ */ jsx(Plus, {}), " Ajouter une image"]
+						})]
+					}),
+					images.length === NOMBRE_IMAGES_MAX && /* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: "La limite de cinq images est atteinte."
+					})
+				]
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: "flex flex-wrap justify-end gap-2",
+				children: [/* @__PURE__ */ jsx(Button, {
+					type: "button",
+					variant: "outline",
+					onClick: onCancel,
+					disabled: enregistrement,
+					children: "Annuler"
+				}), /* @__PURE__ */ jsx(Button, {
+					type: "submit",
+					disabled: enregistrement || chargementOptions || categories.length === 0 || devises.length === 0 || Object.keys(erreursImages).length > 0,
+					children: enregistrement ? "Enregistrement…" : article ? "Enregistrer les modifications" : "Créer l’article"
 				})]
-			})] })
+			})
+		]
+	});
+}
+//#endregion
+//#region app/routes/articles/nouveau.tsx
+var nouveau_exports = /* @__PURE__ */ __exportAll({ default: () => nouveau_default });
+var nouveau_default = UNSAFE_withComponentProps(function NouvelArticle() {
+	const { businessId } = useBusiness();
+	const navigate = useNavigate();
+	const [enregistrement, setEnregistrement] = useState(false);
+	const enregistrer = async (form) => {
+		if (!businessId) {
+			toast.error("Aucun business actif n’est sélectionné.");
+			return;
+		}
+		setEnregistrement(true);
+		try {
+			await creerArticleAvecImages(businessId, form);
+			toast.success("L’article a été créé.");
+			navigate("/articles");
+		} catch (error) {
+			toast.error(error instanceof Error ? error.message : "La création de l’article a échoué.");
+		} finally {
+			setEnregistrement(false);
+		}
+	};
+	return /* @__PURE__ */ jsx(PageRessource, {
+		titre: "Nouvel article",
+		description: "Renseignez les informations et les images du nouvel article.",
+		businessRequis: true,
+		businessId,
+		action: /* @__PURE__ */ jsxs(Button, {
+			variant: "outline",
+			render: /* @__PURE__ */ jsx(Link, { to: "/articles" }),
+			children: [/* @__PURE__ */ jsx(ArrowLeft, {}), " Retour aux articles"]
+		}),
+		children: /* @__PURE__ */ jsx("div", {
+			className: "max-w-4xl rounded-xl border p-4 lg:p-6",
+			children: /* @__PURE__ */ jsx(FormulaireArticle, {
+				enregistrement,
+				onCancel: () => navigate("/articles"),
+				onSave: enregistrer
+			})
+		})
+	});
+});
+//#endregion
+//#region app/routes/articles/detail.tsx
+var detail_exports$3 = /* @__PURE__ */ __exportAll({ default: () => detail_default$3 });
+var dateLisible = (date) => new Date(date).toLocaleString("fr-FR", {
+	dateStyle: "medium",
+	timeStyle: "short"
+});
+var detail_default$3 = UNSAFE_withComponentProps(function DetailArticle() {
+	const { id } = useParams();
+	const { businessId } = useBusiness();
+	const navigate = useNavigate();
+	const [article, setArticle] = useState(null);
+	const [nombreJaimes, setNombreJaimes] = useState(0);
+	const [chargement, setChargement] = useState(true);
+	const [erreur, setErreur] = useState(null);
+	const [enregistrement, setEnregistrement] = useState(false);
+	const [suppressionOuverte, setSuppressionOuverte] = useState(false);
+	const [suppressionEnCours, setSuppressionEnCours] = useState(false);
+	const [erreurConfirmations, setErreurConfirmations] = useState(null);
+	useEffect(() => {
+		if (!id || !businessId) return;
+		let annule = false;
+		setChargement(true);
+		setErreur(null);
+		setArticle(null);
+		setNombreJaimes(0);
+		setErreurConfirmations(null);
+		const charger = async () => {
+			const [articleResultat, jaimesResultat] = await Promise.allSettled([lireArticle(id), listerJaimes(id)]);
+			if (annule) return;
+			if (articleResultat.status === "fulfilled") setArticle(articleResultat.value);
+			else setErreur(articleResultat.reason instanceof Error ? articleResultat.reason.message : "Le chargement de l’article a échoué.");
+			if (jaimesResultat.status === "fulfilled") setNombreJaimes(Number(jaimesResultat.value) || 0);
+			else setErreurConfirmations((courante) => courante ?? (jaimesResultat.reason instanceof Error ? jaimesResultat.reason.message : "Le chargement des confirmations a échoué."));
+			setChargement(false);
+		};
+		charger();
+		return () => {
+			annule = true;
+		};
+	}, [id, businessId]);
+	const enregistrer = async (form) => {
+		if (!id) return;
+		setEnregistrement(true);
+		try {
+			const misAJour = await modifierArticleAvecImages(id, form);
+			setArticle(misAJour);
+			toast.success("Les modifications de l’article ont été enregistrées.");
+		} catch (cause) {
+			toast.error(cause instanceof Error ? cause.message : "La modification de l’article a échoué.");
+		} finally {
+			setEnregistrement(false);
+		}
+	};
+	const confirmerSuppression = async () => {
+		if (!article) return;
+		setSuppressionEnCours(true);
+		try {
+			await supprimerArticle(article.id);
+			toast.success("L’article a été supprimé.");
+			navigate("/articles");
+		} catch (cause) {
+			toast.error(cause instanceof Error ? cause.message : "La suppression de l’article a échoué.");
+		} finally {
+			setSuppressionEnCours(false);
+			setSuppressionOuverte(false);
+		}
+	};
+	return /* @__PURE__ */ jsxs(PageRessource, {
+		titre: article?.designation ?? "Détail de l’article",
+		description: "Activités, confirmations et gestion de l’article.",
+		businessRequis: true,
+		businessId,
+		chargement,
+		erreur,
+		onReessayer: () => {
+			if (id) {
+				setChargement(true);
+				lireArticle(id).then(setArticle).catch((cause) => setErreur(cause instanceof Error ? cause.message : "Le chargement de l’article a échoué.")).finally(() => setChargement(false));
+			}
+		},
+		action: /* @__PURE__ */ jsxs(Button, {
+			variant: "outline",
+			render: /* @__PURE__ */ jsx(Link, { to: "/articles" }),
+			children: [/* @__PURE__ */ jsx(ArrowLeft, {}), " Retour aux articles"]
+		}),
+		children: [article && /* @__PURE__ */ jsxs("div", {
+			className: "space-y-6",
+			children: [
+				/* @__PURE__ */ jsxs(Tabs, {
+					defaultValue: "activites",
+					className: "w-full",
+					children: [
+						/* @__PURE__ */ jsxs(TabsList, { children: [/* @__PURE__ */ jsxs(TabsTrigger, {
+							value: "activites",
+							children: [/* @__PURE__ */ jsx(MessageSquare, {}), " Activités"]
+						}), /* @__PURE__ */ jsxs(TabsTrigger, {
+							value: "confirmations",
+							children: [/* @__PURE__ */ jsx(Heart, {}), " Confirmations"]
+						})] }),
+						/* @__PURE__ */ jsx(TabsContent, { value: "activites" }),
+						/* @__PURE__ */ jsx(TabsContent, {
+							value: "confirmations",
+							className: "pt-4",
+							children: /* @__PURE__ */ jsxs("div", {
+								className: "space-y-4",
+								children: [/* @__PURE__ */ jsxs("section", {
+									className: "space-y-2 rounded-xl border p-4",
+									children: [
+										/* @__PURE__ */ jsx("h2", {
+											className: "font-semibold",
+											children: "Confirmations d’intérêt"
+										}),
+										/* @__PURE__ */ jsx("p", {
+											className: "text-sm text-muted-foreground",
+											children: "Nombre de mentions « J’aime » enregistrées pour cet article."
+										}),
+										/* @__PURE__ */ jsxs("p", {
+											className: "flex items-center gap-2 text-2xl font-semibold tabular-nums",
+											children: [
+												/* @__PURE__ */ jsx(Heart, { className: "size-5 text-primary" }),
+												" ",
+												nombreJaimes
+											]
+										}),
+										erreurConfirmations && /* @__PURE__ */ jsx("p", {
+											role: "alert",
+											className: "text-sm text-destructive",
+											children: erreurConfirmations
+										})
+									]
+								}), /* @__PURE__ */ jsxs("section", {
+									className: "space-y-4 rounded-xl border p-4",
+									children: [/* @__PURE__ */ jsx("h2", {
+										className: "font-semibold",
+										children: "Historique de l’article"
+									}), /* @__PURE__ */ jsxs("ol", {
+										className: "space-y-3",
+										children: [/* @__PURE__ */ jsxs("li", {
+											className: "flex gap-3",
+											children: [/* @__PURE__ */ jsx(CalendarDays, { className: "mt-0.5 size-4 shrink-0 text-muted-foreground" }), /* @__PURE__ */ jsxs("span", { children: ["Article créé le ", /* @__PURE__ */ jsx("time", {
+												dateTime: article.createdAt,
+												children: dateLisible(article.createdAt)
+											})] })]
+										}), article.updatedAt !== article.createdAt && /* @__PURE__ */ jsxs("li", {
+											className: "flex gap-3",
+											children: [/* @__PURE__ */ jsx(CalendarDays, { className: "mt-0.5 size-4 shrink-0 text-muted-foreground" }), /* @__PURE__ */ jsxs("span", { children: ["Dernière mise à jour le ", /* @__PURE__ */ jsx("time", {
+												dateTime: article.updatedAt,
+												children: dateLisible(article.updatedAt)
+											})] })]
+										})]
+									})]
+								})]
+							})
+						})
+					]
+				}),
+				/* @__PURE__ */ jsxs("section", {
+					className: "space-y-4 rounded-xl border p-4 lg:p-6",
+					children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+						className: "font-semibold",
+						children: "Modifier l’article"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: "Mettez à jour les informations, la catégorie, la devise et les images."
+					})] }), /* @__PURE__ */ jsx(FormulaireArticle, {
+						article,
+						enregistrement,
+						onCancel: () => navigate("/articles"),
+						onSave: enregistrer
+					})]
+				}),
+				/* @__PURE__ */ jsxs("section", {
+					className: "space-y-3 rounded-xl border border-destructive/40 p-4",
+					children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+						className: "font-semibold",
+						children: "Zone de danger"
+					}), /* @__PURE__ */ jsx("p", {
+						className: "text-sm text-muted-foreground",
+						children: "La suppression de cet article est définitive."
+					})] }), /* @__PURE__ */ jsxs(Button, {
+						variant: "destructive",
+						onClick: () => setSuppressionOuverte(true),
+						disabled: suppressionEnCours,
+						children: [/* @__PURE__ */ jsx(Trash2, {}), " Supprimer l’article"]
+					})]
+				})
+			]
+		}), /* @__PURE__ */ jsx(AlertDialog$1, {
+			open: suppressionOuverte,
+			onOpenChange: setSuppressionOuverte,
+			children: /* @__PURE__ */ jsxs(AlertDialogContent, { children: [/* @__PURE__ */ jsxs(AlertDialogHeader, { children: [/* @__PURE__ */ jsx(AlertDialogTitle, { children: "Supprimer cet article ?" }), /* @__PURE__ */ jsx(AlertDialogDescription, { children: "Cette action est définitive. L’article et les données qui lui sont liées seront supprimés." })] }), /* @__PURE__ */ jsxs(AlertDialogFooter, { children: [/* @__PURE__ */ jsx(AlertDialogCancel, {
+				disabled: suppressionEnCours,
+				children: "Annuler"
+			}), /* @__PURE__ */ jsx(AlertDialogAction, {
+				onClick: (event) => {
+					event.preventDefault();
+					confirmerSuppression();
+				},
+				disabled: suppressionEnCours,
+				className: "bg-destructive text-white hover:bg-destructive/90",
+				children: suppressionEnCours ? "Suppression…" : "Supprimer"
+			})] })] })
 		})]
 	});
 });
@@ -1948,81 +2576,6 @@ function CreerClient({ businessId, onCreated, onInvited }) {
 			})]
 		})
 	})] });
-}
-//#endregion
-//#region app/components/ui/alert-dialog.tsx
-function AlertDialog$1({ ...props }) {
-	return /* @__PURE__ */ jsx(AlertDialog.Root, {
-		"data-slot": "alert-dialog",
-		...props
-	});
-}
-function AlertDialogPortal({ ...props }) {
-	return /* @__PURE__ */ jsx(AlertDialog.Portal, {
-		"data-slot": "alert-dialog-portal",
-		...props
-	});
-}
-function AlertDialogOverlay({ className, ...props }) {
-	return /* @__PURE__ */ jsx(AlertDialog.Backdrop, {
-		"data-slot": "alert-dialog-overlay",
-		className: cn$1("fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0", className),
-		...props
-	});
-}
-function AlertDialogContent({ className, size = "default", ...props }) {
-	return /* @__PURE__ */ jsxs(AlertDialogPortal, { children: [/* @__PURE__ */ jsx(AlertDialogOverlay, {}), /* @__PURE__ */ jsx(AlertDialog.Popup, {
-		"data-slot": "alert-dialog-content",
-		"data-size": size,
-		className: cn$1("group/alert-dialog-content fixed top-1/2 left-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none data-[size=default]:max-w-xs data-[size=sm]:max-w-xs data-[size=default]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
-		...props
-	})] });
-}
-function AlertDialogHeader({ className, ...props }) {
-	return /* @__PURE__ */ jsx("div", {
-		"data-slot": "alert-dialog-header",
-		className: cn$1("grid grid-rows-[auto_1fr] place-items-center gap-1.5 text-center has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] has-data-[slot=alert-dialog-media]:gap-x-4 sm:group-data-[size=default]/alert-dialog-content:place-items-start sm:group-data-[size=default]/alert-dialog-content:text-left sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]", className),
-		...props
-	});
-}
-function AlertDialogFooter({ className, ...props }) {
-	return /* @__PURE__ */ jsx("div", {
-		"data-slot": "alert-dialog-footer",
-		className: cn$1("-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 sm:flex-row sm:justify-end", className),
-		...props
-	});
-}
-function AlertDialogTitle({ className, ...props }) {
-	return /* @__PURE__ */ jsx(AlertDialog.Title, {
-		"data-slot": "alert-dialog-title",
-		className: cn$1("font-heading text-base font-medium sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2", className),
-		...props
-	});
-}
-function AlertDialogDescription({ className, ...props }) {
-	return /* @__PURE__ */ jsx(AlertDialog.Description, {
-		"data-slot": "alert-dialog-description",
-		className: cn$1("text-sm text-balance text-muted-foreground md:text-pretty *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground", className),
-		...props
-	});
-}
-function AlertDialogAction({ className, ...props }) {
-	return /* @__PURE__ */ jsx(Button, {
-		"data-slot": "alert-dialog-action",
-		className: cn$1(className),
-		...props
-	});
-}
-function AlertDialogCancel({ className, variant = "outline", size = "default", ...props }) {
-	return /* @__PURE__ */ jsx(AlertDialog.Close, {
-		"data-slot": "alert-dialog-cancel",
-		className: cn$1(className),
-		render: /* @__PURE__ */ jsx(Button, {
-			variant,
-			size
-		}),
-		...props
-	});
 }
 //#endregion
 //#region app/routes/clients/clients.tsx
@@ -3455,9 +4008,33 @@ var detail_default$2 = UNSAFE_withComponentProps(function DetailClient() {
 									})
 								})]
 							}),
-							/* @__PURE__ */ jsxs("section", {
+							/* @__PURE__ */ jsx("section", {
 								className: "space-y-4 rounded-xl border p-4",
-								children: [
+								children: compteExistant ? /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+									className: "font-semibold",
+									children: "Contacts de l’utilisateur invité"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: "Coordonnées renseignées sur son compte. Elles ne sont pas modifiables depuis votre business."
+								})] }), client.userContacts.length > 0 ? /* @__PURE__ */ jsx("ul", {
+									className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+									children: client.userContacts.map((item) => /* @__PURE__ */ jsxs("li", {
+										className: "flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 p-3",
+										children: [/* @__PURE__ */ jsxs("span", {
+											className: "flex min-w-0 items-center gap-2 text-sm",
+											children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
+												className: "truncate",
+												children: item.email || item.phone || item.label || "Contact"
+											})]
+										}), item.status === "VERIFIE" && /* @__PURE__ */ jsx("span", {
+											className: "shrink-0 text-xs text-muted-foreground",
+											children: "Vérifié"
+										})]
+									}, item.id))
+								}) : /* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: "Aucun contact n’est renseigné sur ce compte utilisateur."
+								})] }) : /* @__PURE__ */ jsxs(Fragment, { children: [
 									/* @__PURE__ */ jsxs("div", {
 										className: "flex items-start justify-between gap-3",
 										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
@@ -3466,7 +4043,7 @@ var detail_default$2 = UNSAFE_withComponentProps(function DetailClient() {
 										}), /* @__PURE__ */ jsx("p", {
 											className: "text-sm text-muted-foreground",
 											children: "Coordonnées téléphoniques et e-mail du client."
-										})] }), client.contacts.length < 3 && /* @__PURE__ */ jsxs(Button, {
+										})] }), /* @__PURE__ */ jsxs(Button, {
 											variant: "outline",
 											className: "border",
 											onClick: ouvrirCreationContact,
@@ -3488,7 +4065,7 @@ var detail_default$2 = UNSAFE_withComponentProps(function DetailClient() {
 													className: "truncate",
 													children: item.email || item.phone || item.label || "Contact"
 												})]
-											}), !compteExistant && /* @__PURE__ */ jsxs("div", {
+											}), /* @__PURE__ */ jsxs("div", {
 												className: "flex shrink-0 gap-1",
 												children: [/* @__PURE__ */ jsx(Button, {
 													variant: "ghost",
@@ -3513,37 +4090,9 @@ var detail_default$2 = UNSAFE_withComponentProps(function DetailClient() {
 										}, item.id))
 									}) : /* @__PURE__ */ jsx("p", {
 										className: "text-sm text-muted-foreground",
-										children: client.userContacts.length ? "Aucun contact propre à ce client." : "Aucun contact renseigné."
-									}),
-									compteExistant && /* @__PURE__ */ jsxs("div", {
-										className: "space-y-2 border-t pt-4",
-										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
-											className: "text-sm font-medium",
-											children: "Contacts du compte utilisateur"
-										}), /* @__PURE__ */ jsx("p", {
-											className: "text-sm text-muted-foreground",
-											children: "Renseignés par la personne sur son compte. Ils ne sont pas modifiables depuis votre business."
-										})] }), client.userContacts.length > 0 ? /* @__PURE__ */ jsx("ul", {
-											className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
-											children: client.userContacts.map((item) => /* @__PURE__ */ jsxs("li", {
-												className: "flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 p-3",
-												children: [/* @__PURE__ */ jsxs("span", {
-													className: "flex min-w-0 items-center gap-2 text-sm",
-													children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
-														className: "truncate",
-														children: item.email || item.phone || item.label || "Contact"
-													})]
-												}), item.status === "VERIFIE" && /* @__PURE__ */ jsx("span", {
-													className: "shrink-0 text-xs text-muted-foreground",
-													children: "Vérifié"
-												})]
-											}, item.id))
-										}) : /* @__PURE__ */ jsx("p", {
-											className: "text-sm text-muted-foreground",
-											children: "Aucun contact n’est renseigné sur ce compte utilisateur."
-										})]
+										children: "Aucun contact renseigné."
 									})
-								]
+								] })
 							}),
 							/* @__PURE__ */ jsxs("section", {
 								className: "space-y-4 rounded-xl border border-destructive/30 p-4",
@@ -3569,7 +4118,7 @@ var detail_default$2 = UNSAFE_withComponentProps(function DetailClient() {
 					})
 				]
 			}),
-			/* @__PURE__ */ jsx(Dialog$1, {
+			!compteExistant && /* @__PURE__ */ jsx(Dialog$1, {
 				open: dialogContact,
 				onOpenChange: setDialogContact,
 				children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: contactEdite ? "Modifier le contact" : "Ajouter un contact" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Ajoutez un numéro de téléphone ou une adresse e-mail." })] }), /* @__PURE__ */ jsxs("form", {
@@ -5246,9 +5795,33 @@ var detail_default$1 = UNSAFE_withComponentProps(function DetailFournisseur() {
 									})
 								})]
 							}),
-							/* @__PURE__ */ jsxs("section", {
+							/* @__PURE__ */ jsx("section", {
 								className: "space-y-4 rounded-xl border p-4",
-								children: [
+								children: compteExistant ? /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
+									className: "font-semibold",
+									children: "Contacts de l’utilisateur invité"
+								}), /* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: "Coordonnées renseignées sur son compte. Elles ne sont pas modifiables depuis votre business."
+								})] }), fournisseur.userContacts.length > 0 ? /* @__PURE__ */ jsx("ul", {
+									className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
+									children: fournisseur.userContacts.map((item) => /* @__PURE__ */ jsxs("li", {
+										className: "flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 p-3",
+										children: [/* @__PURE__ */ jsxs("span", {
+											className: "flex min-w-0 items-center gap-2 text-sm",
+											children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
+												className: "truncate",
+												children: item.email || item.phone || item.label || "Contact"
+											})]
+										}), item.status === "VERIFIE" && /* @__PURE__ */ jsx("span", {
+											className: "shrink-0 text-xs text-muted-foreground",
+											children: "Vérifié"
+										})]
+									}, item.id))
+								}) : /* @__PURE__ */ jsx("p", {
+									className: "text-sm text-muted-foreground",
+									children: "Aucun contact n’est renseigné sur ce compte utilisateur."
+								})] }) : /* @__PURE__ */ jsxs(Fragment, { children: [
 									/* @__PURE__ */ jsxs("div", {
 										className: "flex items-start justify-between gap-3",
 										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h2", {
@@ -5257,12 +5830,17 @@ var detail_default$1 = UNSAFE_withComponentProps(function DetailFournisseur() {
 										}), /* @__PURE__ */ jsx("p", {
 											className: "text-sm text-muted-foreground",
 											children: "Ajoutez jusqu’à deux contacts pour joindre le fournisseur."
-										})] }), fournisseur.contacts.length < 2 && /* @__PURE__ */ jsxs(Button, {
+										})] }), /* @__PURE__ */ jsxs(Button, {
 											variant: "outline",
 											className: "border",
 											onClick: ouvrirCreationContact,
+											disabled: fournisseur.contacts.length >= 2,
 											children: [/* @__PURE__ */ jsx(Plus, {}), " Ajouter"]
 										})]
+									}),
+									fournisseur.contacts.length >= 2 && /* @__PURE__ */ jsx("p", {
+										className: "text-sm text-muted-foreground",
+										children: "Le fournisseur a atteint la limite de deux contacts."
 									}),
 									fournisseur.contacts.length ? /* @__PURE__ */ jsx("ul", {
 										className: "grid grid-cols-2 gap-2",
@@ -5274,7 +5852,7 @@ var detail_default$1 = UNSAFE_withComponentProps(function DetailFournisseur() {
 													className: "truncate",
 													children: item.email || item.phone || item.label || "Contact"
 												})]
-											}), !compteExistant && /* @__PURE__ */ jsxs("div", {
+											}), /* @__PURE__ */ jsxs("div", {
 												className: "flex shrink-0 gap-1",
 												children: [/* @__PURE__ */ jsx(Button, {
 													variant: "ghost",
@@ -5299,37 +5877,9 @@ var detail_default$1 = UNSAFE_withComponentProps(function DetailFournisseur() {
 										}, item.id))
 									}) : /* @__PURE__ */ jsx("p", {
 										className: "text-sm text-muted-foreground",
-										children: fournisseur.userContacts.length ? "Aucun contact propre à ce fournisseur." : "Aucun contact renseigné."
-									}),
-									compteExistant && /* @__PURE__ */ jsxs("div", {
-										className: "space-y-2 border-t pt-4",
-										children: [/* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("h3", {
-											className: "text-sm font-medium",
-											children: "Contacts du compte utilisateur"
-										}), /* @__PURE__ */ jsx("p", {
-											className: "text-sm text-muted-foreground",
-											children: "Renseignés par la personne sur son compte. Ils ne sont pas modifiables depuis votre business."
-										})] }), fournisseur.userContacts.length > 0 ? /* @__PURE__ */ jsx("ul", {
-											className: "grid grid-cols-1 gap-2 sm:grid-cols-2",
-											children: fournisseur.userContacts.map((item) => /* @__PURE__ */ jsxs("li", {
-												className: "flex items-center justify-between gap-3 rounded-lg border border-dashed bg-muted/30 p-3",
-												children: [/* @__PURE__ */ jsxs("span", {
-													className: "flex min-w-0 items-center gap-2 text-sm",
-													children: [item.type === "EMAIL" ? /* @__PURE__ */ jsx(Mail, { className: "size-4 shrink-0" }) : /* @__PURE__ */ jsx(Phone, { className: "size-4 shrink-0" }), /* @__PURE__ */ jsx("span", {
-														className: "truncate",
-														children: item.email || item.phone || item.label || "Contact"
-													})]
-												}), item.status === "VERIFIE" && /* @__PURE__ */ jsx("span", {
-													className: "shrink-0 text-xs text-muted-foreground",
-													children: "Vérifié"
-												})]
-											}, item.id))
-										}) : /* @__PURE__ */ jsx("p", {
-											className: "text-sm text-muted-foreground",
-											children: "Aucun contact n’est renseigné sur ce compte utilisateur."
-										})]
+										children: "Aucun contact renseigné."
 									})
-								]
+								] })
 							}),
 							/* @__PURE__ */ jsxs("section", {
 								className: "space-y-4 rounded-xl border p-4",
@@ -5371,7 +5921,7 @@ var detail_default$1 = UNSAFE_withComponentProps(function DetailFournisseur() {
 					})
 				]
 			}),
-			/* @__PURE__ */ jsx(Dialog$1, {
+			!compteExistant && /* @__PURE__ */ jsx(Dialog$1, {
 				open: dialogContact,
 				onOpenChange: setDialogContact,
 				children: /* @__PURE__ */ jsxs(DialogContent, { children: [/* @__PURE__ */ jsxs(DialogHeader, { children: [/* @__PURE__ */ jsx(DialogTitle, { children: contactEdite ? "Modifier le contact" : "Ajouter un contact" }), /* @__PURE__ */ jsx(DialogDescription, { children: "Ajoutez une adresse e-mail ou un numéro de téléphone." })] }), /* @__PURE__ */ jsxs("form", {
@@ -8601,6 +9151,14 @@ var root_default = UNSAFE_withComponentProps(function App({ loaderData }) {
 								element: /* @__PURE__ */ jsx(articles_default, {})
 							}),
 							/* @__PURE__ */ jsx(Route, {
+								path: "/articles/nouveau",
+								element: /* @__PURE__ */ jsx(nouveau_default, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
+								path: "/articles/:id",
+								element: /* @__PURE__ */ jsx(detail_default$3, {})
+							}),
+							/* @__PURE__ */ jsx(Route, {
 								path: "/businesses/creer",
 								element: /* @__PURE__ */ jsx(page_default, {})
 							}),
@@ -9189,8 +9747,8 @@ var aides_default = UNSAFE_withComponentProps(function Aides() {
 //#region \0virtual:react-router/server-manifest
 var server_manifest_default = {
 	"entry": {
-		"module": "/assets/entry.client-DJk2Q3bq.js",
-		"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DDjUWroy.js"],
+		"module": "/assets/entry.client-BwbdmzkL.js",
+		"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-C1UJaEuc.js"],
 		"css": []
 	},
 	"routes": {
@@ -9207,51 +9765,54 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": true,
-			"module": "/assets/root-CPpTRqgF.js",
+			"module": "/assets/root-DTuWUUoI.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/profile-B3qO1Pyr.js",
-				"/assets/avatar-BCX5K0QS.js",
-				"/assets/clerk-C_JvYzjK.js",
-				"/assets/acceuil-D7jVaxXD.js",
-				"/assets/home-CrMjB8_J.js",
-				"/assets/notifications-Bx1C-M0V.js",
-				"/assets/commandes-BRAKvdDx.js",
-				"/assets/ventes-D_UYFWq2.js",
-				"/assets/articles-CilPTbs9.js",
-				"/assets/achats-BSj-KmKd.js",
-				"/assets/clients-DUwPs2dh.js",
-				"/assets/detail-PpEZnvJ9.js",
-				"/assets/valider-invitation-CeTytRoV.js",
-				"/assets/fournisseurs-DYBFc_VF.js",
-				"/assets/valider-invitation-DJPiLm95.js",
-				"/assets/detail-CoPsG_MA.js",
-				"/assets/travailleurs-CJjOVRLX.js",
-				"/assets/detail-CypbbsEw.js",
-				"/assets/valider-invitation-BeqcG5O0.js",
-				"/assets/caisses-DzMKheDa.js",
-				"/assets/parametres--yRt7Cwa.js",
-				"/assets/page-C0ho4w-M.js",
-				"/assets/page-BO6X63Yv.js",
-				"/assets/welcome-Dd6DRMJc.js",
-				"/assets/page-EVvlTosV.js",
-				"/assets/promotions-D844PiEQ.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js",
-				"/assets/card-ByHb0aF3.js",
-				"/assets/apis-BaQWYjXy.js",
-				"/assets/switch-CwWXBor6.js",
-				"/assets/alert-BhMUVgDH.js",
-				"/assets/textarea-rYX1mxRK.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/alert-dialog-BNdWC40a.js",
-				"/assets/forms-DlnA6V6_.js",
-				"/assets/avatar-ressource-DK2aEXop.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/profile-D0Bnxe5V.js",
+				"/assets/avatar-DWFVrUED.js",
+				"/assets/clerk-CH-P7nbE.js",
+				"/assets/acceuil-fU45-Kzl.js",
+				"/assets/home-Wt-hoFsN.js",
+				"/assets/notifications-CXKyw1jg.js",
+				"/assets/commandes-B-paHrIE.js",
+				"/assets/ventes-Dlsl8E13.js",
+				"/assets/articles-UG4QxWpg.js",
+				"/assets/nouveau-Bdd8kSAM.js",
+				"/assets/detail-BQJw5zOo.js",
+				"/assets/achats-Cmoq9Re7.js",
+				"/assets/clients-BFOQK-Jo.js",
+				"/assets/detail-Bk7cmrtM.js",
+				"/assets/valider-invitation-WxSava4B.js",
+				"/assets/fournisseurs-CnabY807.js",
+				"/assets/valider-invitation-CdJY_eYh.js",
+				"/assets/detail-Doe9vuJg.js",
+				"/assets/travailleurs-BN-xzefy.js",
+				"/assets/detail-DSTiuG0U.js",
+				"/assets/valider-invitation-8LKHRzyo.js",
+				"/assets/caisses-DtGnHyTr.js",
+				"/assets/parametres-Bc-E4WT4.js",
+				"/assets/page-wVr7zRcc.js",
+				"/assets/page-CCZmrRcp.js",
+				"/assets/welcome-CVUIrMG-.js",
+				"/assets/page-SipFcOiW.js",
+				"/assets/promotions-BYqu70fm.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js",
+				"/assets/card-CXiHH_Xb.js",
+				"/assets/apis-RB_cg0fH.js",
+				"/assets/switch-CTf8gaW1.js",
+				"/assets/alert-CgGRRxqd.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/formulaire-article-Bz-PbCxX.js",
+				"/assets/textarea-CsZ-ZDAL.js",
+				"/assets/forms-CdgaCzaC.js",
+				"/assets/avatar-ressource-BTSKVq2i.js"
 			],
-			"css": ["/assets/app-CpzgLij_.css"],
+			"css": ["/assets/app-DyEC_6oK.css"],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
 			"clientMiddlewareModule": void 0,
@@ -9270,12 +9831,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/home-DL-9tXt2.js",
+			"module": "/assets/home-z0GbMTv2.js",
 			"imports": [
-				"/assets/home-CrMjB8_J.js",
+				"/assets/home-Wt-hoFsN.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/alert-BhMUVgDH.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/alert-CgGRRxqd.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9296,17 +9857,17 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/docs-CWAs9Q9F.js",
+			"module": "/assets/docs-B95P9fIa.js",
 			"imports": [
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/avatar-BCX5K0QS.js",
-				"/assets/alert-BhMUVgDH.js",
-				"/assets/switch-CwWXBor6.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/avatar-DWFVrUED.js",
+				"/assets/alert-CgGRRxqd.js",
+				"/assets/switch-CTf8gaW1.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9327,13 +9888,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-CV_WXo79.js",
+			"module": "/assets/page-DT5F-6r-.js",
 			"imports": [
-				"/assets/page-C0ho4w-M.js",
+				"/assets/page-wVr7zRcc.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/clerk-C_JvYzjK.js",
-				"/assets/card-ByHb0aF3.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/clerk-CH-P7nbE.js",
+				"/assets/card-CXiHH_Xb.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9354,13 +9915,13 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-_EZ0zwYP.js",
+			"module": "/assets/page-761FXAjG.js",
 			"imports": [
-				"/assets/page-BO6X63Yv.js",
+				"/assets/page-CCZmrRcp.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/clerk-C_JvYzjK.js",
-				"/assets/card-ByHb0aF3.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/clerk-CH-P7nbE.js",
+				"/assets/card-CXiHH_Xb.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9381,12 +9942,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/welcome-CZetGbgb.js",
+			"module": "/assets/welcome-KIVxYSqL.js",
 			"imports": [
-				"/assets/welcome-Dd6DRMJc.js",
+				"/assets/welcome-CVUIrMG-.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/apis-BaQWYjXy.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/apis-RB_cg0fH.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9407,11 +9968,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/acceuil-C1ZgU9FV.js",
+			"module": "/assets/acceuil-CPf7u2c5.js",
 			"imports": [
-				"/assets/acceuil-D7jVaxXD.js",
+				"/assets/acceuil-fU45-Kzl.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js"
+				"/assets/admin-C1UJaEuc.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9432,12 +9993,12 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/dashboard-BcftVsVc.js",
+			"module": "/assets/dashboard-DScwM4dR.js",
 			"imports": [
-				"/assets/dashboard-q9qRQ38q.js",
+				"/assets/dashboard-iFgxSVNy.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/charts-DPqxfEhR.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/charts-CqGBh3FX.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9458,11 +10019,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/commandes-leHiTrqp.js",
+			"module": "/assets/commandes-BSNB1pjk.js",
 			"imports": [
-				"/assets/commandes-BRAKvdDx.js",
+				"/assets/commandes-B-paHrIE.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js"
+				"/assets/admin-C1UJaEuc.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9483,11 +10044,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/ventes-DtQUlEUb.js",
+			"module": "/assets/ventes-VGA4CS_Z.js",
 			"imports": [
-				"/assets/ventes-D_UYFWq2.js",
+				"/assets/ventes-Dlsl8E13.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js"
+				"/assets/admin-C1UJaEuc.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9508,18 +10069,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/page-C6a5pWuc.js",
+			"module": "/assets/page-BuXvMY1W.js",
 			"imports": [
-				"/assets/page-EVvlTosV.js",
+				"/assets/page-SipFcOiW.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/vendor-DCvTQ-yt.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/card-ByHb0aF3.js",
-				"/assets/textarea-rYX1mxRK.js",
-				"/assets/apis-BaQWYjXy.js",
-				"/assets/charts-DPqxfEhR.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/vendor-uXzeSch6.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/card-CXiHH_Xb.js",
+				"/assets/textarea-CsZ-ZDAL.js",
+				"/assets/apis-RB_cg0fH.js",
+				"/assets/charts-CqGBh3FX.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9540,19 +10101,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/profile-CR5qseIp.js",
+			"module": "/assets/profile-DXWtIIP3.js",
 			"imports": [
-				"/assets/profile-B3qO1Pyr.js",
+				"/assets/profile-D0Bnxe5V.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/vendor-DCvTQ-yt.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/avatar-BCX5K0QS.js",
-				"/assets/card-ByHb0aF3.js",
-				"/assets/apis-BaQWYjXy.js",
-				"/assets/switch-CwWXBor6.js",
-				"/assets/charts-DPqxfEhR.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/vendor-uXzeSch6.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/avatar-DWFVrUED.js",
+				"/assets/card-CXiHH_Xb.js",
+				"/assets/apis-RB_cg0fH.js",
+				"/assets/switch-CTf8gaW1.js",
+				"/assets/charts-CqGBh3FX.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9573,11 +10134,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/notifications-CPMXO_Ja.js",
+			"module": "/assets/notifications-CGEW3Lwo.js",
 			"imports": [
-				"/assets/notifications-Bx1C-M0V.js",
+				"/assets/notifications-CXKyw1jg.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js"
+				"/assets/admin-C1UJaEuc.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9598,14 +10159,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/achats-CJB7lI-K.js",
+			"module": "/assets/achats-LEGNODSF.js",
 			"imports": [
-				"/assets/achats-BSj-KmKd.js",
+				"/assets/achats-Cmoq9Re7.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/charts-DPqxfEhR.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/charts-CqGBh3FX.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9626,18 +10187,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/travailleurs-C4fyymXk.js",
+			"module": "/assets/travailleurs-DvJtjdKH.js",
 			"imports": [
-				"/assets/travailleurs-CJjOVRLX.js",
+				"/assets/travailleurs-BN-xzefy.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/avatar-BCX5K0QS.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/alert-dialog-BNdWC40a.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/avatar-DWFVrUED.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9658,18 +10219,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/detail-DSH9Io2w.js",
+			"module": "/assets/detail-qIkLtkBv.js",
 			"imports": [
-				"/assets/detail-CypbbsEw.js",
+				"/assets/detail-DSTiuG0U.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/alert-dialog-BNdWC40a.js",
-				"/assets/avatar-ressource-DK2aEXop.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js",
-				"/assets/avatar-BCX5K0QS.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/avatar-ressource-BTSKVq2i.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js",
+				"/assets/avatar-DWFVrUED.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9690,11 +10251,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/valider-invitation-CoQyzkVC.js",
+			"module": "/assets/valider-invitation-1YWKyFBZ.js",
 			"imports": [
-				"/assets/valider-invitation-BeqcG5O0.js",
+				"/assets/valider-invitation-8LKHRzyo.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js"
+				"/assets/admin-C1UJaEuc.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9715,18 +10276,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/clients-CUpgoa1y.js",
+			"module": "/assets/clients-Ds1vhdGS.js",
 			"imports": [
-				"/assets/clients-DUwPs2dh.js",
+				"/assets/clients-BFOQK-Jo.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/avatar-BCX5K0QS.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/alert-dialog-BNdWC40a.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/avatar-DWFVrUED.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9747,20 +10308,20 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/detail-CsyWzXa2.js",
+			"module": "/assets/detail-Beaw_jyd.js",
 			"imports": [
-				"/assets/detail-PpEZnvJ9.js",
+				"/assets/detail-Bk7cmrtM.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/forms-DlnA6V6_.js",
-				"/assets/alert-dialog-BNdWC40a.js",
-				"/assets/apis-BaQWYjXy.js",
-				"/assets/avatar-ressource-DK2aEXop.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js",
-				"/assets/avatar-BCX5K0QS.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/forms-CdgaCzaC.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/apis-RB_cg0fH.js",
+				"/assets/avatar-ressource-BTSKVq2i.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js",
+				"/assets/avatar-DWFVrUED.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9781,11 +10342,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/valider-invitation-DlmEtNMy.js",
+			"module": "/assets/valider-invitation-GJj5rVd-.js",
 			"imports": [
-				"/assets/valider-invitation-CeTytRoV.js",
+				"/assets/valider-invitation-WxSava4B.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js"
+				"/assets/admin-C1UJaEuc.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9806,18 +10367,18 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/fournisseurs-DmL2roOH.js",
+			"module": "/assets/fournisseurs-CYz5Ifyb.js",
 			"imports": [
-				"/assets/fournisseurs-DYBFc_VF.js",
+				"/assets/fournisseurs-CnabY807.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/avatar-BCX5K0QS.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/alert-dialog-BNdWC40a.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/avatar-DWFVrUED.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9838,19 +10399,19 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/detail-DdUbap__.js",
+			"module": "/assets/detail-Cuuokb7o.js",
 			"imports": [
-				"/assets/detail-CoPsG_MA.js",
+				"/assets/detail-Doe9vuJg.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/avatar-BCX5K0QS.js",
-				"/assets/alert-dialog-BNdWC40a.js",
-				"/assets/apis-BaQWYjXy.js",
-				"/assets/avatar-ressource-DK2aEXop.js",
-				"/assets/charts-DPqxfEhR.js",
-				"/assets/vendor-DCvTQ-yt.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/avatar-DWFVrUED.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/apis-RB_cg0fH.js",
+				"/assets/avatar-ressource-BTSKVq2i.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9871,11 +10432,11 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/valider-invitation-BPguRCJn.js",
+			"module": "/assets/valider-invitation-DD98siD4.js",
 			"imports": [
-				"/assets/valider-invitation-DJPiLm95.js",
+				"/assets/valider-invitation-CdJY_eYh.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js"
+				"/assets/admin-C1UJaEuc.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9896,15 +10457,81 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/articles-DGGrBuKd.js",
+			"module": "/assets/articles-DLlY0A3z.js",
 			"imports": [
-				"/assets/articles-CilPTbs9.js",
+				"/assets/articles-UG4QxWpg.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/textarea-rYX1mxRK.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/charts-DPqxfEhR.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/articles/nouveau": {
+			"id": "routes/articles/nouveau",
+			"parentId": "root",
+			"path": "/articles/nouveau",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/nouveau-CPDIio79.js",
+			"imports": [
+				"/assets/nouveau-Bdd8kSAM.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/formulaire-article-Bz-PbCxX.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/textarea-CsZ-ZDAL.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/charts-CqGBh3FX.js"
+			],
+			"css": [],
+			"clientActionModule": void 0,
+			"clientLoaderModule": void 0,
+			"clientMiddlewareModule": void 0,
+			"hydrateFallbackModule": void 0
+		},
+		"routes/articles/detail": {
+			"id": "routes/articles/detail",
+			"parentId": "root",
+			"path": "/articles/:id",
+			"index": void 0,
+			"caseSensitive": void 0,
+			"hasAction": false,
+			"hasLoader": false,
+			"hasClientAction": false,
+			"hasClientLoader": false,
+			"hasClientMiddleware": false,
+			"hasDefaultExport": true,
+			"hasErrorBoundary": false,
+			"module": "/assets/detail-CZWk9mog.js",
+			"imports": [
+				"/assets/detail-BQJw5zOo.js",
+				"/assets/rolldown-runtime-hePW80VL.js",
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/alert-dialog-Bn4N_nIq.js",
+				"/assets/formulaire-article-Bz-PbCxX.js",
+				"/assets/charts-CqGBh3FX.js",
+				"/assets/vendor-uXzeSch6.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/textarea-CsZ-ZDAL.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9925,15 +10552,15 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/promotions-CODrnYik.js",
+			"module": "/assets/promotions-CpVcgPlR.js",
 			"imports": [
-				"/assets/promotions-D844PiEQ.js",
+				"/assets/promotions-BYqu70fm.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/textarea-rYX1mxRK.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/charts-DPqxfEhR.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/textarea-CsZ-ZDAL.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/charts-CqGBh3FX.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9954,14 +10581,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/caisses-CiY7bbCq.js",
+			"module": "/assets/caisses-krFchDnq.js",
 			"imports": [
-				"/assets/caisses-DzMKheDa.js",
+				"/assets/caisses-DtGnHyTr.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/dashboard-q9qRQ38q.js",
-				"/assets/native-select-DbjOonhl.js",
-				"/assets/charts-DPqxfEhR.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/dashboard-iFgxSVNy.js",
+				"/assets/native-select-_BnVK_AK.js",
+				"/assets/charts-CqGBh3FX.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -9982,8 +10609,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/aides-3C-Q3ncz.js",
-			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-DDjUWroy.js"],
+			"module": "/assets/aides-C0c32YKP.js",
+			"imports": ["/assets/rolldown-runtime-hePW80VL.js", "/assets/admin-C1UJaEuc.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10003,14 +10630,14 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/parametres-f1p7HVkG.js",
+			"module": "/assets/parametres-BbJh5Uyc.js",
 			"imports": [
-				"/assets/parametres--yRt7Cwa.js",
+				"/assets/parametres-Bc-E4WT4.js",
 				"/assets/rolldown-runtime-hePW80VL.js",
-				"/assets/admin-DDjUWroy.js",
-				"/assets/ui-BmCKeUE8.js",
-				"/assets/card-ByHb0aF3.js",
-				"/assets/apis-BaQWYjXy.js"
+				"/assets/admin-C1UJaEuc.js",
+				"/assets/ui-CACRHaBU.js",
+				"/assets/card-CXiHH_Xb.js",
+				"/assets/apis-RB_cg0fH.js"
 			],
 			"css": [],
 			"clientActionModule": void 0,
@@ -10031,8 +10658,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/businesses-Bl4j-Fc_.js",
-			"imports": ["/assets/admin-DDjUWroy.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/businesses-tC2_vuh7.js",
+			"imports": ["/assets/admin-C1UJaEuc.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10052,8 +10679,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/offres-sYV-2NlV.js",
-			"imports": ["/assets/admin-DDjUWroy.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/offres-DohuYrTM.js",
+			"imports": ["/assets/admin-C1UJaEuc.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10073,8 +10700,8 @@ var server_manifest_default = {
 			"hasClientMiddleware": false,
 			"hasDefaultExport": true,
 			"hasErrorBoundary": false,
-			"module": "/assets/categories-Cj24yqLp.js",
-			"imports": ["/assets/admin-DDjUWroy.js", "/assets/rolldown-runtime-hePW80VL.js"],
+			"module": "/assets/categories-CWuXEFKy.js",
+			"imports": ["/assets/admin-C1UJaEuc.js", "/assets/rolldown-runtime-hePW80VL.js"],
 			"css": [],
 			"clientActionModule": void 0,
 			"clientLoaderModule": void 0,
@@ -10082,8 +10709,8 @@ var server_manifest_default = {
 			"hydrateFallbackModule": void 0
 		}
 	},
-	"url": "/assets/manifest-b211eb78.js",
-	"version": "b211eb78",
+	"url": "/assets/manifest-fc486b62.js",
+	"version": "fc486b62",
 	"sri": void 0
 };
 //#endregion
@@ -10295,6 +10922,22 @@ var routes = {
 		index: void 0,
 		caseSensitive: void 0,
 		module: articles_exports
+	},
+	"routes/articles/nouveau": {
+		id: "routes/articles/nouveau",
+		parentId: "root",
+		path: "/articles/nouveau",
+		index: void 0,
+		caseSensitive: void 0,
+		module: nouveau_exports
+	},
+	"routes/articles/detail": {
+		id: "routes/articles/detail",
+		parentId: "root",
+		path: "/articles/:id",
+		index: void 0,
+		caseSensitive: void 0,
+		module: detail_exports$3
 	},
 	"routes/promotions/promotions": {
 		id: "routes/promotions/promotions",

@@ -37,6 +37,8 @@ export default [
   route("/fournisseurs/:id", `./routes/fournisseurs/detail.tsx`),
   route("/fournisseurs/valider-invitation/:invitationId", `./routes/fournisseurs/valider-invitation.tsx`),
   route("/articles", `./routes/articles/articles.tsx`),
+  route("/articles/nouveau", `./routes/articles/nouveau.tsx`),
+  route("/articles/:id", `./routes/articles/detail.tsx`),
   route("/promotions", `./routes/promotions/promotions.tsx`),
   route("/caisses", `./routes/caisses/caisses.tsx`),
   route("/aides", `./routes/aides/aides.tsx`),

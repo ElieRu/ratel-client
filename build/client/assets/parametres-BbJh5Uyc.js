@@ -1,0 +1,1 @@
+import{n as e,t}from"./parametres-Bc-E4WT4.js";export{e as default,t as meta};

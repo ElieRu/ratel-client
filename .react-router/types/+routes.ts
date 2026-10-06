@@ -96,6 +96,14 @@ type Pages = {
   "/articles": {
     params: {};
   };
+  "/articles/nouveau": {
+    params: {};
+  };
+  "/articles/:id": {
+    params: {
+      "id": string;
+    };
+  };
   "/promotions": {
     params: {};
   };
@@ -122,7 +130,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/businesses/creer" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/travailleurs/:id" | "/travailleurs/valider-invitation/:invitationId" | "/clients" | "/clients/:id" | "/clients/valider-invitation/:invitationId" | "/fournisseurs" | "/fournisseurs/:id" | "/fournisseurs/valider-invitation/:invitationId" | "/articles" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
+    page: "/" | "/docs" | "/sign-in/*" | "/sign-up/*" | "/welcome" | "/acceuil" | "/dashboard" | "/commandes" | "/ventes" | "/businesses/creer" | "/profile" | "/notifications" | "/achats" | "/travailleurs" | "/travailleurs/:id" | "/travailleurs/valider-invitation/:invitationId" | "/clients" | "/clients/:id" | "/clients/valider-invitation/:invitationId" | "/fournisseurs" | "/fournisseurs/:id" | "/fournisseurs/valider-invitation/:invitationId" | "/articles" | "/articles/nouveau" | "/articles/:id" | "/promotions" | "/caisses" | "/aides" | "/parametres" | "/admin/businesses" | "/admin/offres" | "/admin/categories";
   };
   "./routes/home.tsx": {
     id: "routes/home";
@@ -216,6 +224,14 @@ type RouteFiles = {
     id: "routes/articles/articles";
     page: "/articles";
   };
+  "./routes/articles/nouveau.tsx": {
+    id: "routes/articles/nouveau";
+    page: "/articles/nouveau";
+  };
+  "./routes/articles/detail.tsx": {
+    id: "routes/articles/detail";
+    page: "/articles/:id";
+  };
   "./routes/promotions/promotions.tsx": {
     id: "routes/promotions/promotions";
     page: "/promotions";
@@ -271,6 +287,8 @@ type RouteModules = {
   "routes/fournisseurs/detail": typeof import("./app/./routes/fournisseurs/detail.tsx");
   "routes/fournisseurs/valider-invitation": typeof import("./app/./routes/fournisseurs/valider-invitation.tsx");
   "routes/articles/articles": typeof import("./app/./routes/articles/articles.tsx");
+  "routes/articles/nouveau": typeof import("./app/./routes/articles/nouveau.tsx");
+  "routes/articles/detail": typeof import("./app/./routes/articles/detail.tsx");
   "routes/promotions/promotions": typeof import("./app/./routes/promotions/promotions.tsx");
   "routes/caisses/caisses": typeof import("./app/./routes/caisses/caisses.tsx");
   "routes/aides/aides": typeof import("./app/./routes/aides/aides.tsx");

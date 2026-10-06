@@ -1,206 +1,191 @@
-"use client"
+"use client";
 
-import { useCallback, useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { Link } from "react-router";
+import { Grid2X2, List, PlusIcon, Search, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { PlusIcon, Trash2Icon } from "lucide-react";
 
-import { ArticleSchema, type Article } from "@/lib/validations";
-import { champsRequis } from "@/lib/utils";
-import { useBusiness } from "@/lib/business-context";
 import {
-  creerArticle,
   listerArticles,
   listerCategories,
-  listerDevises,
-  modifierArticle,
+  modifierModeAffichageArticles,
   supprimerArticle,
+  type ArticlesViewMode,
+  type ArticleAvecRelations,
 } from "@/lib/api/business";
+import { useBusiness } from "@/lib/business-context";
 import { PageRessource } from "@/components/ressource/page-ressource";
 import { useListe } from "@/components/ressource/use-liste";
-import {
-  DataTable as ReusableDataTable,
-  type DataTableColumn,
-} from "@/components/data-table-reusable";
-
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-  FieldLegend,
-  FieldSet,
-} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
-const requis = champsRequis(ArticleSchema.shape);
-
-const Etoile = () => <span className="text-destructive">*</span>;
-
-type LigneArticle = Article & {
-  id: string;
-  categorie?: { nom: string };
-  devise?: { symbole: string };
-};
-type Option = { id: string; nom?: string; symbole?: string; type?: string };
+type CategoryOption = { id: string; nom: string };
+const TAILLE_PAGE = 10;
+const IMAGE_PAR_DEFAUT = "/images/articles/article-par-defaut.svg";
 
 export default function Articles() {
-  const { businessId } = useBusiness();
-  const [ouvert, setOuvert] = useState(false);
-  const [enEdition, setEnEdition] = useState<LigneArticle | null>(null);
-
-  const chargerArticles = useCallback(() => listerArticles(), []);
+  const { businessId, user, pret } = useBusiness();
+  const [recherche, setRecherche] = useState("");
+  const [categorieId, setCategorieId] = useState("");
+  const [selection, setSelection] = useState<string[]>([]);
+  const [page, setPage] = useState(0);
+  const [suppressionCibles, setSuppressionCibles] = useState<string[]>([]);
+  const [suppressionEnCours, setSuppressionEnCours] = useState(false);
+  const [modeAffichage, setModeAffichage] = useState<ArticlesViewMode>("TABLE");
+  const [sauvegardeMode, setSauvegardeMode] = useState(false);
+  const chargerArticles = useCallback(
+    () => (businessId ? listerArticles(businessId) : Promise.resolve([])),
+    [businessId]
+  );
   const chargerCategories = useCallback(
-    () => listerCategories(businessId!),
+    () => (businessId ? listerCategories(businessId) : Promise.resolve([])),
     [businessId]
   );
-  const chargerDevises = useCallback(
-    () => listerDevises(businessId!),
-    [businessId]
-  );
-
-  const { donnees, chargement, erreur, recharger } =
-    useListe<LigneArticle>(chargerArticles);
-  const { donnees: categories } = useListe<Option>(chargerCategories, !!businessId);
-  const { donnees: devises } = useListe<Option>(chargerDevises, !!businessId);
-
   const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting, isValid },
-  } = useForm<Article>({
-    resolver: zodResolver(ArticleSchema),
-    mode: "onTouched",
-  });
+    donnees: articles,
+    chargement,
+    erreur,
+    recharger,
+  } = useListe<ArticleAvecRelations>(chargerArticles, !!businessId);
+  const { donnees: categories } = useListe<CategoryOption>(
+    chargerCategories,
+    !!businessId
+  );
 
-  const ouvrirCreation = () => {
-    setEnEdition(null);
-    reset({
-      designation: "",
-      pu: 0,
-      description: "",
-      categorieId: categories[0]?.id ?? "",
-      deviseId: devises[0]?.id ?? "",
+  const articlesFiltres = useMemo(() => {
+    const terme = recherche.trim().toLocaleLowerCase("fr");
+    return articles.filter((article) => {
+      const correspondRecherche =
+        !terme ||
+        article.designation.toLocaleLowerCase("fr").includes(terme) ||
+        (article.description ?? "").toLocaleLowerCase("fr").includes(terme);
+      const correspondCategorie =
+        !categorieId || article.categorieId === categorieId;
+      return correspondRecherche && correspondCategorie;
     });
-    setOuvert(true);
+  }, [articles, categorieId, recherche]);
+  const nombrePages = Math.ceil(articlesFiltres.length / TAILLE_PAGE);
+  const pageCourante = Math.min(page, Math.max(0, nombrePages - 1));
+  const articlesPage = articlesFiltres.slice(
+    pageCourante * TAILLE_PAGE,
+    (pageCourante + 1) * TAILLE_PAGE
+  );
+  const idsPage = articlesPage.map((article) => article.id);
+  const tousSelectionnes =
+    idsPage.length > 0 && idsPage.every((articleId) => selection.includes(articleId));
+
+  useEffect(() => {
+    setPage(0);
+  }, [recherche, categorieId]);
+
+  useEffect(() => {
+    if (pret) {
+      setModeAffichage(
+        user?.articlesViewMode === "GRID" ? "GRID" : "TABLE"
+      );
+    }
+  }, [pret, user?.articlesViewMode]);
+
+  const changerModeAffichage = async () => {
+    if (sauvegardeMode) return;
+    const modeSuivant = modeAffichage === "TABLE" ? "GRID" : "TABLE";
+    setSauvegardeMode(true);
+    try {
+      await modifierModeAffichageArticles(modeSuivant);
+      setModeAffichage(modeSuivant);
+    } catch (cause) {
+      toast.error(
+        cause instanceof Error
+          ? cause.message
+          : "Le mode d’affichage n’a pas pu être enregistré."
+      );
+    } finally {
+      setSauvegardeMode(false);
+    }
   };
 
-  const ouvrirEdition = (article: LigneArticle) => {
-    setEnEdition(article);
-    reset({
-      designation: article.designation,
-      pu: Number(article.pu),
-      description: article.description ?? "",
-      categorieId: article.categorieId,
-      deviseId: article.deviseId,
+  const basculerSelection = (articleId: string) => {
+    setSelection((courante) =>
+      courante.includes(articleId)
+        ? courante.filter((id) => id !== articleId)
+        : [...courante, articleId]
+    );
+  };
+
+  const basculerPage = () => {
+    setSelection((courante) =>
+      tousSelectionnes
+        ? courante.filter((id) => !idsPage.includes(id))
+        : [...new Set([...courante, ...idsPage])]
+    );
+  };
+
+  const ouvrirSuppression = (ids: string[]) => {
+    setSuppressionCibles(ids);
+  };
+
+  const supprimerSelection = async () => {
+    if (suppressionCibles.length === 0) return;
+    setSuppressionEnCours(true);
+    const resultats = await Promise.allSettled(
+      suppressionCibles.map((id) => supprimerArticle(id))
+    );
+    const nombreSupprimes = resultats.filter(
+      (resultat) => resultat.status === "fulfilled"
+    ).length;
+    const echecs = resultats.filter(
+      (resultat): resultat is PromiseRejectedResult =>
+        resultat.status === "rejected"
+    );
+    await new Promise<void>((resolve) => {
+      recharger();
+      window.setTimeout(resolve, 0);
     });
-    setOuvert(true);
+    setSelection((courante) =>
+      courante.filter((id) =>
+        resultats[suppressionCibles.indexOf(id)]?.status !== "fulfilled"
+      )
+    );
+    if (nombreSupprimes > 0) {
+      toast.success(
+        nombreSupprimes === 1
+          ? "L’article a été supprimé."
+          : `${nombreSupprimes} articles ont été supprimés.`
+      );
+    }
+    if (echecs.length > 0) {
+      const premierEchec = echecs[0].reason;
+      toast.error(
+        premierEchec instanceof Error
+          ? `${echecs.length} suppression(s) ont échoué : ${premierEchec.message}`
+          : `${echecs.length} suppression(s) ont échoué.`
+      );
+    }
+    setSuppressionEnCours(false);
+    setSuppressionCibles([]);
   };
-
-  const onSubmit = async (form: Article) => {
-    const action = enEdition
-      ? modifierArticle(enEdition.id, form)
-      : creerArticle(businessId!, form);
-
-    await toast
-      .promise(action, {
-        loading: enEdition ? "Modification…" : "Création…",
-        success: () => {
-          setOuvert(false);
-          recharger();
-          return enEdition ? "Article modifié" : "Article créé";
-        },
-        error: (e: Error) => e.message,
-      })
-      .unwrap();
-  };
-
-  const supprimer = async (article: LigneArticle) => {
-    await toast
-      .promise(supprimerArticle(article.id), {
-        loading: "Suppression…",
-        success: () => {
-          recharger();
-          return "Article supprimé";
-        },
-        error: (e: Error) => e.message,
-      })
-      .unwrap();
-  };
-
-  const colonnes: DataTableColumn<LigneArticle>[] = [
-    {
-      id: "designation",
-      header: "Désignation",
-      accessor: (article) => article.designation,
-      cell: (article) => (
-        <span className="font-medium">{article.designation}</span>
-      ),
-    },
-    {
-      id: "categorie",
-      header: "Catégorie",
-      accessor: (article) => article.categorie?.nom,
-      cell: (article) => (
-        <span className="text-muted-foreground">
-          {article.categorie?.nom ?? "—"}
-        </span>
-      ),
-    },
-    {
-      id: "pu",
-      header: "Prix unitaire",
-      accessor: (article) => Number(article.pu),
-      cell: (article) => (
-        <span className="tabular-nums">
-          {Number(article.pu).toLocaleString("fr-FR")}{" "}
-          <span className="text-muted-foreground">
-            {article.devise?.symbole ?? ""}
-          </span>
-        </span>
-      ),
-      className: "text-right",
-    },
-    {
-      id: "actions",
-      header: "Actions",
-      accessor: () => null,
-      sortable: false,
-      cell: (article) => (
-        <div className="whitespace-nowrap text-right">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => ouvrirEdition(article)}
-          >
-            Modifier
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            aria-label={`Supprimer ${article.designation}`}
-            onClick={() => supprimer(article)}
-          >
-            <Trash2Icon className="size-4 text-destructive" />
-          </Button>
-        </div>
-      ),
-      className: "w-[1%] text-right",
-    },
-  ];
 
   return (
     <PageRessource
@@ -210,150 +195,282 @@ export default function Articles() {
       businessId={businessId}
       chargement={chargement}
       erreur={erreur}
-      vide={donnees.length === 0}
+      vide={articles.length === 0}
       messageVide="Aucun article au catalogue pour le moment."
       onReessayer={recharger}
       action={
-        <Button onClick={ouvrirCreation}>
+        <Button render={<Link to="/articles/nouveau" />}>
           <PlusIcon className="size-4" />
           Nouvel article
         </Button>
       }
+      outils={
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="relative min-w-[min(100%,18rem)] flex-1">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              value={recherche}
+              onChange={(event) => setRecherche(event.currentTarget.value)}
+              placeholder="Rechercher un article…"
+              aria-label="Rechercher un article"
+              className="pl-9"
+            />
+          </label>
+          <NativeSelect
+            value={categorieId}
+            onChange={(event) => setCategorieId(event.currentTarget.value)}
+            aria-label="Filtrer par catégorie"
+            className="w-full sm:w-56"
+          >
+            <NativeSelectOption value="">Toutes les catégories</NativeSelectOption>
+            {categories.map((categorie) => (
+              <NativeSelectOption key={categorie.id} value={categorie.id}>
+                {categorie.nom}
+              </NativeSelectOption>
+            ))}
+          </NativeSelect>
+          <Button
+            type="button"
+            variant="outline"
+            size="icon"
+            aria-label={
+              modeAffichage === "TABLE"
+                ? "Afficher les articles en grille"
+                : "Afficher les articles en tableau"
+            }
+            aria-pressed={modeAffichage === "GRID"}
+            onClick={() => void changerModeAffichage()}
+            disabled={!pret || sauvegardeMode}
+          >
+            {modeAffichage === "TABLE" ? <Grid2X2 /> : <List />}
+          </Button>
+          <Button
+            type="button"
+            variant="destructive"
+            disabled={selection.length === 0}
+            onClick={() => ouvrirSuppression(selection)}
+          >
+            <Trash2 /> Supprimer ({selection.length})
+          </Button>
+        </div>
+      }
     >
-      <ReusableDataTable
-        data={donnees}
-        columns={colonnes}
-        getRowKey={(article) => article.id}
-        pageSize={10}
-      />
-
-      <Dialog open={ouvert} onOpenChange={setOuvert}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>
-              {enEdition ? "Modifier l'article" : "Nouvel article"}
-            </DialogTitle>
-            <DialogDescription>
-              Les champs marqués d'une étoile sont exigés par le serveur.
-            </DialogDescription>
-          </DialogHeader>
-
-          <form onSubmit={handleSubmit(onSubmit)} noValidate>
-            <FieldGroup>
-              <FieldSet>
-                <FieldLegend variant="label">Informations requises</FieldLegend>
-
-                <Field data-invalid={!!errors.designation}>
-                  <FieldLabel htmlFor="designation">
-                    Désignation {requis.has("designation") && <Etoile />}
-                  </FieldLabel>
-                  <Input
-                    id="designation"
-                    placeholder="Ex : Pagne wax 6 yards"
-                    aria-required={requis.has("designation")}
-                    aria-invalid={!!errors.designation}
-                    {...register("designation")}
+      <div className="space-y-3">
+        {modeAffichage === "TABLE" ? (
+        <div className="overflow-hidden rounded-lg border">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-10">
+                  <input
+                    type="checkbox"
+                    aria-label="Sélectionner les articles de cette page"
+                    checked={tousSelectionnes}
+                    onChange={basculerPage}
+                    disabled={idsPage.length === 0}
+                    className="size-4 bg-transparent accent-primary opacity-70"
                   />
-                  <FieldError errors={[errors.designation]} />
-                </Field>
+                </TableHead>
+                <TableHead>Image</TableHead>
+                <TableHead>Désignation</TableHead>
+                <TableHead>Catégorie</TableHead>
+                <TableHead className="text-right">PU</TableHead>
+                <TableHead className="text-right">En stock</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {articlesPage.length > 0 ? (
+                articlesPage.map((article) => {
+                  const imageParDefaut = article.images?.find(
+                    (item) => item.isDefault
+                  );
+                  const image = imageParDefaut?.url || IMAGE_PAR_DEFAUT;
+                  return (
+                    <TableRow key={article.id}>
+                      <TableCell>
+                        <input
+                          type="checkbox"
+                          aria-label={`Sélectionner ${article.designation}`}
+                          checked={selection.includes(article.id)}
+                          onChange={() => basculerSelection(article.id)}
+                          className="size-4 bg-transparent accent-primary opacity-70"
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <img
+                          src={image}
+                          alt=""
+                          className="size-12 rounded-md border bg-muted object-cover"
+                          onError={(event) => {
+                            event.currentTarget.src = IMAGE_PAR_DEFAUT;
+                          }}
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <Link
+                          to={`/articles/${article.id}`}
+                          className="font-medium text-primary underline-offset-4 hover:underline"
+                        >
+                          {article.designation}
+                        </Link>
+                      </TableCell>
+                      <TableCell>{article.categorie?.nom ?? "—"}</TableCell>
+                      <TableCell className="text-right tabular-nums">
+                        {Number(article.pu).toLocaleString("fr-FR")}{" "}
+                        <span className="text-muted-foreground">
+                          {article.devise?.symbole ?? ""}
+                        </span>
+                      </TableCell>
+                      <TableCell className="text-right tabular-nums">
+                        {article.stocks?.reduce(
+                          (total, stock) => total + stock.qtteDisponible,
+                          0
+                        ) || "vide"}
+                      </TableCell>
+                    </TableRow>
+                  );
+                })
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={6} className="h-24 text-center text-muted-foreground">
+                    Aucun article ne correspond à la recherche.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {articlesPage.length > 0 ? (
+              articlesPage.map((article) => {
+                const imageParDefaut = article.images?.find(
+                  (item) => item.isDefault
+                );
+                const image = imageParDefaut?.url || IMAGE_PAR_DEFAUT;
+                const stockDisponible = article.stocks?.reduce(
+                  (total, stock) => total + stock.qtteDisponible,
+                  0
+                ) || 0;
+                return (
+                  <article key={article.id} className="relative space-y-3 rounded-lg border p-4">
+                    <input
+                      type="checkbox"
+                      aria-label={`Sélectionner ${article.designation}`}
+                      checked={selection.includes(article.id)}
+                      onChange={() => basculerSelection(article.id)}
+                      className="absolute right-4 top-4 size-4 bg-transparent accent-primary opacity-70"
+                    />
+                    <img
+                      src={image}
+                      alt=""
+                      className="aspect-[4/3] w-full rounded-md border bg-muted object-cover"
+                      onError={(event) => {
+                        event.currentTarget.src = IMAGE_PAR_DEFAUT;
+                      }}
+                    />
+                    <div className="space-y-2">
+                      <Link
+                        to={`/articles/${article.id}`}
+                        className="block pr-8 font-medium text-primary underline-offset-4 hover:underline"
+                      >
+                        {article.designation}
+                      </Link>
+                      <p className="text-sm text-muted-foreground">
+                        {article.categorie?.nom ?? "—"}
+                      </p>
+                      <p className="text-sm tabular-nums">
+                        PU : {Number(article.pu).toLocaleString("fr-FR")}{" "}
+                        <span className="text-muted-foreground">
+                          {article.devise?.symbole ?? ""}
+                        </span>
+                      </p>
+                      <p className="text-sm">
+                        En stock : {stockDisponible || "vide"}
+                      </p>
+                    </div>
+                  </article>
+                );
+              })
+            ) : (
+              <p className="col-span-full py-10 text-center text-muted-foreground">
+                Aucun article ne correspond à la recherche.
+              </p>
+            )}
+          </div>
+        )}
+        <nav
+          aria-label="Pagination des articles"
+          className="flex flex-wrap items-center justify-between gap-3"
+        >
+          <p aria-live="polite" className="text-sm text-muted-foreground">
+            {articlesFiltres.length === 0
+              ? "0 article"
+              : `${pageCourante * TAILLE_PAGE + 1}–${Math.min(
+                  (pageCourante + 1) * TAILLE_PAGE,
+                  articlesFiltres.length
+                )} sur ${articlesFiltres.length}`}
+          </p>
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => setPage((courante) => Math.max(0, courante - 1))}
+              disabled={pageCourante === 0}
+            >
+              Précédent
+            </Button>
+            <span className="text-sm tabular-nums">
+              {nombrePages === 0 ? 0 : pageCourante + 1} / {nombrePages}
+            </span>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() =>
+                setPage((courante) => Math.min(nombrePages - 1, courante + 1))
+              }
+              disabled={pageCourante >= nombrePages - 1}
+            >
+              Suivant
+            </Button>
+          </div>
+        </nav>
+      </div>
 
-                <Field data-invalid={!!errors.pu}>
-                  <FieldLabel htmlFor="pu">
-                    Prix unitaire {requis.has("pu") && <Etoile />}
-                  </FieldLabel>
-                  <Input
-                    id="pu"
-                    type="number"
-                    step="0.01"
-                    inputMode="decimal"
-                    placeholder="0"
-                    aria-required={requis.has("pu")}
-                    aria-invalid={!!errors.pu}
-                    {...register("pu", { valueAsNumber: true })}
-                  />
-                  <FieldError errors={[errors.pu]} />
-                </Field>
-
-                <Field data-invalid={!!errors.categorieId}>
-                  <FieldLabel htmlFor="categorieId">
-                    Catégorie {requis.has("categorieId") && <Etoile />}
-                  </FieldLabel>
-                  <NativeSelect
-                    id="categorieId"
-                    aria-required={requis.has("categorieId")}
-                    aria-invalid={!!errors.categorieId}
-                    {...register("categorieId")}
-                  >
-                    <NativeSelectOption value="">
-                      Sélectionner une catégorie
-                    </NativeSelectOption>
-                    {categories.map((c) => (
-                      <NativeSelectOption key={c.id} value={c.id}>
-                        {c.nom}
-                      </NativeSelectOption>
-                    ))}
-                  </NativeSelect>
-                  <FieldError errors={[errors.categorieId]} />
-                </Field>
-
-                <Field data-invalid={!!errors.deviseId}>
-                  <FieldLabel htmlFor="deviseId">
-                    Devise {requis.has("deviseId") && <Etoile />}
-                  </FieldLabel>
-                  <NativeSelect
-                    id="deviseId"
-                    aria-required={requis.has("deviseId")}
-                    aria-invalid={!!errors.deviseId}
-                    {...register("deviseId")}
-                  >
-                    <NativeSelectOption value="">
-                      Sélectionner une devise
-                    </NativeSelectOption>
-                    {devises.map((d) => (
-                      <NativeSelectOption key={d.id} value={d.id}>
-                        {d.nom ?? d.type} ({d.symbole})
-                      </NativeSelectOption>
-                    ))}
-                  </NativeSelect>
-                  <FieldError errors={[errors.deviseId]} />
-                </Field>
-              </FieldSet>
-
-              <Field data-invalid={!!errors.description}>
-                <FieldLabel htmlFor="description">
-                  Description <span className="text-muted-foreground">(facultatif)</span>
-                </FieldLabel>
-                <Textarea
-                  id="description"
-                  rows={3}
-                  placeholder="Matière, dimensions, provenance…"
-                  aria-invalid={!!errors.description}
-                  {...register("description")}
-                />
-                <FieldError errors={[errors.description]} />
-              </Field>
-            </FieldGroup>
-
-            <DialogFooter className="mt-6">
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => setOuvert(false)}
-                disabled={isSubmitting}
-              >
-                Annuler
-              </Button>
-              <Button type="submit" disabled={!isValid || isSubmitting}>
-                {isSubmitting
-                  ? "Enregistrement…"
-                  : enEdition
-                    ? "Enregistrer"
-                    : "Créer l'article"}
-              </Button>
-            </DialogFooter>
-          </form>
-        </DialogContent>
-      </Dialog>
+      <AlertDialog
+        open={suppressionCibles.length > 0}
+        onOpenChange={(open) => {
+          if (!open && !suppressionEnCours) setSuppressionCibles([]);
+        }}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              Supprimer {suppressionCibles.length === 1 ? "cet article" : "ces articles"} ?
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              {suppressionCibles.length === 1
+                ? "Cette suppression est définitive."
+                : `Cette action supprimera définitivement les ${suppressionCibles.length} articles sélectionnés.`}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={suppressionEnCours}>Annuler</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={(event) => {
+                event.preventDefault();
+                void supprimerSelection();
+              }}
+              disabled={suppressionEnCours}
+              className="bg-destructive text-white hover:bg-destructive/90"
+            >
+              {suppressionEnCours ? "Suppression…" : "Confirmer la suppression"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </PageRessource>
   );
 }

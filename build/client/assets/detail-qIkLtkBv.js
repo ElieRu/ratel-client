@@ -1,0 +1,1 @@
+import{t as e}from"./detail-DSTiuG0U.js";export{e as default};

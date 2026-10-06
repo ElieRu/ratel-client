@@ -1,0 +1,1 @@
+import{t as e}from"./fournisseurs-CnabY807.js";export{e as default};

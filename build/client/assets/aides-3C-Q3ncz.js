@@ -1,1 +1,0 @@
-import{r as e}from"./rolldown-runtime-hePW80VL.js";import{jo as t,uo as n}from"./admin-DDjUWroy.js";var r=e(n(),1);function i({}){return[{title:`My Admin App`},{name:`description`,content:`Welcome to React Router!`}]}var a=t(function(){return(0,r.jsx)(`div`,{children:(0,r.jsx)(`h1`,{children:`aides`})})});export{a as default,i as meta};

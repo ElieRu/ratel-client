@@ -1,1 +1,0 @@
-import{t as e}from"./detail-CypbbsEw.js";export{e as default};

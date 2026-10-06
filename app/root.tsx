@@ -19,6 +19,8 @@ import Dashboard from "./routes/dashboard/dashboard";
 import Commandes from "./routes/commandes/commandes";
 import Ventes from "./routes/ventes/ventes";
 import Articles from "./routes/articles/articles";
+import NouvelArticle from "./routes/articles/nouveau";
+import DetailArticle from "./routes/articles/detail";
 import Achats from "./routes/achats/achats";
 import Clients from "./routes/clients/clients";
 import DetailClient from "./routes/clients/detail";
@@ -133,6 +135,8 @@ export default function App({ loaderData }: Route.ComponentProps) {
                   <MyRoute path="/commandes" element={<Commandes />} />
                   <MyRoute path="/ventes" element={<Ventes />} />
                   <MyRoute path="/articles" element={<Articles />} />
+                  <MyRoute path="/articles/nouveau" element={<NouvelArticle />} />
+                  <MyRoute path="/articles/:id" element={<DetailArticle />} />
                   <MyRoute path="/businesses/creer" element={<BusinessForm />} />
                   <MyRoute path="/promotions" element={<Promotions />} />
                   <MyRoute path="/achats" element={<Achats />} />

@@ -1,0 +1,1 @@
+import{t as e}from"./valider-invitation-WxSava4B.js";export{e as default};

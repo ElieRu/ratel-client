@@ -1,1 +1,0 @@
-import{t as e}from"./detail-PpEZnvJ9.js";export{e as default};
